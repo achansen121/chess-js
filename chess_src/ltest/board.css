@@ -1,0 +1,906 @@
+.move_history {
+  font-family: sans-serif;
+  display: inline-block;
+  margin: 1em;
+  vertical-align: top;
+}
+.move_history h6 {
+  font-size: 120%;
+  margin: 0;
+  margin-bottom: .5em;
+  font-weight: normal;
+}
+.move_history > div {
+  height: 20em;
+  overflow-y: scroll;
+  min-width: 10em;
+  border: 1px solid black;
+  padding: .5em;
+  font-family: monospace;
+}
+.chessboard {
+  width: 750px;
+  height: 750px;
+  position: relative;
+  display: inline-block;
+}
+.chessboard > .bsquare.odd {
+  background: #ff8037;
+}
+.chessboard > .bsquare.even {
+  background: #ffffc8;
+}
+.chessboard > .bsquare {
+  width: 12.5%;
+  height: 12.5%;
+  position: absolute;
+}
+.chessboard > .recent_move,
+.chessboard > .recent_source {
+  width: 93.75px;
+  height: 93.75px;
+  position: absolute;
+}
+.chessboard > .recent_move > div,
+.chessboard > .recent_source > div {
+  border: 5px solid green;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.chessboard > .recent_source > div {
+  border-color: #00ff00;
+}
+.chessboard > svg {
+  position: absolute;
+  z-index: 1;
+  width: 11.25%;
+  height: 11.25%;
+}
+.chessboard svg path,
+.chessboard svg circle,
+.chessboard svg rect {
+  fill: white;
+  stroke: black;
+}
+.chessboard svg.black path,
+.chessboard svg.black circle,
+.chessboard svg.black rect {
+  fill: black;
+  stroke: white;
+}
+.chessboard > button {
+  position: absolute;
+  z-index: 2;
+  cursor: pointer;
+  padding: 0;
+  background: none;
+  border: none;
+  width: 12.5%;
+  height: 12.5%;
+}
+.chessboard > button.selectedbutton > div {
+  position: absolute;
+  top: 10%;
+  bottom: 10%;
+  left: 10%;
+  right: 10%;
+  border: 3px solid black;
+  border-radius: 50%;
+}
+.chessboard > button.selectedbutton.nil {
+  border: 3px solid black;
+  width: 12.5%;
+  height: 12.5%;
+  z-index: 3;
+}
+.chessboard > button.selectedbutton.nil:focus {
+  border-width: 6px;
+  outline: 0;
+}
+.chessboard > button.selectedbutton.nil.invalidmove {
+  border-color: red;
+}
+.chessboard button:focus,
+.chessboard div[role="button"]:focus {
+  outline: 0;
+}
+.chessboard .promotion {
+  width: 50%;
+  position: absolute;
+  background: white;
+  top: 37.5%;
+  left: 25%;
+  border-radius: 5px;
+  border: 1px solid black;
+  z-index: -5;
+  padding: 1em;
+  font-family: sans-serif;
+}
+.chessboard .promotion svg {
+  height: 3em;
+}
+.chessboard .promotion .promotray {
+  text-align: center;
+}
+.chessboard .promotion div[role="button"] {
+  vertical-align: middle;
+  cursor: pointer;
+  display: inline-block;
+  margin: 1em;
+  border: 1px solid rgba(255, 255, 255, 0);
+  border-radius: 5px;
+}
+.chessboard .promotion div[role="button"]:hover {
+  border-color: black;
+}
+.chessboard > button[data-coord="1x8"],
+.chessboard > button.selectedbutton[data-coord="1x8"],
+.chessboard > .bsquare[data-coord="1x8"],
+.chessboard > .recent_move[data-coord="1x8"],
+.chessboard > .recent_source[data-coord="1x8"] {
+  left: 0%;
+  top: 87.5%;
+}
+.chessboard > svg[data-coord="1x8"] {
+  left: 0.625%;
+  top: 88.125%;
+}
+.chessboard > button[data-coord="1x7"],
+.chessboard > button.selectedbutton[data-coord="1x7"],
+.chessboard > .bsquare[data-coord="1x7"],
+.chessboard > .recent_move[data-coord="1x7"],
+.chessboard > .recent_source[data-coord="1x7"] {
+  left: 0%;
+  top: 75%;
+}
+.chessboard > svg[data-coord="1x7"] {
+  left: 0.625%;
+  top: 75.625%;
+}
+.chessboard > button[data-coord="1x6"],
+.chessboard > button.selectedbutton[data-coord="1x6"],
+.chessboard > .bsquare[data-coord="1x6"],
+.chessboard > .recent_move[data-coord="1x6"],
+.chessboard > .recent_source[data-coord="1x6"] {
+  left: 0%;
+  top: 62.5%;
+}
+.chessboard > svg[data-coord="1x6"] {
+  left: 0.625%;
+  top: 63.125%;
+}
+.chessboard > button[data-coord="1x5"],
+.chessboard > button.selectedbutton[data-coord="1x5"],
+.chessboard > .bsquare[data-coord="1x5"],
+.chessboard > .recent_move[data-coord="1x5"],
+.chessboard > .recent_source[data-coord="1x5"] {
+  left: 0%;
+  top: 50%;
+}
+.chessboard > svg[data-coord="1x5"] {
+  left: 0.625%;
+  top: 50.625%;
+}
+.chessboard > button[data-coord="1x4"],
+.chessboard > button.selectedbutton[data-coord="1x4"],
+.chessboard > .bsquare[data-coord="1x4"],
+.chessboard > .recent_move[data-coord="1x4"],
+.chessboard > .recent_source[data-coord="1x4"] {
+  left: 0%;
+  top: 37.5%;
+}
+.chessboard > svg[data-coord="1x4"] {
+  left: 0.625%;
+  top: 38.125%;
+}
+.chessboard > button[data-coord="1x3"],
+.chessboard > button.selectedbutton[data-coord="1x3"],
+.chessboard > .bsquare[data-coord="1x3"],
+.chessboard > .recent_move[data-coord="1x3"],
+.chessboard > .recent_source[data-coord="1x3"] {
+  left: 0%;
+  top: 25%;
+}
+.chessboard > svg[data-coord="1x3"] {
+  left: 0.625%;
+  top: 25.625%;
+}
+.chessboard > button[data-coord="1x2"],
+.chessboard > button.selectedbutton[data-coord="1x2"],
+.chessboard > .bsquare[data-coord="1x2"],
+.chessboard > .recent_move[data-coord="1x2"],
+.chessboard > .recent_source[data-coord="1x2"] {
+  left: 0%;
+  top: 12.5%;
+}
+.chessboard > svg[data-coord="1x2"] {
+  left: 0.625%;
+  top: 13.125%;
+}
+.chessboard > button[data-coord="1x1"],
+.chessboard > button.selectedbutton[data-coord="1x1"],
+.chessboard > .bsquare[data-coord="1x1"],
+.chessboard > .recent_move[data-coord="1x1"],
+.chessboard > .recent_source[data-coord="1x1"] {
+  left: 0%;
+  top: 0%;
+}
+.chessboard > svg[data-coord="1x1"] {
+  left: 0.625%;
+  top: 0.625%;
+}
+.chessboard > button[data-coord="2x8"],
+.chessboard > button.selectedbutton[data-coord="2x8"],
+.chessboard > .bsquare[data-coord="2x8"],
+.chessboard > .recent_move[data-coord="2x8"],
+.chessboard > .recent_source[data-coord="2x8"] {
+  left: 12.5%;
+  top: 87.5%;
+}
+.chessboard > svg[data-coord="2x8"] {
+  left: 13.125%;
+  top: 88.125%;
+}
+.chessboard > button[data-coord="2x7"],
+.chessboard > button.selectedbutton[data-coord="2x7"],
+.chessboard > .bsquare[data-coord="2x7"],
+.chessboard > .recent_move[data-coord="2x7"],
+.chessboard > .recent_source[data-coord="2x7"] {
+  left: 12.5%;
+  top: 75%;
+}
+.chessboard > svg[data-coord="2x7"] {
+  left: 13.125%;
+  top: 75.625%;
+}
+.chessboard > button[data-coord="2x6"],
+.chessboard > button.selectedbutton[data-coord="2x6"],
+.chessboard > .bsquare[data-coord="2x6"],
+.chessboard > .recent_move[data-coord="2x6"],
+.chessboard > .recent_source[data-coord="2x6"] {
+  left: 12.5%;
+  top: 62.5%;
+}
+.chessboard > svg[data-coord="2x6"] {
+  left: 13.125%;
+  top: 63.125%;
+}
+.chessboard > button[data-coord="2x5"],
+.chessboard > button.selectedbutton[data-coord="2x5"],
+.chessboard > .bsquare[data-coord="2x5"],
+.chessboard > .recent_move[data-coord="2x5"],
+.chessboard > .recent_source[data-coord="2x5"] {
+  left: 12.5%;
+  top: 50%;
+}
+.chessboard > svg[data-coord="2x5"] {
+  left: 13.125%;
+  top: 50.625%;
+}
+.chessboard > button[data-coord="2x4"],
+.chessboard > button.selectedbutton[data-coord="2x4"],
+.chessboard > .bsquare[data-coord="2x4"],
+.chessboard > .recent_move[data-coord="2x4"],
+.chessboard > .recent_source[data-coord="2x4"] {
+  left: 12.5%;
+  top: 37.5%;
+}
+.chessboard > svg[data-coord="2x4"] {
+  left: 13.125%;
+  top: 38.125%;
+}
+.chessboard > button[data-coord="2x3"],
+.chessboard > button.selectedbutton[data-coord="2x3"],
+.chessboard > .bsquare[data-coord="2x3"],
+.chessboard > .recent_move[data-coord="2x3"],
+.chessboard > .recent_source[data-coord="2x3"] {
+  left: 12.5%;
+  top: 25%;
+}
+.chessboard > svg[data-coord="2x3"] {
+  left: 13.125%;
+  top: 25.625%;
+}
+.chessboard > button[data-coord="2x2"],
+.chessboard > button.selectedbutton[data-coord="2x2"],
+.chessboard > .bsquare[data-coord="2x2"],
+.chessboard > .recent_move[data-coord="2x2"],
+.chessboard > .recent_source[data-coord="2x2"] {
+  left: 12.5%;
+  top: 12.5%;
+}
+.chessboard > svg[data-coord="2x2"] {
+  left: 13.125%;
+  top: 13.125%;
+}
+.chessboard > button[data-coord="2x1"],
+.chessboard > button.selectedbutton[data-coord="2x1"],
+.chessboard > .bsquare[data-coord="2x1"],
+.chessboard > .recent_move[data-coord="2x1"],
+.chessboard > .recent_source[data-coord="2x1"] {
+  left: 12.5%;
+  top: 0%;
+}
+.chessboard > svg[data-coord="2x1"] {
+  left: 13.125%;
+  top: 0.625%;
+}
+.chessboard > button[data-coord="3x8"],
+.chessboard > button.selectedbutton[data-coord="3x8"],
+.chessboard > .bsquare[data-coord="3x8"],
+.chessboard > .recent_move[data-coord="3x8"],
+.chessboard > .recent_source[data-coord="3x8"] {
+  left: 25%;
+  top: 87.5%;
+}
+.chessboard > svg[data-coord="3x8"] {
+  left: 25.625%;
+  top: 88.125%;
+}
+.chessboard > button[data-coord="3x7"],
+.chessboard > button.selectedbutton[data-coord="3x7"],
+.chessboard > .bsquare[data-coord="3x7"],
+.chessboard > .recent_move[data-coord="3x7"],
+.chessboard > .recent_source[data-coord="3x7"] {
+  left: 25%;
+  top: 75%;
+}
+.chessboard > svg[data-coord="3x7"] {
+  left: 25.625%;
+  top: 75.625%;
+}
+.chessboard > button[data-coord="3x6"],
+.chessboard > button.selectedbutton[data-coord="3x6"],
+.chessboard > .bsquare[data-coord="3x6"],
+.chessboard > .recent_move[data-coord="3x6"],
+.chessboard > .recent_source[data-coord="3x6"] {
+  left: 25%;
+  top: 62.5%;
+}
+.chessboard > svg[data-coord="3x6"] {
+  left: 25.625%;
+  top: 63.125%;
+}
+.chessboard > button[data-coord="3x5"],
+.chessboard > button.selectedbutton[data-coord="3x5"],
+.chessboard > .bsquare[data-coord="3x5"],
+.chessboard > .recent_move[data-coord="3x5"],
+.chessboard > .recent_source[data-coord="3x5"] {
+  left: 25%;
+  top: 50%;
+}
+.chessboard > svg[data-coord="3x5"] {
+  left: 25.625%;
+  top: 50.625%;
+}
+.chessboard > button[data-coord="3x4"],
+.chessboard > button.selectedbutton[data-coord="3x4"],
+.chessboard > .bsquare[data-coord="3x4"],
+.chessboard > .recent_move[data-coord="3x4"],
+.chessboard > .recent_source[data-coord="3x4"] {
+  left: 25%;
+  top: 37.5%;
+}
+.chessboard > svg[data-coord="3x4"] {
+  left: 25.625%;
+  top: 38.125%;
+}
+.chessboard > button[data-coord="3x3"],
+.chessboard > button.selectedbutton[data-coord="3x3"],
+.chessboard > .bsquare[data-coord="3x3"],
+.chessboard > .recent_move[data-coord="3x3"],
+.chessboard > .recent_source[data-coord="3x3"] {
+  left: 25%;
+  top: 25%;
+}
+.chessboard > svg[data-coord="3x3"] {
+  left: 25.625%;
+  top: 25.625%;
+}
+.chessboard > button[data-coord="3x2"],
+.chessboard > button.selectedbutton[data-coord="3x2"],
+.chessboard > .bsquare[data-coord="3x2"],
+.chessboard > .recent_move[data-coord="3x2"],
+.chessboard > .recent_source[data-coord="3x2"] {
+  left: 25%;
+  top: 12.5%;
+}
+.chessboard > svg[data-coord="3x2"] {
+  left: 25.625%;
+  top: 13.125%;
+}
+.chessboard > button[data-coord="3x1"],
+.chessboard > button.selectedbutton[data-coord="3x1"],
+.chessboard > .bsquare[data-coord="3x1"],
+.chessboard > .recent_move[data-coord="3x1"],
+.chessboard > .recent_source[data-coord="3x1"] {
+  left: 25%;
+  top: 0%;
+}
+.chessboard > svg[data-coord="3x1"] {
+  left: 25.625%;
+  top: 0.625%;
+}
+.chessboard > button[data-coord="4x8"],
+.chessboard > button.selectedbutton[data-coord="4x8"],
+.chessboard > .bsquare[data-coord="4x8"],
+.chessboard > .recent_move[data-coord="4x8"],
+.chessboard > .recent_source[data-coord="4x8"] {
+  left: 37.5%;
+  top: 87.5%;
+}
+.chessboard > svg[data-coord="4x8"] {
+  left: 38.125%;
+  top: 88.125%;
+}
+.chessboard > button[data-coord="4x7"],
+.chessboard > button.selectedbutton[data-coord="4x7"],
+.chessboard > .bsquare[data-coord="4x7"],
+.chessboard > .recent_move[data-coord="4x7"],
+.chessboard > .recent_source[data-coord="4x7"] {
+  left: 37.5%;
+  top: 75%;
+}
+.chessboard > svg[data-coord="4x7"] {
+  left: 38.125%;
+  top: 75.625%;
+}
+.chessboard > button[data-coord="4x6"],
+.chessboard > button.selectedbutton[data-coord="4x6"],
+.chessboard > .bsquare[data-coord="4x6"],
+.chessboard > .recent_move[data-coord="4x6"],
+.chessboard > .recent_source[data-coord="4x6"] {
+  left: 37.5%;
+  top: 62.5%;
+}
+.chessboard > svg[data-coord="4x6"] {
+  left: 38.125%;
+  top: 63.125%;
+}
+.chessboard > button[data-coord="4x5"],
+.chessboard > button.selectedbutton[data-coord="4x5"],
+.chessboard > .bsquare[data-coord="4x5"],
+.chessboard > .recent_move[data-coord="4x5"],
+.chessboard > .recent_source[data-coord="4x5"] {
+  left: 37.5%;
+  top: 50%;
+}
+.chessboard > svg[data-coord="4x5"] {
+  left: 38.125%;
+  top: 50.625%;
+}
+.chessboard > button[data-coord="4x4"],
+.chessboard > button.selectedbutton[data-coord="4x4"],
+.chessboard > .bsquare[data-coord="4x4"],
+.chessboard > .recent_move[data-coord="4x4"],
+.chessboard > .recent_source[data-coord="4x4"] {
+  left: 37.5%;
+  top: 37.5%;
+}
+.chessboard > svg[data-coord="4x4"] {
+  left: 38.125%;
+  top: 38.125%;
+}
+.chessboard > button[data-coord="4x3"],
+.chessboard > button.selectedbutton[data-coord="4x3"],
+.chessboard > .bsquare[data-coord="4x3"],
+.chessboard > .recent_move[data-coord="4x3"],
+.chessboard > .recent_source[data-coord="4x3"] {
+  left: 37.5%;
+  top: 25%;
+}
+.chessboard > svg[data-coord="4x3"] {
+  left: 38.125%;
+  top: 25.625%;
+}
+.chessboard > button[data-coord="4x2"],
+.chessboard > button.selectedbutton[data-coord="4x2"],
+.chessboard > .bsquare[data-coord="4x2"],
+.chessboard > .recent_move[data-coord="4x2"],
+.chessboard > .recent_source[data-coord="4x2"] {
+  left: 37.5%;
+  top: 12.5%;
+}
+.chessboard > svg[data-coord="4x2"] {
+  left: 38.125%;
+  top: 13.125%;
+}
+.chessboard > button[data-coord="4x1"],
+.chessboard > button.selectedbutton[data-coord="4x1"],
+.chessboard > .bsquare[data-coord="4x1"],
+.chessboard > .recent_move[data-coord="4x1"],
+.chessboard > .recent_source[data-coord="4x1"] {
+  left: 37.5%;
+  top: 0%;
+}
+.chessboard > svg[data-coord="4x1"] {
+  left: 38.125%;
+  top: 0.625%;
+}
+.chessboard > button[data-coord="5x8"],
+.chessboard > button.selectedbutton[data-coord="5x8"],
+.chessboard > .bsquare[data-coord="5x8"],
+.chessboard > .recent_move[data-coord="5x8"],
+.chessboard > .recent_source[data-coord="5x8"] {
+  left: 50%;
+  top: 87.5%;
+}
+.chessboard > svg[data-coord="5x8"] {
+  left: 50.625%;
+  top: 88.125%;
+}
+.chessboard > button[data-coord="5x7"],
+.chessboard > button.selectedbutton[data-coord="5x7"],
+.chessboard > .bsquare[data-coord="5x7"],
+.chessboard > .recent_move[data-coord="5x7"],
+.chessboard > .recent_source[data-coord="5x7"] {
+  left: 50%;
+  top: 75%;
+}
+.chessboard > svg[data-coord="5x7"] {
+  left: 50.625%;
+  top: 75.625%;
+}
+.chessboard > button[data-coord="5x6"],
+.chessboard > button.selectedbutton[data-coord="5x6"],
+.chessboard > .bsquare[data-coord="5x6"],
+.chessboard > .recent_move[data-coord="5x6"],
+.chessboard > .recent_source[data-coord="5x6"] {
+  left: 50%;
+  top: 62.5%;
+}
+.chessboard > svg[data-coord="5x6"] {
+  left: 50.625%;
+  top: 63.125%;
+}
+.chessboard > button[data-coord="5x5"],
+.chessboard > button.selectedbutton[data-coord="5x5"],
+.chessboard > .bsquare[data-coord="5x5"],
+.chessboard > .recent_move[data-coord="5x5"],
+.chessboard > .recent_source[data-coord="5x5"] {
+  left: 50%;
+  top: 50%;
+}
+.chessboard > svg[data-coord="5x5"] {
+  left: 50.625%;
+  top: 50.625%;
+}
+.chessboard > button[data-coord="5x4"],
+.chessboard > button.selectedbutton[data-coord="5x4"],
+.chessboard > .bsquare[data-coord="5x4"],
+.chessboard > .recent_move[data-coord="5x4"],
+.chessboard > .recent_source[data-coord="5x4"] {
+  left: 50%;
+  top: 37.5%;
+}
+.chessboard > svg[data-coord="5x4"] {
+  left: 50.625%;
+  top: 38.125%;
+}
+.chessboard > button[data-coord="5x3"],
+.chessboard > button.selectedbutton[data-coord="5x3"],
+.chessboard > .bsquare[data-coord="5x3"],
+.chessboard > .recent_move[data-coord="5x3"],
+.chessboard > .recent_source[data-coord="5x3"] {
+  left: 50%;
+  top: 25%;
+}
+.chessboard > svg[data-coord="5x3"] {
+  left: 50.625%;
+  top: 25.625%;
+}
+.chessboard > button[data-coord="5x2"],
+.chessboard > button.selectedbutton[data-coord="5x2"],
+.chessboard > .bsquare[data-coord="5x2"],
+.chessboard > .recent_move[data-coord="5x2"],
+.chessboard > .recent_source[data-coord="5x2"] {
+  left: 50%;
+  top: 12.5%;
+}
+.chessboard > svg[data-coord="5x2"] {
+  left: 50.625%;
+  top: 13.125%;
+}
+.chessboard > button[data-coord="5x1"],
+.chessboard > button.selectedbutton[data-coord="5x1"],
+.chessboard > .bsquare[data-coord="5x1"],
+.chessboard > .recent_move[data-coord="5x1"],
+.chessboard > .recent_source[data-coord="5x1"] {
+  left: 50%;
+  top: 0%;
+}
+.chessboard > svg[data-coord="5x1"] {
+  left: 50.625%;
+  top: 0.625%;
+}
+.chessboard > button[data-coord="6x8"],
+.chessboard > button.selectedbutton[data-coord="6x8"],
+.chessboard > .bsquare[data-coord="6x8"],
+.chessboard > .recent_move[data-coord="6x8"],
+.chessboard > .recent_source[data-coord="6x8"] {
+  left: 62.5%;
+  top: 87.5%;
+}
+.chessboard > svg[data-coord="6x8"] {
+  left: 63.125%;
+  top: 88.125%;
+}
+.chessboard > button[data-coord="6x7"],
+.chessboard > button.selectedbutton[data-coord="6x7"],
+.chessboard > .bsquare[data-coord="6x7"],
+.chessboard > .recent_move[data-coord="6x7"],
+.chessboard > .recent_source[data-coord="6x7"] {
+  left: 62.5%;
+  top: 75%;
+}
+.chessboard > svg[data-coord="6x7"] {
+  left: 63.125%;
+  top: 75.625%;
+}
+.chessboard > button[data-coord="6x6"],
+.chessboard > button.selectedbutton[data-coord="6x6"],
+.chessboard > .bsquare[data-coord="6x6"],
+.chessboard > .recent_move[data-coord="6x6"],
+.chessboard > .recent_source[data-coord="6x6"] {
+  left: 62.5%;
+  top: 62.5%;
+}
+.chessboard > svg[data-coord="6x6"] {
+  left: 63.125%;
+  top: 63.125%;
+}
+.chessboard > button[data-coord="6x5"],
+.chessboard > button.selectedbutton[data-coord="6x5"],
+.chessboard > .bsquare[data-coord="6x5"],
+.chessboard > .recent_move[data-coord="6x5"],
+.chessboard > .recent_source[data-coord="6x5"] {
+  left: 62.5%;
+  top: 50%;
+}
+.chessboard > svg[data-coord="6x5"] {
+  left: 63.125%;
+  top: 50.625%;
+}
+.chessboard > button[data-coord="6x4"],
+.chessboard > button.selectedbutton[data-coord="6x4"],
+.chessboard > .bsquare[data-coord="6x4"],
+.chessboard > .recent_move[data-coord="6x4"],
+.chessboard > .recent_source[data-coord="6x4"] {
+  left: 62.5%;
+  top: 37.5%;
+}
+.chessboard > svg[data-coord="6x4"] {
+  left: 63.125%;
+  top: 38.125%;
+}
+.chessboard > button[data-coord="6x3"],
+.chessboard > button.selectedbutton[data-coord="6x3"],
+.chessboard > .bsquare[data-coord="6x3"],
+.chessboard > .recent_move[data-coord="6x3"],
+.chessboard > .recent_source[data-coord="6x3"] {
+  left: 62.5%;
+  top: 25%;
+}
+.chessboard > svg[data-coord="6x3"] {
+  left: 63.125%;
+  top: 25.625%;
+}
+.chessboard > button[data-coord="6x2"],
+.chessboard > button.selectedbutton[data-coord="6x2"],
+.chessboard > .bsquare[data-coord="6x2"],
+.chessboard > .recent_move[data-coord="6x2"],
+.chessboard > .recent_source[data-coord="6x2"] {
+  left: 62.5%;
+  top: 12.5%;
+}
+.chessboard > svg[data-coord="6x2"] {
+  left: 63.125%;
+  top: 13.125%;
+}
+.chessboard > button[data-coord="6x1"],
+.chessboard > button.selectedbutton[data-coord="6x1"],
+.chessboard > .bsquare[data-coord="6x1"],
+.chessboard > .recent_move[data-coord="6x1"],
+.chessboard > .recent_source[data-coord="6x1"] {
+  left: 62.5%;
+  top: 0%;
+}
+.chessboard > svg[data-coord="6x1"] {
+  left: 63.125%;
+  top: 0.625%;
+}
+.chessboard > button[data-coord="7x8"],
+.chessboard > button.selectedbutton[data-coord="7x8"],
+.chessboard > .bsquare[data-coord="7x8"],
+.chessboard > .recent_move[data-coord="7x8"],
+.chessboard > .recent_source[data-coord="7x8"] {
+  left: 75%;
+  top: 87.5%;
+}
+.chessboard > svg[data-coord="7x8"] {
+  left: 75.625%;
+  top: 88.125%;
+}
+.chessboard > button[data-coord="7x7"],
+.chessboard > button.selectedbutton[data-coord="7x7"],
+.chessboard > .bsquare[data-coord="7x7"],
+.chessboard > .recent_move[data-coord="7x7"],
+.chessboard > .recent_source[data-coord="7x7"] {
+  left: 75%;
+  top: 75%;
+}
+.chessboard > svg[data-coord="7x7"] {
+  left: 75.625%;
+  top: 75.625%;
+}
+.chessboard > button[data-coord="7x6"],
+.chessboard > button.selectedbutton[data-coord="7x6"],
+.chessboard > .bsquare[data-coord="7x6"],
+.chessboard > .recent_move[data-coord="7x6"],
+.chessboard > .recent_source[data-coord="7x6"] {
+  left: 75%;
+  top: 62.5%;
+}
+.chessboard > svg[data-coord="7x6"] {
+  left: 75.625%;
+  top: 63.125%;
+}
+.chessboard > button[data-coord="7x5"],
+.chessboard > button.selectedbutton[data-coord="7x5"],
+.chessboard > .bsquare[data-coord="7x5"],
+.chessboard > .recent_move[data-coord="7x5"],
+.chessboard > .recent_source[data-coord="7x5"] {
+  left: 75%;
+  top: 50%;
+}
+.chessboard > svg[data-coord="7x5"] {
+  left: 75.625%;
+  top: 50.625%;
+}
+.chessboard > button[data-coord="7x4"],
+.chessboard > button.selectedbutton[data-coord="7x4"],
+.chessboard > .bsquare[data-coord="7x4"],
+.chessboard > .recent_move[data-coord="7x4"],
+.chessboard > .recent_source[data-coord="7x4"] {
+  left: 75%;
+  top: 37.5%;
+}
+.chessboard > svg[data-coord="7x4"] {
+  left: 75.625%;
+  top: 38.125%;
+}
+.chessboard > button[data-coord="7x3"],
+.chessboard > button.selectedbutton[data-coord="7x3"],
+.chessboard > .bsquare[data-coord="7x3"],
+.chessboard > .recent_move[data-coord="7x3"],
+.chessboard > .recent_source[data-coord="7x3"] {
+  left: 75%;
+  top: 25%;
+}
+.chessboard > svg[data-coord="7x3"] {
+  left: 75.625%;
+  top: 25.625%;
+}
+.chessboard > button[data-coord="7x2"],
+.chessboard > button.selectedbutton[data-coord="7x2"],
+.chessboard > .bsquare[data-coord="7x2"],
+.chessboard > .recent_move[data-coord="7x2"],
+.chessboard > .recent_source[data-coord="7x2"] {
+  left: 75%;
+  top: 12.5%;
+}
+.chessboard > svg[data-coord="7x2"] {
+  left: 75.625%;
+  top: 13.125%;
+}
+.chessboard > button[data-coord="7x1"],
+.chessboard > button.selectedbutton[data-coord="7x1"],
+.chessboard > .bsquare[data-coord="7x1"],
+.chessboard > .recent_move[data-coord="7x1"],
+.chessboard > .recent_source[data-coord="7x1"] {
+  left: 75%;
+  top: 0%;
+}
+.chessboard > svg[data-coord="7x1"] {
+  left: 75.625%;
+  top: 0.625%;
+}
+.chessboard > button[data-coord="8x8"],
+.chessboard > button.selectedbutton[data-coord="8x8"],
+.chessboard > .bsquare[data-coord="8x8"],
+.chessboard > .recent_move[data-coord="8x8"],
+.chessboard > .recent_source[data-coord="8x8"] {
+  left: 87.5%;
+  top: 87.5%;
+}
+.chessboard > svg[data-coord="8x8"] {
+  left: 88.125%;
+  top: 88.125%;
+}
+.chessboard > button[data-coord="8x7"],
+.chessboard > button.selectedbutton[data-coord="8x7"],
+.chessboard > .bsquare[data-coord="8x7"],
+.chessboard > .recent_move[data-coord="8x7"],
+.chessboard > .recent_source[data-coord="8x7"] {
+  left: 87.5%;
+  top: 75%;
+}
+.chessboard > svg[data-coord="8x7"] {
+  left: 88.125%;
+  top: 75.625%;
+}
+.chessboard > button[data-coord="8x6"],
+.chessboard > button.selectedbutton[data-coord="8x6"],
+.chessboard > .bsquare[data-coord="8x6"],
+.chessboard > .recent_move[data-coord="8x6"],
+.chessboard > .recent_source[data-coord="8x6"] {
+  left: 87.5%;
+  top: 62.5%;
+}
+.chessboard > svg[data-coord="8x6"] {
+  left: 88.125%;
+  top: 63.125%;
+}
+.chessboard > button[data-coord="8x5"],
+.chessboard > button.selectedbutton[data-coord="8x5"],
+.chessboard > .bsquare[data-coord="8x5"],
+.chessboard > .recent_move[data-coord="8x5"],
+.chessboard > .recent_source[data-coord="8x5"] {
+  left: 87.5%;
+  top: 50%;
+}
+.chessboard > svg[data-coord="8x5"] {
+  left: 88.125%;
+  top: 50.625%;
+}
+.chessboard > button[data-coord="8x4"],
+.chessboard > button.selectedbutton[data-coord="8x4"],
+.chessboard > .bsquare[data-coord="8x4"],
+.chessboard > .recent_move[data-coord="8x4"],
+.chessboard > .recent_source[data-coord="8x4"] {
+  left: 87.5%;
+  top: 37.5%;
+}
+.chessboard > svg[data-coord="8x4"] {
+  left: 88.125%;
+  top: 38.125%;
+}
+.chessboard > button[data-coord="8x3"],
+.chessboard > button.selectedbutton[data-coord="8x3"],
+.chessboard > .bsquare[data-coord="8x3"],
+.chessboard > .recent_move[data-coord="8x3"],
+.chessboard > .recent_source[data-coord="8x3"] {
+  left: 87.5%;
+  top: 25%;
+}
+.chessboard > svg[data-coord="8x3"] {
+  left: 88.125%;
+  top: 25.625%;
+}
+.chessboard > button[data-coord="8x2"],
+.chessboard > button.selectedbutton[data-coord="8x2"],
+.chessboard > .bsquare[data-coord="8x2"],
+.chessboard > .recent_move[data-coord="8x2"],
+.chessboard > .recent_source[data-coord="8x2"] {
+  left: 87.5%;
+  top: 12.5%;
+}
+.chessboard > svg[data-coord="8x2"] {
+  left: 88.125%;
+  top: 13.125%;
+}
+.chessboard > button[data-coord="8x1"],
+.chessboard > button.selectedbutton[data-coord="8x1"],
+.chessboard > .bsquare[data-coord="8x1"],
+.chessboard > .recent_move[data-coord="8x1"],
+.chessboard > .recent_source[data-coord="8x1"] {
+  left: 87.5%;
+  top: 0%;
+}
+.chessboard > svg[data-coord="8x1"] {
+  left: 88.125%;
+  top: 0.625%;
+}

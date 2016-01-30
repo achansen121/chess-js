@@ -1,0 +1,28 @@
+{
+  "name": "chess",
+  "version": "1.0.0",
+  "description": "",
+  "main": "chess.js",
+  "dependencies": {
+    "brfs": "^1.4.0",
+    "css": "^2.2.1",
+    "getip": "^1.0.0",
+    "node-lessify": "^0.0.10",
+    "outpipe": "^1.1.1",
+    "recurse_watch": "^1.0.0",
+    "streamto": "^1.0.0",
+    "type_checker": "^1.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "browserify": {
+    "transform": [
+      [ "./transform_both.js" ]
+    ]
+  },
+  "author": "",
+  "license": "ISC"
+}

@@ -1,0 +1,34 @@
+formtemplate:
+  tag: form
+  class: gamestarter
+  name: gamestarter
+  children:
+  - tag: div
+    class: gamestarter_sub
+    children:
+    - tag: div
+      data-side: white
+      class: aside
+      child:
+        tag: h6
+        text: White
+    - tag: div
+      class: aside
+      data-side: black
+      child:
+        tag: h6
+        text: Black
+  - tag: div
+    class: start_game_row
+    child:
+      tag: button
+      text: Start
+      class: start_game
+sidetemplate:
+- tag: div
+  class: button_surround
+  children:
+  - tag: button
+    child: Human
+    data-is: Human
+    data-become: Bot
