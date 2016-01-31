@@ -2,5 +2,5 @@
 
 Play here
 
-https://rawgit.com/achansen121/chess-js/762ce48d226aa31a09e207d12f4fd88a8c769872/static/index.html
+https://rawgit.com/achansen121/chess-js/ec765fa7806a6c291b529e4d7f481e57fa452fa6/static/index.html
 
