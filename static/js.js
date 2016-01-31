@@ -1731,7 +1731,7 @@ use_debug=function(){
     use_debug.result = use_debug.test();
   return use_debug.result;
 };
-use_debut.test=function(){
+use_debug.test=function(){
   var loc = window.location;
   if(!loc)
     return true;
