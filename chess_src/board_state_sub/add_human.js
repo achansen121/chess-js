@@ -12,6 +12,8 @@ var add_human=function (color) {
   assert(color in board_constants.options.valid_colors);
   assert(this.browser_element);
   
+  var bs=this;
+  
   var document=window.document;
   
   if(this.valid_humans){
@@ -165,7 +167,7 @@ var add_human=function (color) {
       }));
     }
   })
-  return bs;
+  return this;
 };
 
 module.exports=add_human;
