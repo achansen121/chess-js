@@ -1843,7 +1843,8 @@ var generate=function (ee,prnt) {
         btn.innerHTML="";
         btn.appendChild(document.createTextNode(become));
         cstate[whichside]=become;
-        console.log(whichside+" is "+become);
+        if(use_debug())
+          console.log(whichside+" is "+become);
         swap();
       };
       btn.addEventListener("click",setcurrent,false);
@@ -1853,7 +1854,8 @@ var generate=function (ee,prnt) {
   sbutton.addEventListener("click",function (event) {
     event.preventDefault();
     ee.emit("start",cstate);
-    console.log(cstate);
+    if(use_debug())
+      console.log(cstate);
     ee.collapse();
   },false);
   
