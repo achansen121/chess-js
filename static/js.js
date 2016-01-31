@@ -336,7 +336,7 @@ board_util.configure();
 
 module.exports=BoardState;
 
-},{"./board_constants.js":2,"./board_state_sub/_check_all.js":4,"./board_state_sub/add_human.js":5,"./board_state_sub/browser_element.js":6,"./board_state_sub/check_check.js":7,"./board_state_sub/clone.js":8,"./board_state_sub/flip_html_board.js":9,"./board_state_sub/install_key_listeners.js":10,"./board_state_sub/perform_move.js":11,"./board_state_sub/print.js":12,"./board_state_sub/undo_move.js":13,"./board_state_sub/valid_moves.js":14,"./board_state_sub/valid_moves_by_color.js":15,"./board_state_sub/valid_moves_by_pos.js":16,"./board_util.js":17,"./piece.js":34,"./position.js":35,"assert":"assert","dcopy":29,"events":38,"path":40,"type_checker":33,"util":43}],4:[function(require,module,exports){
+},{"./board_constants.js":2,"./board_state_sub/_check_all.js":4,"./board_state_sub/add_human.js":5,"./board_state_sub/browser_element.js":6,"./board_state_sub/check_check.js":7,"./board_state_sub/clone.js":8,"./board_state_sub/flip_html_board.js":9,"./board_state_sub/install_key_listeners.js":10,"./board_state_sub/perform_move.js":11,"./board_state_sub/print.js":12,"./board_state_sub/undo_move.js":13,"./board_state_sub/valid_moves.js":14,"./board_state_sub/valid_moves_by_color.js":15,"./board_state_sub/valid_moves_by_pos.js":16,"./board_util.js":17,"./piece.js":34,"./position.js":35,"assert":"assert","dcopy":29,"events":39,"path":41,"type_checker":33,"util":44}],4:[function(require,module,exports){
 
 module.exports=function _checkall(note) {
   var me=this;
@@ -524,7 +524,7 @@ var add_human=function (color) {
 module.exports=add_human;
 
 }).call(this,require('_process'))
-},{"../board_constants.js":2,"../piece.js":34,"../position.js":35,"_process":41,"assert":"assert"}],6:[function(require,module,exports){
+},{"../board_constants.js":2,"../piece.js":34,"../position.js":35,"_process":42,"assert":"assert"}],6:[function(require,module,exports){
 (function (process){
 
 var window=(function(){return this;})();
@@ -672,7 +672,7 @@ module.exports=function browser_element(parent) {
   return hb;
 };
 }).call(this,require('_process'))
-},{"../board.less":1,"_process":41}],7:[function(require,module,exports){
+},{"../board.less":1,"_process":42}],7:[function(require,module,exports){
 var type_checker=require("type_checker");
 var board_util=require("../board_util.js");
 var assert=require("assert")
@@ -831,7 +831,7 @@ var install_key_listeners=function () {
 module.exports=install_key_listeners;
 
 
-},{"../position.js":35,"assert":"assert","keycode":44}],11:[function(require,module,exports){
+},{"../position.js":35,"assert":"assert","keycode":45}],11:[function(require,module,exports){
 var type_checker=require("type_checker");
 var board_util=require("../board_util.js");
 var assert=require("assert")
@@ -1029,7 +1029,7 @@ module.exports=function print() {
 
 
 }).call(this,require('_process'))
-},{"../board_constants.js":2,"_process":41,"colors/safe":54}],13:[function(require,module,exports){
+},{"../board_constants.js":2,"_process":42,"colors/safe":55}],13:[function(require,module,exports){
 var type_checker=require("type_checker");
 var board_util=require("../board_util.js");
 var assert=require("assert")
@@ -1249,7 +1249,7 @@ module.exports=function valid_moves_by_pos (pos,skipkingcheck) {
   return vnew;
 }
 
-},{"../position.js":35,"../valid_moves.js":37,"assert":"assert"}],17:[function(require,module,exports){
+},{"../position.js":35,"../valid_moves.js":38,"assert":"assert"}],17:[function(require,module,exports){
 
 var path=require("path")
 
@@ -1309,7 +1309,7 @@ bu.pconfig={
 
 module.exports=bu;
 
-},{"./board_constants.js":2,"./piece.js":34,"./position.js":35,"assert":"assert","path":40,"type_checker":33}],18:[function(require,module,exports){
+},{"./board_constants.js":2,"./piece.js":34,"./position.js":35,"assert":"assert","path":41,"type_checker":33}],18:[function(require,module,exports){
 (function (process){
 
 var assert=require("assert");
@@ -1676,7 +1676,7 @@ nega_max=function (bs,perspective,turn,depth,alpha,beta, cb){
 module.exports=bot;
 
 }).call(this,require('_process'))
-},{"./board_util.js":17,"./piece.js":34,"_process":41,"assert":"assert","type_checker":33}],19:[function(require,module,exports){
+},{"./board_util.js":17,"./piece.js":34,"_process":42,"assert":"assert","type_checker":33}],19:[function(require,module,exports){
 (function (process){
 
 var Picker=require("./game_picker.js")
@@ -1689,6 +1689,8 @@ var piece=require("./piece.js")
 var position=require("./position.js")
 var type_checker=require("type_checker")
 var turn_display=require("./turn_display.js");
+
+var use_debug = require("./use_debug.js");
 
 var history_display=require("./move_history_display.js")
 
@@ -1725,23 +1727,6 @@ var append_to_body=function (bs,cb) {
   return be;
 };
 
-var use_debug;
-use_debug=function(){
-  if(!("result" in use_debug))
-    use_debug.result = use_debug.test();
-  return use_debug.result;
-};
-use_debug.test=function(){
-  var loc = window.location;
-  if(!loc)
-    return true;
-  var hnm = loc.hostname;
-  if(!hnm)
-    return true;
-  if(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/gi.test(hnm))
-    return true;
-  return false;
-};
 var init_board=function (cb) {
   var bs=new BoardState()
   
@@ -1795,7 +1780,7 @@ if(process.title==="browser"){
 
 
 }).call(this,require('_process'))
-},{"./board_state.js":3,"./bot.js":18,"./game_picker.js":21,"./move_history_display.js":28,"./piece.js":34,"./position.js":35,"./turn_display.js":36,"_process":41,"assert":"assert","type_checker":33}],20:[function(require,module,exports){
+},{"./board_state.js":3,"./bot.js":18,"./game_picker.js":21,"./move_history_display.js":28,"./piece.js":34,"./position.js":35,"./turn_display.js":36,"./use_debug.js":37,"_process":42,"assert":"assert","type_checker":33}],20:[function(require,module,exports){
 module.exports = {"formtemplate":{"tag":"form","class":"gamestarter","name":"gamestarter","children":[{"tag":"div","class":"gamestarter_sub","children":[{"tag":"div","data-side":"white","class":"aside","child":{"tag":"h6","text":"White"}},{"tag":"div","class":"aside","data-side":"black","child":{"tag":"h6","text":"Black"}}]},{"tag":"div","class":"start_game_row","child":{"tag":"button","text":"Start","class":"start_game"}}]},"sidetemplate":[{"tag":"div","class":"button_surround","children":[{"tag":"button","child":"Human","data-is":"Human","data-become":"Bot"}]}]}
 },{}],21:[function(require,module,exports){
 (function (process){
@@ -1805,6 +1790,9 @@ var document=window.document;
 var EventEmitter=require("events").EventEmitter;
 var util=require("util")
 var sgen=require("gen2015-07")
+
+var use_debug=require("./use_debug.js");
+
 var gen=function (desc) {
   return sgen(document,desc);
 };
@@ -1942,7 +1930,7 @@ Picker.prototype.expand=function () {
 module.exports=Picker;
 
 }).call(this,require('_process'))
-},{"./fstructure.yaml":20,"_process":41,"assert":"assert","events":38,"gen2015-07":31,"type_checker":33,"util":43}],22:[function(require,module,exports){
+},{"./fstructure.yaml":20,"./use_debug.js":37,"_process":42,"assert":"assert","events":39,"gen2015-07":31,"type_checker":33,"util":44}],22:[function(require,module,exports){
 module.exports="<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\"\n  viewBox=\"0 0 202.03075 388\" xml:space=\"preserve\"\n  >\n  <path\n    transform=\"translate(-239.48463,-184.66)\"\n    style=\"stroke-width:3.88px;\"\n    d=\"m 340.5,185.21875 c 0,0 -8.33846,4.39207 -11.40625,14.375 -2.13516,6.94806 7.25934,2.7015 7.40625,9.96875 0.45244,22.38145 -35.49059,40.79736 -33.875,63.125 1.12731,15.57948 20.0632,24.62199 15.9375,39.6875 -2.70926,9.8932 -29.04675,1.16023 -28.5625,11.40625 0.39836,8.42871 19.36581,0.29766 24.28125,7.15625 20.26689,28.27869 6.75168,71.28571 -4.28125,104.28125 -7.70736,23.04994 -23.08653,44.06436 -41.4375,60 -4.82382,4.18892 -17.65195,2.1955 -17.125,8.5625 0.53422,6.45482 17.15872,-0.60419 18.5625,5.71875 2.92281,13.16498 -30.81988,13.69567 -30,27.15625 0.77913,12.79148 15.97949,16.26903 31.4375,22.125 19.14823,7.25394 45.76329,10.71875 69.0625,10.71875 23.29921,0 49.91427,-3.46481 69.0625,-10.71875 15.45801,-5.85597 30.65837,-9.33352 31.4375,-22.125 0.81988,-13.46058 -32.92281,-13.99127 -30,-27.15625 1.40378,-6.32294 18.02828,0.73607 18.5625,-5.71875 0.52695,-6.367 -12.30118,-4.37358 -17.125,-8.5625 -18.35097,-15.93564 -33.73014,-36.95006 -41.4375,-60 -11.03293,-32.99554 -24.54814,-76.00256 -4.28125,-104.28125 4.91544,-6.85859 23.88289,1.27246 24.28125,-7.15625 0.48425,-10.24602 -25.85324,-1.51305 -28.5625,-11.40625 -4.1257,-15.06551 14.81019,-24.10802 15.9375,-39.6875 0.68732,-9.4989 -5.44398,-18.28093 -12.65625,-26.96875 l -21.5,25.59375 -5.71875,-4.78125 22.3125,-26.625 c -8.36473,-9.77562 -16.52946,-19.6111 -16.3125,-30.34375 0.14691,-7.26725 9.54141,-3.02069 7.40625,-9.96875 -3.06779,-9.98293 -11.40625,-14.375 -11.40625,-14.375 z\"\n     />\n</svg>";
 },{}],23:[function(require,module,exports){
 module.exports="<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\"\n  viewBox=\"0 0 422.92255 895\" xml:space=\"preserve\"\n   >\n  <path\n    style=\"stroke-width:8.95px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;fill-opacity:1\"\n    transform=\"translate(-140.21214,-110.9375)\"\n    d=\"m 156.42857,980.93363 c -36.07569,-3.69605 24.33077,-48.75609 45,-65.00002 -13.83748,-10.91045 -36.30677,-8.87317 -40,-35 -1.6487,-9.16891 1.46049,-18.93256 15,-30 71.50123,-98.72126 75.16234,-213.71766 85,-335 -20.03364,-9.97898 -47.22719,-15.483 -60,-30 -2.8113,-11.02696 1.36038,-23.05148 5,-35 4.40457,-16.02184 33.33333,-30 50,-45 3.60732,-5.19024 2.00685,-17.3242 0,-30 -4.98028,-43.23993 -13.92774,-85.54641 -35,-125 24.93411,-28.4157 76.33169,-23.75205 115,-35 l 0,-50 -35,0 0,-30 35,0 0,-20 15.25,-5e-5 15.25,-6e-5 0,20 35,0 0,30 -35,0 0,50 c 38.66831,11.24795 90.06589,6.5843 115,35 -21.07226,39.45359 -30.01972,81.76007 -35,125 -2.00685,12.6758 -3.60732,24.80976 0,30 16.66667,15 45.59543,28.97816 50,45 3.63962,11.94852 7.8113,23.97304 5,35 -12.77281,14.517 -39.96636,20.02102 -60,30 9.83766,121.28234 13.49877,236.27874 85,335 13.53951,11.06744 16.6487,20.83109 15,30 -3.69323,26.12683 -26.16252,24.08955 -40,35 20.66923,16.24393 81.0758,61.30407 45,65.00013 0,0 -129.82598,20.00387 -195.25,20.00387 -65.42402,0 -195.25,-20.00387 -195.25,-20.00387 z\"\n  />\n</svg>";
@@ -4267,7 +4255,32 @@ d_turn.prototype.detach=function (parent) {
 module.exports=d_turn;
 
 }).call(this,require('_process'))
-},{"_process":41,"assert":"assert"}],37:[function(require,module,exports){
+},{"_process":42,"assert":"assert"}],37:[function(require,module,exports){
+
+var window=(function(){return this;})();
+
+
+var use_debug;
+use_debug=function(){
+  if(!("result" in use_debug))
+    use_debug.result = use_debug.test();
+  return use_debug.result;
+};
+use_debug.test=function(){
+  var loc = window.location;
+  if(!loc)
+    return true;
+  var hnm = loc.hostname;
+  if(!hnm)
+    return true;
+  if(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/gi.test(hnm))
+    return true;
+  return false;
+};
+
+module.exports=use_debug;
+
+},{}],38:[function(require,module,exports){
 
 
 var board_util=require("./board_util.js")
@@ -4678,7 +4691,7 @@ vmoves.knight=function (bs,piece) {
 
 module.exports=vmoves;
 
-},{"./board_util.js":17,"./position.js":35,"assert":"assert","type_checker":33}],38:[function(require,module,exports){
+},{"./board_util.js":17,"./position.js":35,"assert":"assert","type_checker":33}],39:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -4981,7 +4994,7 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-},{}],39:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -5006,7 +5019,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],40:[function(require,module,exports){
+},{}],41:[function(require,module,exports){
 (function (process){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -5234,7 +5247,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":41}],41:[function(require,module,exports){
+},{"_process":42}],42:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -5326,14 +5339,14 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],42:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],43:[function(require,module,exports){
+},{}],44:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -5923,7 +5936,7 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":42,"_process":41,"inherits":39}],44:[function(require,module,exports){
+},{"./support/isBuffer":43,"_process":42,"inherits":40}],45:[function(require,module,exports){
 // Source: http://jsfiddle.net/vWx8V/
 // http://stackoverflow.com/questions/5603195/full-list-of-javascript-keycodes
 
@@ -6072,7 +6085,7 @@ for (var alias in aliases) {
   codes[alias] = aliases[alias]
 }
 
-},{}],45:[function(require,module,exports){
+},{}],46:[function(require,module,exports){
 /*
 
 The MIT License (MIT)
@@ -6260,7 +6273,7 @@ for (var map in colors.maps) {
 }
 
 defineProps(colors, init());
-},{"./custom/trap":46,"./custom/zalgo":47,"./maps/america":48,"./maps/rainbow":49,"./maps/random":50,"./maps/zebra":51,"./styles":52,"./system/supports-colors":53}],46:[function(require,module,exports){
+},{"./custom/trap":47,"./custom/zalgo":48,"./maps/america":49,"./maps/rainbow":50,"./maps/random":51,"./maps/zebra":52,"./styles":53,"./system/supports-colors":54}],47:[function(require,module,exports){
 module['exports'] = function runTheTrap (text, options) {
   var result = "";
   text = text || "Run the trap, drop the bass";
@@ -6307,7 +6320,7 @@ module['exports'] = function runTheTrap (text, options) {
 
 }
 
-},{}],47:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 // please no
 module['exports'] = function zalgo(text, options) {
   text = text || "   he is here   ";
@@ -6413,7 +6426,7 @@ module['exports'] = function zalgo(text, options) {
   return heComes(text, options);
 }
 
-},{}],48:[function(require,module,exports){
+},{}],49:[function(require,module,exports){
 var colors = require('../colors');
 
 module['exports'] = (function() {
@@ -6426,7 +6439,7 @@ module['exports'] = (function() {
     }
   }
 })();
-},{"../colors":45}],49:[function(require,module,exports){
+},{"../colors":46}],50:[function(require,module,exports){
 var colors = require('../colors');
 
 module['exports'] = (function () {
@@ -6441,7 +6454,7 @@ module['exports'] = (function () {
 })();
 
 
-},{"../colors":45}],50:[function(require,module,exports){
+},{"../colors":46}],51:[function(require,module,exports){
 var colors = require('../colors');
 
 module['exports'] = (function () {
@@ -6450,13 +6463,13 @@ module['exports'] = (function () {
     return letter === " " ? letter : colors[available[Math.round(Math.random() * (available.length - 1))]](letter);
   };
 })();
-},{"../colors":45}],51:[function(require,module,exports){
+},{"../colors":46}],52:[function(require,module,exports){
 var colors = require('../colors');
 
 module['exports'] = function (letter, i, exploded) {
   return i % 2 === 0 ? letter : colors.inverse(letter);
 };
-},{"../colors":45}],52:[function(require,module,exports){
+},{"../colors":46}],53:[function(require,module,exports){
 /*
 The MIT License (MIT)
 
@@ -6534,7 +6547,7 @@ Object.keys(codes).forEach(function (key) {
   style.open = '\u001b[' + val[0] + 'm';
   style.close = '\u001b[' + val[1] + 'm';
 });
-},{}],53:[function(require,module,exports){
+},{}],54:[function(require,module,exports){
 (function (process){
 /*
 The MIT License (MIT)
@@ -6598,7 +6611,7 @@ module.exports = (function () {
   return false;
 })();
 }).call(this,require('_process'))
-},{"_process":41}],54:[function(require,module,exports){
+},{"_process":42}],55:[function(require,module,exports){
 //
 // Remark: Requiring this file will use the "safe" colors API which will not touch String.prototype
 //
@@ -6608,6 +6621,6 @@ module.exports = (function () {
 //
 var colors = require('./lib/colors');
 module['exports'] = colors;
-},{"./lib/colors":45}],"assert":[function(require,module,exports){
+},{"./lib/colors":46}],"assert":[function(require,module,exports){
 module.exports=function (test,msg) {if(!test)throw new Error("Assertion Error"+(typeof msg==typeof ""? ": "+msg : ""));};
 },{}]},{},[19]);

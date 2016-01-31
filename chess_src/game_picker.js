@@ -4,6 +4,9 @@ var document=window.document;
 var EventEmitter=require("events").EventEmitter;
 var util=require("util")
 var sgen=require("gen2015-07")
+
+var use_debug=require("./use_debug.js");
+
 var gen=function (desc) {
   return sgen(document,desc);
 };

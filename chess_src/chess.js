@@ -10,6 +10,8 @@ var position=require("./position.js")
 var type_checker=require("type_checker")
 var turn_display=require("./turn_display.js");
 
+var use_debug = require("./use_debug.js");
+
 var history_display=require("./move_history_display.js")
 
 var pickrandom=function(arr){
@@ -45,23 +47,6 @@ var append_to_body=function (bs,cb) {
   return be;
 };
 
-var use_debug;
-use_debug=function(){
-  if(!("result" in use_debug))
-    use_debug.result = use_debug.test();
-  return use_debug.result;
-};
-use_debug.test=function(){
-  var loc = window.location;
-  if(!loc)
-    return true;
-  var hnm = loc.hostname;
-  if(!hnm)
-    return true;
-  if(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/gi.test(hnm))
-    return true;
-  return false;
-};
 var init_board=function (cb) {
   var bs=new BoardState()
   
