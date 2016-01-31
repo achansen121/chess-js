@@ -276,6 +276,15 @@ BoardState.fromJSON=function(bj){
   return bs;
 };
 
+var current_emit = BoardState.prototype.emit;
+
+BoardState.prototype.emit=function(evtname){
+  if(this.debug){
+    console.log(evtname,arguments);
+  }
+  return current_emit.apply(this,arguments);
+};
+
 board_util.configure();
 
 module.exports=BoardState;

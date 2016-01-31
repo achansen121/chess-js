@@ -15,8 +15,8 @@
     "outpipe": "^1.1.1",
     "minifyify": "^7.0.3",
     "through2": "^2.0.0",
-    "recurse_watch": "^1.0.0",
-    "type_checker": "^1.0.0"
+    "recurse_watch": "https://github.com/achansen121/nd_recurse_watch.git",
+    "type_checker": "https://github.com/achansen121/node-type_checker.git"
   },
   "devDependencies": {},
   "scripts": {

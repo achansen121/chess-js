@@ -57,7 +57,7 @@
   }
 }
 
-.move_history{
+.move_history, .turn_display{
   
   h6{
     font-size: 120%;
@@ -65,6 +65,19 @@
     margin-bottom: .5em;
     font-weight: normal;
   }
+  font-family: sans-serif;
+  display: inline-block;
+  margin: 1em;
+  vertical-align: top;
+}
+.turn_display{
+  min-width: 5em;
+  text-align: center;
+  >div{
+    font-weight: bold;
+  }
+}
+.move_history{
   >div{
     height: 20em;
     overflow-y: scroll;
@@ -73,10 +86,6 @@
     padding: .5em;
     font-family: monospace;
   }
-  font-family: sans-serif;
-  display: inline-block;
-  margin: 1em;
-  vertical-align: top;
 }
 // .move_history:before{
   // content: "Move History";

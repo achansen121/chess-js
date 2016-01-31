@@ -8,7 +8,7 @@ var assert=require("assert")
 var piece=require("./piece.js")
 var position=require("./position.js")
 var type_checker=require("type_checker")
-
+var turn_display=require("./turn_display.js");
 
 var history_display=require("./move_history_display.js")
 
@@ -37,6 +37,7 @@ var append_to_body=function (bs,cb) {
   var body=document.querySelector("body");
   var be=bs.browser_element();
   
+  var t_display=new turn_display(bs);
   var mvhistory=new history_display(bs);
   
   if(cb)
@@ -46,6 +47,7 @@ var append_to_body=function (bs,cb) {
     if(!body)
       body=document.querySelector("body");
     body.appendChild(be);
+    t_display.attach(body);
     mvhistory.attach(body);
     if(cb){
       cb();}
@@ -80,6 +82,9 @@ var bot_v_bot=function () {
 
 var init_board=function (cb) {
   var bs=new BoardState()
+  
+  bs.debug=true;
+  
   window.bs=bs;
   bs.initialize();
   append_to_body(bs,function(){

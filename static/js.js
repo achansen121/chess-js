@@ -1,5 +1,5 @@
 require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
-module.exports = ".gamestarter{max-width:750px;font-family:sans-serif;transition:1s all}.gamestarter .button_surround,.gamestarter .start_game_row{transition:1s all;margin-bottom:2em;overflow:hidden}.gamestarter .aside{width:50%;display:inline-block;text-align:center}.gamestarter .aside h6{font-size:100%;margin:1em}.gamestarter .aside button{margin:1em}.gamestarter button{color:white;background:black;padding:4px 10px;border-radius:4px;outline:0;border:1px solid black;cursor:pointer;font-weight:bold;transition:.5s all;min-width:75px;text-align:center}.gamestarter button:hover{background:white;color:black}.gamestarter button:focus{border-color:turquoise}.gamestarter .start_game_row{text-align:center}.move_history{font-family:sans-serif;display:inline-block;margin:1em;vertical-align:top}.move_history h6{font-size:120%;margin:0;margin-bottom:.5em;font-weight:normal}.move_history>div{height:20em;overflow-y:scroll;min-width:10em;border:1px solid black;padding:.5em;font-family:monospace}.chessboard{width:750px;height:750px;position:relative;display:inline-block}.chessboard>.bsquare.odd{background:#ff8037}.chessboard>.bsquare.even{background:#ffffc8}.chessboard>.bsquare{width:12.5%;height:12.5%;position:absolute}.chessboard>.recent_move,.chessboard>.recent_source{width:93.75px;height:93.75px;position:absolute}.chessboard>.recent_move>div,.chessboard>.recent_source>div{border:5px solid green;position:absolute;top:0;bottom:0;left:0;right:0}.chessboard>.recent_source>div{border-color:#0f0}.chessboard>svg{position:absolute;z-index:1;width:11.25%;height:11.25%}.chessboard svg path,.chessboard svg circle,.chessboard svg rect{fill:white;stroke:black}.chessboard svg.black path,.chessboard svg.black circle,.chessboard svg.black rect{fill:black;stroke:white}.chessboard>button{position:absolute;z-index:2;cursor:pointer;padding:0;background:none;border:none;width:12.5%;height:12.5%}.chessboard>button.selectedbutton>div{position:absolute;top:10%;bottom:10%;left:10%;right:10%;border:3px solid black;border-radius:50%}.chessboard>button.selectedbutton.nil{border:3px solid black;width:12.5%;height:12.5%;z-index:3}.chessboard>button.selectedbutton.nil:focus{border-width:6px;outline:0}.chessboard>button.selectedbutton.nil.invalidmove{border-color:red}.chessboard button:focus,.chessboard div[role=\"button\"]:focus{outline:0}.chessboard .promotion{width:50%;position:absolute;background:white;top:37.5%;left:25%;border-radius:5px;border:1px solid black;z-index:-5;padding:1em;font-family:sans-serif}.chessboard .promotion svg{height:3em}.chessboard .promotion .promotray{text-align:center}.chessboard .promotion div[role=\"button\"]{vertical-align:middle;cursor:pointer;display:inline-block;margin:1em;border:1px solid rgba(255,255,255,0);border-radius:5px}.chessboard .promotion div[role=\"button\"]:hover{border-color:black}.chessboard>button[data-coord=\"1x8\"],.chessboard>button.selectedbutton[data-coord=\"1x8\"],.chessboard>.bsquare[data-coord=\"1x8\"],.chessboard>.recent_move[data-coord=\"1x8\"],.chessboard>.recent_source[data-coord=\"1x8\"]{left:0;top:87.5%}.chessboard>svg[data-coord=\"1x8\"]{left:.625%;top:88.125%}.chessboard>button[data-coord=\"1x7\"],.chessboard>button.selectedbutton[data-coord=\"1x7\"],.chessboard>.bsquare[data-coord=\"1x7\"],.chessboard>.recent_move[data-coord=\"1x7\"],.chessboard>.recent_source[data-coord=\"1x7\"]{left:0;top:75%}.chessboard>svg[data-coord=\"1x7\"]{left:.625%;top:75.625%}.chessboard>button[data-coord=\"1x6\"],.chessboard>button.selectedbutton[data-coord=\"1x6\"],.chessboard>.bsquare[data-coord=\"1x6\"],.chessboard>.recent_move[data-coord=\"1x6\"],.chessboard>.recent_source[data-coord=\"1x6\"]{left:0;top:62.5%}.chessboard>svg[data-coord=\"1x6\"]{left:.625%;top:63.125%}.chessboard>button[data-coord=\"1x5\"],.chessboard>button.selectedbutton[data-coord=\"1x5\"],.chessboard>.bsquare[data-coord=\"1x5\"],.chessboard>.recent_move[data-coord=\"1x5\"],.chessboard>.recent_source[data-coord=\"1x5\"]{left:0;top:50%}.chessboard>svg[data-coord=\"1x5\"]{left:.625%;top:50.625%}.chessboard>button[data-coord=\"1x4\"],.chessboard>button.selectedbutton[data-coord=\"1x4\"],.chessboard>.bsquare[data-coord=\"1x4\"],.chessboard>.recent_move[data-coord=\"1x4\"],.chessboard>.recent_source[data-coord=\"1x4\"]{left:0;top:37.5%}.chessboard>svg[data-coord=\"1x4\"]{left:.625%;top:38.125%}.chessboard>button[data-coord=\"1x3\"],.chessboard>button.selectedbutton[data-coord=\"1x3\"],.chessboard>.bsquare[data-coord=\"1x3\"],.chessboard>.recent_move[data-coord=\"1x3\"],.chessboard>.recent_source[data-coord=\"1x3\"]{left:0;top:25%}.chessboard>svg[data-coord=\"1x3\"]{left:.625%;top:25.625%}.chessboard>button[data-coord=\"1x2\"],.chessboard>button.selectedbutton[data-coord=\"1x2\"],.chessboard>.bsquare[data-coord=\"1x2\"],.chessboard>.recent_move[data-coord=\"1x2\"],.chessboard>.recent_source[data-coord=\"1x2\"]{left:0;top:12.5%}.chessboard>svg[data-coord=\"1x2\"]{left:.625%;top:13.125%}.chessboard>button[data-coord=\"1x1\"],.chessboard>button.selectedbutton[data-coord=\"1x1\"],.chessboard>.bsquare[data-coord=\"1x1\"],.chessboard>.recent_move[data-coord=\"1x1\"],.chessboard>.recent_source[data-coord=\"1x1\"]{left:0;top:0}.chessboard>svg[data-coord=\"1x1\"]{left:.625%;top:.625%}.chessboard>button[data-coord=\"2x8\"],.chessboard>button.selectedbutton[data-coord=\"2x8\"],.chessboard>.bsquare[data-coord=\"2x8\"],.chessboard>.recent_move[data-coord=\"2x8\"],.chessboard>.recent_source[data-coord=\"2x8\"]{left:12.5%;top:87.5%}.chessboard>svg[data-coord=\"2x8\"]{left:13.125%;top:88.125%}.chessboard>button[data-coord=\"2x7\"],.chessboard>button.selectedbutton[data-coord=\"2x7\"],.chessboard>.bsquare[data-coord=\"2x7\"],.chessboard>.recent_move[data-coord=\"2x7\"],.chessboard>.recent_source[data-coord=\"2x7\"]{left:12.5%;top:75%}.chessboard>svg[data-coord=\"2x7\"]{left:13.125%;top:75.625%}.chessboard>button[data-coord=\"2x6\"],.chessboard>button.selectedbutton[data-coord=\"2x6\"],.chessboard>.bsquare[data-coord=\"2x6\"],.chessboard>.recent_move[data-coord=\"2x6\"],.chessboard>.recent_source[data-coord=\"2x6\"]{left:12.5%;top:62.5%}.chessboard>svg[data-coord=\"2x6\"]{left:13.125%;top:63.125%}.chessboard>button[data-coord=\"2x5\"],.chessboard>button.selectedbutton[data-coord=\"2x5\"],.chessboard>.bsquare[data-coord=\"2x5\"],.chessboard>.recent_move[data-coord=\"2x5\"],.chessboard>.recent_source[data-coord=\"2x5\"]{left:12.5%;top:50%}.chessboard>svg[data-coord=\"2x5\"]{left:13.125%;top:50.625%}.chessboard>button[data-coord=\"2x4\"],.chessboard>button.selectedbutton[data-coord=\"2x4\"],.chessboard>.bsquare[data-coord=\"2x4\"],.chessboard>.recent_move[data-coord=\"2x4\"],.chessboard>.recent_source[data-coord=\"2x4\"]{left:12.5%;top:37.5%}.chessboard>svg[data-coord=\"2x4\"]{left:13.125%;top:38.125%}.chessboard>button[data-coord=\"2x3\"],.chessboard>button.selectedbutton[data-coord=\"2x3\"],.chessboard>.bsquare[data-coord=\"2x3\"],.chessboard>.recent_move[data-coord=\"2x3\"],.chessboard>.recent_source[data-coord=\"2x3\"]{left:12.5%;top:25%}.chessboard>svg[data-coord=\"2x3\"]{left:13.125%;top:25.625%}.chessboard>button[data-coord=\"2x2\"],.chessboard>button.selectedbutton[data-coord=\"2x2\"],.chessboard>.bsquare[data-coord=\"2x2\"],.chessboard>.recent_move[data-coord=\"2x2\"],.chessboard>.recent_source[data-coord=\"2x2\"]{left:12.5%;top:12.5%}.chessboard>svg[data-coord=\"2x2\"]{left:13.125%;top:13.125%}.chessboard>button[data-coord=\"2x1\"],.chessboard>button.selectedbutton[data-coord=\"2x1\"],.chessboard>.bsquare[data-coord=\"2x1\"],.chessboard>.recent_move[data-coord=\"2x1\"],.chessboard>.recent_source[data-coord=\"2x1\"]{left:12.5%;top:0}.chessboard>svg[data-coord=\"2x1\"]{left:13.125%;top:.625%}.chessboard>button[data-coord=\"3x8\"],.chessboard>button.selectedbutton[data-coord=\"3x8\"],.chessboard>.bsquare[data-coord=\"3x8\"],.chessboard>.recent_move[data-coord=\"3x8\"],.chessboard>.recent_source[data-coord=\"3x8\"]{left:25%;top:87.5%}.chessboard>svg[data-coord=\"3x8\"]{left:25.625%;top:88.125%}.chessboard>button[data-coord=\"3x7\"],.chessboard>button.selectedbutton[data-coord=\"3x7\"],.chessboard>.bsquare[data-coord=\"3x7\"],.chessboard>.recent_move[data-coord=\"3x7\"],.chessboard>.recent_source[data-coord=\"3x7\"]{left:25%;top:75%}.chessboard>svg[data-coord=\"3x7\"]{left:25.625%;top:75.625%}.chessboard>button[data-coord=\"3x6\"],.chessboard>button.selectedbutton[data-coord=\"3x6\"],.chessboard>.bsquare[data-coord=\"3x6\"],.chessboard>.recent_move[data-coord=\"3x6\"],.chessboard>.recent_source[data-coord=\"3x6\"]{left:25%;top:62.5%}.chessboard>svg[data-coord=\"3x6\"]{left:25.625%;top:63.125%}.chessboard>button[data-coord=\"3x5\"],.chessboard>button.selectedbutton[data-coord=\"3x5\"],.chessboard>.bsquare[data-coord=\"3x5\"],.chessboard>.recent_move[data-coord=\"3x5\"],.chessboard>.recent_source[data-coord=\"3x5\"]{left:25%;top:50%}.chessboard>svg[data-coord=\"3x5\"]{left:25.625%;top:50.625%}.chessboard>button[data-coord=\"3x4\"],.chessboard>button.selectedbutton[data-coord=\"3x4\"],.chessboard>.bsquare[data-coord=\"3x4\"],.chessboard>.recent_move[data-coord=\"3x4\"],.chessboard>.recent_source[data-coord=\"3x4\"]{left:25%;top:37.5%}.chessboard>svg[data-coord=\"3x4\"]{left:25.625%;top:38.125%}.chessboard>button[data-coord=\"3x3\"],.chessboard>button.selectedbutton[data-coord=\"3x3\"],.chessboard>.bsquare[data-coord=\"3x3\"],.chessboard>.recent_move[data-coord=\"3x3\"],.chessboard>.recent_source[data-coord=\"3x3\"]{left:25%;top:25%}.chessboard>svg[data-coord=\"3x3\"]{left:25.625%;top:25.625%}.chessboard>button[data-coord=\"3x2\"],.chessboard>button.selectedbutton[data-coord=\"3x2\"],.chessboard>.bsquare[data-coord=\"3x2\"],.chessboard>.recent_move[data-coord=\"3x2\"],.chessboard>.recent_source[data-coord=\"3x2\"]{left:25%;top:12.5%}.chessboard>svg[data-coord=\"3x2\"]{left:25.625%;top:13.125%}.chessboard>button[data-coord=\"3x1\"],.chessboard>button.selectedbutton[data-coord=\"3x1\"],.chessboard>.bsquare[data-coord=\"3x1\"],.chessboard>.recent_move[data-coord=\"3x1\"],.chessboard>.recent_source[data-coord=\"3x1\"]{left:25%;top:0}.chessboard>svg[data-coord=\"3x1\"]{left:25.625%;top:.625%}.chessboard>button[data-coord=\"4x8\"],.chessboard>button.selectedbutton[data-coord=\"4x8\"],.chessboard>.bsquare[data-coord=\"4x8\"],.chessboard>.recent_move[data-coord=\"4x8\"],.chessboard>.recent_source[data-coord=\"4x8\"]{left:37.5%;top:87.5%}.chessboard>svg[data-coord=\"4x8\"]{left:38.125%;top:88.125%}.chessboard>button[data-coord=\"4x7\"],.chessboard>button.selectedbutton[data-coord=\"4x7\"],.chessboard>.bsquare[data-coord=\"4x7\"],.chessboard>.recent_move[data-coord=\"4x7\"],.chessboard>.recent_source[data-coord=\"4x7\"]{left:37.5%;top:75%}.chessboard>svg[data-coord=\"4x7\"]{left:38.125%;top:75.625%}.chessboard>button[data-coord=\"4x6\"],.chessboard>button.selectedbutton[data-coord=\"4x6\"],.chessboard>.bsquare[data-coord=\"4x6\"],.chessboard>.recent_move[data-coord=\"4x6\"],.chessboard>.recent_source[data-coord=\"4x6\"]{left:37.5%;top:62.5%}.chessboard>svg[data-coord=\"4x6\"]{left:38.125%;top:63.125%}.chessboard>button[data-coord=\"4x5\"],.chessboard>button.selectedbutton[data-coord=\"4x5\"],.chessboard>.bsquare[data-coord=\"4x5\"],.chessboard>.recent_move[data-coord=\"4x5\"],.chessboard>.recent_source[data-coord=\"4x5\"]{left:37.5%;top:50%}.chessboard>svg[data-coord=\"4x5\"]{left:38.125%;top:50.625%}.chessboard>button[data-coord=\"4x4\"],.chessboard>button.selectedbutton[data-coord=\"4x4\"],.chessboard>.bsquare[data-coord=\"4x4\"],.chessboard>.recent_move[data-coord=\"4x4\"],.chessboard>.recent_source[data-coord=\"4x4\"]{left:37.5%;top:37.5%}.chessboard>svg[data-coord=\"4x4\"]{left:38.125%;top:38.125%}.chessboard>button[data-coord=\"4x3\"],.chessboard>button.selectedbutton[data-coord=\"4x3\"],.chessboard>.bsquare[data-coord=\"4x3\"],.chessboard>.recent_move[data-coord=\"4x3\"],.chessboard>.recent_source[data-coord=\"4x3\"]{left:37.5%;top:25%}.chessboard>svg[data-coord=\"4x3\"]{left:38.125%;top:25.625%}.chessboard>button[data-coord=\"4x2\"],.chessboard>button.selectedbutton[data-coord=\"4x2\"],.chessboard>.bsquare[data-coord=\"4x2\"],.chessboard>.recent_move[data-coord=\"4x2\"],.chessboard>.recent_source[data-coord=\"4x2\"]{left:37.5%;top:12.5%}.chessboard>svg[data-coord=\"4x2\"]{left:38.125%;top:13.125%}.chessboard>button[data-coord=\"4x1\"],.chessboard>button.selectedbutton[data-coord=\"4x1\"],.chessboard>.bsquare[data-coord=\"4x1\"],.chessboard>.recent_move[data-coord=\"4x1\"],.chessboard>.recent_source[data-coord=\"4x1\"]{left:37.5%;top:0}.chessboard>svg[data-coord=\"4x1\"]{left:38.125%;top:.625%}.chessboard>button[data-coord=\"5x8\"],.chessboard>button.selectedbutton[data-coord=\"5x8\"],.chessboard>.bsquare[data-coord=\"5x8\"],.chessboard>.recent_move[data-coord=\"5x8\"],.chessboard>.recent_source[data-coord=\"5x8\"]{left:50%;top:87.5%}.chessboard>svg[data-coord=\"5x8\"]{left:50.625%;top:88.125%}.chessboard>button[data-coord=\"5x7\"],.chessboard>button.selectedbutton[data-coord=\"5x7\"],.chessboard>.bsquare[data-coord=\"5x7\"],.chessboard>.recent_move[data-coord=\"5x7\"],.chessboard>.recent_source[data-coord=\"5x7\"]{left:50%;top:75%}.chessboard>svg[data-coord=\"5x7\"]{left:50.625%;top:75.625%}.chessboard>button[data-coord=\"5x6\"],.chessboard>button.selectedbutton[data-coord=\"5x6\"],.chessboard>.bsquare[data-coord=\"5x6\"],.chessboard>.recent_move[data-coord=\"5x6\"],.chessboard>.recent_source[data-coord=\"5x6\"]{left:50%;top:62.5%}.chessboard>svg[data-coord=\"5x6\"]{left:50.625%;top:63.125%}.chessboard>button[data-coord=\"5x5\"],.chessboard>button.selectedbutton[data-coord=\"5x5\"],.chessboard>.bsquare[data-coord=\"5x5\"],.chessboard>.recent_move[data-coord=\"5x5\"],.chessboard>.recent_source[data-coord=\"5x5\"]{left:50%;top:50%}.chessboard>svg[data-coord=\"5x5\"]{left:50.625%;top:50.625%}.chessboard>button[data-coord=\"5x4\"],.chessboard>button.selectedbutton[data-coord=\"5x4\"],.chessboard>.bsquare[data-coord=\"5x4\"],.chessboard>.recent_move[data-coord=\"5x4\"],.chessboard>.recent_source[data-coord=\"5x4\"]{left:50%;top:37.5%}.chessboard>svg[data-coord=\"5x4\"]{left:50.625%;top:38.125%}.chessboard>button[data-coord=\"5x3\"],.chessboard>button.selectedbutton[data-coord=\"5x3\"],.chessboard>.bsquare[data-coord=\"5x3\"],.chessboard>.recent_move[data-coord=\"5x3\"],.chessboard>.recent_source[data-coord=\"5x3\"]{left:50%;top:25%}.chessboard>svg[data-coord=\"5x3\"]{left:50.625%;top:25.625%}.chessboard>button[data-coord=\"5x2\"],.chessboard>button.selectedbutton[data-coord=\"5x2\"],.chessboard>.bsquare[data-coord=\"5x2\"],.chessboard>.recent_move[data-coord=\"5x2\"],.chessboard>.recent_source[data-coord=\"5x2\"]{left:50%;top:12.5%}.chessboard>svg[data-coord=\"5x2\"]{left:50.625%;top:13.125%}.chessboard>button[data-coord=\"5x1\"],.chessboard>button.selectedbutton[data-coord=\"5x1\"],.chessboard>.bsquare[data-coord=\"5x1\"],.chessboard>.recent_move[data-coord=\"5x1\"],.chessboard>.recent_source[data-coord=\"5x1\"]{left:50%;top:0}.chessboard>svg[data-coord=\"5x1\"]{left:50.625%;top:.625%}.chessboard>button[data-coord=\"6x8\"],.chessboard>button.selectedbutton[data-coord=\"6x8\"],.chessboard>.bsquare[data-coord=\"6x8\"],.chessboard>.recent_move[data-coord=\"6x8\"],.chessboard>.recent_source[data-coord=\"6x8\"]{left:62.5%;top:87.5%}.chessboard>svg[data-coord=\"6x8\"]{left:63.125%;top:88.125%}.chessboard>button[data-coord=\"6x7\"],.chessboard>button.selectedbutton[data-coord=\"6x7\"],.chessboard>.bsquare[data-coord=\"6x7\"],.chessboard>.recent_move[data-coord=\"6x7\"],.chessboard>.recent_source[data-coord=\"6x7\"]{left:62.5%;top:75%}.chessboard>svg[data-coord=\"6x7\"]{left:63.125%;top:75.625%}.chessboard>button[data-coord=\"6x6\"],.chessboard>button.selectedbutton[data-coord=\"6x6\"],.chessboard>.bsquare[data-coord=\"6x6\"],.chessboard>.recent_move[data-coord=\"6x6\"],.chessboard>.recent_source[data-coord=\"6x6\"]{left:62.5%;top:62.5%}.chessboard>svg[data-coord=\"6x6\"]{left:63.125%;top:63.125%}.chessboard>button[data-coord=\"6x5\"],.chessboard>button.selectedbutton[data-coord=\"6x5\"],.chessboard>.bsquare[data-coord=\"6x5\"],.chessboard>.recent_move[data-coord=\"6x5\"],.chessboard>.recent_source[data-coord=\"6x5\"]{left:62.5%;top:50%}.chessboard>svg[data-coord=\"6x5\"]{left:63.125%;top:50.625%}.chessboard>button[data-coord=\"6x4\"],.chessboard>button.selectedbutton[data-coord=\"6x4\"],.chessboard>.bsquare[data-coord=\"6x4\"],.chessboard>.recent_move[data-coord=\"6x4\"],.chessboard>.recent_source[data-coord=\"6x4\"]{left:62.5%;top:37.5%}.chessboard>svg[data-coord=\"6x4\"]{left:63.125%;top:38.125%}.chessboard>button[data-coord=\"6x3\"],.chessboard>button.selectedbutton[data-coord=\"6x3\"],.chessboard>.bsquare[data-coord=\"6x3\"],.chessboard>.recent_move[data-coord=\"6x3\"],.chessboard>.recent_source[data-coord=\"6x3\"]{left:62.5%;top:25%}.chessboard>svg[data-coord=\"6x3\"]{left:63.125%;top:25.625%}.chessboard>button[data-coord=\"6x2\"],.chessboard>button.selectedbutton[data-coord=\"6x2\"],.chessboard>.bsquare[data-coord=\"6x2\"],.chessboard>.recent_move[data-coord=\"6x2\"],.chessboard>.recent_source[data-coord=\"6x2\"]{left:62.5%;top:12.5%}.chessboard>svg[data-coord=\"6x2\"]{left:63.125%;top:13.125%}.chessboard>button[data-coord=\"6x1\"],.chessboard>button.selectedbutton[data-coord=\"6x1\"],.chessboard>.bsquare[data-coord=\"6x1\"],.chessboard>.recent_move[data-coord=\"6x1\"],.chessboard>.recent_source[data-coord=\"6x1\"]{left:62.5%;top:0}.chessboard>svg[data-coord=\"6x1\"]{left:63.125%;top:.625%}.chessboard>button[data-coord=\"7x8\"],.chessboard>button.selectedbutton[data-coord=\"7x8\"],.chessboard>.bsquare[data-coord=\"7x8\"],.chessboard>.recent_move[data-coord=\"7x8\"],.chessboard>.recent_source[data-coord=\"7x8\"]{left:75%;top:87.5%}.chessboard>svg[data-coord=\"7x8\"]{left:75.625%;top:88.125%}.chessboard>button[data-coord=\"7x7\"],.chessboard>button.selectedbutton[data-coord=\"7x7\"],.chessboard>.bsquare[data-coord=\"7x7\"],.chessboard>.recent_move[data-coord=\"7x7\"],.chessboard>.recent_source[data-coord=\"7x7\"]{left:75%;top:75%}.chessboard>svg[data-coord=\"7x7\"]{left:75.625%;top:75.625%}.chessboard>button[data-coord=\"7x6\"],.chessboard>button.selectedbutton[data-coord=\"7x6\"],.chessboard>.bsquare[data-coord=\"7x6\"],.chessboard>.recent_move[data-coord=\"7x6\"],.chessboard>.recent_source[data-coord=\"7x6\"]{left:75%;top:62.5%}.chessboard>svg[data-coord=\"7x6\"]{left:75.625%;top:63.125%}.chessboard>button[data-coord=\"7x5\"],.chessboard>button.selectedbutton[data-coord=\"7x5\"],.chessboard>.bsquare[data-coord=\"7x5\"],.chessboard>.recent_move[data-coord=\"7x5\"],.chessboard>.recent_source[data-coord=\"7x5\"]{left:75%;top:50%}.chessboard>svg[data-coord=\"7x5\"]{left:75.625%;top:50.625%}.chessboard>button[data-coord=\"7x4\"],.chessboard>button.selectedbutton[data-coord=\"7x4\"],.chessboard>.bsquare[data-coord=\"7x4\"],.chessboard>.recent_move[data-coord=\"7x4\"],.chessboard>.recent_source[data-coord=\"7x4\"]{left:75%;top:37.5%}.chessboard>svg[data-coord=\"7x4\"]{left:75.625%;top:38.125%}.chessboard>button[data-coord=\"7x3\"],.chessboard>button.selectedbutton[data-coord=\"7x3\"],.chessboard>.bsquare[data-coord=\"7x3\"],.chessboard>.recent_move[data-coord=\"7x3\"],.chessboard>.recent_source[data-coord=\"7x3\"]{left:75%;top:25%}.chessboard>svg[data-coord=\"7x3\"]{left:75.625%;top:25.625%}.chessboard>button[data-coord=\"7x2\"],.chessboard>button.selectedbutton[data-coord=\"7x2\"],.chessboard>.bsquare[data-coord=\"7x2\"],.chessboard>.recent_move[data-coord=\"7x2\"],.chessboard>.recent_source[data-coord=\"7x2\"]{left:75%;top:12.5%}.chessboard>svg[data-coord=\"7x2\"]{left:75.625%;top:13.125%}.chessboard>button[data-coord=\"7x1\"],.chessboard>button.selectedbutton[data-coord=\"7x1\"],.chessboard>.bsquare[data-coord=\"7x1\"],.chessboard>.recent_move[data-coord=\"7x1\"],.chessboard>.recent_source[data-coord=\"7x1\"]{left:75%;top:0}.chessboard>svg[data-coord=\"7x1\"]{left:75.625%;top:.625%}.chessboard>button[data-coord=\"8x8\"],.chessboard>button.selectedbutton[data-coord=\"8x8\"],.chessboard>.bsquare[data-coord=\"8x8\"],.chessboard>.recent_move[data-coord=\"8x8\"],.chessboard>.recent_source[data-coord=\"8x8\"]{left:87.5%;top:87.5%}.chessboard>svg[data-coord=\"8x8\"]{left:88.125%;top:88.125%}.chessboard>button[data-coord=\"8x7\"],.chessboard>button.selectedbutton[data-coord=\"8x7\"],.chessboard>.bsquare[data-coord=\"8x7\"],.chessboard>.recent_move[data-coord=\"8x7\"],.chessboard>.recent_source[data-coord=\"8x7\"]{left:87.5%;top:75%}.chessboard>svg[data-coord=\"8x7\"]{left:88.125%;top:75.625%}.chessboard>button[data-coord=\"8x6\"],.chessboard>button.selectedbutton[data-coord=\"8x6\"],.chessboard>.bsquare[data-coord=\"8x6\"],.chessboard>.recent_move[data-coord=\"8x6\"],.chessboard>.recent_source[data-coord=\"8x6\"]{left:87.5%;top:62.5%}.chessboard>svg[data-coord=\"8x6\"]{left:88.125%;top:63.125%}.chessboard>button[data-coord=\"8x5\"],.chessboard>button.selectedbutton[data-coord=\"8x5\"],.chessboard>.bsquare[data-coord=\"8x5\"],.chessboard>.recent_move[data-coord=\"8x5\"],.chessboard>.recent_source[data-coord=\"8x5\"]{left:87.5%;top:50%}.chessboard>svg[data-coord=\"8x5\"]{left:88.125%;top:50.625%}.chessboard>button[data-coord=\"8x4\"],.chessboard>button.selectedbutton[data-coord=\"8x4\"],.chessboard>.bsquare[data-coord=\"8x4\"],.chessboard>.recent_move[data-coord=\"8x4\"],.chessboard>.recent_source[data-coord=\"8x4\"]{left:87.5%;top:37.5%}.chessboard>svg[data-coord=\"8x4\"]{left:88.125%;top:38.125%}.chessboard>button[data-coord=\"8x3\"],.chessboard>button.selectedbutton[data-coord=\"8x3\"],.chessboard>.bsquare[data-coord=\"8x3\"],.chessboard>.recent_move[data-coord=\"8x3\"],.chessboard>.recent_source[data-coord=\"8x3\"]{left:87.5%;top:25%}.chessboard>svg[data-coord=\"8x3\"]{left:88.125%;top:25.625%}.chessboard>button[data-coord=\"8x2\"],.chessboard>button.selectedbutton[data-coord=\"8x2\"],.chessboard>.bsquare[data-coord=\"8x2\"],.chessboard>.recent_move[data-coord=\"8x2\"],.chessboard>.recent_source[data-coord=\"8x2\"]{left:87.5%;top:12.5%}.chessboard>svg[data-coord=\"8x2\"]{left:88.125%;top:13.125%}.chessboard>button[data-coord=\"8x1\"],.chessboard>button.selectedbutton[data-coord=\"8x1\"],.chessboard>.bsquare[data-coord=\"8x1\"],.chessboard>.recent_move[data-coord=\"8x1\"],.chessboard>.recent_source[data-coord=\"8x1\"]{left:87.5%;top:0}.chessboard>svg[data-coord=\"8x1\"]{left:88.125%;top:.625%}";
+module.exports = ".gamestarter{max-width:750px;font-family:sans-serif;transition:1s all}.gamestarter .button_surround,.gamestarter .start_game_row{transition:1s all;margin-bottom:2em;overflow:hidden}.gamestarter .aside{width:50%;display:inline-block;text-align:center}.gamestarter .aside h6{font-size:100%;margin:1em}.gamestarter .aside button{margin:1em}.gamestarter button{color:white;background:black;padding:4px 10px;border-radius:4px;outline:0;border:1px solid black;cursor:pointer;font-weight:bold;transition:.5s all;min-width:75px;text-align:center}.gamestarter button:hover{background:white;color:black}.gamestarter button:focus{border-color:turquoise}.gamestarter .start_game_row{text-align:center}.move_history,.turn_display{font-family:sans-serif;display:inline-block;margin:1em;vertical-align:top}.move_history h6,.turn_display h6{font-size:120%;margin:0;margin-bottom:.5em;font-weight:normal}.turn_display{min-width:5em;text-align:center}.turn_display>div{font-weight:bold}.move_history>div{height:20em;overflow-y:scroll;min-width:10em;border:1px solid black;padding:.5em;font-family:monospace}.chessboard{width:750px;height:750px;position:relative;display:inline-block}.chessboard>.bsquare.odd{background:#ff8037}.chessboard>.bsquare.even{background:#ffffc8}.chessboard>.bsquare{width:12.5%;height:12.5%;position:absolute}.chessboard>.recent_move,.chessboard>.recent_source{width:93.75px;height:93.75px;position:absolute}.chessboard>.recent_move>div,.chessboard>.recent_source>div{border:5px solid green;position:absolute;top:0;bottom:0;left:0;right:0}.chessboard>.recent_source>div{border-color:#0f0}.chessboard>svg{position:absolute;z-index:1;width:11.25%;height:11.25%}.chessboard svg path,.chessboard svg circle,.chessboard svg rect{fill:white;stroke:black}.chessboard svg.black path,.chessboard svg.black circle,.chessboard svg.black rect{fill:black;stroke:white}.chessboard>button{position:absolute;z-index:2;cursor:pointer;padding:0;background:none;border:none;width:12.5%;height:12.5%}.chessboard>button.selectedbutton>div{position:absolute;top:10%;bottom:10%;left:10%;right:10%;border:3px solid black;border-radius:50%}.chessboard>button.selectedbutton.nil{border:3px solid black;width:12.5%;height:12.5%;z-index:3}.chessboard>button.selectedbutton.nil:focus{border-width:6px;outline:0}.chessboard>button.selectedbutton.nil.invalidmove{border-color:red}.chessboard button:focus,.chessboard div[role=\"button\"]:focus{outline:0}.chessboard .promotion{width:50%;position:absolute;background:white;top:37.5%;left:25%;border-radius:5px;border:1px solid black;z-index:-5;padding:1em;font-family:sans-serif}.chessboard .promotion svg{height:3em}.chessboard .promotion .promotray{text-align:center}.chessboard .promotion div[role=\"button\"]{vertical-align:middle;cursor:pointer;display:inline-block;margin:1em;border:1px solid rgba(255,255,255,0);border-radius:5px}.chessboard .promotion div[role=\"button\"]:hover{border-color:black}.chessboard>button[data-coord=\"1x8\"],.chessboard>button.selectedbutton[data-coord=\"1x8\"],.chessboard>.bsquare[data-coord=\"1x8\"],.chessboard>.recent_move[data-coord=\"1x8\"],.chessboard>.recent_source[data-coord=\"1x8\"]{left:0;top:87.5%}.chessboard>svg[data-coord=\"1x8\"]{left:.625%;top:88.125%}.chessboard>button[data-coord=\"1x7\"],.chessboard>button.selectedbutton[data-coord=\"1x7\"],.chessboard>.bsquare[data-coord=\"1x7\"],.chessboard>.recent_move[data-coord=\"1x7\"],.chessboard>.recent_source[data-coord=\"1x7\"]{left:0;top:75%}.chessboard>svg[data-coord=\"1x7\"]{left:.625%;top:75.625%}.chessboard>button[data-coord=\"1x6\"],.chessboard>button.selectedbutton[data-coord=\"1x6\"],.chessboard>.bsquare[data-coord=\"1x6\"],.chessboard>.recent_move[data-coord=\"1x6\"],.chessboard>.recent_source[data-coord=\"1x6\"]{left:0;top:62.5%}.chessboard>svg[data-coord=\"1x6\"]{left:.625%;top:63.125%}.chessboard>button[data-coord=\"1x5\"],.chessboard>button.selectedbutton[data-coord=\"1x5\"],.chessboard>.bsquare[data-coord=\"1x5\"],.chessboard>.recent_move[data-coord=\"1x5\"],.chessboard>.recent_source[data-coord=\"1x5\"]{left:0;top:50%}.chessboard>svg[data-coord=\"1x5\"]{left:.625%;top:50.625%}.chessboard>button[data-coord=\"1x4\"],.chessboard>button.selectedbutton[data-coord=\"1x4\"],.chessboard>.bsquare[data-coord=\"1x4\"],.chessboard>.recent_move[data-coord=\"1x4\"],.chessboard>.recent_source[data-coord=\"1x4\"]{left:0;top:37.5%}.chessboard>svg[data-coord=\"1x4\"]{left:.625%;top:38.125%}.chessboard>button[data-coord=\"1x3\"],.chessboard>button.selectedbutton[data-coord=\"1x3\"],.chessboard>.bsquare[data-coord=\"1x3\"],.chessboard>.recent_move[data-coord=\"1x3\"],.chessboard>.recent_source[data-coord=\"1x3\"]{left:0;top:25%}.chessboard>svg[data-coord=\"1x3\"]{left:.625%;top:25.625%}.chessboard>button[data-coord=\"1x2\"],.chessboard>button.selectedbutton[data-coord=\"1x2\"],.chessboard>.bsquare[data-coord=\"1x2\"],.chessboard>.recent_move[data-coord=\"1x2\"],.chessboard>.recent_source[data-coord=\"1x2\"]{left:0;top:12.5%}.chessboard>svg[data-coord=\"1x2\"]{left:.625%;top:13.125%}.chessboard>button[data-coord=\"1x1\"],.chessboard>button.selectedbutton[data-coord=\"1x1\"],.chessboard>.bsquare[data-coord=\"1x1\"],.chessboard>.recent_move[data-coord=\"1x1\"],.chessboard>.recent_source[data-coord=\"1x1\"]{left:0;top:0}.chessboard>svg[data-coord=\"1x1\"]{left:.625%;top:.625%}.chessboard>button[data-coord=\"2x8\"],.chessboard>button.selectedbutton[data-coord=\"2x8\"],.chessboard>.bsquare[data-coord=\"2x8\"],.chessboard>.recent_move[data-coord=\"2x8\"],.chessboard>.recent_source[data-coord=\"2x8\"]{left:12.5%;top:87.5%}.chessboard>svg[data-coord=\"2x8\"]{left:13.125%;top:88.125%}.chessboard>button[data-coord=\"2x7\"],.chessboard>button.selectedbutton[data-coord=\"2x7\"],.chessboard>.bsquare[data-coord=\"2x7\"],.chessboard>.recent_move[data-coord=\"2x7\"],.chessboard>.recent_source[data-coord=\"2x7\"]{left:12.5%;top:75%}.chessboard>svg[data-coord=\"2x7\"]{left:13.125%;top:75.625%}.chessboard>button[data-coord=\"2x6\"],.chessboard>button.selectedbutton[data-coord=\"2x6\"],.chessboard>.bsquare[data-coord=\"2x6\"],.chessboard>.recent_move[data-coord=\"2x6\"],.chessboard>.recent_source[data-coord=\"2x6\"]{left:12.5%;top:62.5%}.chessboard>svg[data-coord=\"2x6\"]{left:13.125%;top:63.125%}.chessboard>button[data-coord=\"2x5\"],.chessboard>button.selectedbutton[data-coord=\"2x5\"],.chessboard>.bsquare[data-coord=\"2x5\"],.chessboard>.recent_move[data-coord=\"2x5\"],.chessboard>.recent_source[data-coord=\"2x5\"]{left:12.5%;top:50%}.chessboard>svg[data-coord=\"2x5\"]{left:13.125%;top:50.625%}.chessboard>button[data-coord=\"2x4\"],.chessboard>button.selectedbutton[data-coord=\"2x4\"],.chessboard>.bsquare[data-coord=\"2x4\"],.chessboard>.recent_move[data-coord=\"2x4\"],.chessboard>.recent_source[data-coord=\"2x4\"]{left:12.5%;top:37.5%}.chessboard>svg[data-coord=\"2x4\"]{left:13.125%;top:38.125%}.chessboard>button[data-coord=\"2x3\"],.chessboard>button.selectedbutton[data-coord=\"2x3\"],.chessboard>.bsquare[data-coord=\"2x3\"],.chessboard>.recent_move[data-coord=\"2x3\"],.chessboard>.recent_source[data-coord=\"2x3\"]{left:12.5%;top:25%}.chessboard>svg[data-coord=\"2x3\"]{left:13.125%;top:25.625%}.chessboard>button[data-coord=\"2x2\"],.chessboard>button.selectedbutton[data-coord=\"2x2\"],.chessboard>.bsquare[data-coord=\"2x2\"],.chessboard>.recent_move[data-coord=\"2x2\"],.chessboard>.recent_source[data-coord=\"2x2\"]{left:12.5%;top:12.5%}.chessboard>svg[data-coord=\"2x2\"]{left:13.125%;top:13.125%}.chessboard>button[data-coord=\"2x1\"],.chessboard>button.selectedbutton[data-coord=\"2x1\"],.chessboard>.bsquare[data-coord=\"2x1\"],.chessboard>.recent_move[data-coord=\"2x1\"],.chessboard>.recent_source[data-coord=\"2x1\"]{left:12.5%;top:0}.chessboard>svg[data-coord=\"2x1\"]{left:13.125%;top:.625%}.chessboard>button[data-coord=\"3x8\"],.chessboard>button.selectedbutton[data-coord=\"3x8\"],.chessboard>.bsquare[data-coord=\"3x8\"],.chessboard>.recent_move[data-coord=\"3x8\"],.chessboard>.recent_source[data-coord=\"3x8\"]{left:25%;top:87.5%}.chessboard>svg[data-coord=\"3x8\"]{left:25.625%;top:88.125%}.chessboard>button[data-coord=\"3x7\"],.chessboard>button.selectedbutton[data-coord=\"3x7\"],.chessboard>.bsquare[data-coord=\"3x7\"],.chessboard>.recent_move[data-coord=\"3x7\"],.chessboard>.recent_source[data-coord=\"3x7\"]{left:25%;top:75%}.chessboard>svg[data-coord=\"3x7\"]{left:25.625%;top:75.625%}.chessboard>button[data-coord=\"3x6\"],.chessboard>button.selectedbutton[data-coord=\"3x6\"],.chessboard>.bsquare[data-coord=\"3x6\"],.chessboard>.recent_move[data-coord=\"3x6\"],.chessboard>.recent_source[data-coord=\"3x6\"]{left:25%;top:62.5%}.chessboard>svg[data-coord=\"3x6\"]{left:25.625%;top:63.125%}.chessboard>button[data-coord=\"3x5\"],.chessboard>button.selectedbutton[data-coord=\"3x5\"],.chessboard>.bsquare[data-coord=\"3x5\"],.chessboard>.recent_move[data-coord=\"3x5\"],.chessboard>.recent_source[data-coord=\"3x5\"]{left:25%;top:50%}.chessboard>svg[data-coord=\"3x5\"]{left:25.625%;top:50.625%}.chessboard>button[data-coord=\"3x4\"],.chessboard>button.selectedbutton[data-coord=\"3x4\"],.chessboard>.bsquare[data-coord=\"3x4\"],.chessboard>.recent_move[data-coord=\"3x4\"],.chessboard>.recent_source[data-coord=\"3x4\"]{left:25%;top:37.5%}.chessboard>svg[data-coord=\"3x4\"]{left:25.625%;top:38.125%}.chessboard>button[data-coord=\"3x3\"],.chessboard>button.selectedbutton[data-coord=\"3x3\"],.chessboard>.bsquare[data-coord=\"3x3\"],.chessboard>.recent_move[data-coord=\"3x3\"],.chessboard>.recent_source[data-coord=\"3x3\"]{left:25%;top:25%}.chessboard>svg[data-coord=\"3x3\"]{left:25.625%;top:25.625%}.chessboard>button[data-coord=\"3x2\"],.chessboard>button.selectedbutton[data-coord=\"3x2\"],.chessboard>.bsquare[data-coord=\"3x2\"],.chessboard>.recent_move[data-coord=\"3x2\"],.chessboard>.recent_source[data-coord=\"3x2\"]{left:25%;top:12.5%}.chessboard>svg[data-coord=\"3x2\"]{left:25.625%;top:13.125%}.chessboard>button[data-coord=\"3x1\"],.chessboard>button.selectedbutton[data-coord=\"3x1\"],.chessboard>.bsquare[data-coord=\"3x1\"],.chessboard>.recent_move[data-coord=\"3x1\"],.chessboard>.recent_source[data-coord=\"3x1\"]{left:25%;top:0}.chessboard>svg[data-coord=\"3x1\"]{left:25.625%;top:.625%}.chessboard>button[data-coord=\"4x8\"],.chessboard>button.selectedbutton[data-coord=\"4x8\"],.chessboard>.bsquare[data-coord=\"4x8\"],.chessboard>.recent_move[data-coord=\"4x8\"],.chessboard>.recent_source[data-coord=\"4x8\"]{left:37.5%;top:87.5%}.chessboard>svg[data-coord=\"4x8\"]{left:38.125%;top:88.125%}.chessboard>button[data-coord=\"4x7\"],.chessboard>button.selectedbutton[data-coord=\"4x7\"],.chessboard>.bsquare[data-coord=\"4x7\"],.chessboard>.recent_move[data-coord=\"4x7\"],.chessboard>.recent_source[data-coord=\"4x7\"]{left:37.5%;top:75%}.chessboard>svg[data-coord=\"4x7\"]{left:38.125%;top:75.625%}.chessboard>button[data-coord=\"4x6\"],.chessboard>button.selectedbutton[data-coord=\"4x6\"],.chessboard>.bsquare[data-coord=\"4x6\"],.chessboard>.recent_move[data-coord=\"4x6\"],.chessboard>.recent_source[data-coord=\"4x6\"]{left:37.5%;top:62.5%}.chessboard>svg[data-coord=\"4x6\"]{left:38.125%;top:63.125%}.chessboard>button[data-coord=\"4x5\"],.chessboard>button.selectedbutton[data-coord=\"4x5\"],.chessboard>.bsquare[data-coord=\"4x5\"],.chessboard>.recent_move[data-coord=\"4x5\"],.chessboard>.recent_source[data-coord=\"4x5\"]{left:37.5%;top:50%}.chessboard>svg[data-coord=\"4x5\"]{left:38.125%;top:50.625%}.chessboard>button[data-coord=\"4x4\"],.chessboard>button.selectedbutton[data-coord=\"4x4\"],.chessboard>.bsquare[data-coord=\"4x4\"],.chessboard>.recent_move[data-coord=\"4x4\"],.chessboard>.recent_source[data-coord=\"4x4\"]{left:37.5%;top:37.5%}.chessboard>svg[data-coord=\"4x4\"]{left:38.125%;top:38.125%}.chessboard>button[data-coord=\"4x3\"],.chessboard>button.selectedbutton[data-coord=\"4x3\"],.chessboard>.bsquare[data-coord=\"4x3\"],.chessboard>.recent_move[data-coord=\"4x3\"],.chessboard>.recent_source[data-coord=\"4x3\"]{left:37.5%;top:25%}.chessboard>svg[data-coord=\"4x3\"]{left:38.125%;top:25.625%}.chessboard>button[data-coord=\"4x2\"],.chessboard>button.selectedbutton[data-coord=\"4x2\"],.chessboard>.bsquare[data-coord=\"4x2\"],.chessboard>.recent_move[data-coord=\"4x2\"],.chessboard>.recent_source[data-coord=\"4x2\"]{left:37.5%;top:12.5%}.chessboard>svg[data-coord=\"4x2\"]{left:38.125%;top:13.125%}.chessboard>button[data-coord=\"4x1\"],.chessboard>button.selectedbutton[data-coord=\"4x1\"],.chessboard>.bsquare[data-coord=\"4x1\"],.chessboard>.recent_move[data-coord=\"4x1\"],.chessboard>.recent_source[data-coord=\"4x1\"]{left:37.5%;top:0}.chessboard>svg[data-coord=\"4x1\"]{left:38.125%;top:.625%}.chessboard>button[data-coord=\"5x8\"],.chessboard>button.selectedbutton[data-coord=\"5x8\"],.chessboard>.bsquare[data-coord=\"5x8\"],.chessboard>.recent_move[data-coord=\"5x8\"],.chessboard>.recent_source[data-coord=\"5x8\"]{left:50%;top:87.5%}.chessboard>svg[data-coord=\"5x8\"]{left:50.625%;top:88.125%}.chessboard>button[data-coord=\"5x7\"],.chessboard>button.selectedbutton[data-coord=\"5x7\"],.chessboard>.bsquare[data-coord=\"5x7\"],.chessboard>.recent_move[data-coord=\"5x7\"],.chessboard>.recent_source[data-coord=\"5x7\"]{left:50%;top:75%}.chessboard>svg[data-coord=\"5x7\"]{left:50.625%;top:75.625%}.chessboard>button[data-coord=\"5x6\"],.chessboard>button.selectedbutton[data-coord=\"5x6\"],.chessboard>.bsquare[data-coord=\"5x6\"],.chessboard>.recent_move[data-coord=\"5x6\"],.chessboard>.recent_source[data-coord=\"5x6\"]{left:50%;top:62.5%}.chessboard>svg[data-coord=\"5x6\"]{left:50.625%;top:63.125%}.chessboard>button[data-coord=\"5x5\"],.chessboard>button.selectedbutton[data-coord=\"5x5\"],.chessboard>.bsquare[data-coord=\"5x5\"],.chessboard>.recent_move[data-coord=\"5x5\"],.chessboard>.recent_source[data-coord=\"5x5\"]{left:50%;top:50%}.chessboard>svg[data-coord=\"5x5\"]{left:50.625%;top:50.625%}.chessboard>button[data-coord=\"5x4\"],.chessboard>button.selectedbutton[data-coord=\"5x4\"],.chessboard>.bsquare[data-coord=\"5x4\"],.chessboard>.recent_move[data-coord=\"5x4\"],.chessboard>.recent_source[data-coord=\"5x4\"]{left:50%;top:37.5%}.chessboard>svg[data-coord=\"5x4\"]{left:50.625%;top:38.125%}.chessboard>button[data-coord=\"5x3\"],.chessboard>button.selectedbutton[data-coord=\"5x3\"],.chessboard>.bsquare[data-coord=\"5x3\"],.chessboard>.recent_move[data-coord=\"5x3\"],.chessboard>.recent_source[data-coord=\"5x3\"]{left:50%;top:25%}.chessboard>svg[data-coord=\"5x3\"]{left:50.625%;top:25.625%}.chessboard>button[data-coord=\"5x2\"],.chessboard>button.selectedbutton[data-coord=\"5x2\"],.chessboard>.bsquare[data-coord=\"5x2\"],.chessboard>.recent_move[data-coord=\"5x2\"],.chessboard>.recent_source[data-coord=\"5x2\"]{left:50%;top:12.5%}.chessboard>svg[data-coord=\"5x2\"]{left:50.625%;top:13.125%}.chessboard>button[data-coord=\"5x1\"],.chessboard>button.selectedbutton[data-coord=\"5x1\"],.chessboard>.bsquare[data-coord=\"5x1\"],.chessboard>.recent_move[data-coord=\"5x1\"],.chessboard>.recent_source[data-coord=\"5x1\"]{left:50%;top:0}.chessboard>svg[data-coord=\"5x1\"]{left:50.625%;top:.625%}.chessboard>button[data-coord=\"6x8\"],.chessboard>button.selectedbutton[data-coord=\"6x8\"],.chessboard>.bsquare[data-coord=\"6x8\"],.chessboard>.recent_move[data-coord=\"6x8\"],.chessboard>.recent_source[data-coord=\"6x8\"]{left:62.5%;top:87.5%}.chessboard>svg[data-coord=\"6x8\"]{left:63.125%;top:88.125%}.chessboard>button[data-coord=\"6x7\"],.chessboard>button.selectedbutton[data-coord=\"6x7\"],.chessboard>.bsquare[data-coord=\"6x7\"],.chessboard>.recent_move[data-coord=\"6x7\"],.chessboard>.recent_source[data-coord=\"6x7\"]{left:62.5%;top:75%}.chessboard>svg[data-coord=\"6x7\"]{left:63.125%;top:75.625%}.chessboard>button[data-coord=\"6x6\"],.chessboard>button.selectedbutton[data-coord=\"6x6\"],.chessboard>.bsquare[data-coord=\"6x6\"],.chessboard>.recent_move[data-coord=\"6x6\"],.chessboard>.recent_source[data-coord=\"6x6\"]{left:62.5%;top:62.5%}.chessboard>svg[data-coord=\"6x6\"]{left:63.125%;top:63.125%}.chessboard>button[data-coord=\"6x5\"],.chessboard>button.selectedbutton[data-coord=\"6x5\"],.chessboard>.bsquare[data-coord=\"6x5\"],.chessboard>.recent_move[data-coord=\"6x5\"],.chessboard>.recent_source[data-coord=\"6x5\"]{left:62.5%;top:50%}.chessboard>svg[data-coord=\"6x5\"]{left:63.125%;top:50.625%}.chessboard>button[data-coord=\"6x4\"],.chessboard>button.selectedbutton[data-coord=\"6x4\"],.chessboard>.bsquare[data-coord=\"6x4\"],.chessboard>.recent_move[data-coord=\"6x4\"],.chessboard>.recent_source[data-coord=\"6x4\"]{left:62.5%;top:37.5%}.chessboard>svg[data-coord=\"6x4\"]{left:63.125%;top:38.125%}.chessboard>button[data-coord=\"6x3\"],.chessboard>button.selectedbutton[data-coord=\"6x3\"],.chessboard>.bsquare[data-coord=\"6x3\"],.chessboard>.recent_move[data-coord=\"6x3\"],.chessboard>.recent_source[data-coord=\"6x3\"]{left:62.5%;top:25%}.chessboard>svg[data-coord=\"6x3\"]{left:63.125%;top:25.625%}.chessboard>button[data-coord=\"6x2\"],.chessboard>button.selectedbutton[data-coord=\"6x2\"],.chessboard>.bsquare[data-coord=\"6x2\"],.chessboard>.recent_move[data-coord=\"6x2\"],.chessboard>.recent_source[data-coord=\"6x2\"]{left:62.5%;top:12.5%}.chessboard>svg[data-coord=\"6x2\"]{left:63.125%;top:13.125%}.chessboard>button[data-coord=\"6x1\"],.chessboard>button.selectedbutton[data-coord=\"6x1\"],.chessboard>.bsquare[data-coord=\"6x1\"],.chessboard>.recent_move[data-coord=\"6x1\"],.chessboard>.recent_source[data-coord=\"6x1\"]{left:62.5%;top:0}.chessboard>svg[data-coord=\"6x1\"]{left:63.125%;top:.625%}.chessboard>button[data-coord=\"7x8\"],.chessboard>button.selectedbutton[data-coord=\"7x8\"],.chessboard>.bsquare[data-coord=\"7x8\"],.chessboard>.recent_move[data-coord=\"7x8\"],.chessboard>.recent_source[data-coord=\"7x8\"]{left:75%;top:87.5%}.chessboard>svg[data-coord=\"7x8\"]{left:75.625%;top:88.125%}.chessboard>button[data-coord=\"7x7\"],.chessboard>button.selectedbutton[data-coord=\"7x7\"],.chessboard>.bsquare[data-coord=\"7x7\"],.chessboard>.recent_move[data-coord=\"7x7\"],.chessboard>.recent_source[data-coord=\"7x7\"]{left:75%;top:75%}.chessboard>svg[data-coord=\"7x7\"]{left:75.625%;top:75.625%}.chessboard>button[data-coord=\"7x6\"],.chessboard>button.selectedbutton[data-coord=\"7x6\"],.chessboard>.bsquare[data-coord=\"7x6\"],.chessboard>.recent_move[data-coord=\"7x6\"],.chessboard>.recent_source[data-coord=\"7x6\"]{left:75%;top:62.5%}.chessboard>svg[data-coord=\"7x6\"]{left:75.625%;top:63.125%}.chessboard>button[data-coord=\"7x5\"],.chessboard>button.selectedbutton[data-coord=\"7x5\"],.chessboard>.bsquare[data-coord=\"7x5\"],.chessboard>.recent_move[data-coord=\"7x5\"],.chessboard>.recent_source[data-coord=\"7x5\"]{left:75%;top:50%}.chessboard>svg[data-coord=\"7x5\"]{left:75.625%;top:50.625%}.chessboard>button[data-coord=\"7x4\"],.chessboard>button.selectedbutton[data-coord=\"7x4\"],.chessboard>.bsquare[data-coord=\"7x4\"],.chessboard>.recent_move[data-coord=\"7x4\"],.chessboard>.recent_source[data-coord=\"7x4\"]{left:75%;top:37.5%}.chessboard>svg[data-coord=\"7x4\"]{left:75.625%;top:38.125%}.chessboard>button[data-coord=\"7x3\"],.chessboard>button.selectedbutton[data-coord=\"7x3\"],.chessboard>.bsquare[data-coord=\"7x3\"],.chessboard>.recent_move[data-coord=\"7x3\"],.chessboard>.recent_source[data-coord=\"7x3\"]{left:75%;top:25%}.chessboard>svg[data-coord=\"7x3\"]{left:75.625%;top:25.625%}.chessboard>button[data-coord=\"7x2\"],.chessboard>button.selectedbutton[data-coord=\"7x2\"],.chessboard>.bsquare[data-coord=\"7x2\"],.chessboard>.recent_move[data-coord=\"7x2\"],.chessboard>.recent_source[data-coord=\"7x2\"]{left:75%;top:12.5%}.chessboard>svg[data-coord=\"7x2\"]{left:75.625%;top:13.125%}.chessboard>button[data-coord=\"7x1\"],.chessboard>button.selectedbutton[data-coord=\"7x1\"],.chessboard>.bsquare[data-coord=\"7x1\"],.chessboard>.recent_move[data-coord=\"7x1\"],.chessboard>.recent_source[data-coord=\"7x1\"]{left:75%;top:0}.chessboard>svg[data-coord=\"7x1\"]{left:75.625%;top:.625%}.chessboard>button[data-coord=\"8x8\"],.chessboard>button.selectedbutton[data-coord=\"8x8\"],.chessboard>.bsquare[data-coord=\"8x8\"],.chessboard>.recent_move[data-coord=\"8x8\"],.chessboard>.recent_source[data-coord=\"8x8\"]{left:87.5%;top:87.5%}.chessboard>svg[data-coord=\"8x8\"]{left:88.125%;top:88.125%}.chessboard>button[data-coord=\"8x7\"],.chessboard>button.selectedbutton[data-coord=\"8x7\"],.chessboard>.bsquare[data-coord=\"8x7\"],.chessboard>.recent_move[data-coord=\"8x7\"],.chessboard>.recent_source[data-coord=\"8x7\"]{left:87.5%;top:75%}.chessboard>svg[data-coord=\"8x7\"]{left:88.125%;top:75.625%}.chessboard>button[data-coord=\"8x6\"],.chessboard>button.selectedbutton[data-coord=\"8x6\"],.chessboard>.bsquare[data-coord=\"8x6\"],.chessboard>.recent_move[data-coord=\"8x6\"],.chessboard>.recent_source[data-coord=\"8x6\"]{left:87.5%;top:62.5%}.chessboard>svg[data-coord=\"8x6\"]{left:88.125%;top:63.125%}.chessboard>button[data-coord=\"8x5\"],.chessboard>button.selectedbutton[data-coord=\"8x5\"],.chessboard>.bsquare[data-coord=\"8x5\"],.chessboard>.recent_move[data-coord=\"8x5\"],.chessboard>.recent_source[data-coord=\"8x5\"]{left:87.5%;top:50%}.chessboard>svg[data-coord=\"8x5\"]{left:88.125%;top:50.625%}.chessboard>button[data-coord=\"8x4\"],.chessboard>button.selectedbutton[data-coord=\"8x4\"],.chessboard>.bsquare[data-coord=\"8x4\"],.chessboard>.recent_move[data-coord=\"8x4\"],.chessboard>.recent_source[data-coord=\"8x4\"]{left:87.5%;top:37.5%}.chessboard>svg[data-coord=\"8x4\"]{left:88.125%;top:38.125%}.chessboard>button[data-coord=\"8x3\"],.chessboard>button.selectedbutton[data-coord=\"8x3\"],.chessboard>.bsquare[data-coord=\"8x3\"],.chessboard>.recent_move[data-coord=\"8x3\"],.chessboard>.recent_source[data-coord=\"8x3\"]{left:87.5%;top:25%}.chessboard>svg[data-coord=\"8x3\"]{left:88.125%;top:25.625%}.chessboard>button[data-coord=\"8x2\"],.chessboard>button.selectedbutton[data-coord=\"8x2\"],.chessboard>.bsquare[data-coord=\"8x2\"],.chessboard>.recent_move[data-coord=\"8x2\"],.chessboard>.recent_source[data-coord=\"8x2\"]{left:87.5%;top:12.5%}.chessboard>svg[data-coord=\"8x2\"]{left:88.125%;top:13.125%}.chessboard>button[data-coord=\"8x1\"],.chessboard>button.selectedbutton[data-coord=\"8x1\"],.chessboard>.bsquare[data-coord=\"8x1\"],.chessboard>.recent_move[data-coord=\"8x1\"],.chessboard>.recent_source[data-coord=\"8x1\"]{left:87.5%;top:0}.chessboard>svg[data-coord=\"8x1\"]{left:88.125%;top:.625%}";
 },{}],2:[function(require,module,exports){
 
 var bc={};
@@ -323,11 +323,20 @@ BoardState.fromJSON=function(bj){
   return bs;
 };
 
+var current_emit = BoardState.prototype.emit;
+
+BoardState.prototype.emit=function(evtname){
+  if(this.debug){
+    console.log(evtname,arguments);
+  }
+  return current_emit.apply(this,arguments);
+};
+
 board_util.configure();
 
 module.exports=BoardState;
 
-},{"./board_constants.js":2,"./board_state_sub/_check_all.js":4,"./board_state_sub/add_human.js":5,"./board_state_sub/browser_element.js":6,"./board_state_sub/check_check.js":7,"./board_state_sub/clone.js":8,"./board_state_sub/flip_html_board.js":9,"./board_state_sub/install_key_listeners.js":10,"./board_state_sub/perform_move.js":11,"./board_state_sub/print.js":12,"./board_state_sub/undo_move.js":13,"./board_state_sub/valid_moves.js":14,"./board_state_sub/valid_moves_by_color.js":15,"./board_state_sub/valid_moves_by_pos.js":16,"./board_util.js":17,"./piece.js":34,"./position.js":35,"assert":"assert","dcopy":29,"events":37,"path":39,"type_checker":33,"util":42}],4:[function(require,module,exports){
+},{"./board_constants.js":2,"./board_state_sub/_check_all.js":4,"./board_state_sub/add_human.js":5,"./board_state_sub/browser_element.js":6,"./board_state_sub/check_check.js":7,"./board_state_sub/clone.js":8,"./board_state_sub/flip_html_board.js":9,"./board_state_sub/install_key_listeners.js":10,"./board_state_sub/perform_move.js":11,"./board_state_sub/print.js":12,"./board_state_sub/undo_move.js":13,"./board_state_sub/valid_moves.js":14,"./board_state_sub/valid_moves_by_color.js":15,"./board_state_sub/valid_moves_by_pos.js":16,"./board_util.js":17,"./piece.js":34,"./position.js":35,"assert":"assert","dcopy":29,"events":38,"path":40,"type_checker":33,"util":43}],4:[function(require,module,exports){
 
 module.exports=function _checkall(note) {
   var me=this;
@@ -513,7 +522,7 @@ var add_human=function (color) {
 module.exports=add_human;
 
 }).call(this,require('_process'))
-},{"../board_constants.js":2,"../piece.js":34,"../position.js":35,"_process":40,"assert":"assert"}],6:[function(require,module,exports){
+},{"../board_constants.js":2,"../piece.js":34,"../position.js":35,"_process":41,"assert":"assert"}],6:[function(require,module,exports){
 (function (process){
 
 var window=(function(){return this;})();
@@ -661,7 +670,7 @@ module.exports=function browser_element(parent) {
   return hb;
 };
 }).call(this,require('_process'))
-},{"../board.less":1,"_process":40}],7:[function(require,module,exports){
+},{"../board.less":1,"_process":41}],7:[function(require,module,exports){
 var type_checker=require("type_checker");
 var board_util=require("../board_util.js");
 var assert=require("assert")
@@ -820,7 +829,7 @@ var install_key_listeners=function () {
 module.exports=install_key_listeners;
 
 
-},{"../position.js":35,"assert":"assert","keycode":43}],11:[function(require,module,exports){
+},{"../position.js":35,"assert":"assert","keycode":44}],11:[function(require,module,exports){
 var type_checker=require("type_checker");
 var board_util=require("../board_util.js");
 var assert=require("assert")
@@ -1018,7 +1027,7 @@ module.exports=function print() {
 
 
 }).call(this,require('_process'))
-},{"../board_constants.js":2,"_process":40,"colors/safe":53}],13:[function(require,module,exports){
+},{"../board_constants.js":2,"_process":41,"colors/safe":54}],13:[function(require,module,exports){
 var type_checker=require("type_checker");
 var board_util=require("../board_util.js");
 var assert=require("assert")
@@ -1238,7 +1247,7 @@ module.exports=function valid_moves_by_pos (pos,skipkingcheck) {
   return vnew;
 }
 
-},{"../position.js":35,"../valid_moves.js":36,"assert":"assert"}],17:[function(require,module,exports){
+},{"../position.js":35,"../valid_moves.js":37,"assert":"assert"}],17:[function(require,module,exports){
 
 var path=require("path")
 
@@ -1298,7 +1307,7 @@ bu.pconfig={
 
 module.exports=bu;
 
-},{"./board_constants.js":2,"./piece.js":34,"./position.js":35,"assert":"assert","path":39,"type_checker":33}],18:[function(require,module,exports){
+},{"./board_constants.js":2,"./piece.js":34,"./position.js":35,"assert":"assert","path":40,"type_checker":33}],18:[function(require,module,exports){
 (function (process){
 
 var assert=require("assert");
@@ -1665,7 +1674,7 @@ nega_max=function (bs,perspective,turn,depth,alpha,beta, cb){
 module.exports=bot;
 
 }).call(this,require('_process'))
-},{"./board_util.js":17,"./piece.js":34,"_process":40,"assert":"assert","type_checker":33}],19:[function(require,module,exports){
+},{"./board_util.js":17,"./piece.js":34,"_process":41,"assert":"assert","type_checker":33}],19:[function(require,module,exports){
 (function (process){
 
 var Picker=require("./game_picker.js")
@@ -1677,7 +1686,7 @@ var assert=require("assert")
 var piece=require("./piece.js")
 var position=require("./position.js")
 var type_checker=require("type_checker")
-
+var turn_display=require("./turn_display.js");
 
 var history_display=require("./move_history_display.js")
 
@@ -1706,6 +1715,7 @@ var append_to_body=function (bs,cb) {
   var body=document.querySelector("body");
   var be=bs.browser_element();
   
+  var t_display=new turn_display(bs);
   var mvhistory=new history_display(bs);
   
   if(cb)
@@ -1715,6 +1725,7 @@ var append_to_body=function (bs,cb) {
     if(!body)
       body=document.querySelector("body");
     body.appendChild(be);
+    t_display.attach(body);
     mvhistory.attach(body);
     if(cb){
       cb();}
@@ -1749,6 +1760,9 @@ var bot_v_bot=function () {
 
 var init_board=function (cb) {
   var bs=new BoardState()
+  
+  bs.debug=true;
+  
   window.bs=bs;
   bs.initialize();
   append_to_body(bs,function(){
@@ -1813,7 +1827,7 @@ if(process.title==="browser"){
 
 
 }).call(this,require('_process'))
-},{"./board_state.js":3,"./bot.js":18,"./game_picker.js":21,"./move_history_display.js":28,"./piece.js":34,"./position.js":35,"_process":40,"assert":"assert","type_checker":33}],20:[function(require,module,exports){
+},{"./board_state.js":3,"./bot.js":18,"./game_picker.js":21,"./move_history_display.js":28,"./piece.js":34,"./position.js":35,"./turn_display.js":36,"_process":41,"assert":"assert","type_checker":33}],20:[function(require,module,exports){
 module.exports = {"formtemplate":{"tag":"form","class":"gamestarter","name":"gamestarter","children":[{"tag":"div","class":"gamestarter_sub","children":[{"tag":"div","data-side":"white","class":"aside","child":{"tag":"h6","text":"White"}},{"tag":"div","class":"aside","data-side":"black","child":{"tag":"h6","text":"Black"}}]},{"tag":"div","class":"start_game_row","child":{"tag":"button","text":"Start","class":"start_game"}}]},"sidetemplate":[{"tag":"div","class":"button_surround","children":[{"tag":"button","child":"Human","data-is":"Human","data-become":"Bot"}]}]}
 },{}],21:[function(require,module,exports){
 (function (process){
@@ -1960,7 +1974,7 @@ Picker.prototype.expand=function () {
 module.exports=Picker;
 
 }).call(this,require('_process'))
-},{"./fstructure.yaml":20,"_process":40,"assert":"assert","events":37,"gen2015-07":31,"type_checker":33,"util":42}],22:[function(require,module,exports){
+},{"./fstructure.yaml":20,"_process":41,"assert":"assert","events":38,"gen2015-07":31,"type_checker":33,"util":43}],22:[function(require,module,exports){
 module.exports="<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\"\n  viewBox=\"0 0 202.03075 388\" xml:space=\"preserve\"\n  >\n  <path\n    transform=\"translate(-239.48463,-184.66)\"\n    style=\"stroke-width:3.88px;\"\n    d=\"m 340.5,185.21875 c 0,0 -8.33846,4.39207 -11.40625,14.375 -2.13516,6.94806 7.25934,2.7015 7.40625,9.96875 0.45244,22.38145 -35.49059,40.79736 -33.875,63.125 1.12731,15.57948 20.0632,24.62199 15.9375,39.6875 -2.70926,9.8932 -29.04675,1.16023 -28.5625,11.40625 0.39836,8.42871 19.36581,0.29766 24.28125,7.15625 20.26689,28.27869 6.75168,71.28571 -4.28125,104.28125 -7.70736,23.04994 -23.08653,44.06436 -41.4375,60 -4.82382,4.18892 -17.65195,2.1955 -17.125,8.5625 0.53422,6.45482 17.15872,-0.60419 18.5625,5.71875 2.92281,13.16498 -30.81988,13.69567 -30,27.15625 0.77913,12.79148 15.97949,16.26903 31.4375,22.125 19.14823,7.25394 45.76329,10.71875 69.0625,10.71875 23.29921,0 49.91427,-3.46481 69.0625,-10.71875 15.45801,-5.85597 30.65837,-9.33352 31.4375,-22.125 0.81988,-13.46058 -32.92281,-13.99127 -30,-27.15625 1.40378,-6.32294 18.02828,0.73607 18.5625,-5.71875 0.52695,-6.367 -12.30118,-4.37358 -17.125,-8.5625 -18.35097,-15.93564 -33.73014,-36.95006 -41.4375,-60 -11.03293,-32.99554 -24.54814,-76.00256 -4.28125,-104.28125 4.91544,-6.85859 23.88289,1.27246 24.28125,-7.15625 0.48425,-10.24602 -25.85324,-1.51305 -28.5625,-11.40625 -4.1257,-15.06551 14.81019,-24.10802 15.9375,-39.6875 0.68732,-9.4989 -5.44398,-18.28093 -12.65625,-26.96875 l -21.5,25.59375 -5.71875,-4.78125 22.3125,-26.625 c -8.36473,-9.77562 -16.52946,-19.6111 -16.3125,-30.34375 0.14691,-7.26725 9.54141,-3.02069 7.40625,-9.96875 -3.06779,-9.98293 -11.40625,-14.375 -11.40625,-14.375 z\"\n     />\n</svg>";
 },{}],23:[function(require,module,exports){
 module.exports="<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\"\n  viewBox=\"0 0 422.92255 895\" xml:space=\"preserve\"\n   >\n  <path\n    style=\"stroke-width:8.95px;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-opacity:1;stroke-dasharray:none;fill-opacity:1\"\n    transform=\"translate(-140.21214,-110.9375)\"\n    d=\"m 156.42857,980.93363 c -36.07569,-3.69605 24.33077,-48.75609 45,-65.00002 -13.83748,-10.91045 -36.30677,-8.87317 -40,-35 -1.6487,-9.16891 1.46049,-18.93256 15,-30 71.50123,-98.72126 75.16234,-213.71766 85,-335 -20.03364,-9.97898 -47.22719,-15.483 -60,-30 -2.8113,-11.02696 1.36038,-23.05148 5,-35 4.40457,-16.02184 33.33333,-30 50,-45 3.60732,-5.19024 2.00685,-17.3242 0,-30 -4.98028,-43.23993 -13.92774,-85.54641 -35,-125 24.93411,-28.4157 76.33169,-23.75205 115,-35 l 0,-50 -35,0 0,-30 35,0 0,-20 15.25,-5e-5 15.25,-6e-5 0,20 35,0 0,30 -35,0 0,50 c 38.66831,11.24795 90.06589,6.5843 115,35 -21.07226,39.45359 -30.01972,81.76007 -35,125 -2.00685,12.6758 -3.60732,24.80976 0,30 16.66667,15 45.59543,28.97816 50,45 3.63962,11.94852 7.8113,23.97304 5,35 -12.77281,14.517 -39.96636,20.02102 -60,30 9.83766,121.28234 13.49877,236.27874 85,335 13.53951,11.06744 16.6487,20.83109 15,30 -3.69323,26.12683 -26.16252,24.08955 -40,35 20.66923,16.24393 81.0758,61.30407 45,65.00013 0,0 -129.82598,20.00387 -195.25,20.00387 -65.42402,0 -195.25,-20.00387 -195.25,-20.00387 z\"\n  />\n</svg>";
@@ -2004,12 +2018,8 @@ var d_history=function (bs) {
 };
 
 d_history.prototype.attach=function (parent) {
-  // console.log("before mvh ",parent.childNodes[0])
   var me=this;
-  // process.nextTick(function () {
     parent.appendChild(me.div);
-    // assert(parent.childNodes[1]===me.div)
-  // });
   return;
 };
 d_history.prototype.detach=function (parent) {
@@ -4243,6 +4253,53 @@ position.prototype.inspect=function () {
 
 module.exports=position;
 },{"assert":"assert","type_checker":33}],36:[function(require,module,exports){
+(function (process){
+
+var window=(function(){return this;})();
+var document=window.document;
+var assert=require('assert')
+
+var d_turn=function (bs) {
+  
+  var div=this.div=document.createElement("div");
+  div.className="turn_display";
+  
+  var turn_title=document.createElement("h6");
+  turn_title.appendChild(document.createTextNode("Turn"))
+  
+  
+  var tdisplay=this.tdisplay=document.createElement("div");
+  
+  [turn_title,tdisplay].forEach(function (e) {
+    div.appendChild(e);
+  })
+  // div.appendChild();
+  
+  var update=function () {
+    var turn = bs.turn.toString();
+    turn = turn.substr(0,1).toUpperCase()+turn.substr(1).toLowerCase();
+    tdisplay.innerHTML="";
+    tdisplay.appendChild(document.createTextNode(turn));
+  };
+  // bs.on("initialize",update);
+  bs.on("movedesc",update);
+  bs.on("animated",update);
+  process.nextTick(update);
+};
+
+d_turn.prototype.attach=function (parent) {
+  var me=this;
+    parent.appendChild(me.div);
+  return;
+};
+d_turn.prototype.detach=function (parent) {
+  return parent.removeChild(this.div);
+};
+
+module.exports=d_turn;
+
+}).call(this,require('_process'))
+},{"_process":41,"assert":"assert"}],37:[function(require,module,exports){
 
 
 var board_util=require("./board_util.js")
@@ -4653,7 +4710,7 @@ vmoves.knight=function (bs,piece) {
 
 module.exports=vmoves;
 
-},{"./board_util.js":17,"./position.js":35,"assert":"assert","type_checker":33}],37:[function(require,module,exports){
+},{"./board_util.js":17,"./position.js":35,"assert":"assert","type_checker":33}],38:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -4956,7 +5013,7 @@ function isUndefined(arg) {
   return arg === void 0;
 }
 
-},{}],38:[function(require,module,exports){
+},{}],39:[function(require,module,exports){
 if (typeof Object.create === 'function') {
   // implementation from standard node.js 'util' module
   module.exports = function inherits(ctor, superCtor) {
@@ -4981,7 +5038,7 @@ if (typeof Object.create === 'function') {
   }
 }
 
-},{}],39:[function(require,module,exports){
+},{}],40:[function(require,module,exports){
 (function (process){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -5209,7 +5266,7 @@ var substr = 'ab'.substr(-1) === 'b'
 ;
 
 }).call(this,require('_process'))
-},{"_process":40}],40:[function(require,module,exports){
+},{"_process":41}],41:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -5301,14 +5358,14 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],41:[function(require,module,exports){
+},{}],42:[function(require,module,exports){
 module.exports = function isBuffer(arg) {
   return arg && typeof arg === 'object'
     && typeof arg.copy === 'function'
     && typeof arg.fill === 'function'
     && typeof arg.readUInt8 === 'function';
 }
-},{}],42:[function(require,module,exports){
+},{}],43:[function(require,module,exports){
 (function (process,global){
 // Copyright Joyent, Inc. and other Node contributors.
 //
@@ -5898,7 +5955,7 @@ function hasOwnProperty(obj, prop) {
 }
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
-},{"./support/isBuffer":41,"_process":40,"inherits":38}],43:[function(require,module,exports){
+},{"./support/isBuffer":42,"_process":41,"inherits":39}],44:[function(require,module,exports){
 // Source: http://jsfiddle.net/vWx8V/
 // http://stackoverflow.com/questions/5603195/full-list-of-javascript-keycodes
 
@@ -6047,7 +6104,7 @@ for (var alias in aliases) {
   codes[alias] = aliases[alias]
 }
 
-},{}],44:[function(require,module,exports){
+},{}],45:[function(require,module,exports){
 /*
 
 The MIT License (MIT)
@@ -6235,7 +6292,7 @@ for (var map in colors.maps) {
 }
 
 defineProps(colors, init());
-},{"./custom/trap":45,"./custom/zalgo":46,"./maps/america":47,"./maps/rainbow":48,"./maps/random":49,"./maps/zebra":50,"./styles":51,"./system/supports-colors":52}],45:[function(require,module,exports){
+},{"./custom/trap":46,"./custom/zalgo":47,"./maps/america":48,"./maps/rainbow":49,"./maps/random":50,"./maps/zebra":51,"./styles":52,"./system/supports-colors":53}],46:[function(require,module,exports){
 module['exports'] = function runTheTrap (text, options) {
   var result = "";
   text = text || "Run the trap, drop the bass";
@@ -6282,7 +6339,7 @@ module['exports'] = function runTheTrap (text, options) {
 
 }
 
-},{}],46:[function(require,module,exports){
+},{}],47:[function(require,module,exports){
 // please no
 module['exports'] = function zalgo(text, options) {
   text = text || "   he is here   ";
@@ -6388,7 +6445,7 @@ module['exports'] = function zalgo(text, options) {
   return heComes(text, options);
 }
 
-},{}],47:[function(require,module,exports){
+},{}],48:[function(require,module,exports){
 var colors = require('../colors');
 
 module['exports'] = (function() {
@@ -6401,7 +6458,7 @@ module['exports'] = (function() {
     }
   }
 })();
-},{"../colors":44}],48:[function(require,module,exports){
+},{"../colors":45}],49:[function(require,module,exports){
 var colors = require('../colors');
 
 module['exports'] = (function () {
@@ -6416,7 +6473,7 @@ module['exports'] = (function () {
 })();
 
 
-},{"../colors":44}],49:[function(require,module,exports){
+},{"../colors":45}],50:[function(require,module,exports){
 var colors = require('../colors');
 
 module['exports'] = (function () {
@@ -6425,13 +6482,13 @@ module['exports'] = (function () {
     return letter === " " ? letter : colors[available[Math.round(Math.random() * (available.length - 1))]](letter);
   };
 })();
-},{"../colors":44}],50:[function(require,module,exports){
+},{"../colors":45}],51:[function(require,module,exports){
 var colors = require('../colors');
 
 module['exports'] = function (letter, i, exploded) {
   return i % 2 === 0 ? letter : colors.inverse(letter);
 };
-},{"../colors":44}],51:[function(require,module,exports){
+},{"../colors":45}],52:[function(require,module,exports){
 /*
 The MIT License (MIT)
 
@@ -6509,7 +6566,7 @@ Object.keys(codes).forEach(function (key) {
   style.open = '\u001b[' + val[0] + 'm';
   style.close = '\u001b[' + val[1] + 'm';
 });
-},{}],52:[function(require,module,exports){
+},{}],53:[function(require,module,exports){
 (function (process){
 /*
 The MIT License (MIT)
@@ -6573,7 +6630,7 @@ module.exports = (function () {
   return false;
 })();
 }).call(this,require('_process'))
-},{"_process":40}],53:[function(require,module,exports){
+},{"_process":41}],54:[function(require,module,exports){
 //
 // Remark: Requiring this file will use the "safe" colors API which will not touch String.prototype
 //
@@ -6583,6 +6640,6 @@ module.exports = (function () {
 //
 var colors = require('./lib/colors');
 module['exports'] = colors;
-},{"./lib/colors":44}],"assert":[function(require,module,exports){
+},{"./lib/colors":45}],"assert":[function(require,module,exports){
 module.exports=function (test,msg) {if(!test)throw new Error("Assertion Error"+(typeof msg==typeof ""? ": "+msg : ""));};
 },{}]},{},[19]);

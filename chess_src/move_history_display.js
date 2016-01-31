@@ -29,12 +29,8 @@ var d_history=function (bs) {
 };
 
 d_history.prototype.attach=function (parent) {
-  // console.log("before mvh ",parent.childNodes[0])
   var me=this;
-  // process.nextTick(function () {
     parent.appendChild(me.div);
-    // assert(parent.childNodes[1]===me.div)
-  // });
   return;
 };
 d_history.prototype.detach=function (parent) {
