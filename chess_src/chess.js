@@ -79,13 +79,24 @@ var bot_v_bot=function () {
     };
   });
 }
-
+var use_debug=function(){
+  var loc = window.location;
+  if(!loc)
+    return true;
+  var hnm = loc.hostname;
+  if(!hnm)
+    return true;
+  if(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/gi.test(hnm))
+    return true;
+  return false;
+};
 var init_board=function (cb) {
   var bs=new BoardState()
   
-  bs.debug=true;
-  
-  window.bs=bs;
+  if(use_debug()){
+    bs.debug=true;
+    window.bs=bs;
+  }
   bs.initialize();
   append_to_body(bs,function(){
     cb(bs);
