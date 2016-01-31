@@ -15,21 +15,6 @@ var history_display=require("./move_history_display.js")
 var pickrandom=function(arr){
   return arr[Math.floor(Math.random()*arr.length)]
 };
-
-var play_human_v_human=function () {
-  var bs=new BoardState();
-  window.bs=bs;
-  bs.initialize();
-  
-
-  var body=document.querySelector("body");
-  
-  append_to_body(bs,function () {
-    bs.install_key_listeners();
-    bs.add_human("white");
-    bs.add_human("black");
-  });
-};
 var append_to_body=function (bs,cb) {
   
   var window=(function(){return this;})();
@@ -60,33 +45,20 @@ var append_to_body=function (bs,cb) {
   return be;
 };
 
-var bot_v_bot=function () {
-  var bs=new BoardState()
-  window.bs=bs;
-  bs.initialize();
-  
-  bs.on("movedesc",function(mtxt,mdesc,mnot){
-    console.log(mnot+"   "+mtxt);
-  })
-  
-  assert(process.title=="browser")
-  append_to_body(bs,function () {
-    var bone=new bot(bs,"white");
-    var btwo=new bot(bs,"black");
-    window.stopbots=function () {
-      bone.stop();
-      btwo.stop();
-    };
-  });
-}
-var use_debug=function(){
+var use_debug;
+use_debug=function(){
+  if(!("result" in use_debug))
+    use_debug.result = use_debug.test();
+  return use_debug.result;
+};
+use_debut.test=function(){
   var loc = window.location;
   if(!loc)
     return true;
   var hnm = loc.hostname;
   if(!hnm)
     return true;
-  if(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}/gi.test(hnm))
+  if(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/gi.test(hnm))
     return true;
   return false;
 };
@@ -103,31 +75,14 @@ var init_board=function (cb) {
   });
 };
 
-var play_bot=function () {
-  
-  assert(process.title=="browser");
-  append_to_body(bs,function () {
-    bs.install_key_listeners();
-    bs.add_human("white");
-    var bt=new bot(bs,"black");
-  });
-}
-var playrand=function () {
-  var bs=new BoardState()
-  window.bs=bs;
-  bs.initialize();
-  if(process.title=="browser"){
-    process.nextTick(play_rand_inbrowser.bind(this,bs))
-  }
-}
-
 if(process.title==="browser"){
   var pdiv=document.createElement("div");
   var p=new Picker(pdiv);
   var inited=false;
   var bs=null;
   p.on("start",function (desc) {
-    console.log(desc,inited,bs)
+    if(use_debug())
+      console.log(desc,inited,bs)
     if(!inited)
       return;
     var keylistenersset=false;
