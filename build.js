@@ -44,7 +44,7 @@ var continuous=function () {
     
     wb.on("error",function (err) {
       info.error=err;
-      fw.writeFile(outfile,"console.error("+JSON.stringify(String(err))+");",logerr);
+      fs.writeFile(outfile,"console.error("+JSON.stringify(String(err))+");",logerr);
       console.error(String(err));
     });
     wb.on("data",function (buf) {
