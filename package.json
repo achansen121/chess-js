@@ -18,7 +18,11 @@
     "recurse_watch": "https://github.com/achansen121/nd_recurse_watch.git",
     "type_checker": "https://github.com/achansen121/node-type_checker.git"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
