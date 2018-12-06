@@ -6,6 +6,7 @@
   "dependencies": {
     "brfs": "^1.4.0",
     "browserify-data": "^0.2.0",
+    "colors": "^1.3.2",
     "css": "^2.2.1",
     "dcopy": "file:my_modules/dcopy",
     "gen2015-07": "file:my_modules/gen2015-07",

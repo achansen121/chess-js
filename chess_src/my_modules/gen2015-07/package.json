@@ -5,7 +5,7 @@
   "main": "index.js",
   "dependencies": {
     "es5-shim": "^4.1.10",
-    "type_checker": "^1.0.0"
+    "type_checker": "../type_checker"
   },
   "devDependencies": {},
   "scripts": {
