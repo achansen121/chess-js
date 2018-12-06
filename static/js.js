@@ -1,4 +1,4 @@
-require=(function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+require=(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports = ".gamestarter{max-width:750px;font-family:sans-serif;transition:1s all}.gamestarter .button_surround,.gamestarter .start_game_row{transition:1s all;margin-bottom:2em;overflow:hidden}.gamestarter .aside{width:50%;display:inline-block;text-align:center}.gamestarter .aside h6{font-size:100%;margin:1em}.gamestarter .aside button{margin:1em}.gamestarter button{color:white;background:black;padding:4px 10px;border-radius:4px;outline:0;border:1px solid black;cursor:pointer;font-weight:bold;transition:.5s all;min-width:75px;text-align:center}.gamestarter button:hover{background:white;color:black}.gamestarter button:focus{border-color:turquoise}.gamestarter .start_game_row{text-align:center}.move_history,.turn_display{font-family:sans-serif;display:inline-block;margin:1em;vertical-align:top}.move_history h6,.turn_display h6{font-size:120%;margin:0;margin-bottom:.5em;font-weight:normal}.turn_display{min-width:5em;text-align:center}.turn_display>div{font-weight:bold}.move_history>div{height:20em;overflow-y:scroll;min-width:10em;border:1px solid black;padding:.5em;font-family:monospace}.chessboard{width:750px;height:750px;position:relative;display:inline-block}.chessboard>.bsquare.odd{background:#ff8037}.chessboard>.bsquare.even{background:#ffffc8}.chessboard>.bsquare{width:12.5%;height:12.5%;position:absolute}.chessboard>.recent_move,.chessboard>.recent_source{width:93.75px;height:93.75px;position:absolute}.chessboard>.recent_move>div,.chessboard>.recent_source>div{border:5px solid green;position:absolute;top:0;bottom:0;left:0;right:0}.chessboard>.recent_source>div{border-color:#0f0}.chessboard>svg{position:absolute;z-index:1;width:11.25%;height:11.25%}.chessboard svg path,.chessboard svg circle,.chessboard svg rect{fill:white;stroke:black}.chessboard svg.black path,.chessboard svg.black circle,.chessboard svg.black rect{fill:black;stroke:white}.chessboard>button{position:absolute;z-index:2;cursor:pointer;padding:0;background:none;border:none;width:12.5%;height:12.5%}.chessboard>button.selectedbutton>div{position:absolute;top:10%;bottom:10%;left:10%;right:10%;border:3px solid black;border-radius:50%}.chessboard>button.selectedbutton.nil{border:3px solid black;width:12.5%;height:12.5%;z-index:3}.chessboard>button.selectedbutton.nil:focus{border-width:6px;outline:0}.chessboard>button.selectedbutton.nil.invalidmove{border-color:red}.chessboard button:focus,.chessboard div[role=\"button\"]:focus{outline:0}.chessboard .promotion{width:50%;position:absolute;background:white;top:37.5%;left:25%;border-radius:5px;border:1px solid black;z-index:-5;padding:1em;font-family:sans-serif}.chessboard .promotion svg{height:3em}.chessboard .promotion .promotray{text-align:center}.chessboard .promotion div[role=\"button\"]{vertical-align:middle;cursor:pointer;display:inline-block;margin:1em;border:1px solid rgba(255,255,255,0);border-radius:5px}.chessboard .promotion div[role=\"button\"]:hover{border-color:black}.chessboard>button[data-coord=\"1x8\"],.chessboard>button.selectedbutton[data-coord=\"1x8\"],.chessboard>.bsquare[data-coord=\"1x8\"],.chessboard>.recent_move[data-coord=\"1x8\"],.chessboard>.recent_source[data-coord=\"1x8\"]{left:0;top:87.5%}.chessboard>svg[data-coord=\"1x8\"]{left:.625%;top:88.125%}.chessboard>button[data-coord=\"1x7\"],.chessboard>button.selectedbutton[data-coord=\"1x7\"],.chessboard>.bsquare[data-coord=\"1x7\"],.chessboard>.recent_move[data-coord=\"1x7\"],.chessboard>.recent_source[data-coord=\"1x7\"]{left:0;top:75%}.chessboard>svg[data-coord=\"1x7\"]{left:.625%;top:75.625%}.chessboard>button[data-coord=\"1x6\"],.chessboard>button.selectedbutton[data-coord=\"1x6\"],.chessboard>.bsquare[data-coord=\"1x6\"],.chessboard>.recent_move[data-coord=\"1x6\"],.chessboard>.recent_source[data-coord=\"1x6\"]{left:0;top:62.5%}.chessboard>svg[data-coord=\"1x6\"]{left:.625%;top:63.125%}.chessboard>button[data-coord=\"1x5\"],.chessboard>button.selectedbutton[data-coord=\"1x5\"],.chessboard>.bsquare[data-coord=\"1x5\"],.chessboard>.recent_move[data-coord=\"1x5\"],.chessboard>.recent_source[data-coord=\"1x5\"]{left:0;top:50%}.chessboard>svg[data-coord=\"1x5\"]{left:.625%;top:50.625%}.chessboard>button[data-coord=\"1x4\"],.chessboard>button.selectedbutton[data-coord=\"1x4\"],.chessboard>.bsquare[data-coord=\"1x4\"],.chessboard>.recent_move[data-coord=\"1x4\"],.chessboard>.recent_source[data-coord=\"1x4\"]{left:0;top:37.5%}.chessboard>svg[data-coord=\"1x4\"]{left:.625%;top:38.125%}.chessboard>button[data-coord=\"1x3\"],.chessboard>button.selectedbutton[data-coord=\"1x3\"],.chessboard>.bsquare[data-coord=\"1x3\"],.chessboard>.recent_move[data-coord=\"1x3\"],.chessboard>.recent_source[data-coord=\"1x3\"]{left:0;top:25%}.chessboard>svg[data-coord=\"1x3\"]{left:.625%;top:25.625%}.chessboard>button[data-coord=\"1x2\"],.chessboard>button.selectedbutton[data-coord=\"1x2\"],.chessboard>.bsquare[data-coord=\"1x2\"],.chessboard>.recent_move[data-coord=\"1x2\"],.chessboard>.recent_source[data-coord=\"1x2\"]{left:0;top:12.5%}.chessboard>svg[data-coord=\"1x2\"]{left:.625%;top:13.125%}.chessboard>button[data-coord=\"1x1\"],.chessboard>button.selectedbutton[data-coord=\"1x1\"],.chessboard>.bsquare[data-coord=\"1x1\"],.chessboard>.recent_move[data-coord=\"1x1\"],.chessboard>.recent_source[data-coord=\"1x1\"]{left:0;top:0}.chessboard>svg[data-coord=\"1x1\"]{left:.625%;top:.625%}.chessboard>button[data-coord=\"2x8\"],.chessboard>button.selectedbutton[data-coord=\"2x8\"],.chessboard>.bsquare[data-coord=\"2x8\"],.chessboard>.recent_move[data-coord=\"2x8\"],.chessboard>.recent_source[data-coord=\"2x8\"]{left:12.5%;top:87.5%}.chessboard>svg[data-coord=\"2x8\"]{left:13.125%;top:88.125%}.chessboard>button[data-coord=\"2x7\"],.chessboard>button.selectedbutton[data-coord=\"2x7\"],.chessboard>.bsquare[data-coord=\"2x7\"],.chessboard>.recent_move[data-coord=\"2x7\"],.chessboard>.recent_source[data-coord=\"2x7\"]{left:12.5%;top:75%}.chessboard>svg[data-coord=\"2x7\"]{left:13.125%;top:75.625%}.chessboard>button[data-coord=\"2x6\"],.chessboard>button.selectedbutton[data-coord=\"2x6\"],.chessboard>.bsquare[data-coord=\"2x6\"],.chessboard>.recent_move[data-coord=\"2x6\"],.chessboard>.recent_source[data-coord=\"2x6\"]{left:12.5%;top:62.5%}.chessboard>svg[data-coord=\"2x6\"]{left:13.125%;top:63.125%}.chessboard>button[data-coord=\"2x5\"],.chessboard>button.selectedbutton[data-coord=\"2x5\"],.chessboard>.bsquare[data-coord=\"2x5\"],.chessboard>.recent_move[data-coord=\"2x5\"],.chessboard>.recent_source[data-coord=\"2x5\"]{left:12.5%;top:50%}.chessboard>svg[data-coord=\"2x5\"]{left:13.125%;top:50.625%}.chessboard>button[data-coord=\"2x4\"],.chessboard>button.selectedbutton[data-coord=\"2x4\"],.chessboard>.bsquare[data-coord=\"2x4\"],.chessboard>.recent_move[data-coord=\"2x4\"],.chessboard>.recent_source[data-coord=\"2x4\"]{left:12.5%;top:37.5%}.chessboard>svg[data-coord=\"2x4\"]{left:13.125%;top:38.125%}.chessboard>button[data-coord=\"2x3\"],.chessboard>button.selectedbutton[data-coord=\"2x3\"],.chessboard>.bsquare[data-coord=\"2x3\"],.chessboard>.recent_move[data-coord=\"2x3\"],.chessboard>.recent_source[data-coord=\"2x3\"]{left:12.5%;top:25%}.chessboard>svg[data-coord=\"2x3\"]{left:13.125%;top:25.625%}.chessboard>button[data-coord=\"2x2\"],.chessboard>button.selectedbutton[data-coord=\"2x2\"],.chessboard>.bsquare[data-coord=\"2x2\"],.chessboard>.recent_move[data-coord=\"2x2\"],.chessboard>.recent_source[data-coord=\"2x2\"]{left:12.5%;top:12.5%}.chessboard>svg[data-coord=\"2x2\"]{left:13.125%;top:13.125%}.chessboard>button[data-coord=\"2x1\"],.chessboard>button.selectedbutton[data-coord=\"2x1\"],.chessboard>.bsquare[data-coord=\"2x1\"],.chessboard>.recent_move[data-coord=\"2x1\"],.chessboard>.recent_source[data-coord=\"2x1\"]{left:12.5%;top:0}.chessboard>svg[data-coord=\"2x1\"]{left:13.125%;top:.625%}.chessboard>button[data-coord=\"3x8\"],.chessboard>button.selectedbutton[data-coord=\"3x8\"],.chessboard>.bsquare[data-coord=\"3x8\"],.chessboard>.recent_move[data-coord=\"3x8\"],.chessboard>.recent_source[data-coord=\"3x8\"]{left:25%;top:87.5%}.chessboard>svg[data-coord=\"3x8\"]{left:25.625%;top:88.125%}.chessboard>button[data-coord=\"3x7\"],.chessboard>button.selectedbutton[data-coord=\"3x7\"],.chessboard>.bsquare[data-coord=\"3x7\"],.chessboard>.recent_move[data-coord=\"3x7\"],.chessboard>.recent_source[data-coord=\"3x7\"]{left:25%;top:75%}.chessboard>svg[data-coord=\"3x7\"]{left:25.625%;top:75.625%}.chessboard>button[data-coord=\"3x6\"],.chessboard>button.selectedbutton[data-coord=\"3x6\"],.chessboard>.bsquare[data-coord=\"3x6\"],.chessboard>.recent_move[data-coord=\"3x6\"],.chessboard>.recent_source[data-coord=\"3x6\"]{left:25%;top:62.5%}.chessboard>svg[data-coord=\"3x6\"]{left:25.625%;top:63.125%}.chessboard>button[data-coord=\"3x5\"],.chessboard>button.selectedbutton[data-coord=\"3x5\"],.chessboard>.bsquare[data-coord=\"3x5\"],.chessboard>.recent_move[data-coord=\"3x5\"],.chessboard>.recent_source[data-coord=\"3x5\"]{left:25%;top:50%}.chessboard>svg[data-coord=\"3x5\"]{left:25.625%;top:50.625%}.chessboard>button[data-coord=\"3x4\"],.chessboard>button.selectedbutton[data-coord=\"3x4\"],.chessboard>.bsquare[data-coord=\"3x4\"],.chessboard>.recent_move[data-coord=\"3x4\"],.chessboard>.recent_source[data-coord=\"3x4\"]{left:25%;top:37.5%}.chessboard>svg[data-coord=\"3x4\"]{left:25.625%;top:38.125%}.chessboard>button[data-coord=\"3x3\"],.chessboard>button.selectedbutton[data-coord=\"3x3\"],.chessboard>.bsquare[data-coord=\"3x3\"],.chessboard>.recent_move[data-coord=\"3x3\"],.chessboard>.recent_source[data-coord=\"3x3\"]{left:25%;top:25%}.chessboard>svg[data-coord=\"3x3\"]{left:25.625%;top:25.625%}.chessboard>button[data-coord=\"3x2\"],.chessboard>button.selectedbutton[data-coord=\"3x2\"],.chessboard>.bsquare[data-coord=\"3x2\"],.chessboard>.recent_move[data-coord=\"3x2\"],.chessboard>.recent_source[data-coord=\"3x2\"]{left:25%;top:12.5%}.chessboard>svg[data-coord=\"3x2\"]{left:25.625%;top:13.125%}.chessboard>button[data-coord=\"3x1\"],.chessboard>button.selectedbutton[data-coord=\"3x1\"],.chessboard>.bsquare[data-coord=\"3x1\"],.chessboard>.recent_move[data-coord=\"3x1\"],.chessboard>.recent_source[data-coord=\"3x1\"]{left:25%;top:0}.chessboard>svg[data-coord=\"3x1\"]{left:25.625%;top:.625%}.chessboard>button[data-coord=\"4x8\"],.chessboard>button.selectedbutton[data-coord=\"4x8\"],.chessboard>.bsquare[data-coord=\"4x8\"],.chessboard>.recent_move[data-coord=\"4x8\"],.chessboard>.recent_source[data-coord=\"4x8\"]{left:37.5%;top:87.5%}.chessboard>svg[data-coord=\"4x8\"]{left:38.125%;top:88.125%}.chessboard>button[data-coord=\"4x7\"],.chessboard>button.selectedbutton[data-coord=\"4x7\"],.chessboard>.bsquare[data-coord=\"4x7\"],.chessboard>.recent_move[data-coord=\"4x7\"],.chessboard>.recent_source[data-coord=\"4x7\"]{left:37.5%;top:75%}.chessboard>svg[data-coord=\"4x7\"]{left:38.125%;top:75.625%}.chessboard>button[data-coord=\"4x6\"],.chessboard>button.selectedbutton[data-coord=\"4x6\"],.chessboard>.bsquare[data-coord=\"4x6\"],.chessboard>.recent_move[data-coord=\"4x6\"],.chessboard>.recent_source[data-coord=\"4x6\"]{left:37.5%;top:62.5%}.chessboard>svg[data-coord=\"4x6\"]{left:38.125%;top:63.125%}.chessboard>button[data-coord=\"4x5\"],.chessboard>button.selectedbutton[data-coord=\"4x5\"],.chessboard>.bsquare[data-coord=\"4x5\"],.chessboard>.recent_move[data-coord=\"4x5\"],.chessboard>.recent_source[data-coord=\"4x5\"]{left:37.5%;top:50%}.chessboard>svg[data-coord=\"4x5\"]{left:38.125%;top:50.625%}.chessboard>button[data-coord=\"4x4\"],.chessboard>button.selectedbutton[data-coord=\"4x4\"],.chessboard>.bsquare[data-coord=\"4x4\"],.chessboard>.recent_move[data-coord=\"4x4\"],.chessboard>.recent_source[data-coord=\"4x4\"]{left:37.5%;top:37.5%}.chessboard>svg[data-coord=\"4x4\"]{left:38.125%;top:38.125%}.chessboard>button[data-coord=\"4x3\"],.chessboard>button.selectedbutton[data-coord=\"4x3\"],.chessboard>.bsquare[data-coord=\"4x3\"],.chessboard>.recent_move[data-coord=\"4x3\"],.chessboard>.recent_source[data-coord=\"4x3\"]{left:37.5%;top:25%}.chessboard>svg[data-coord=\"4x3\"]{left:38.125%;top:25.625%}.chessboard>button[data-coord=\"4x2\"],.chessboard>button.selectedbutton[data-coord=\"4x2\"],.chessboard>.bsquare[data-coord=\"4x2\"],.chessboard>.recent_move[data-coord=\"4x2\"],.chessboard>.recent_source[data-coord=\"4x2\"]{left:37.5%;top:12.5%}.chessboard>svg[data-coord=\"4x2\"]{left:38.125%;top:13.125%}.chessboard>button[data-coord=\"4x1\"],.chessboard>button.selectedbutton[data-coord=\"4x1\"],.chessboard>.bsquare[data-coord=\"4x1\"],.chessboard>.recent_move[data-coord=\"4x1\"],.chessboard>.recent_source[data-coord=\"4x1\"]{left:37.5%;top:0}.chessboard>svg[data-coord=\"4x1\"]{left:38.125%;top:.625%}.chessboard>button[data-coord=\"5x8\"],.chessboard>button.selectedbutton[data-coord=\"5x8\"],.chessboard>.bsquare[data-coord=\"5x8\"],.chessboard>.recent_move[data-coord=\"5x8\"],.chessboard>.recent_source[data-coord=\"5x8\"]{left:50%;top:87.5%}.chessboard>svg[data-coord=\"5x8\"]{left:50.625%;top:88.125%}.chessboard>button[data-coord=\"5x7\"],.chessboard>button.selectedbutton[data-coord=\"5x7\"],.chessboard>.bsquare[data-coord=\"5x7\"],.chessboard>.recent_move[data-coord=\"5x7\"],.chessboard>.recent_source[data-coord=\"5x7\"]{left:50%;top:75%}.chessboard>svg[data-coord=\"5x7\"]{left:50.625%;top:75.625%}.chessboard>button[data-coord=\"5x6\"],.chessboard>button.selectedbutton[data-coord=\"5x6\"],.chessboard>.bsquare[data-coord=\"5x6\"],.chessboard>.recent_move[data-coord=\"5x6\"],.chessboard>.recent_source[data-coord=\"5x6\"]{left:50%;top:62.5%}.chessboard>svg[data-coord=\"5x6\"]{left:50.625%;top:63.125%}.chessboard>button[data-coord=\"5x5\"],.chessboard>button.selectedbutton[data-coord=\"5x5\"],.chessboard>.bsquare[data-coord=\"5x5\"],.chessboard>.recent_move[data-coord=\"5x5\"],.chessboard>.recent_source[data-coord=\"5x5\"]{left:50%;top:50%}.chessboard>svg[data-coord=\"5x5\"]{left:50.625%;top:50.625%}.chessboard>button[data-coord=\"5x4\"],.chessboard>button.selectedbutton[data-coord=\"5x4\"],.chessboard>.bsquare[data-coord=\"5x4\"],.chessboard>.recent_move[data-coord=\"5x4\"],.chessboard>.recent_source[data-coord=\"5x4\"]{left:50%;top:37.5%}.chessboard>svg[data-coord=\"5x4\"]{left:50.625%;top:38.125%}.chessboard>button[data-coord=\"5x3\"],.chessboard>button.selectedbutton[data-coord=\"5x3\"],.chessboard>.bsquare[data-coord=\"5x3\"],.chessboard>.recent_move[data-coord=\"5x3\"],.chessboard>.recent_source[data-coord=\"5x3\"]{left:50%;top:25%}.chessboard>svg[data-coord=\"5x3\"]{left:50.625%;top:25.625%}.chessboard>button[data-coord=\"5x2\"],.chessboard>button.selectedbutton[data-coord=\"5x2\"],.chessboard>.bsquare[data-coord=\"5x2\"],.chessboard>.recent_move[data-coord=\"5x2\"],.chessboard>.recent_source[data-coord=\"5x2\"]{left:50%;top:12.5%}.chessboard>svg[data-coord=\"5x2\"]{left:50.625%;top:13.125%}.chessboard>button[data-coord=\"5x1\"],.chessboard>button.selectedbutton[data-coord=\"5x1\"],.chessboard>.bsquare[data-coord=\"5x1\"],.chessboard>.recent_move[data-coord=\"5x1\"],.chessboard>.recent_source[data-coord=\"5x1\"]{left:50%;top:0}.chessboard>svg[data-coord=\"5x1\"]{left:50.625%;top:.625%}.chessboard>button[data-coord=\"6x8\"],.chessboard>button.selectedbutton[data-coord=\"6x8\"],.chessboard>.bsquare[data-coord=\"6x8\"],.chessboard>.recent_move[data-coord=\"6x8\"],.chessboard>.recent_source[data-coord=\"6x8\"]{left:62.5%;top:87.5%}.chessboard>svg[data-coord=\"6x8\"]{left:63.125%;top:88.125%}.chessboard>button[data-coord=\"6x7\"],.chessboard>button.selectedbutton[data-coord=\"6x7\"],.chessboard>.bsquare[data-coord=\"6x7\"],.chessboard>.recent_move[data-coord=\"6x7\"],.chessboard>.recent_source[data-coord=\"6x7\"]{left:62.5%;top:75%}.chessboard>svg[data-coord=\"6x7\"]{left:63.125%;top:75.625%}.chessboard>button[data-coord=\"6x6\"],.chessboard>button.selectedbutton[data-coord=\"6x6\"],.chessboard>.bsquare[data-coord=\"6x6\"],.chessboard>.recent_move[data-coord=\"6x6\"],.chessboard>.recent_source[data-coord=\"6x6\"]{left:62.5%;top:62.5%}.chessboard>svg[data-coord=\"6x6\"]{left:63.125%;top:63.125%}.chessboard>button[data-coord=\"6x5\"],.chessboard>button.selectedbutton[data-coord=\"6x5\"],.chessboard>.bsquare[data-coord=\"6x5\"],.chessboard>.recent_move[data-coord=\"6x5\"],.chessboard>.recent_source[data-coord=\"6x5\"]{left:62.5%;top:50%}.chessboard>svg[data-coord=\"6x5\"]{left:63.125%;top:50.625%}.chessboard>button[data-coord=\"6x4\"],.chessboard>button.selectedbutton[data-coord=\"6x4\"],.chessboard>.bsquare[data-coord=\"6x4\"],.chessboard>.recent_move[data-coord=\"6x4\"],.chessboard>.recent_source[data-coord=\"6x4\"]{left:62.5%;top:37.5%}.chessboard>svg[data-coord=\"6x4\"]{left:63.125%;top:38.125%}.chessboard>button[data-coord=\"6x3\"],.chessboard>button.selectedbutton[data-coord=\"6x3\"],.chessboard>.bsquare[data-coord=\"6x3\"],.chessboard>.recent_move[data-coord=\"6x3\"],.chessboard>.recent_source[data-coord=\"6x3\"]{left:62.5%;top:25%}.chessboard>svg[data-coord=\"6x3\"]{left:63.125%;top:25.625%}.chessboard>button[data-coord=\"6x2\"],.chessboard>button.selectedbutton[data-coord=\"6x2\"],.chessboard>.bsquare[data-coord=\"6x2\"],.chessboard>.recent_move[data-coord=\"6x2\"],.chessboard>.recent_source[data-coord=\"6x2\"]{left:62.5%;top:12.5%}.chessboard>svg[data-coord=\"6x2\"]{left:63.125%;top:13.125%}.chessboard>button[data-coord=\"6x1\"],.chessboard>button.selectedbutton[data-coord=\"6x1\"],.chessboard>.bsquare[data-coord=\"6x1\"],.chessboard>.recent_move[data-coord=\"6x1\"],.chessboard>.recent_source[data-coord=\"6x1\"]{left:62.5%;top:0}.chessboard>svg[data-coord=\"6x1\"]{left:63.125%;top:.625%}.chessboard>button[data-coord=\"7x8\"],.chessboard>button.selectedbutton[data-coord=\"7x8\"],.chessboard>.bsquare[data-coord=\"7x8\"],.chessboard>.recent_move[data-coord=\"7x8\"],.chessboard>.recent_source[data-coord=\"7x8\"]{left:75%;top:87.5%}.chessboard>svg[data-coord=\"7x8\"]{left:75.625%;top:88.125%}.chessboard>button[data-coord=\"7x7\"],.chessboard>button.selectedbutton[data-coord=\"7x7\"],.chessboard>.bsquare[data-coord=\"7x7\"],.chessboard>.recent_move[data-coord=\"7x7\"],.chessboard>.recent_source[data-coord=\"7x7\"]{left:75%;top:75%}.chessboard>svg[data-coord=\"7x7\"]{left:75.625%;top:75.625%}.chessboard>button[data-coord=\"7x6\"],.chessboard>button.selectedbutton[data-coord=\"7x6\"],.chessboard>.bsquare[data-coord=\"7x6\"],.chessboard>.recent_move[data-coord=\"7x6\"],.chessboard>.recent_source[data-coord=\"7x6\"]{left:75%;top:62.5%}.chessboard>svg[data-coord=\"7x6\"]{left:75.625%;top:63.125%}.chessboard>button[data-coord=\"7x5\"],.chessboard>button.selectedbutton[data-coord=\"7x5\"],.chessboard>.bsquare[data-coord=\"7x5\"],.chessboard>.recent_move[data-coord=\"7x5\"],.chessboard>.recent_source[data-coord=\"7x5\"]{left:75%;top:50%}.chessboard>svg[data-coord=\"7x5\"]{left:75.625%;top:50.625%}.chessboard>button[data-coord=\"7x4\"],.chessboard>button.selectedbutton[data-coord=\"7x4\"],.chessboard>.bsquare[data-coord=\"7x4\"],.chessboard>.recent_move[data-coord=\"7x4\"],.chessboard>.recent_source[data-coord=\"7x4\"]{left:75%;top:37.5%}.chessboard>svg[data-coord=\"7x4\"]{left:75.625%;top:38.125%}.chessboard>button[data-coord=\"7x3\"],.chessboard>button.selectedbutton[data-coord=\"7x3\"],.chessboard>.bsquare[data-coord=\"7x3\"],.chessboard>.recent_move[data-coord=\"7x3\"],.chessboard>.recent_source[data-coord=\"7x3\"]{left:75%;top:25%}.chessboard>svg[data-coord=\"7x3\"]{left:75.625%;top:25.625%}.chessboard>button[data-coord=\"7x2\"],.chessboard>button.selectedbutton[data-coord=\"7x2\"],.chessboard>.bsquare[data-coord=\"7x2\"],.chessboard>.recent_move[data-coord=\"7x2\"],.chessboard>.recent_source[data-coord=\"7x2\"]{left:75%;top:12.5%}.chessboard>svg[data-coord=\"7x2\"]{left:75.625%;top:13.125%}.chessboard>button[data-coord=\"7x1\"],.chessboard>button.selectedbutton[data-coord=\"7x1\"],.chessboard>.bsquare[data-coord=\"7x1\"],.chessboard>.recent_move[data-coord=\"7x1\"],.chessboard>.recent_source[data-coord=\"7x1\"]{left:75%;top:0}.chessboard>svg[data-coord=\"7x1\"]{left:75.625%;top:.625%}.chessboard>button[data-coord=\"8x8\"],.chessboard>button.selectedbutton[data-coord=\"8x8\"],.chessboard>.bsquare[data-coord=\"8x8\"],.chessboard>.recent_move[data-coord=\"8x8\"],.chessboard>.recent_source[data-coord=\"8x8\"]{left:87.5%;top:87.5%}.chessboard>svg[data-coord=\"8x8\"]{left:88.125%;top:88.125%}.chessboard>button[data-coord=\"8x7\"],.chessboard>button.selectedbutton[data-coord=\"8x7\"],.chessboard>.bsquare[data-coord=\"8x7\"],.chessboard>.recent_move[data-coord=\"8x7\"],.chessboard>.recent_source[data-coord=\"8x7\"]{left:87.5%;top:75%}.chessboard>svg[data-coord=\"8x7\"]{left:88.125%;top:75.625%}.chessboard>button[data-coord=\"8x6\"],.chessboard>button.selectedbutton[data-coord=\"8x6\"],.chessboard>.bsquare[data-coord=\"8x6\"],.chessboard>.recent_move[data-coord=\"8x6\"],.chessboard>.recent_source[data-coord=\"8x6\"]{left:87.5%;top:62.5%}.chessboard>svg[data-coord=\"8x6\"]{left:88.125%;top:63.125%}.chessboard>button[data-coord=\"8x5\"],.chessboard>button.selectedbutton[data-coord=\"8x5\"],.chessboard>.bsquare[data-coord=\"8x5\"],.chessboard>.recent_move[data-coord=\"8x5\"],.chessboard>.recent_source[data-coord=\"8x5\"]{left:87.5%;top:50%}.chessboard>svg[data-coord=\"8x5\"]{left:88.125%;top:50.625%}.chessboard>button[data-coord=\"8x4\"],.chessboard>button.selectedbutton[data-coord=\"8x4\"],.chessboard>.bsquare[data-coord=\"8x4\"],.chessboard>.recent_move[data-coord=\"8x4\"],.chessboard>.recent_source[data-coord=\"8x4\"]{left:87.5%;top:37.5%}.chessboard>svg[data-coord=\"8x4\"]{left:88.125%;top:38.125%}.chessboard>button[data-coord=\"8x3\"],.chessboard>button.selectedbutton[data-coord=\"8x3\"],.chessboard>.bsquare[data-coord=\"8x3\"],.chessboard>.recent_move[data-coord=\"8x3\"],.chessboard>.recent_source[data-coord=\"8x3\"]{left:87.5%;top:25%}.chessboard>svg[data-coord=\"8x3\"]{left:88.125%;top:25.625%}.chessboard>button[data-coord=\"8x2\"],.chessboard>button.selectedbutton[data-coord=\"8x2\"],.chessboard>.bsquare[data-coord=\"8x2\"],.chessboard>.recent_move[data-coord=\"8x2\"],.chessboard>.recent_source[data-coord=\"8x2\"]{left:87.5%;top:12.5%}.chessboard>svg[data-coord=\"8x2\"]{left:88.125%;top:13.125%}.chessboard>button[data-coord=\"8x1\"],.chessboard>button.selectedbutton[data-coord=\"8x1\"],.chessboard>.bsquare[data-coord=\"8x1\"],.chessboard>.recent_move[data-coord=\"8x1\"],.chessboard>.recent_source[data-coord=\"8x1\"]{left:87.5%;top:0}.chessboard>svg[data-coord=\"8x1\"]{left:88.125%;top:.625%}";
 },{}],2:[function(require,module,exports){
 
@@ -5927,8 +5927,16 @@ module.exports=vmoves;
 // OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE
 // USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+var objectCreate = Object.create || objectCreatePolyfill
+var objectKeys = Object.keys || objectKeysPolyfill
+var bind = Function.prototype.bind || functionBindPolyfill
+
 function EventEmitter() {
-  this._events = this._events || {};
+  if (!this._events || !Object.prototype.hasOwnProperty.call(this, '_events')) {
+    this._events = objectCreate(null);
+    this._eventsCount = 0;
+  }
+
   this._maxListeners = this._maxListeners || undefined;
 }
 module.exports = EventEmitter;
@@ -5941,271 +5949,485 @@ EventEmitter.prototype._maxListeners = undefined;
 
 // By default EventEmitters will print a warning if more than 10 listeners are
 // added to it. This is a useful default which helps finding memory leaks.
-EventEmitter.defaultMaxListeners = 10;
+var defaultMaxListeners = 10;
+
+var hasDefineProperty;
+try {
+  var o = {};
+  if (Object.defineProperty) Object.defineProperty(o, 'x', { value: 0 });
+  hasDefineProperty = o.x === 0;
+} catch (err) { hasDefineProperty = false }
+if (hasDefineProperty) {
+  Object.defineProperty(EventEmitter, 'defaultMaxListeners', {
+    enumerable: true,
+    get: function() {
+      return defaultMaxListeners;
+    },
+    set: function(arg) {
+      // check whether the input is a positive number (whose value is zero or
+      // greater and not a NaN).
+      if (typeof arg !== 'number' || arg < 0 || arg !== arg)
+        throw new TypeError('"defaultMaxListeners" must be a positive number');
+      defaultMaxListeners = arg;
+    }
+  });
+} else {
+  EventEmitter.defaultMaxListeners = defaultMaxListeners;
+}
 
 // Obviously not all Emitters should be limited to 10. This function allows
 // that to be increased. Set to zero for unlimited.
-EventEmitter.prototype.setMaxListeners = function(n) {
-  if (!isNumber(n) || n < 0 || isNaN(n))
-    throw TypeError('n must be a positive number');
+EventEmitter.prototype.setMaxListeners = function setMaxListeners(n) {
+  if (typeof n !== 'number' || n < 0 || isNaN(n))
+    throw new TypeError('"n" argument must be a positive number');
   this._maxListeners = n;
   return this;
 };
 
-EventEmitter.prototype.emit = function(type) {
-  var er, handler, len, args, i, listeners;
+function $getMaxListeners(that) {
+  if (that._maxListeners === undefined)
+    return EventEmitter.defaultMaxListeners;
+  return that._maxListeners;
+}
 
-  if (!this._events)
-    this._events = {};
+EventEmitter.prototype.getMaxListeners = function getMaxListeners() {
+  return $getMaxListeners(this);
+};
 
-  // If there is no 'error' event listener then throw.
-  if (type === 'error') {
-    if (!this._events.error ||
-        (isObject(this._events.error) && !this._events.error.length)) {
-      er = arguments[1];
-      if (er instanceof Error) {
-        throw er; // Unhandled 'error' event
-      }
-      throw TypeError('Uncaught, unspecified "error" event.');
-    }
+// These standalone emit* functions are used to optimize calling of event
+// handlers for fast cases because emit() itself often has a variable number of
+// arguments and can be deoptimized because of that. These functions always have
+// the same number of arguments and thus do not get deoptimized, so the code
+// inside them can execute faster.
+function emitNone(handler, isFn, self) {
+  if (isFn)
+    handler.call(self);
+  else {
+    var len = handler.length;
+    var listeners = arrayClone(handler, len);
+    for (var i = 0; i < len; ++i)
+      listeners[i].call(self);
   }
+}
+function emitOne(handler, isFn, self, arg1) {
+  if (isFn)
+    handler.call(self, arg1);
+  else {
+    var len = handler.length;
+    var listeners = arrayClone(handler, len);
+    for (var i = 0; i < len; ++i)
+      listeners[i].call(self, arg1);
+  }
+}
+function emitTwo(handler, isFn, self, arg1, arg2) {
+  if (isFn)
+    handler.call(self, arg1, arg2);
+  else {
+    var len = handler.length;
+    var listeners = arrayClone(handler, len);
+    for (var i = 0; i < len; ++i)
+      listeners[i].call(self, arg1, arg2);
+  }
+}
+function emitThree(handler, isFn, self, arg1, arg2, arg3) {
+  if (isFn)
+    handler.call(self, arg1, arg2, arg3);
+  else {
+    var len = handler.length;
+    var listeners = arrayClone(handler, len);
+    for (var i = 0; i < len; ++i)
+      listeners[i].call(self, arg1, arg2, arg3);
+  }
+}
 
-  handler = this._events[type];
+function emitMany(handler, isFn, self, args) {
+  if (isFn)
+    handler.apply(self, args);
+  else {
+    var len = handler.length;
+    var listeners = arrayClone(handler, len);
+    for (var i = 0; i < len; ++i)
+      listeners[i].apply(self, args);
+  }
+}
 
-  if (isUndefined(handler))
+EventEmitter.prototype.emit = function emit(type) {
+  var er, handler, len, args, i, events;
+  var doError = (type === 'error');
+
+  events = this._events;
+  if (events)
+    doError = (doError && events.error == null);
+  else if (!doError)
     return false;
 
-  if (isFunction(handler)) {
-    switch (arguments.length) {
-      // fast cases
-      case 1:
-        handler.call(this);
-        break;
-      case 2:
-        handler.call(this, arguments[1]);
-        break;
-      case 3:
-        handler.call(this, arguments[1], arguments[2]);
-        break;
-      // slower
-      default:
-        len = arguments.length;
-        args = new Array(len - 1);
-        for (i = 1; i < len; i++)
-          args[i - 1] = arguments[i];
-        handler.apply(this, args);
+  // If there is no 'error' event listener then throw.
+  if (doError) {
+    if (arguments.length > 1)
+      er = arguments[1];
+    if (er instanceof Error) {
+      throw er; // Unhandled 'error' event
+    } else {
+      // At least give some kind of context to the user
+      var err = new Error('Unhandled "error" event. (' + er + ')');
+      err.context = er;
+      throw err;
     }
-  } else if (isObject(handler)) {
-    len = arguments.length;
-    args = new Array(len - 1);
-    for (i = 1; i < len; i++)
-      args[i - 1] = arguments[i];
+    return false;
+  }
 
-    listeners = handler.slice();
-    len = listeners.length;
-    for (i = 0; i < len; i++)
-      listeners[i].apply(this, args);
+  handler = events[type];
+
+  if (!handler)
+    return false;
+
+  var isFn = typeof handler === 'function';
+  len = arguments.length;
+  switch (len) {
+      // fast cases
+    case 1:
+      emitNone(handler, isFn, this);
+      break;
+    case 2:
+      emitOne(handler, isFn, this, arguments[1]);
+      break;
+    case 3:
+      emitTwo(handler, isFn, this, arguments[1], arguments[2]);
+      break;
+    case 4:
+      emitThree(handler, isFn, this, arguments[1], arguments[2], arguments[3]);
+      break;
+      // slower
+    default:
+      args = new Array(len - 1);
+      for (i = 1; i < len; i++)
+        args[i - 1] = arguments[i];
+      emitMany(handler, isFn, this, args);
   }
 
   return true;
 };
 
-EventEmitter.prototype.addListener = function(type, listener) {
+function _addListener(target, type, listener, prepend) {
   var m;
+  var events;
+  var existing;
 
-  if (!isFunction(listener))
-    throw TypeError('listener must be a function');
+  if (typeof listener !== 'function')
+    throw new TypeError('"listener" argument must be a function');
 
-  if (!this._events)
-    this._events = {};
+  events = target._events;
+  if (!events) {
+    events = target._events = objectCreate(null);
+    target._eventsCount = 0;
+  } else {
+    // To avoid recursion in the case that type === "newListener"! Before
+    // adding it to the listeners, first emit "newListener".
+    if (events.newListener) {
+      target.emit('newListener', type,
+          listener.listener ? listener.listener : listener);
 
-  // To avoid recursion in the case that type === "newListener"! Before
-  // adding it to the listeners, first emit "newListener".
-  if (this._events.newListener)
-    this.emit('newListener', type,
-              isFunction(listener.listener) ?
-              listener.listener : listener);
+      // Re-assign `events` because a newListener handler could have caused the
+      // this._events to be assigned to a new object
+      events = target._events;
+    }
+    existing = events[type];
+  }
 
-  if (!this._events[type])
+  if (!existing) {
     // Optimize the case of one listener. Don't need the extra array object.
-    this._events[type] = listener;
-  else if (isObject(this._events[type]))
-    // If we've already got an array, just append.
-    this._events[type].push(listener);
-  else
-    // Adding the second element, need to change to array.
-    this._events[type] = [this._events[type], listener];
-
-  // Check for listener leak
-  if (isObject(this._events[type]) && !this._events[type].warned) {
-    var m;
-    if (!isUndefined(this._maxListeners)) {
-      m = this._maxListeners;
+    existing = events[type] = listener;
+    ++target._eventsCount;
+  } else {
+    if (typeof existing === 'function') {
+      // Adding the second element, need to change to array.
+      existing = events[type] =
+          prepend ? [listener, existing] : [existing, listener];
     } else {
-      m = EventEmitter.defaultMaxListeners;
+      // If we've already got an array, just append.
+      if (prepend) {
+        existing.unshift(listener);
+      } else {
+        existing.push(listener);
+      }
     }
 
-    if (m && m > 0 && this._events[type].length > m) {
-      this._events[type].warned = true;
-      console.error('(node) warning: possible EventEmitter memory ' +
-                    'leak detected. %d listeners added. ' +
-                    'Use emitter.setMaxListeners() to increase limit.',
-                    this._events[type].length);
-      if (typeof console.trace === 'function') {
-        // not supported in IE 10
-        console.trace();
+    // Check for listener leak
+    if (!existing.warned) {
+      m = $getMaxListeners(target);
+      if (m && m > 0 && existing.length > m) {
+        existing.warned = true;
+        var w = new Error('Possible EventEmitter memory leak detected. ' +
+            existing.length + ' "' + String(type) + '" listeners ' +
+            'added. Use emitter.setMaxListeners() to ' +
+            'increase limit.');
+        w.name = 'MaxListenersExceededWarning';
+        w.emitter = target;
+        w.type = type;
+        w.count = existing.length;
+        if (typeof console === 'object' && console.warn) {
+          console.warn('%s: %s', w.name, w.message);
+        }
       }
     }
   }
 
-  return this;
+  return target;
+}
+
+EventEmitter.prototype.addListener = function addListener(type, listener) {
+  return _addListener(this, type, listener, false);
 };
 
 EventEmitter.prototype.on = EventEmitter.prototype.addListener;
 
-EventEmitter.prototype.once = function(type, listener) {
-  if (!isFunction(listener))
-    throw TypeError('listener must be a function');
+EventEmitter.prototype.prependListener =
+    function prependListener(type, listener) {
+      return _addListener(this, type, listener, true);
+    };
 
-  var fired = false;
-
-  function g() {
-    this.removeListener(type, g);
-
-    if (!fired) {
-      fired = true;
-      listener.apply(this, arguments);
+function onceWrapper() {
+  if (!this.fired) {
+    this.target.removeListener(this.type, this.wrapFn);
+    this.fired = true;
+    switch (arguments.length) {
+      case 0:
+        return this.listener.call(this.target);
+      case 1:
+        return this.listener.call(this.target, arguments[0]);
+      case 2:
+        return this.listener.call(this.target, arguments[0], arguments[1]);
+      case 3:
+        return this.listener.call(this.target, arguments[0], arguments[1],
+            arguments[2]);
+      default:
+        var args = new Array(arguments.length);
+        for (var i = 0; i < args.length; ++i)
+          args[i] = arguments[i];
+        this.listener.apply(this.target, args);
     }
   }
+}
 
-  g.listener = listener;
-  this.on(type, g);
+function _onceWrap(target, type, listener) {
+  var state = { fired: false, wrapFn: undefined, target: target, type: type, listener: listener };
+  var wrapped = bind.call(onceWrapper, state);
+  wrapped.listener = listener;
+  state.wrapFn = wrapped;
+  return wrapped;
+}
 
+EventEmitter.prototype.once = function once(type, listener) {
+  if (typeof listener !== 'function')
+    throw new TypeError('"listener" argument must be a function');
+  this.on(type, _onceWrap(this, type, listener));
   return this;
 };
 
-// emits a 'removeListener' event iff the listener was removed
-EventEmitter.prototype.removeListener = function(type, listener) {
-  var list, position, length, i;
-
-  if (!isFunction(listener))
-    throw TypeError('listener must be a function');
-
-  if (!this._events || !this._events[type])
-    return this;
-
-  list = this._events[type];
-  length = list.length;
-  position = -1;
-
-  if (list === listener ||
-      (isFunction(list.listener) && list.listener === listener)) {
-    delete this._events[type];
-    if (this._events.removeListener)
-      this.emit('removeListener', type, listener);
-
-  } else if (isObject(list)) {
-    for (i = length; i-- > 0;) {
-      if (list[i] === listener ||
-          (list[i].listener && list[i].listener === listener)) {
-        position = i;
-        break;
-      }
-    }
-
-    if (position < 0)
+EventEmitter.prototype.prependOnceListener =
+    function prependOnceListener(type, listener) {
+      if (typeof listener !== 'function')
+        throw new TypeError('"listener" argument must be a function');
+      this.prependListener(type, _onceWrap(this, type, listener));
       return this;
+    };
 
-    if (list.length === 1) {
-      list.length = 0;
-      delete this._events[type];
-    } else {
-      list.splice(position, 1);
-    }
+// Emits a 'removeListener' event if and only if the listener was removed.
+EventEmitter.prototype.removeListener =
+    function removeListener(type, listener) {
+      var list, events, position, i, originalListener;
 
-    if (this._events.removeListener)
-      this.emit('removeListener', type, listener);
-  }
+      if (typeof listener !== 'function')
+        throw new TypeError('"listener" argument must be a function');
 
-  return this;
+      events = this._events;
+      if (!events)
+        return this;
+
+      list = events[type];
+      if (!list)
+        return this;
+
+      if (list === listener || list.listener === listener) {
+        if (--this._eventsCount === 0)
+          this._events = objectCreate(null);
+        else {
+          delete events[type];
+          if (events.removeListener)
+            this.emit('removeListener', type, list.listener || listener);
+        }
+      } else if (typeof list !== 'function') {
+        position = -1;
+
+        for (i = list.length - 1; i >= 0; i--) {
+          if (list[i] === listener || list[i].listener === listener) {
+            originalListener = list[i].listener;
+            position = i;
+            break;
+          }
+        }
+
+        if (position < 0)
+          return this;
+
+        if (position === 0)
+          list.shift();
+        else
+          spliceOne(list, position);
+
+        if (list.length === 1)
+          events[type] = list[0];
+
+        if (events.removeListener)
+          this.emit('removeListener', type, originalListener || listener);
+      }
+
+      return this;
+    };
+
+EventEmitter.prototype.removeAllListeners =
+    function removeAllListeners(type) {
+      var listeners, events, i;
+
+      events = this._events;
+      if (!events)
+        return this;
+
+      // not listening for removeListener, no need to emit
+      if (!events.removeListener) {
+        if (arguments.length === 0) {
+          this._events = objectCreate(null);
+          this._eventsCount = 0;
+        } else if (events[type]) {
+          if (--this._eventsCount === 0)
+            this._events = objectCreate(null);
+          else
+            delete events[type];
+        }
+        return this;
+      }
+
+      // emit removeListener for all listeners on all events
+      if (arguments.length === 0) {
+        var keys = objectKeys(events);
+        var key;
+        for (i = 0; i < keys.length; ++i) {
+          key = keys[i];
+          if (key === 'removeListener') continue;
+          this.removeAllListeners(key);
+        }
+        this.removeAllListeners('removeListener');
+        this._events = objectCreate(null);
+        this._eventsCount = 0;
+        return this;
+      }
+
+      listeners = events[type];
+
+      if (typeof listeners === 'function') {
+        this.removeListener(type, listeners);
+      } else if (listeners) {
+        // LIFO order
+        for (i = listeners.length - 1; i >= 0; i--) {
+          this.removeListener(type, listeners[i]);
+        }
+      }
+
+      return this;
+    };
+
+function _listeners(target, type, unwrap) {
+  var events = target._events;
+
+  if (!events)
+    return [];
+
+  var evlistener = events[type];
+  if (!evlistener)
+    return [];
+
+  if (typeof evlistener === 'function')
+    return unwrap ? [evlistener.listener || evlistener] : [evlistener];
+
+  return unwrap ? unwrapListeners(evlistener) : arrayClone(evlistener, evlistener.length);
+}
+
+EventEmitter.prototype.listeners = function listeners(type) {
+  return _listeners(this, type, true);
 };
 
-EventEmitter.prototype.removeAllListeners = function(type) {
-  var key, listeners;
-
-  if (!this._events)
-    return this;
-
-  // not listening for removeListener, no need to emit
-  if (!this._events.removeListener) {
-    if (arguments.length === 0)
-      this._events = {};
-    else if (this._events[type])
-      delete this._events[type];
-    return this;
-  }
-
-  // emit removeListener for all listeners on all events
-  if (arguments.length === 0) {
-    for (key in this._events) {
-      if (key === 'removeListener') continue;
-      this.removeAllListeners(key);
-    }
-    this.removeAllListeners('removeListener');
-    this._events = {};
-    return this;
-  }
-
-  listeners = this._events[type];
-
-  if (isFunction(listeners)) {
-    this.removeListener(type, listeners);
-  } else {
-    // LIFO order
-    while (listeners.length)
-      this.removeListener(type, listeners[listeners.length - 1]);
-  }
-  delete this._events[type];
-
-  return this;
-};
-
-EventEmitter.prototype.listeners = function(type) {
-  var ret;
-  if (!this._events || !this._events[type])
-    ret = [];
-  else if (isFunction(this._events[type]))
-    ret = [this._events[type]];
-  else
-    ret = this._events[type].slice();
-  return ret;
+EventEmitter.prototype.rawListeners = function rawListeners(type) {
+  return _listeners(this, type, false);
 };
 
 EventEmitter.listenerCount = function(emitter, type) {
-  var ret;
-  if (!emitter._events || !emitter._events[type])
-    ret = 0;
-  else if (isFunction(emitter._events[type]))
-    ret = 1;
-  else
-    ret = emitter._events[type].length;
-  return ret;
+  if (typeof emitter.listenerCount === 'function') {
+    return emitter.listenerCount(type);
+  } else {
+    return listenerCount.call(emitter, type);
+  }
 };
 
-function isFunction(arg) {
-  return typeof arg === 'function';
+EventEmitter.prototype.listenerCount = listenerCount;
+function listenerCount(type) {
+  var events = this._events;
+
+  if (events) {
+    var evlistener = events[type];
+
+    if (typeof evlistener === 'function') {
+      return 1;
+    } else if (evlistener) {
+      return evlistener.length;
+    }
+  }
+
+  return 0;
 }
 
-function isNumber(arg) {
-  return typeof arg === 'number';
+EventEmitter.prototype.eventNames = function eventNames() {
+  return this._eventsCount > 0 ? Reflect.ownKeys(this._events) : [];
+};
+
+// About 1.5x faster than the two-arg version of Array#splice().
+function spliceOne(list, index) {
+  for (var i = index, k = i + 1, n = list.length; k < n; i += 1, k += 1)
+    list[i] = list[k];
+  list.pop();
 }
 
-function isObject(arg) {
-  return typeof arg === 'object' && arg !== null;
+function arrayClone(arr, n) {
+  var copy = new Array(n);
+  for (var i = 0; i < n; ++i)
+    copy[i] = arr[i];
+  return copy;
 }
 
-function isUndefined(arg) {
-  return arg === void 0;
+function unwrapListeners(arr) {
+  var ret = new Array(arr.length);
+  for (var i = 0; i < ret.length; ++i) {
+    ret[i] = arr[i].listener || arr[i];
+  }
+  return ret;
+}
+
+function objectCreatePolyfill(proto) {
+  var F = function() {};
+  F.prototype = proto;
+  return new F;
+}
+function objectKeysPolyfill(obj) {
+  var keys = [];
+  for (var k in obj) if (Object.prototype.hasOwnProperty.call(obj, k)) {
+    keys.push(k);
+  }
+  return k;
+}
+function functionBindPolyfill(context) {
+  var fn = this;
+  return function () {
+    return fn.apply(context, arguments);
+  };
 }
 
 },{}],50:[function(require,module,exports){
@@ -6456,6 +6678,10 @@ exports.tmpdir = exports.tmpDir = function () {
 };
 
 exports.EOL = '\n';
+
+exports.homedir = function () {
+	return '/'
+};
 
 },{}],53:[function(require,module,exports){
 (function (process){
