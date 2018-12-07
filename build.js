@@ -45,7 +45,7 @@ function continuous() {
     wb.on('error', (err) => {
       info.error = err;
       fs.writeFile(outfile, `console.error(${JSON.stringify(String(err))});`, logErr);
-      console.error(String(err);
+      console.error(String(err));
     });
 
     wb.on('data', (buf) => {
