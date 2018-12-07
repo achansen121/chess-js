@@ -1,39 +1,34 @@
-
-
 const assert = require('assert');
-const type_checker = require('type_checker');
-const board_util = require('./board_util.js');
+const typeChecker = require('type_checker');
+require('./board_util.js');
 const position = require('./position.js');
 
-const HIDETODO = true;
-
-
-const move = function (opos, dx, dy) {
+function move(opos, dx, dy) {
   const npos = position.softfail(opos.x + dx, opos.y + dy);
   if (!npos) return false;
   return npos;
-};
+}
 
-const vasserts = function (bs, piece) {
-  type_checker.object(piece);
-  type_checker.object(piece.position);
+function vasserts(bs, piece) {
+  typeChecker.object(piece);
+  typeChecker.object(piece.position);
   assert(piece.color === 'white' || piece.color === 'black');
-};
-
+}
 
 const vmoves = {};
-vmoves.pawn = function (bs, piece) {
+
+vmoves.pawn = function pawn(bs, piece) {
   const color = piece.color;
   const opos = piece.position;
   vasserts.apply(this, arguments);
 
   let direction = 1;
   let homerow = 2;
-  if (color != 'white') {
+  if (color !== 'white') {
     homerow = 7;
     direction = -1;
   }
-  if (opos.y != homerow) {
+  if (opos.y !== homerow) {
     assert(piece.moved);
   }
 
@@ -73,38 +68,27 @@ vmoves.pawn = function (bs, piece) {
   }
   const promoptions = 'queen,knight,rook,bishop'.split(',');
 
-  // .forEach(function (promo) {
-  //   diffs.push({
-  //     dx:0,
-  //     dy:1,
-  //     islast:true,
-  //     promo:promo,
-  //     require_empty:[{
-  //       dx:0,
-  //       dy:1
-  //     }]
-  //   })
-  // })
-
-  if (color != 'white') {
+  if (color !== 'white') {
     diffs.forEach((e) => {
       e.dy *= -1;
       if (e.require_empty) {
-        e.require_empty.forEach((rempty) => {
-          rempty.dx *= -1;
-          rempty.dy *= -1;
+        e.require_empty.forEach((requiresEmptyInput) => {
+          const requiresEmpty = requiresEmptyInput;
+          requiresEmpty.dx *= -1;
+          requiresEmpty.dy *= -1;
         });
       }
     });
   }
+
   const promos = [];
   let trymoves = diffs.map((dpos) => {
     let rempty = false;
     const rrow = false;
     if (dpos.require_empty) {
       for (let i = 0; i < dpos.require_empty.length; i++) {
-        const re_mv = dpos.require_empty[i];
-        rempty = move(opos, re_mv.dx, re_mv.dy);
+        const requiresEmpty = dpos.require_empty[i];
+        rempty = move(opos, requiresEmpty.dx, requiresEmpty.dy);
         if (bs.positions[rempty.toString()]) return false;
       }
     }
@@ -112,8 +96,8 @@ vmoves.pawn = function (bs, piece) {
 
     const o = {};
     Object.keys(dpos).forEach((k) => {
-      if (k == 'dx') return;
-      if (k == 'dy') o.mv = move(opos, dpos.dx, dpos.dy);
+      if (k === 'dx') return;
+      if (k === 'dy') o.mv = move(opos, dpos.dx, dpos.dy);
       else o[k] = dpos[k];
     });
     return o;
@@ -125,13 +109,13 @@ vmoves.pawn = function (bs, piece) {
     const current = bs.positions[e.mv.toString()];
     if (!e.requires_occ) return !current;
 
-    return (current && current.color != color);
+    return (current && current.color !== color);
   });
 
   trymoves = trymoves.filter((e) => {
     if (e === false) return false;
-    if (e.mv == false) return false;
-    if (e.mv.y == 1 || e.mv.y == 8) {
+    if (e.mv === false) return false;
+    if (e.mv.y === 1 || e.mv.y === 8) {
       promoptions.forEach((p) => {
         promos.push({
           from: opos,
@@ -147,13 +131,17 @@ vmoves.pawn = function (bs, piece) {
 
   const mvappend = [];
 
-  const lastmove_meta = bs.history[bs.history.length - 1];
-  let lastmove = null;
-  if (lastmove_meta) lastmove = lastmove_meta.mvdesc;
-  if (lastmove && lastmove.isjump) {
-    const jpos = new position(lastmove.to.toString());
-    if (jpos.y == opos.y) {
-      if ((jpos.x + 1 == opos.x) || (jpos.x - 1 == opos.x)) {
+  const lastMoveMeta = bs.history[bs.history.length - 1];
+  let lastMove = null;
+
+  if (lastMoveMeta) {
+    lastMove = lastMoveMeta.mvdesc;
+  }
+
+  if (lastMove && lastMove.isjump) {
+    const jpos = new position(lastMove.to.toString());
+    if (jpos.y === opos.y) {
+      if ((jpos.x + 1 === opos.x) || (jpos.x - 1 === opos.x)) {
         mvappend.push({
           enpassant: true,
           from: opos,
@@ -180,10 +168,9 @@ vmoves.pawn = function (bs, piece) {
   }).concat(mvappend).concat(promos);
 };
 
-let add_direction;
-add_direction = function (opos, bs, color, vm) {
-  let gendir;
-  gendir = function (dir) {
+let addDirection;
+addDirection = function (opos, bs, color, vm) {
+  function genDirection(dir) {
     const from = dir.pos;
     const dx = dir.dx;
     const dy = dir.dy;
@@ -191,16 +178,17 @@ add_direction = function (opos, bs, color, vm) {
     if (!to) return false;
     const current = bs.positions[to.toString()];
     if (current) {
-      if (current.color != color) vm.push({ from: opos, to });
+      if (current.color !== color) vm.push({ from: opos, to });
       return false;
     }
     vm.push({ from: opos, to });
-    gendir({ pos: to, dx, dy });
+    genDirection({ pos: to, dx, dy });
     return true;
-  };
-  return gendir;
+  }
+
+  return genDirection;
 };
-vmoves.rook = function (bs, piece) {
+vmoves.rook = function rook(bs, piece) {
   const color = piece.color;
   const opos = piece.position;
   const row = opos.x;
@@ -214,13 +202,15 @@ vmoves.rook = function (bs, piece) {
     { pos: opos, dx: 0, dy: -1 },
     { pos: opos, dx: 0, dy: 1 },
   ];
-  dirs.forEach(add_direction(opos, bs, color, vm));
+  dirs.forEach(addDirection(opos, bs, color, vm));
   return vm;
 };
-const copydir = function (o) {
+
+function copydir(o) {
   return { dx: o.dx, dy: o.dy, pos: o.pos };
-};
-vmoves.bishop = function (bs, piece) {
+}
+
+vmoves.bishop = function bishop(bs, piece) {
   const color = piece.color;
   const opos = piece.position;
   const row = opos.x;
@@ -234,10 +224,11 @@ vmoves.bishop = function (bs, piece) {
     { pos: opos, dx: 1, dy: -1 },
     { pos: opos, dx: -1, dy: 1 },
   ];
-  dirs.forEach(add_direction(opos, bs, color, vm));
+  dirs.forEach(addDirection(opos, bs, color, vm));
   return vm;
 };
-vmoves.king = function (bs, piece, skipkingcheck) {
+
+vmoves.king = function king(bs, piece, skipkingcheck) {
   const color = piece.color;
   const opos = piece.position;
   const dirs = [
@@ -247,13 +238,13 @@ vmoves.king = function (bs, piece, skipkingcheck) {
   ];
   dirs.slice().forEach((e) => {
     const ne = copydir(e);
-    if (ne.dx == 0) return;
+    if (ne.dx === 0) return;
     ne.dx *= -1;
     dirs.push(ne);
   });
   dirs.slice().forEach((e) => {
     const ne = copydir(e);
-    if (ne.dy == 0) return;
+    if (ne.dy === 0) return;
     ne.dy *= -1;
     dirs.push(ne);
   });
@@ -266,7 +257,7 @@ vmoves.king = function (bs, piece, skipkingcheck) {
       if (!desc.mv) return false;
       const current = bs.positions[desc.mv.toString()];
       if (!current) return true;
-      if (current.color != color) return true;
+      if (current.color !== color) return true;
       return false;
     })
     .map(e => ({
@@ -285,7 +276,7 @@ vmoves.king = function (bs, piece, skipkingcheck) {
     if (mking.moved) return false;
     if (rook.moved) return false;
     const y = rook.position.y;
-    assert(y == mking.position.y);
+    assert(y === mking.position.y);
     const dx = rook.position.x - mking.position.x;
     const di = (dx < 0 ? -1 : 1);
 
@@ -355,7 +346,7 @@ vmoves.knight = function (bs, piece) {
     .filter((e) => {
       const current = bs.positions[e.mv.toString()];
       if (!current) return true;
-      if (current.color != color) return true;
+      if (current.color !== color) return true;
       return false;
     })
     .map(e => ({

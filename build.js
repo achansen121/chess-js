@@ -52,10 +52,10 @@ function continuous() {
       info.bytes += Buffer.byteLength(String(buf), 'utf8');
       info.buf += buf;
     })
-    .on('end', () => {
-      fs.writeFile(outfile, info.buf, logErr);
-      console.error(`Write ${info.bytes} to ${outfile} in ${info.time}`);
-    });
+      .on('end', () => {
+        fs.writeFile(outfile, info.buf, logErr);
+        console.error(`Write ${info.bytes} to ${outfile} in ${info.time}`);
+      });
   }
   w.on('update', bundle);
   bundle();

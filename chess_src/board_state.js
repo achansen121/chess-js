@@ -166,17 +166,18 @@ BoardState.prototype.remove_piece = function (pobj) {
   return true;
 };
 
-const jcopy = {};
-'positions,history,animating,turn,taken'.split(',').forEach((pname) => {
-  jcopy[pname] = true;
-});
+const jcopy = 'positions,history,animating,turn,taken'.split(',');
+
 BoardState.prototype.toJSON = function () {
   const vcopy = {};
-  for (const k in jcopy) {
-    vcopy[k] = this[k];
-  }
+
+  jcopy.forEach((key) => {
+    vcopy[key] = this[key]
+  });
+
   return vcopy;
 };
+
 BoardState.prototype.initialize = function (optional) {
   this.animating = 0;
   this.positions = {};
