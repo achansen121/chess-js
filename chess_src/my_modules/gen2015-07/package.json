@@ -1,0 +1,21 @@
+{
+  "name": "gen2015-07",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "es5-shim": "^4.1.10",
+    "type_checker": "../type_checker"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "readme": "ERROR: No README data found!",
+  "_id": "gen2015-07@1.0.0",
+  "_shasum": "43627244be45d5bad693ad85c8c55c265c6bc12e",
+  "_from": "../../.mynpm/gen2015-07",
+  "_resolved": "file:../../.mynpm/gen2015-07"
+}

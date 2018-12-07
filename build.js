@@ -45,16 +45,17 @@ function continuous() {
     wb.on('error', (err) => {
       info.error = err;
       fs.writeFile(outfile, `console.error(${JSON.stringify(String(err))});`, logErr);
-      console.error(String(err));
+      console.error(String(err);
     });
+
     wb.on('data', (buf) => {
       info.bytes += Buffer.byteLength(String(buf), 'utf8');
       info.buf += buf;
     })
-      .on('end', () => {
-        fs.writeFile(outfile, info.buf, logErr);
-        console.error(`Write ${info.bytes} to ${outfile} in ${info.time}`);
-      });
+    .on('end', () => {
+      fs.writeFile(outfile, info.buf, logErr);
+      console.error(`Write ${info.bytes} to ${outfile} in ${info.time}`);
+    });
   }
   w.on('update', bundle);
   bundle();

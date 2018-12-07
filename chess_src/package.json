@@ -5,20 +5,28 @@
   "main": "chess.js",
   "dependencies": {
     "brfs": "^1.4.0",
+    "browserify-data": "^0.2.0",
+    "colors": "^1.3.2",
     "css": "^2.2.1",
+    "less": "^3.9.0",
     "node-lessify": "^0.0.10",
     "outpipe": "^1.1.1",
-    "recurse_watch": "https://github.com/achansen121/nd_recurse_watch.git",
-    "type_checker": "https://github.com/achansen121/node-type_checker.git"
+    "recurse_watch": "https://github.com/achansen121/nd_recurse_watch.git"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "es5-shim": "^4.5.12",
+    "fs-extra": "^7.0.1"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "postinstall": "node ./my_modules/install.js"
   },
   "browserify": {
     "transform": [
-      [ "./transform_both.js" ]
+      [
+        "./transform_both.js"
+      ]
     ]
   },
   "author": "",
