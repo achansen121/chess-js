@@ -172,7 +172,7 @@ BoardState.prototype.toJSON = function () {
   const vcopy = {};
 
   jcopy.forEach((key) => {
-    vcopy[key] = this[key]
+    vcopy[key] = this[key];
   });
 
   return vcopy;
