@@ -16,7 +16,7 @@
     "through": "^2.3.8",
     "through2": "^2.0.0",
     "type_checker": "https://github.com/achansen121/node-type_checker.git",
-    "watchify": "^3.3.1"
+    "watchify": "^3.11.1"
   },
   "devDependencies": {
     "eslint": "^5.9.0",
