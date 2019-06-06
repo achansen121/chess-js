@@ -1,85 +1,80 @@
 
-var brfs=require("brfs");
-var lessify=require("node-lessify")
-var bd=require("browserify-data")
-var through=require("through");
-var fs=require("fs");
+const brfs = require('brfs');
+const lessify = require('node-lessify');
+const bd = require('browserify-data');
+const through = require('through');
+const fs = require('fs');
 
 
-module.exports=function (file,package_options) {
-  console.log("transforming "+file)
-  if(/\.yaml$/gi.test(file)) {
-    return bd.apply(this,arguments);
+module.exports = function (file, package_options) {
+  console.log(`transforming ${file}`);
+  if (/\.yaml$/gi.test(file)) {
+    return bd.apply(this, arguments);
   }
-  if(/\.(css|less)$/gi.test(file)) {
-    return lessify(file,{textMode:true});
+  if (/\.(css|less)$/gi.test(file)) {
+    return lessify(file, { textMode: true });
   }
-  if(/\.svg$/gi.test(file)){
+  if (/\.svg$/gi.test(file)) {
     var getstream;
-    getstream=through();
-    var actualwrite=getstream.write;
-    var actualend  =getstream.end;
-    var svg="";
-    getstream.write=function(d){
-      svg+=d;
+    getstream = through();
+    var actualwrite = getstream.write;
+    var actualend = getstream.end;
+    let svg = '';
+    getstream.write = function (d) {
+      svg += d;
     };
-    getstream.end=function(){
-      actualwrite.call(getstream,"module.exports="+JSON.stringify(svg)+";");
+    getstream.end = function () {
+      actualwrite.call(getstream, `module.exports=${JSON.stringify(svg)};`);
       actualend.call(getstream);
     };
     return getstream;
   }
-  if(/\.js$/gi.test(file)){
-    
-    var lst=lessify(file,{textMode:true});
-    var bst=brfs.apply(this,arguments);
-    
+  if (/\.js$/gi.test(file)) {
+    const lst = lessify(file, { textMode: true });
+    const bst = brfs.apply(this, arguments);
+
     var getstream;
-    getstream=through();
-    
-    
-    bst.on("error",function (err) {
-      getstream.emit("error",err);
-    })
-    
-    var actualwrite=getstream.write;
-    var actualend=getstream.end;
-    
-    getstream.write=function (data) {
-      var rval=lst.write(data);
-      if(!rval){
+    getstream = through();
+
+
+    bst.on('error', (err) => {
+      getstream.emit('error', err);
+    });
+
+    var actualwrite = getstream.write;
+    var actualend = getstream.end;
+
+    getstream.write = function (data) {
+      const rval = lst.write(data);
+      if (!rval) {
         getstream.pause();
-        lst.once("drain",function () {
+        lst.once('drain', () => {
           getstream.resume();
         });
       }
     };
-    
-    getstream.end=function (end) {
+
+    getstream.end = function (end) {
       lst.end();
     };
-    
-    
-    lst.pipe(bst)
-    
-    bst.on("data",function (data) {
-      var rval=actualwrite.call(getstream,data);
-      if(!rval){
+
+
+    lst.pipe(bst);
+
+    bst.on('data', (data) => {
+      const rval = actualwrite.call(getstream, data);
+      if (!rval) {
         bst.pause();
-        getstream.once("drain",function () {
+        getstream.once('drain', () => {
           bst.resume();
         });
       }
     });
-    bst.on("end",function () {
-      return actualend.apply(getstream,arguments);
-    })
-    
+    bst.on('end', function () {
+      return actualend.apply(getstream, arguments);
+    });
+
     return getstream;
-    
   }
   return through();
 };
-
-
-

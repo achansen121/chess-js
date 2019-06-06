@@ -16,10 +16,15 @@
     "through": "^2.3.8",
     "through2": "^2.0.0",
     "type_checker": "https://github.com/achansen121/node-type_checker.git",
-    "watchify": "^3.3.1"
+    "watchify": "^3.11.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "eslint": "^5.9.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-plugin-import": "^2.14.0"
+  },
   "scripts": {
+    "lint": "eslint ./chess_src",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

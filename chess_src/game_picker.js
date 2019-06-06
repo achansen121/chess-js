@@ -1,146 +1,143 @@
 
-var window=(function(){return this;})();
-var document=window.document;
-var EventEmitter=require("events").EventEmitter;
-var util=require("util")
-var sgen=require("gen2015-07")
+const window = (function () { return this; }());
+const document = window.document;
+const EventEmitter = require('events').EventEmitter;
+const util = require('util');
+const sgen = require('gen2015-07');
 
-var use_debug=require("./use_debug.js");
 
-var gen=function (desc) {
-  return sgen(document,desc);
+const gen = function (desc) {
+  return sgen(document, desc);
 };
 
-var assert=require("assert");
-var type_checker=require("type_checker");
-var fstructure=require("./fstructure.yaml");
+const assert = require('assert');
+const type_checker = require('type_checker');
+const use_debug = require('./use_debug.js');
+const fstructure = require('./fstructure.yaml');
 
-var fakeevent={preventDefault:function(){}};
+const fakeevent = { preventDefault() {} };
 
-var getremove=function (ele,key) {
-  var v=ele.getAttribute(key);
+const getremove = function (ele, key) {
+  const v = ele.getAttribute(key);
   ele.removeAttribute(key);
   return v;
 };
 
-var generate=function (ee,prnt) {
+const generate = function (ee, prnt) {
   // fstructure.parent=prnt;
-  
-  var formtemp=fstructure.formtemplate;
-  var sidetemp=fstructure.sidetemplate;
-  
-  formtemp.parent=prnt;
-  
-  var cstate={};
-  
-  var fobj=gen(formtemp);
-  var sidelocs=[].slice.call(fobj.querySelectorAll(".aside"));
-  sidelocs.forEach(function (loc) {
-    sidetemp.forEach(function (spart) {
-      loc.appendChild(gen(spart))
-    })
-    var whichside=getremove(loc,"data-side");
-    
-    var btns=[].slice.call(loc.querySelectorAll("button"));
-    
-    btns.forEach(function (btn,i) {
-      var is = getremove(btn,"data-is");
-      var become=getremove(btn,"data-become");
-      var swap=function(){
-        var tmp = is;
+
+  const formtemp = fstructure.formtemplate;
+  const sidetemp = fstructure.sidetemplate;
+
+  formtemp.parent = prnt;
+
+  const cstate = {};
+
+  const fobj = gen(formtemp);
+  const sidelocs = [].slice.call(fobj.querySelectorAll('.aside'));
+  sidelocs.forEach((loc) => {
+    sidetemp.forEach((spart) => {
+      loc.appendChild(gen(spart));
+    });
+    const whichside = getremove(loc, 'data-side');
+
+    const btns = [].slice.call(loc.querySelectorAll('button'));
+
+    btns.forEach((btn, i) => {
+      let is = getremove(btn, 'data-is');
+      let become = getremove(btn, 'data-become');
+      const swap = function () {
+        const tmp = is;
         is = become;
         become = tmp;
       };
-      cstate[whichside]=is;
-      var setcurrent=function (event) {
+      cstate[whichside] = is;
+      const setcurrent = function (event) {
         event.preventDefault();
-        btn.innerHTML="";
+        btn.innerHTML = '';
         btn.appendChild(document.createTextNode(become));
-        cstate[whichside]=become;
-        if(use_debug())
-          console.log(whichside+" is "+become);
+        cstate[whichside] = become;
+        if (use_debug()) console.log(`${whichside} is ${become}`);
         swap();
       };
-      btn.addEventListener("click",setcurrent,false);
+      btn.addEventListener('click', setcurrent, false);
     });
   });
-  var sbutton=fobj.querySelector(".start_game")
-  sbutton.addEventListener("click",function (event) {
+  const sbutton = fobj.querySelector('.start_game');
+  sbutton.addEventListener('click', (event) => {
     event.preventDefault();
-    ee.emit("start",cstate);
-    if(use_debug())
-      console.log(cstate);
+    ee.emit('start', cstate);
+    if (use_debug()) console.log(cstate);
     ee.collapse();
-  },false);
-  
+  }, false);
+
   return fobj;
 };
 
 
-var Picker=function (prnt) {
+const Picker = function (prnt) {
   EventEmitter.call(this);
   type_checker.object(prnt);
   type_checker.object(prnt.ownerDocument);
-  assert(prnt.ownerDocument===document);
-  
-  var me=this;
-  this.parent=prnt;
-  var hobj=this.html_obj=generate(this,prnt);
-  this.collapsing=false;
-  this.expanding=false;
-  this.collapsed=false;
-  
-  this.collapseable=hobj.querySelectorAll(".button_surround,.start_game_row")
-  this.collapseable=[].slice.call(this.collapseable)
-  process.nextTick(function(){
-    assert(document.body.contains(me.html_obj))
-  //   me.last_height=me.html_obj.clientHeight;
-  //   me.html_obj.style.height=me.last_height+"px";
-    me.collapseable.forEach(function (ele) {
-      if(!ele.style.height)
-        ele.style.height=ele.clientHeight+"px";
-    })
-  })
+  assert(prnt.ownerDocument === document);
+
+  const me = this;
+  this.parent = prnt;
+  const hobj = this.html_obj = generate(this, prnt);
+  this.collapsing = false;
+  this.expanding = false;
+  this.collapsed = false;
+
+  this.collapseable = hobj.querySelectorAll('.button_surround,.start_game_row');
+  this.collapseable = [].slice.call(this.collapseable);
+  process.nextTick(() => {
+    assert(document.body.contains(me.html_obj));
+    //   me.last_height=me.html_obj.clientHeight;
+    //   me.html_obj.style.height=me.last_height+"px";
+    me.collapseable.forEach((ele) => {
+      if (!ele.style.height) ele.style.height = `${ele.clientHeight}px`;
+    });
+  });
 };
 
 
-util.inherits(Picker,EventEmitter);
-Picker.prototype.collapse=function () {
-  var me=this;
-  var hobj=this.html_obj;
+util.inherits(Picker, EventEmitter);
+Picker.prototype.collapse = function () {
+  const me = this;
+  const hobj = this.html_obj;
   assert(!this.collapsing);
   assert(!this.expanding);
-  assert(!this.collapsed)
-  var to_c=this.collapseable;
-  
-  to_c.forEach(function (ele) {
-    ele.style.height="0px"
+  assert(!this.collapsed);
+  const to_c = this.collapseable;
+
+  to_c.forEach((ele) => {
+    ele.style.height = '0px';
   });
-  
+
   // hobj.style.height=this.last_height+"px";
   // hobj.style.height="0px"
-  this.collapsing=true;
-  setTimeout(function () {
-    if(me.collapsing){
-      me.collapsed=true;
-      me.collapsing=false;
+  this.collapsing = true;
+  setTimeout(() => {
+    if (me.collapsing) {
+      me.collapsed = true;
+      me.collapsing = false;
     }
-  },1E3);
+  }, 1E3);
 };
-Picker.prototype.expand=function () {
+Picker.prototype.expand = function () {
   assert(!this.collapsing);
   assert(this.collapsed);
   // this.html_obj.style.height=this.last_height+"px";
-  this.expanding=true;
-  this.collapseable.forEach(function (ele) {
-    ele.style.height=ele.scrollHeight+"px";
-  })
-  setTimeout(function () {
-    if(me.expanding){
-      me.collapsed=false;
-      me.expanding=false;
+  this.expanding = true;
+  this.collapseable.forEach((ele) => {
+    ele.style.height = `${ele.scrollHeight}px`;
+  });
+  setTimeout(() => {
+    if (me.expanding) {
+      me.collapsed = false;
+      me.expanding = false;
     }
-  },1E3);
-}
+  }, 1E3);
+};
 
-module.exports=Picker;
+module.exports = Picker;

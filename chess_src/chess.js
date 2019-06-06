@@ -1,100 +1,91 @@
 
-var Picker=require("./game_picker.js")
-var BoardState=require("./board_state.js");
-var bot=require("./bot.js");
+const Picker = require('./game_picker.js');
+const BoardState = require('./board_state.js');
+const bot = require('./bot.js');
 
-var window=(function(){return this;})();
-var assert=require("assert")
-var piece=require("./piece.js")
-var position=require("./position.js")
-var type_checker=require("type_checker")
-var turn_display=require("./turn_display.js");
+const window = (function () { return this; }());
+const assert = require('assert');
+const piece = require('./piece.js');
+const position = require('./position.js');
+const type_checker = require('type_checker');
+const turn_display = require('./turn_display.js');
 
-var use_debug = require("./use_debug.js");
+const use_debug = require('./use_debug.js');
 
-var history_display=require("./move_history_display.js")
+const history_display = require('./move_history_display.js');
 
-var pickrandom=function(arr){
-  return arr[Math.floor(Math.random()*arr.length)]
+const pickrandom = function (arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 };
-var append_to_body=function (bs,cb) {
-  
-  var window=(function(){return this;})();
+const append_to_body = function (bs, cb) {
+  const window = (function () { return this; }());
 
-  var body=document.querySelector("body");
-  var be=bs.browser_element();
-  
-  var t_display=new turn_display(bs);
-  var mvhistory=new history_display(bs);
-  
-  if(cb)
-    type_checker.function(cb);
-  
-  var append=function () {
-    if(!body)
-      body=document.querySelector("body");
+  let body = document.querySelector('body');
+  const be = bs.browser_element();
+
+  const t_display = new turn_display(bs);
+  const mvhistory = new history_display(bs);
+
+  if (cb) type_checker.function(cb);
+
+  const append = function () {
+    if (!body) body = document.querySelector('body');
     body.appendChild(be);
     t_display.attach(body);
     mvhistory.attach(body);
-    if(cb){
-      cb();}
+    if (cb) {
+      cb();
+    }
   };
-  if(!document.body){
-    document.addEventListener("DOMContentLoaded",append,false);
-  } else
-    append();
-  
+  if (!document.body) {
+    document.addEventListener('DOMContentLoaded', append, false);
+  } else append();
+
   return be;
 };
 
-var init_board=function (cb) {
-  var bs=new BoardState()
-  
-  if(use_debug()){
-    bs.debug=true;
-    window.bs=bs;
+const init_board = function (cb) {
+  const bs = new BoardState();
+
+  if (use_debug()) {
+    bs.debug = true;
+    window.bs = bs;
   }
   bs.initialize();
-  append_to_body(bs,function(){
+  append_to_body(bs, () => {
     cb(bs);
   });
 };
 
-if(process.title==="browser"){
-  var pdiv=document.createElement("div");
-  var p=new Picker(pdiv);
-  var inited=false;
-  var bs=null;
-  p.on("start",function (desc) {
-    if(use_debug())
-      console.log(desc,inited,bs)
-    if(!inited)
-      return;
-    var keylistenersset=false;
-    Object.keys(desc).forEach(function (color) {
-      if(desc[color]=="Human"){
+if (process.title === 'browser') {
+  const pdiv = document.createElement('div');
+  const p = new Picker(pdiv);
+  let inited = false;
+  let bs = null;
+  p.on('start', (desc) => {
+    if (use_debug()) console.log(desc, inited, bs);
+    if (!inited) return;
+    let keylistenersset = false;
+    Object.keys(desc).forEach((color) => {
+      if (desc[color] == 'Human') {
         bs.add_human(color);
-        if(!keylistenersset){
+        if (!keylistenersset) {
           bs.install_key_listeners();
-          keylistenersset=true;
+          keylistenersset = true;
         }
       }
-      if(desc[color]=="Bot")
-        var bt=new bot(bs,color);
-    })
-  })
-  var start=function () {
+      if (desc[color] == 'Bot') var bt = new bot(bs, color);
+    });
+  });
+  const start = function () {
     document.body.appendChild(pdiv);
-    init_board(function (_bs) {
-      inited=true;
-      bs=_bs;
-    })
+    init_board((_bs) => {
+      inited = true;
+      bs = _bs;
+    });
   };
-  if(!document.body)
-    document.addEventListener("DOMContentLoaded",start,false);
-  else
-    start();
-  
-  window.require=require;
-}
+  if (!document.body) document.addEventListener('DOMContentLoaded', start, false);
+  else start();
 
+  window.require = require;
+}

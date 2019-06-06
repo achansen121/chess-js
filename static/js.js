@@ -2,782 +2,749 @@ require=(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c=
 module.exports = ".gamestarter{max-width:750px;font-family:sans-serif;transition:1s all}.gamestarter .button_surround,.gamestarter .start_game_row{transition:1s all;margin-bottom:2em;overflow:hidden}.gamestarter .aside{width:50%;display:inline-block;text-align:center}.gamestarter .aside h6{font-size:100%;margin:1em}.gamestarter .aside button{margin:1em}.gamestarter button{color:white;background:black;padding:4px 10px;border-radius:4px;outline:0;border:1px solid black;cursor:pointer;font-weight:bold;transition:.5s all;min-width:75px;text-align:center}.gamestarter button:hover{background:white;color:black}.gamestarter button:focus{border-color:turquoise}.gamestarter .start_game_row{text-align:center}.move_history,.turn_display{font-family:sans-serif;display:inline-block;margin:1em;vertical-align:top}.move_history h6,.turn_display h6{font-size:120%;margin:0;margin-bottom:.5em;font-weight:normal}.turn_display{min-width:5em;text-align:center}.turn_display>div{font-weight:bold}.move_history>div{height:20em;overflow-y:scroll;min-width:10em;border:1px solid black;padding:.5em;font-family:monospace}.chessboard{width:750px;height:750px;position:relative;display:inline-block}.chessboard>.bsquare.odd{background:#ff8037}.chessboard>.bsquare.even{background:#ffffc8}.chessboard>.bsquare{width:12.5%;height:12.5%;position:absolute}.chessboard>.recent_move,.chessboard>.recent_source{width:93.75px;height:93.75px;position:absolute}.chessboard>.recent_move>div,.chessboard>.recent_source>div{border:5px solid green;position:absolute;top:0;bottom:0;left:0;right:0}.chessboard>.recent_source>div{border-color:#0f0}.chessboard>svg{position:absolute;z-index:1;width:11.25%;height:11.25%}.chessboard svg path,.chessboard svg circle,.chessboard svg rect{fill:white;stroke:black}.chessboard svg.black path,.chessboard svg.black circle,.chessboard svg.black rect{fill:black;stroke:white}.chessboard>button{position:absolute;z-index:2;cursor:pointer;padding:0;background:none;border:none;width:12.5%;height:12.5%}.chessboard>button.selectedbutton>div{position:absolute;top:10%;bottom:10%;left:10%;right:10%;border:3px solid black;border-radius:50%}.chessboard>button.selectedbutton.nil{border:3px solid black;width:12.5%;height:12.5%;z-index:3}.chessboard>button.selectedbutton.nil:focus{border-width:6px;outline:0}.chessboard>button.selectedbutton.nil.invalidmove{border-color:red}.chessboard button:focus,.chessboard div[role=\"button\"]:focus{outline:0}.chessboard .promotion{width:50%;position:absolute;background:white;top:37.5%;left:25%;border-radius:5px;border:1px solid black;z-index:-5;padding:1em;font-family:sans-serif}.chessboard .promotion svg{height:3em}.chessboard .promotion .promotray{text-align:center}.chessboard .promotion div[role=\"button\"]{vertical-align:middle;cursor:pointer;display:inline-block;margin:1em;border:1px solid rgba(255,255,255,0);border-radius:5px}.chessboard .promotion div[role=\"button\"]:hover{border-color:black}.chessboard>button[data-coord=\"1x8\"],.chessboard>button.selectedbutton[data-coord=\"1x8\"],.chessboard>.bsquare[data-coord=\"1x8\"],.chessboard>.recent_move[data-coord=\"1x8\"],.chessboard>.recent_source[data-coord=\"1x8\"]{left:0;top:87.5%}.chessboard>svg[data-coord=\"1x8\"]{left:.625%;top:88.125%}.chessboard>button[data-coord=\"1x7\"],.chessboard>button.selectedbutton[data-coord=\"1x7\"],.chessboard>.bsquare[data-coord=\"1x7\"],.chessboard>.recent_move[data-coord=\"1x7\"],.chessboard>.recent_source[data-coord=\"1x7\"]{left:0;top:75%}.chessboard>svg[data-coord=\"1x7\"]{left:.625%;top:75.625%}.chessboard>button[data-coord=\"1x6\"],.chessboard>button.selectedbutton[data-coord=\"1x6\"],.chessboard>.bsquare[data-coord=\"1x6\"],.chessboard>.recent_move[data-coord=\"1x6\"],.chessboard>.recent_source[data-coord=\"1x6\"]{left:0;top:62.5%}.chessboard>svg[data-coord=\"1x6\"]{left:.625%;top:63.125%}.chessboard>button[data-coord=\"1x5\"],.chessboard>button.selectedbutton[data-coord=\"1x5\"],.chessboard>.bsquare[data-coord=\"1x5\"],.chessboard>.recent_move[data-coord=\"1x5\"],.chessboard>.recent_source[data-coord=\"1x5\"]{left:0;top:50%}.chessboard>svg[data-coord=\"1x5\"]{left:.625%;top:50.625%}.chessboard>button[data-coord=\"1x4\"],.chessboard>button.selectedbutton[data-coord=\"1x4\"],.chessboard>.bsquare[data-coord=\"1x4\"],.chessboard>.recent_move[data-coord=\"1x4\"],.chessboard>.recent_source[data-coord=\"1x4\"]{left:0;top:37.5%}.chessboard>svg[data-coord=\"1x4\"]{left:.625%;top:38.125%}.chessboard>button[data-coord=\"1x3\"],.chessboard>button.selectedbutton[data-coord=\"1x3\"],.chessboard>.bsquare[data-coord=\"1x3\"],.chessboard>.recent_move[data-coord=\"1x3\"],.chessboard>.recent_source[data-coord=\"1x3\"]{left:0;top:25%}.chessboard>svg[data-coord=\"1x3\"]{left:.625%;top:25.625%}.chessboard>button[data-coord=\"1x2\"],.chessboard>button.selectedbutton[data-coord=\"1x2\"],.chessboard>.bsquare[data-coord=\"1x2\"],.chessboard>.recent_move[data-coord=\"1x2\"],.chessboard>.recent_source[data-coord=\"1x2\"]{left:0;top:12.5%}.chessboard>svg[data-coord=\"1x2\"]{left:.625%;top:13.125%}.chessboard>button[data-coord=\"1x1\"],.chessboard>button.selectedbutton[data-coord=\"1x1\"],.chessboard>.bsquare[data-coord=\"1x1\"],.chessboard>.recent_move[data-coord=\"1x1\"],.chessboard>.recent_source[data-coord=\"1x1\"]{left:0;top:0}.chessboard>svg[data-coord=\"1x1\"]{left:.625%;top:.625%}.chessboard>button[data-coord=\"2x8\"],.chessboard>button.selectedbutton[data-coord=\"2x8\"],.chessboard>.bsquare[data-coord=\"2x8\"],.chessboard>.recent_move[data-coord=\"2x8\"],.chessboard>.recent_source[data-coord=\"2x8\"]{left:12.5%;top:87.5%}.chessboard>svg[data-coord=\"2x8\"]{left:13.125%;top:88.125%}.chessboard>button[data-coord=\"2x7\"],.chessboard>button.selectedbutton[data-coord=\"2x7\"],.chessboard>.bsquare[data-coord=\"2x7\"],.chessboard>.recent_move[data-coord=\"2x7\"],.chessboard>.recent_source[data-coord=\"2x7\"]{left:12.5%;top:75%}.chessboard>svg[data-coord=\"2x7\"]{left:13.125%;top:75.625%}.chessboard>button[data-coord=\"2x6\"],.chessboard>button.selectedbutton[data-coord=\"2x6\"],.chessboard>.bsquare[data-coord=\"2x6\"],.chessboard>.recent_move[data-coord=\"2x6\"],.chessboard>.recent_source[data-coord=\"2x6\"]{left:12.5%;top:62.5%}.chessboard>svg[data-coord=\"2x6\"]{left:13.125%;top:63.125%}.chessboard>button[data-coord=\"2x5\"],.chessboard>button.selectedbutton[data-coord=\"2x5\"],.chessboard>.bsquare[data-coord=\"2x5\"],.chessboard>.recent_move[data-coord=\"2x5\"],.chessboard>.recent_source[data-coord=\"2x5\"]{left:12.5%;top:50%}.chessboard>svg[data-coord=\"2x5\"]{left:13.125%;top:50.625%}.chessboard>button[data-coord=\"2x4\"],.chessboard>button.selectedbutton[data-coord=\"2x4\"],.chessboard>.bsquare[data-coord=\"2x4\"],.chessboard>.recent_move[data-coord=\"2x4\"],.chessboard>.recent_source[data-coord=\"2x4\"]{left:12.5%;top:37.5%}.chessboard>svg[data-coord=\"2x4\"]{left:13.125%;top:38.125%}.chessboard>button[data-coord=\"2x3\"],.chessboard>button.selectedbutton[data-coord=\"2x3\"],.chessboard>.bsquare[data-coord=\"2x3\"],.chessboard>.recent_move[data-coord=\"2x3\"],.chessboard>.recent_source[data-coord=\"2x3\"]{left:12.5%;top:25%}.chessboard>svg[data-coord=\"2x3\"]{left:13.125%;top:25.625%}.chessboard>button[data-coord=\"2x2\"],.chessboard>button.selectedbutton[data-coord=\"2x2\"],.chessboard>.bsquare[data-coord=\"2x2\"],.chessboard>.recent_move[data-coord=\"2x2\"],.chessboard>.recent_source[data-coord=\"2x2\"]{left:12.5%;top:12.5%}.chessboard>svg[data-coord=\"2x2\"]{left:13.125%;top:13.125%}.chessboard>button[data-coord=\"2x1\"],.chessboard>button.selectedbutton[data-coord=\"2x1\"],.chessboard>.bsquare[data-coord=\"2x1\"],.chessboard>.recent_move[data-coord=\"2x1\"],.chessboard>.recent_source[data-coord=\"2x1\"]{left:12.5%;top:0}.chessboard>svg[data-coord=\"2x1\"]{left:13.125%;top:.625%}.chessboard>button[data-coord=\"3x8\"],.chessboard>button.selectedbutton[data-coord=\"3x8\"],.chessboard>.bsquare[data-coord=\"3x8\"],.chessboard>.recent_move[data-coord=\"3x8\"],.chessboard>.recent_source[data-coord=\"3x8\"]{left:25%;top:87.5%}.chessboard>svg[data-coord=\"3x8\"]{left:25.625%;top:88.125%}.chessboard>button[data-coord=\"3x7\"],.chessboard>button.selectedbutton[data-coord=\"3x7\"],.chessboard>.bsquare[data-coord=\"3x7\"],.chessboard>.recent_move[data-coord=\"3x7\"],.chessboard>.recent_source[data-coord=\"3x7\"]{left:25%;top:75%}.chessboard>svg[data-coord=\"3x7\"]{left:25.625%;top:75.625%}.chessboard>button[data-coord=\"3x6\"],.chessboard>button.selectedbutton[data-coord=\"3x6\"],.chessboard>.bsquare[data-coord=\"3x6\"],.chessboard>.recent_move[data-coord=\"3x6\"],.chessboard>.recent_source[data-coord=\"3x6\"]{left:25%;top:62.5%}.chessboard>svg[data-coord=\"3x6\"]{left:25.625%;top:63.125%}.chessboard>button[data-coord=\"3x5\"],.chessboard>button.selectedbutton[data-coord=\"3x5\"],.chessboard>.bsquare[data-coord=\"3x5\"],.chessboard>.recent_move[data-coord=\"3x5\"],.chessboard>.recent_source[data-coord=\"3x5\"]{left:25%;top:50%}.chessboard>svg[data-coord=\"3x5\"]{left:25.625%;top:50.625%}.chessboard>button[data-coord=\"3x4\"],.chessboard>button.selectedbutton[data-coord=\"3x4\"],.chessboard>.bsquare[data-coord=\"3x4\"],.chessboard>.recent_move[data-coord=\"3x4\"],.chessboard>.recent_source[data-coord=\"3x4\"]{left:25%;top:37.5%}.chessboard>svg[data-coord=\"3x4\"]{left:25.625%;top:38.125%}.chessboard>button[data-coord=\"3x3\"],.chessboard>button.selectedbutton[data-coord=\"3x3\"],.chessboard>.bsquare[data-coord=\"3x3\"],.chessboard>.recent_move[data-coord=\"3x3\"],.chessboard>.recent_source[data-coord=\"3x3\"]{left:25%;top:25%}.chessboard>svg[data-coord=\"3x3\"]{left:25.625%;top:25.625%}.chessboard>button[data-coord=\"3x2\"],.chessboard>button.selectedbutton[data-coord=\"3x2\"],.chessboard>.bsquare[data-coord=\"3x2\"],.chessboard>.recent_move[data-coord=\"3x2\"],.chessboard>.recent_source[data-coord=\"3x2\"]{left:25%;top:12.5%}.chessboard>svg[data-coord=\"3x2\"]{left:25.625%;top:13.125%}.chessboard>button[data-coord=\"3x1\"],.chessboard>button.selectedbutton[data-coord=\"3x1\"],.chessboard>.bsquare[data-coord=\"3x1\"],.chessboard>.recent_move[data-coord=\"3x1\"],.chessboard>.recent_source[data-coord=\"3x1\"]{left:25%;top:0}.chessboard>svg[data-coord=\"3x1\"]{left:25.625%;top:.625%}.chessboard>button[data-coord=\"4x8\"],.chessboard>button.selectedbutton[data-coord=\"4x8\"],.chessboard>.bsquare[data-coord=\"4x8\"],.chessboard>.recent_move[data-coord=\"4x8\"],.chessboard>.recent_source[data-coord=\"4x8\"]{left:37.5%;top:87.5%}.chessboard>svg[data-coord=\"4x8\"]{left:38.125%;top:88.125%}.chessboard>button[data-coord=\"4x7\"],.chessboard>button.selectedbutton[data-coord=\"4x7\"],.chessboard>.bsquare[data-coord=\"4x7\"],.chessboard>.recent_move[data-coord=\"4x7\"],.chessboard>.recent_source[data-coord=\"4x7\"]{left:37.5%;top:75%}.chessboard>svg[data-coord=\"4x7\"]{left:38.125%;top:75.625%}.chessboard>button[data-coord=\"4x6\"],.chessboard>button.selectedbutton[data-coord=\"4x6\"],.chessboard>.bsquare[data-coord=\"4x6\"],.chessboard>.recent_move[data-coord=\"4x6\"],.chessboard>.recent_source[data-coord=\"4x6\"]{left:37.5%;top:62.5%}.chessboard>svg[data-coord=\"4x6\"]{left:38.125%;top:63.125%}.chessboard>button[data-coord=\"4x5\"],.chessboard>button.selectedbutton[data-coord=\"4x5\"],.chessboard>.bsquare[data-coord=\"4x5\"],.chessboard>.recent_move[data-coord=\"4x5\"],.chessboard>.recent_source[data-coord=\"4x5\"]{left:37.5%;top:50%}.chessboard>svg[data-coord=\"4x5\"]{left:38.125%;top:50.625%}.chessboard>button[data-coord=\"4x4\"],.chessboard>button.selectedbutton[data-coord=\"4x4\"],.chessboard>.bsquare[data-coord=\"4x4\"],.chessboard>.recent_move[data-coord=\"4x4\"],.chessboard>.recent_source[data-coord=\"4x4\"]{left:37.5%;top:37.5%}.chessboard>svg[data-coord=\"4x4\"]{left:38.125%;top:38.125%}.chessboard>button[data-coord=\"4x3\"],.chessboard>button.selectedbutton[data-coord=\"4x3\"],.chessboard>.bsquare[data-coord=\"4x3\"],.chessboard>.recent_move[data-coord=\"4x3\"],.chessboard>.recent_source[data-coord=\"4x3\"]{left:37.5%;top:25%}.chessboard>svg[data-coord=\"4x3\"]{left:38.125%;top:25.625%}.chessboard>button[data-coord=\"4x2\"],.chessboard>button.selectedbutton[data-coord=\"4x2\"],.chessboard>.bsquare[data-coord=\"4x2\"],.chessboard>.recent_move[data-coord=\"4x2\"],.chessboard>.recent_source[data-coord=\"4x2\"]{left:37.5%;top:12.5%}.chessboard>svg[data-coord=\"4x2\"]{left:38.125%;top:13.125%}.chessboard>button[data-coord=\"4x1\"],.chessboard>button.selectedbutton[data-coord=\"4x1\"],.chessboard>.bsquare[data-coord=\"4x1\"],.chessboard>.recent_move[data-coord=\"4x1\"],.chessboard>.recent_source[data-coord=\"4x1\"]{left:37.5%;top:0}.chessboard>svg[data-coord=\"4x1\"]{left:38.125%;top:.625%}.chessboard>button[data-coord=\"5x8\"],.chessboard>button.selectedbutton[data-coord=\"5x8\"],.chessboard>.bsquare[data-coord=\"5x8\"],.chessboard>.recent_move[data-coord=\"5x8\"],.chessboard>.recent_source[data-coord=\"5x8\"]{left:50%;top:87.5%}.chessboard>svg[data-coord=\"5x8\"]{left:50.625%;top:88.125%}.chessboard>button[data-coord=\"5x7\"],.chessboard>button.selectedbutton[data-coord=\"5x7\"],.chessboard>.bsquare[data-coord=\"5x7\"],.chessboard>.recent_move[data-coord=\"5x7\"],.chessboard>.recent_source[data-coord=\"5x7\"]{left:50%;top:75%}.chessboard>svg[data-coord=\"5x7\"]{left:50.625%;top:75.625%}.chessboard>button[data-coord=\"5x6\"],.chessboard>button.selectedbutton[data-coord=\"5x6\"],.chessboard>.bsquare[data-coord=\"5x6\"],.chessboard>.recent_move[data-coord=\"5x6\"],.chessboard>.recent_source[data-coord=\"5x6\"]{left:50%;top:62.5%}.chessboard>svg[data-coord=\"5x6\"]{left:50.625%;top:63.125%}.chessboard>button[data-coord=\"5x5\"],.chessboard>button.selectedbutton[data-coord=\"5x5\"],.chessboard>.bsquare[data-coord=\"5x5\"],.chessboard>.recent_move[data-coord=\"5x5\"],.chessboard>.recent_source[data-coord=\"5x5\"]{left:50%;top:50%}.chessboard>svg[data-coord=\"5x5\"]{left:50.625%;top:50.625%}.chessboard>button[data-coord=\"5x4\"],.chessboard>button.selectedbutton[data-coord=\"5x4\"],.chessboard>.bsquare[data-coord=\"5x4\"],.chessboard>.recent_move[data-coord=\"5x4\"],.chessboard>.recent_source[data-coord=\"5x4\"]{left:50%;top:37.5%}.chessboard>svg[data-coord=\"5x4\"]{left:50.625%;top:38.125%}.chessboard>button[data-coord=\"5x3\"],.chessboard>button.selectedbutton[data-coord=\"5x3\"],.chessboard>.bsquare[data-coord=\"5x3\"],.chessboard>.recent_move[data-coord=\"5x3\"],.chessboard>.recent_source[data-coord=\"5x3\"]{left:50%;top:25%}.chessboard>svg[data-coord=\"5x3\"]{left:50.625%;top:25.625%}.chessboard>button[data-coord=\"5x2\"],.chessboard>button.selectedbutton[data-coord=\"5x2\"],.chessboard>.bsquare[data-coord=\"5x2\"],.chessboard>.recent_move[data-coord=\"5x2\"],.chessboard>.recent_source[data-coord=\"5x2\"]{left:50%;top:12.5%}.chessboard>svg[data-coord=\"5x2\"]{left:50.625%;top:13.125%}.chessboard>button[data-coord=\"5x1\"],.chessboard>button.selectedbutton[data-coord=\"5x1\"],.chessboard>.bsquare[data-coord=\"5x1\"],.chessboard>.recent_move[data-coord=\"5x1\"],.chessboard>.recent_source[data-coord=\"5x1\"]{left:50%;top:0}.chessboard>svg[data-coord=\"5x1\"]{left:50.625%;top:.625%}.chessboard>button[data-coord=\"6x8\"],.chessboard>button.selectedbutton[data-coord=\"6x8\"],.chessboard>.bsquare[data-coord=\"6x8\"],.chessboard>.recent_move[data-coord=\"6x8\"],.chessboard>.recent_source[data-coord=\"6x8\"]{left:62.5%;top:87.5%}.chessboard>svg[data-coord=\"6x8\"]{left:63.125%;top:88.125%}.chessboard>button[data-coord=\"6x7\"],.chessboard>button.selectedbutton[data-coord=\"6x7\"],.chessboard>.bsquare[data-coord=\"6x7\"],.chessboard>.recent_move[data-coord=\"6x7\"],.chessboard>.recent_source[data-coord=\"6x7\"]{left:62.5%;top:75%}.chessboard>svg[data-coord=\"6x7\"]{left:63.125%;top:75.625%}.chessboard>button[data-coord=\"6x6\"],.chessboard>button.selectedbutton[data-coord=\"6x6\"],.chessboard>.bsquare[data-coord=\"6x6\"],.chessboard>.recent_move[data-coord=\"6x6\"],.chessboard>.recent_source[data-coord=\"6x6\"]{left:62.5%;top:62.5%}.chessboard>svg[data-coord=\"6x6\"]{left:63.125%;top:63.125%}.chessboard>button[data-coord=\"6x5\"],.chessboard>button.selectedbutton[data-coord=\"6x5\"],.chessboard>.bsquare[data-coord=\"6x5\"],.chessboard>.recent_move[data-coord=\"6x5\"],.chessboard>.recent_source[data-coord=\"6x5\"]{left:62.5%;top:50%}.chessboard>svg[data-coord=\"6x5\"]{left:63.125%;top:50.625%}.chessboard>button[data-coord=\"6x4\"],.chessboard>button.selectedbutton[data-coord=\"6x4\"],.chessboard>.bsquare[data-coord=\"6x4\"],.chessboard>.recent_move[data-coord=\"6x4\"],.chessboard>.recent_source[data-coord=\"6x4\"]{left:62.5%;top:37.5%}.chessboard>svg[data-coord=\"6x4\"]{left:63.125%;top:38.125%}.chessboard>button[data-coord=\"6x3\"],.chessboard>button.selectedbutton[data-coord=\"6x3\"],.chessboard>.bsquare[data-coord=\"6x3\"],.chessboard>.recent_move[data-coord=\"6x3\"],.chessboard>.recent_source[data-coord=\"6x3\"]{left:62.5%;top:25%}.chessboard>svg[data-coord=\"6x3\"]{left:63.125%;top:25.625%}.chessboard>button[data-coord=\"6x2\"],.chessboard>button.selectedbutton[data-coord=\"6x2\"],.chessboard>.bsquare[data-coord=\"6x2\"],.chessboard>.recent_move[data-coord=\"6x2\"],.chessboard>.recent_source[data-coord=\"6x2\"]{left:62.5%;top:12.5%}.chessboard>svg[data-coord=\"6x2\"]{left:63.125%;top:13.125%}.chessboard>button[data-coord=\"6x1\"],.chessboard>button.selectedbutton[data-coord=\"6x1\"],.chessboard>.bsquare[data-coord=\"6x1\"],.chessboard>.recent_move[data-coord=\"6x1\"],.chessboard>.recent_source[data-coord=\"6x1\"]{left:62.5%;top:0}.chessboard>svg[data-coord=\"6x1\"]{left:63.125%;top:.625%}.chessboard>button[data-coord=\"7x8\"],.chessboard>button.selectedbutton[data-coord=\"7x8\"],.chessboard>.bsquare[data-coord=\"7x8\"],.chessboard>.recent_move[data-coord=\"7x8\"],.chessboard>.recent_source[data-coord=\"7x8\"]{left:75%;top:87.5%}.chessboard>svg[data-coord=\"7x8\"]{left:75.625%;top:88.125%}.chessboard>button[data-coord=\"7x7\"],.chessboard>button.selectedbutton[data-coord=\"7x7\"],.chessboard>.bsquare[data-coord=\"7x7\"],.chessboard>.recent_move[data-coord=\"7x7\"],.chessboard>.recent_source[data-coord=\"7x7\"]{left:75%;top:75%}.chessboard>svg[data-coord=\"7x7\"]{left:75.625%;top:75.625%}.chessboard>button[data-coord=\"7x6\"],.chessboard>button.selectedbutton[data-coord=\"7x6\"],.chessboard>.bsquare[data-coord=\"7x6\"],.chessboard>.recent_move[data-coord=\"7x6\"],.chessboard>.recent_source[data-coord=\"7x6\"]{left:75%;top:62.5%}.chessboard>svg[data-coord=\"7x6\"]{left:75.625%;top:63.125%}.chessboard>button[data-coord=\"7x5\"],.chessboard>button.selectedbutton[data-coord=\"7x5\"],.chessboard>.bsquare[data-coord=\"7x5\"],.chessboard>.recent_move[data-coord=\"7x5\"],.chessboard>.recent_source[data-coord=\"7x5\"]{left:75%;top:50%}.chessboard>svg[data-coord=\"7x5\"]{left:75.625%;top:50.625%}.chessboard>button[data-coord=\"7x4\"],.chessboard>button.selectedbutton[data-coord=\"7x4\"],.chessboard>.bsquare[data-coord=\"7x4\"],.chessboard>.recent_move[data-coord=\"7x4\"],.chessboard>.recent_source[data-coord=\"7x4\"]{left:75%;top:37.5%}.chessboard>svg[data-coord=\"7x4\"]{left:75.625%;top:38.125%}.chessboard>button[data-coord=\"7x3\"],.chessboard>button.selectedbutton[data-coord=\"7x3\"],.chessboard>.bsquare[data-coord=\"7x3\"],.chessboard>.recent_move[data-coord=\"7x3\"],.chessboard>.recent_source[data-coord=\"7x3\"]{left:75%;top:25%}.chessboard>svg[data-coord=\"7x3\"]{left:75.625%;top:25.625%}.chessboard>button[data-coord=\"7x2\"],.chessboard>button.selectedbutton[data-coord=\"7x2\"],.chessboard>.bsquare[data-coord=\"7x2\"],.chessboard>.recent_move[data-coord=\"7x2\"],.chessboard>.recent_source[data-coord=\"7x2\"]{left:75%;top:12.5%}.chessboard>svg[data-coord=\"7x2\"]{left:75.625%;top:13.125%}.chessboard>button[data-coord=\"7x1\"],.chessboard>button.selectedbutton[data-coord=\"7x1\"],.chessboard>.bsquare[data-coord=\"7x1\"],.chessboard>.recent_move[data-coord=\"7x1\"],.chessboard>.recent_source[data-coord=\"7x1\"]{left:75%;top:0}.chessboard>svg[data-coord=\"7x1\"]{left:75.625%;top:.625%}.chessboard>button[data-coord=\"8x8\"],.chessboard>button.selectedbutton[data-coord=\"8x8\"],.chessboard>.bsquare[data-coord=\"8x8\"],.chessboard>.recent_move[data-coord=\"8x8\"],.chessboard>.recent_source[data-coord=\"8x8\"]{left:87.5%;top:87.5%}.chessboard>svg[data-coord=\"8x8\"]{left:88.125%;top:88.125%}.chessboard>button[data-coord=\"8x7\"],.chessboard>button.selectedbutton[data-coord=\"8x7\"],.chessboard>.bsquare[data-coord=\"8x7\"],.chessboard>.recent_move[data-coord=\"8x7\"],.chessboard>.recent_source[data-coord=\"8x7\"]{left:87.5%;top:75%}.chessboard>svg[data-coord=\"8x7\"]{left:88.125%;top:75.625%}.chessboard>button[data-coord=\"8x6\"],.chessboard>button.selectedbutton[data-coord=\"8x6\"],.chessboard>.bsquare[data-coord=\"8x6\"],.chessboard>.recent_move[data-coord=\"8x6\"],.chessboard>.recent_source[data-coord=\"8x6\"]{left:87.5%;top:62.5%}.chessboard>svg[data-coord=\"8x6\"]{left:88.125%;top:63.125%}.chessboard>button[data-coord=\"8x5\"],.chessboard>button.selectedbutton[data-coord=\"8x5\"],.chessboard>.bsquare[data-coord=\"8x5\"],.chessboard>.recent_move[data-coord=\"8x5\"],.chessboard>.recent_source[data-coord=\"8x5\"]{left:87.5%;top:50%}.chessboard>svg[data-coord=\"8x5\"]{left:88.125%;top:50.625%}.chessboard>button[data-coord=\"8x4\"],.chessboard>button.selectedbutton[data-coord=\"8x4\"],.chessboard>.bsquare[data-coord=\"8x4\"],.chessboard>.recent_move[data-coord=\"8x4\"],.chessboard>.recent_source[data-coord=\"8x4\"]{left:87.5%;top:37.5%}.chessboard>svg[data-coord=\"8x4\"]{left:88.125%;top:38.125%}.chessboard>button[data-coord=\"8x3\"],.chessboard>button.selectedbutton[data-coord=\"8x3\"],.chessboard>.bsquare[data-coord=\"8x3\"],.chessboard>.recent_move[data-coord=\"8x3\"],.chessboard>.recent_source[data-coord=\"8x3\"]{left:87.5%;top:25%}.chessboard>svg[data-coord=\"8x3\"]{left:88.125%;top:25.625%}.chessboard>button[data-coord=\"8x2\"],.chessboard>button.selectedbutton[data-coord=\"8x2\"],.chessboard>.bsquare[data-coord=\"8x2\"],.chessboard>.recent_move[data-coord=\"8x2\"],.chessboard>.recent_source[data-coord=\"8x2\"]{left:87.5%;top:12.5%}.chessboard>svg[data-coord=\"8x2\"]{left:88.125%;top:13.125%}.chessboard>button[data-coord=\"8x1\"],.chessboard>button.selectedbutton[data-coord=\"8x1\"],.chessboard>.bsquare[data-coord=\"8x1\"],.chessboard>.recent_move[data-coord=\"8x1\"],.chessboard>.recent_source[data-coord=\"8x1\"]{left:87.5%;top:0}.chessboard>svg[data-coord=\"8x1\"]{left:88.125%;top:.625%}";
 },{}],2:[function(require,module,exports){
 
-var bc={};
+const bc = {};
 
 
-bc.acode="a".charCodeAt()
-bc.size=8
-bc.options={
-  valid_colors:{
-    white:true,
-    black:true
+bc.acode = 'a'.charCodeAt();
+bc.size = 8;
+bc.options = {
+  valid_colors: {
+    white: true,
+    black: true,
   },
-  valid_names:{
-    king:"k",
-    knight:"n",
-    pawn:"p",
-    bishop:"b",
-    rook:"r",
-    queen:"q",
-  }
+  valid_names: {
+    king: 'k',
+    knight: 'n',
+    pawn: 'p',
+    bishop: 'b',
+    rook: 'r',
+    queen: 'q',
+  },
 };
 
-bc.pcodes=(function () {
-  var pnames;
-  pnames=bc.options.valid_names
-  var o={}
-  var name,code
-  for(name in pnames){
-    code=pnames[name]
-    o[code]=name
+bc.pcodes = (function () {
+  let pnames;
+  pnames = bc.options.valid_names;
+  const o = {};
+  let name; let code;
+  for (name in pnames) {
+    code = pnames[name];
+    o[code] = name;
   }
-  return o
-})()
+  return o;
+}());
 
-bc.homerow="rnbkqbnr".split("").map(function (pcode) {
-  if(!(pcode in bc.pcodes)){
-    throw new Error("no match "+pcode)
+bc.homerow = 'rnbkqbnr'.split('').map((pcode) => {
+  if (!(pcode in bc.pcodes)) {
+    throw new Error(`no match ${pcode}`);
   }
-  
-  return bc.pcodes[pcode]
+
+  return bc.pcodes[pcode];
 });
 
-module.exports=bc;
+module.exports = bc;
 
 },{}],3:[function(require,module,exports){
 
-var type_checker=require("type_checker")
-var assert=require("assert")
-var piece=require("./piece.js")
+const type_checker = require('type_checker');
+const assert = require('assert');
 
-var path=require("path");
+const path = require('path');
 
-var EE=require("events").EventEmitter;
-var util=require("util")
+const EE = require('events').EventEmitter;
+const util = require('util');
 
-var position=require("./position.js")
-var dcopy=require("dcopy");
+const dcopy = require('dcopy');
+const position = require('./position.js');
+const piece = require('./piece.js');
 
-var board_util=require("./board_util.js");
-var bconstants=require("./board_constants.js");
+const board_util = require('./board_util.js');
+const bconstants = require('./board_constants.js');
 
 
+const window = (function () { return this; }());
 
-var window=(function (){return this;})();
+const imgs = piece.imgs;
+const indexes = 'bycolortype,bycolor,bycol,byrow,buttons,bypid'.split(',');
 
-var imgs=piece.imgs;
-var indexes="bycolortype,bycolor,bycol,byrow,buttons,bypid".split(",");
-
-var BoardState=function () {
-  EE.call(this)
-  var me=this;
-  this.animating=0;
-  this.positions={}
-  this.history=[];
-  this.bycolor={}
-  this.bypid={};
-  this["white castled"]=0;
-  this["black castled"]=0;
-  this.isboard=true;
-  this.bytype={}
-  this.supressemit=0;
-  this.turn="white";
-  indexes.forEach(function (pname) {
-    me[pname]={};
+const BoardState = function () {
+  EE.call(this);
+  const me = this;
+  this.animating = 0;
+  this.positions = {};
+  this.history = [];
+  this.bycolor = {};
+  this.bypid = {};
+  this['white castled'] = 0;
+  this['black castled'] = 0;
+  this.isboard = true;
+  this.bytype = {};
+  this.supressemit = 0;
+  this.turn = 'white';
+  indexes.forEach((pname) => {
+    me[pname] = {};
   });
-}
-util.inherits(BoardState,EE);
-BoardState.prototype.animation_notify=function (t) {
+};
+util.inherits(BoardState, EE);
+BoardState.prototype.animation_notify = function (t) {
   this.animating++;
-  this.emit("animating")
-  var me=this;
-  setTimeout(function () {
+  this.emit('animating');
+  const me = this;
+  setTimeout(() => {
     me.animating--;
-    if(!me.animating)
-      me.emit("animated")
-  },t*1E3);
+    if (!me.animating) me.emit('animated');
+  }, t * 1E3);
 };
 
-BoardState.prototype.add_piece=function (which,loc) {
-  var pcode
-  if(typeof loc==typeof "")
-    loc=new position(loc);
-  if(loc!==null)
-    type_checker.object(loc)
-  
-  var pobj
-  if(typeof which==typeof ""){
-    which=which.toLowerCase()
-    pobj=new piece(which)
-  } else{
-    pobj=which;
-    which=pobj.toString();
+BoardState.prototype.add_piece = function (which, loc) {
+  let pcode;
+  if (typeof loc === typeof '') loc = new position(loc);
+  if (loc !== null) type_checker.object(loc);
+
+  let pobj;
+  if (typeof which === typeof '') {
+    which = which.toLowerCase();
+    pobj = new piece(which);
+  } else {
+    pobj = which;
+    which = pobj.toString();
   }
-  
-  if(!pobj.id){
-    var tryid=JSON.stringify([which,loc.toString(),this.history.length])
-    assert(!(tryid in this.bypid))
-    this.bypid[tryid]=pobj;
-    pobj.id=tryid;
+
+  if (!pobj.id) {
+    const tryid = JSON.stringify([which, loc.toString(), this.history.length]);
+    assert(!(tryid in this.bypid));
+    this.bypid[tryid] = pobj;
+    pobj.id = tryid;
   }
-  if(pobj.id in this.bypid){
-    assert(this.bypid[pobj.id]==pobj)
-  } else{
-    this.bypid[pobj.id]=pobj;
+  if (pobj.id in this.bypid) {
+    assert(this.bypid[pobj.id] == pobj);
+  } else {
+    this.bypid[pobj.id] = pobj;
   }
-  
-  if(loc===null){
-    pobj.position=null;
+
+  if (loc === null) {
+    pobj.position = null;
     return pobj;
   }
-  
-  var where=loc.toString()
-  if(where in this.positions && this.positions[where]){
-    throw new Error(where+" is occupied by "+this.positions[where])
+
+  const where = loc.toString();
+  if (where in this.positions && this.positions[where]) {
+    throw new Error(`${where} is occupied by ${this.positions[where]}`);
   }
-  this.bycolor[pobj.color][where]=pobj
-  this.bytype[pobj.pname][where]=pobj
-  this.bycol[loc.x][where]=pobj
-  this.byrow[loc.y][where]=pobj
-  this.bycolortype[pobj.toString()][where]=pobj
-  this.positions[where]=pobj
-  pobj.position=loc;
-  
-  if(!this.supressemit)
-    this.emit("add_piece",pobj,loc)
-  
-  
+  this.bycolor[pobj.color][where] = pobj;
+  this.bytype[pobj.pname][where] = pobj;
+  this.bycol[loc.x][where] = pobj;
+  this.byrow[loc.y][where] = pobj;
+  this.bycolortype[pobj.toString()][where] = pobj;
+  this.positions[where] = pobj;
+  pobj.position = loc;
+
+  if (!this.supressemit) this.emit('add_piece', pobj, loc);
+
+
   return pobj;
-}
-BoardState.prototype.move_piece=function(pobj, loc){
-  
-  
-  if(typeof loc==typeof "")
-    loc=new position(loc);
-  
+};
+BoardState.prototype.move_piece = function (pobj, loc) {
+  if (typeof loc === typeof '') loc = new position(loc);
+
   type_checker.object(loc);
-  type_checker.object(pobj)
-  
-  this.supressemit+=1;
-  var from=pobj.position.toString()
+  type_checker.object(pobj);
+
+  this.supressemit += 1;
+  const from = pobj.position.toString();
   this.remove_piece(pobj);
-  this.add_piece(pobj,loc);
-  this.supressemit-=1;
-  if(!this.supressemit){
-    this.emit("move_piece",new position(from),loc,pobj);
+  this.add_piece(pobj, loc);
+  this.supressemit -= 1;
+  if (!this.supressemit) {
+    this.emit('move_piece', new position(from), loc, pobj);
   }
 };
-BoardState.prototype.promote=function(pobj,topiece){
+BoardState.prototype.promote = function (pobj, topiece) {
   type_checker.object(pobj);
   type_checker.string(topiece);
-  if(pobj.position===null){
-    console.log(pobj.id,pobj,bs)
-    throw new Error("not on board?")
+  if (pobj.position === null) {
+    console.log(pobj.id, pobj, bs);
+    throw new Error('not on board?');
   }
-  
-  var pos=pobj.position;
-  
+
+  const pos = pobj.position;
+
   this.remove_piece(pobj);
-  var np=pobj.color+" "+topiece;
-  var pcopy=new position(pos.toString());
-  
-  var npobj=this.add_piece(np,pcopy);
-  
-  npobj.jumped=pobj.jumped;
-  npobj.moved=pobj.moved;
-  
+  const np = `${pobj.color} ${topiece}`;
+  const pcopy = new position(pos.toString());
+
+  const npobj = this.add_piece(np, pcopy);
+
+  npobj.jumped = pobj.jumped;
+  npobj.moved = pobj.moved;
+
   return npobj;
 };
-BoardState.prototype.forget_piece=function (pobj) {
-  var rval=this.remove_piece(pobj);
+BoardState.prototype.forget_piece = function (pobj) {
+  const rval = this.remove_piece(pobj);
   assert(rval);
   delete this.bypid[pobj.id];
   return true;
-}
-BoardState.prototype.remove_piece=function(pobj){
-  type_checker.object(pobj)
-  if(!pobj.position)
-    throw new Error("not on board, no position")
-  var where=pobj.position.toString()
-  var pobj=this.positions[where]
-  type_checker.uses_interface(pobj,piece.interface)
-  
-  window.lastbs=this;
-  window.lastpobj=pobj;
-  assert(pobj===this.bycolortype[pobj.toString()][where],pobj+" not at "+where)
-  assert(pobj===this.bycolor[pobj.color][where]);
-  assert(pobj===this.bytype[pobj.pname][where]);
+};
+BoardState.prototype.remove_piece = function (pobj) {
+  type_checker.object(pobj);
+  if (!pobj.position) throw new Error('not on board, no position');
+  const where = pobj.position.toString();
+  var pobj = this.positions[where];
+  type_checker.uses_interface(pobj, piece.interface);
+
+  window.lastbs = this;
+  window.lastpobj = pobj;
+  assert(pobj === this.bycolortype[pobj.toString()][where], `${pobj} not at ${where}`);
+  assert(pobj === this.bycolor[pobj.color][where]);
+  assert(pobj === this.bytype[pobj.pname][where]);
   delete this.bycolor[pobj.color][where];
   delete this.bycolortype[pobj.toString()][where];
   delete this.bytype[pobj.pname][where];
   delete this.positions[where];
   delete this.bycol[pobj.position.x][where];
   delete this.byrow[pobj.position.y][where];
-  
-  pobj.position=null;
-  
-  if(!this.supressemit)
-    this.emit("remove_piece",pobj,new position(where))
-  
-  
-  return true
-}
 
-var jcopy={};
-"positions,history,animating,turn,taken".split(",").forEach(function (pname) {
-  jcopy[pname]=true;
-})
-BoardState.prototype.toJSON=function () {
-  var vcopy={};
-  for(var k in jcopy){
-    vcopy[k]=this[k];
-  }
+  pobj.position = null;
+
+  if (!this.supressemit) this.emit('remove_piece', pobj, new position(where));
+
+
+  return true;
+};
+
+const jcopy = 'positions,history,animating,turn,taken'.split(',');
+
+BoardState.prototype.toJSON = function () {
+  const vcopy = {};
+
+  jcopy.forEach((key) => {
+    vcopy[key] = this[key]
+  });
+
   return vcopy;
-}
-BoardState.prototype.initialize=function (optional) {
-  this.animating=0;
-  this.positions={}
-  this.history=[];
-  this.bycolor={}
-  this.bytype={}
-  this.bypid={};
-  this.turn="white";
-  var me=this;
-  indexes.forEach(function (idx) {
-    me[idx]={};
+};
+
+BoardState.prototype.initialize = function (optional) {
+  this.animating = 0;
+  this.positions = {};
+  this.history = [];
+  this.bycolor = {};
+  this.bytype = {};
+  this.bypid = {};
+  this.turn = 'white';
+  var me = this;
+  indexes.forEach((idx) => {
+    me[idx] = {};
   });
-  
-  
-  for(var c in bconstants.options.valid_colors){
-    this.bycolor[c]={}
-    for(var pn in bconstants.options.valid_names){
-      this.bycolortype[c+" "+pn]={}
+
+
+  for (const c in bconstants.options.valid_colors) {
+    this.bycolor[c] = {};
+    for (var pn in bconstants.options.valid_names) {
+      this.bycolortype[`${c} ${pn}`] = {};
     }
   }
-  this.bytype={}
-  for(var pn in bconstants.options.valid_names){
-    this.bytype[pn]={}
+  this.bytype = {};
+  for (var pn in bconstants.options.valid_names) {
+    this.bytype[pn] = {};
   }
-  for (var i = 0; i < bconstants.size; i++) {
-    var n=i+1;
-    this.bycol[n]={}
-    this.byrow[n]={}
-  };
-  this.taken=[]
-  var me=this
-  this.turn="white"
-  bconstants.homerow.forEach(function (pname,i) {
-    if(optional=="empty")
-      return;
-    var pi=i+1;
+  for (let i = 0; i < bconstants.size; i++) {
+    const n = i + 1;
+    this.bycol[n] = {};
+    this.byrow[n] = {};
+  }
+  this.taken = [];
+  var me = this;
+  this.turn = 'white';
+  bconstants.homerow.forEach((pname, i) => {
+    if (optional == 'empty') return;
+    const pi = i + 1;
     [
-      {which:"white "+pname,where:new position(pi,1)},
-      {which:"white pawn",where:new position(pi,2)},
-      {which:"black "+pname,where:new position(pi,8)},
-      {which:"black pawn",where:new position(pi,7)}
-    ].forEach(function (r) {
-      if(optional==="nopawns"&&/pawn/gi.test(r.which))
-        return;
-      me.add_piece(r.which,r.where)
-    })
+      { which: `white ${pname}`, where: new position(pi, 1) },
+      { which: 'white pawn', where: new position(pi, 2) },
+      { which: `black ${pname}`, where: new position(pi, 8) },
+      { which: 'black pawn', where: new position(pi, 7) },
+    ].forEach((r) => {
+      if (optional === 'nopawns' && /pawn/gi.test(r.which)) return;
+      me.add_piece(r.which, r.where);
+    });
   });
-  this.emit("initialize")
-}
+  this.emit('initialize');
+};
 
 
+BoardState.prototype.browser_element = require('./board_state_sub/browser_element.js');
+BoardState.prototype.add_human = require('./board_state_sub/add_human.js');
+BoardState.prototype.install_key_listeners = require('./board_state_sub/install_key_listeners.js');
+BoardState.prototype.clone = require('./board_state_sub/clone.js');
+BoardState.prototype.print = require('./board_state_sub/print.js');
+BoardState.prototype._check_all = require('./board_state_sub/_check_all.js');
+BoardState.prototype.flip_html_board = require('./board_state_sub/flip_html_board.js');
+BoardState.prototype.undo_move = require('./board_state_sub/undo_move.js');
+BoardState.prototype.valid_moves_by_color = require('./board_state_sub/valid_moves_by_color.js');
+BoardState.prototype.valid_moves_by_pos = require('./board_state_sub/valid_moves_by_pos.js');
+BoardState.prototype.valid_moves = require('./board_state_sub/valid_moves.js');
+BoardState.prototype.perform_move = require('./board_state_sub/perform_move.js');
+BoardState.prototype.check_check = require('./board_state_sub/check_check.js');
 
-BoardState.prototype.browser_element=require("./board_state_sub/browser_element.js");
-BoardState.prototype.add_human=require("./board_state_sub/add_human.js");
-BoardState.prototype.install_key_listeners=require("./board_state_sub/install_key_listeners.js");
-BoardState.prototype.clone=require("./board_state_sub/clone.js");
-BoardState.prototype.print=require("./board_state_sub/print.js");
-BoardState.prototype._check_all=require("./board_state_sub/_check_all.js");
-BoardState.prototype.flip_html_board=require("./board_state_sub/flip_html_board.js");
-BoardState.prototype.undo_move=require("./board_state_sub/undo_move.js");
-BoardState.prototype.valid_moves_by_color=require("./board_state_sub/valid_moves_by_color.js");
-BoardState.prototype.valid_moves_by_pos=require("./board_state_sub/valid_moves_by_pos.js");
-BoardState.prototype.valid_moves=require("./board_state_sub/valid_moves.js");
-BoardState.prototype.perform_move=require("./board_state_sub/perform_move.js");
-BoardState.prototype.check_check=require("./board_state_sub/check_check.js");
+BoardState.fromJSON = function (bj) {
+  const btmp = JSON.parse(bj);
 
-BoardState.fromJSON=function(bj){
-  var btmp=JSON.parse(bj);
-  
-  
-  var bs=new BoardState();
-  bs.initialize("empty");
-  
-  Object.keys(btmp.positions).forEach(function (pos) {
-    var pobj=btmp.positions[pos];
-    pobj.__proto__=piece.prototype;
-    var pnew=bs.add_piece(pobj.toString(),pobj.position.toString());
-    for(var k in pobj){
-      if(k=="position")
-        continue;
-      pnew[k]=pobj[k];
+
+  const bs = new BoardState();
+  bs.initialize('empty');
+
+  Object.keys(btmp.positions).forEach((pos) => {
+    const pobj = btmp.positions[pos];
+    pobj.__proto__ = piece.prototype;
+    const pnew = bs.add_piece(pobj.toString(), pobj.position.toString());
+    for (const k in pobj) {
+      if (k == 'position') continue;
+      pnew[k] = pobj[k];
     }
   });
-  
-  bs.turn=btmp.turn;
-  
+
+  bs.turn = btmp.turn;
+
   return bs;
 };
 
-var current_emit = BoardState.prototype.emit;
+const current_emit = BoardState.prototype.emit;
 
-BoardState.prototype.emit=function(evtname){
-  if(this.debug){
-    console.log(evtname,arguments);
+BoardState.prototype.emit = function (evtname) {
+  if (this.debug) {
+    console.log(evtname, arguments);
   }
-  return current_emit.apply(this,arguments);
+  return current_emit.apply(this, arguments);
 };
 
 board_util.configure();
 
-module.exports=BoardState;
+module.exports = BoardState;
 
 },{"./board_constants.js":2,"./board_state_sub/_check_all.js":4,"./board_state_sub/add_human.js":5,"./board_state_sub/browser_element.js":6,"./board_state_sub/check_check.js":7,"./board_state_sub/clone.js":8,"./board_state_sub/flip_html_board.js":9,"./board_state_sub/install_key_listeners.js":10,"./board_state_sub/perform_move.js":11,"./board_state_sub/print.js":12,"./board_state_sub/undo_move.js":13,"./board_state_sub/valid_moves.js":14,"./board_state_sub/valid_moves_by_color.js":15,"./board_state_sub/valid_moves_by_pos.js":16,"./board_util.js":17,"./piece.js":44,"./position.js":45,"assert":"assert","dcopy":40,"events":49,"path":53,"type_checker":43,"util":56}],4:[function(require,module,exports){
 
-module.exports=function _checkall(note) {
-  var me=this;
-  Object.keys(this.positions).forEach(function (pos) {
-    var piece=me.positions[pos];
-    assert(piece===me.bycolortype[piece.toString()][pos],"match fail "+pos+" "+piece+"\n"+note);
-  })
+module.exports = function _checkall(note) {
+  const me = this;
+  Object.keys(this.positions).forEach((pos) => {
+    const piece = me.positions[pos];
+    assert(piece === me.bycolortype[piece.toString()][pos], `match fail ${pos} ${piece}\n${note}`);
+  });
   return true;
 };
 
 },{}],5:[function(require,module,exports){
 (function (process){
 
-var window=(function(){return this;})();
-var board_constants=require("../board_constants.js");
-var position=require("../position.js");
-var assert=require("assert");
+const window = (function () { return this; }());
+const assert = require('assert');
+const board_constants = require('../board_constants.js');
+const position = require('../position.js');
 
-var piece=require("../piece.js");
+const piece = require('../piece.js');
 
-var add_human=function (color) {
-  assert(process.title=="browser");
-  
+const add_human = function (color) {
+  assert(process.title == 'browser');
+
   assert(color in board_constants.options.valid_colors);
   assert(this.browser_element);
-  
-  var bs=this;
-  
-  var document=window.document;
-  
-  if(this.valid_humans){
-    this.valid_humans[color]=true;
+
+  const bs = this;
+
+  const document = window.document;
+
+  if (this.valid_humans) {
+    this.valid_humans[color] = true;
     return;
   }
-  this.valid_humans={};
-  this.valid_humans[color]=true;
-  
-  var be=this.browser_element();
-  var me=this;
-  
-  var selected_piece=null;
-  var vmoves=[];
-  var myellow=[];
-  
-  var vmoves_by_to={};
-  
-  var highlight_moves=function (new_yellow) {
-    while(myellow.length){
-      var de=myellow.pop()
-      de.parentNode.removeChild(de)
+  this.valid_humans = {};
+  this.valid_humans[color] = true;
+
+  const be = this.browser_element();
+  const me = this;
+
+  let selected_piece = null;
+  let vmoves = [];
+  const myellow = [];
+
+  let vmoves_by_to = {};
+
+  const highlight_moves = function (new_yellow) {
+    while (myellow.length) {
+      const de = myellow.pop();
+      de.parentNode.removeChild(de);
     }
-    var first=true;
-    while(new_yellow.length){
-      var nde=new_yellow.pop();
+    let first = true;
+    while (new_yellow.length) {
+      const nde = new_yellow.pop();
       me.html_board.appendChild(nde);
-      if(first){
-        first=false;
+      if (first) {
+        first = false;
         nde.focus();
       }
       myellow.push(nde);
     }
   };
-  var promo=null;
-  var promotray=null;
-  var promo_hide=function () {
-    promo.style.zIndex="-5";
-    promotray.innerHTML="";
-  }
-  var promo_popup=function (mlist) {
-    if(!promo){
-      promo=document.createElement("div")
-      promo.className="promotion";
-      promo.appendChild(document.createTextNode("Select a promotion"));
-      promotray=document.createElement("div");
-      promotray.className="promotray";
+  let promo = null;
+  let promotray = null;
+  const promo_hide = function () {
+    promo.style.zIndex = '-5';
+    promotray.innerHTML = '';
+  };
+  const promo_popup = function (mlist) {
+    if (!promo) {
+      promo = document.createElement('div');
+      promo.className = 'promotion';
+      promo.appendChild(document.createTextNode('Select a promotion'));
+      promotray = document.createElement('div');
+      promotray.className = 'promotray';
       promo.appendChild(promotray);
       be.appendChild(promo);
     }
-    promo.style.zIndex=5;
-    var color=me.turn;
-    promotray.innerHTML="";
-    mlist.forEach(function (mv) {
+    promo.style.zIndex = 5;
+    const color = me.turn;
+    promotray.innerHTML = '';
+    mlist.forEach((mv) => {
       assert(mv.promo);
-      var ptemp=new piece(color+" "+mv.promo);
-      var pbe=ptemp.browser_element();
-      var btn=document.createElement("div");
+      const ptemp = new piece(`${color} ${mv.promo}`);
+      const pbe = ptemp.browser_element();
+      const btn = document.createElement('div');
       btn.appendChild(pbe);
-      btn.setAttribute("role","button")
-      btn.addEventListener("click",function (event) {
+      btn.setAttribute('role', 'button');
+      btn.addEventListener('click', (event) => {
         event.preventDefault();
         me.perform_move(mv);
         promo_hide();
-      },false);
+      }, false);
       promotray.appendChild(btn);
     });
   };
-  var selected_bclick=function (event) {
-    if(event)
-      event.preventDefault();
+  const selected_bclick = function (event) {
+    if (event) event.preventDefault();
     highlight_moves([]);
-    var to=this.getAttribute("data-coord");
-    var mtodo=vmoves_by_to[to];
-    
-    if(Array.isArray(mtodo)){
+    const to = this.getAttribute('data-coord');
+    const mtodo = vmoves_by_to[to];
+
+    if (Array.isArray(mtodo)) {
       promo_popup(mtodo);
       return;
     }
-    
-    if(mtodo.invalid){
-      selected_piece=null;
+
+    if (mtodo.invalid) {
+      selected_piece = null;
       return;
     }
-    
+
     assert(mtodo);
     me.perform_move(mtodo);
   };
-  
-  me.on("bsquare_click",function (where,domele) {
-    vmoves=[];
-    vmoves_by_to={};
-    var oldselection=selected_piece;
-    if(selected_piece){
-      highlight_moves([])
-      selected_piece=null;
+
+  me.on('bsquare_click', (where, domele) => {
+    vmoves = [];
+    vmoves_by_to = {};
+    let oldselection = selected_piece;
+    if (selected_piece) {
+      highlight_moves([]);
+      selected_piece = null;
     }
-    selected_piece=me.positions[where]
-    if(oldselection==selected_piece){
-      selected_piece=null;
-      oldselection=null;
+    selected_piece = me.positions[where];
+    if (oldselection == selected_piece) {
+      selected_piece = null;
+      oldselection = null;
       return;
     }
-    if(selected_piece){
-      var invalidcolor=false;
-      if(selected_piece.color==me.turn && selected_piece.color in me.valid_humans) {
-        vmoves=me.valid_moves_by_pos(selected_piece.position);
+    if (selected_piece) {
+      const invalidcolor = false;
+      if (selected_piece.color == me.turn && selected_piece.color in me.valid_humans) {
+        vmoves = me.valid_moves_by_pos(selected_piece.position);
       }
-      
-      if(!vmoves.length){
-        vmoves=[
+
+      if (!vmoves.length) {
+        vmoves = [
           {
-            invalid:true,
-            to:new position(selected_piece.position)
-          }
+            invalid: true,
+            to: new position(selected_piece.position),
+          },
         ];
       }
-      vmoves.sort(function (a, b) {
-        assert(b.to&& a.to);
-        var ydiff=b.to.y-a.to.y;
-        if(ydiff)
-          return ydiff;
-        var xdiff=b.to.x-a.to.x;
+      vmoves.sort((a, b) => {
+        assert(b.to && a.to);
+        const ydiff = b.to.y - a.to.y;
+        if (ydiff) return ydiff;
+        const xdiff = b.to.x - a.to.x;
         return xdiff;
-      })
-      highlight_moves(vmoves.map(function (mv,i) {
-        var tostr=mv.to.toString();
-        if(!vmoves_by_to[tostr])
-          vmoves_by_to[tostr]=mv;
-        else{
-          if(Array.isArray(vmoves_by_to[tostr])){
-            vmoves_by_to[tostr].push(mv)
-          } else
-            vmoves_by_to[tostr]=[vmoves_by_to[tostr],mv];
-        }
-        
-        
-        var btmp=document.createElement('button');
-        btmp.appendChild(document.createElement("div"))
-        btmp.className="selectedbutton";
-        if(mv.invalid)
-          btmp.className+=" invalidmove";
-        btmp.setAttribute("data-coord",mv.to.toString());
-        btmp.addEventListener("click",function (event) {
+      });
+      highlight_moves(vmoves.map((mv, i) => {
+        const tostr = mv.to.toString();
+        if (!vmoves_by_to[tostr]) vmoves_by_to[tostr] = mv;
+        else if (Array.isArray(vmoves_by_to[tostr])) {
+          vmoves_by_to[tostr].push(mv);
+        } else vmoves_by_to[tostr] = [vmoves_by_to[tostr], mv];
+
+
+        const btmp = document.createElement('button');
+        btmp.appendChild(document.createElement('div'));
+        btmp.className = 'selectedbutton';
+        if (mv.invalid) btmp.className += ' invalidmove';
+        btmp.setAttribute('data-coord', mv.to.toString());
+        btmp.addEventListener('click', function (event) {
           event.preventDefault();
           selected_bclick.call(this);
           domele.focus();
-          selected_piece=null;
-        },false);
+          selected_piece = null;
+        }, false);
         return btmp;
       }));
     }
-  })
+  });
   return this;
 };
 
-module.exports=add_human;
+module.exports = add_human;
 
 }).call(this,require('_process'))
 },{"../board_constants.js":2,"../piece.js":44,"../position.js":45,"_process":54,"assert":"assert"}],6:[function(require,module,exports){
 (function (process){
 
-var window=(function(){return this;})();
+const window = (function () { return this; }());
 
 
-var csstxt="";
-if(process.title=="browser"){
-  csstxt=require("../board.less")
+let csstxt = '';
+if (process.title == 'browser') {
+  csstxt = require('../board.less');
 }
 
-var bsquare_click=function (bs) {
+const bsquare_click = function (bs) {
   return function (event) {
     event.preventDefault();
-    bs.emit("bsquare_click",this.getAttribute("data-coord"),this);
+    bs.emit('bsquare_click', this.getAttribute('data-coord'), this);
   };
 };
 
 
-module.exports=function browser_element(parent) {
-  if(process.title!="browser")
-    throw new Error("not a browser")
-  if(this.html_board)
-    return this.html_board;
-  
-  var me=this;
-  var document=window.document;
-  var head=document.querySelector("head")
-  var bsc=document.querySelector("#board_state_css")
-  
-  var anitime=.2;
-  
-  if(!bsc){
-    bsc=document.createElement("style")
-    bsc.appendChild(document.createTextNode(csstxt.toString()+".chessboard>svg{transition:left "+anitime+"s,top "+anitime+"s;}"))
-    head.appendChild(bsc)
+module.exports = function browser_element(parent) {
+  if (process.title != 'browser') throw new Error('not a browser');
+  if (this.html_board) return this.html_board;
+
+  const me = this;
+  const document = window.document;
+  const head = document.querySelector('head');
+  let bsc = document.querySelector('#board_state_css');
+
+  const anitime = 0.2;
+
+  if (!bsc) {
+    bsc = document.createElement('style');
+    bsc.appendChild(document.createTextNode(`${csstxt.toString()}.chessboard>svg{transition:left ${anitime}s,top ${anitime}s;}`));
+    head.appendChild(bsc);
   }
-  var hb=document.createElement("div")
-  hb.className="chessboard";
-  
-  Object.defineProperty(this,"html_board",{
-    enumerable:false,value:hb
-  })
-  
-  var hpos={};
-  
-  
-  Object.defineProperty(this,"html_board_pos",{
-    enumerable:false,value:hpos
-  })
-  
-  var fillsquare=function (piece,sqr) {
-    var pcolor=null
-    var pname="empty"
-    var psvg=""
-    if(piece){
-      pname=piece.pname
-      pcolor=piece.color
-      psvg=imgs[pname]
+  const hb = document.createElement('div');
+  hb.className = 'chessboard';
+
+  Object.defineProperty(this, 'html_board', {
+    enumerable: false, value: hb,
+  });
+
+  const hpos = {};
+
+
+  Object.defineProperty(this, 'html_board_pos', {
+    enumerable: false, value: hpos,
+  });
+
+  const fillsquare = function (piece, sqr) {
+    let pcolor = null;
+    let pname = 'empty';
+    let psvg = '';
+    if (piece) {
+      pname = piece.pname;
+      pcolor = piece.color;
+      psvg = imgs[pname];
     }
-    sqr.innerHTML=psvg;
-    if(pcolor){
-      var oppcolor=board_util.opposite_color(pcolor)
-      var svg_ele=sqr.querySelector("svg");
-      svg_ele.setAttribute("class",""+pname+" "+pcolor)
+    sqr.innerHTML = psvg;
+    if (pcolor) {
+      const oppcolor = board_util.opposite_color(pcolor);
+      const svg_ele = sqr.querySelector('svg');
+      svg_ele.setAttribute('class', `${pname} ${pcolor}`);
     }
-  }
-  var svg_pos=function(piece,pos){
-    var pbe=piece.browser_element();
-    pbe.setAttribute("data-coord",pos);
-    if(!pbe.parentNode)
-      me.html_board.appendChild(pbe)
-  }
-  var square_map={};
-  
-  for(var i=1;i<=8;i++){
-    for (var j = 1; j <= 8; j++) {
-      var oddoreven=((i+j)%2 ? "odd" : "even")
-      var btn=document.createElement("button");
-      var sqr=document.createElement("div")
-      sqr.className="bsquare "+oddoreven
-      var posstr=j+"x"+i;
-      me.buttons[posstr]=btn;
-      btn.setAttribute("data-coord",posstr);
-      btn.addEventListener("click",bsquare_click(me),false);
-      sqr.setAttribute("data-coord",posstr);
-      hpos[posstr]=sqr;
-      var piece=this.positions[posstr];
-      if(piece)
-        svg_pos(piece,posstr)
-      square_map[posstr]=sqr;
+  };
+  const svg_pos = function (piece, pos) {
+    const pbe = piece.browser_element();
+    pbe.setAttribute('data-coord', pos);
+    if (!pbe.parentNode) me.html_board.appendChild(pbe);
+  };
+  const square_map = {};
+
+  for (let i = 1; i <= 8; i++) {
+    for (let j = 1; j <= 8; j++) {
+      const oddoreven = ((i + j) % 2 ? 'odd' : 'even');
+      const btn = document.createElement('button');
+      const sqr = document.createElement('div');
+      sqr.className = `bsquare ${oddoreven}`;
+      const posstr = `${j}x${i}`;
+      me.buttons[posstr] = btn;
+      btn.setAttribute('data-coord', posstr);
+      btn.addEventListener('click', bsquare_click(me), false);
+      sqr.setAttribute('data-coord', posstr);
+      hpos[posstr] = sqr;
+      const piece = this.positions[posstr];
+      if (piece) svg_pos(piece, posstr);
+      square_map[posstr] = sqr;
       hb.appendChild(btn);
       hb.appendChild(sqr);
-    };
-  }
-  Object.defineProperty(this,"recent_square",{
-    configurable:true,
-    value:document.createElement("div"),
-    enumerable:false
-  });
-  Object.defineProperty(this,"recent_source",{
-    configurable:true,
-    value:document.createElement("div"),
-    enumerable:false,
-  })
-  // this.recent_square=;
-  this.recent_square.appendChild(document.createElement("div"))
-  this.recent_square.setAttribute("class","recent_move")
-  
-  this.recent_source.appendChild(document.createElement("div"))
-  this.recent_source.setAttribute("class","recent_source")
-  
-  var set_new_recent=function (fp, np) {
-    if(!fp){
-      if(me.recent_source.parentNode)
-        me.recent_source.parentNode.removeChild(me.recent_source);
-    } else{
-      me.recent_source.setAttribute("data-coord",fp);
-      if(!me.recent_source.parentNode)
-        me.html_board.appendChild(me.recent_source);
     }
-    me.recent_square.setAttribute("data-coord",np);
-    if(!me.recent_square.parentNode){
-      me.html_board.appendChild(me.recent_square)
+  }
+  Object.defineProperty(this, 'recent_square', {
+    configurable: true,
+    value: document.createElement('div'),
+    enumerable: false,
+  });
+  Object.defineProperty(this, 'recent_source', {
+    configurable: true,
+    value: document.createElement('div'),
+    enumerable: false,
+  });
+  // this.recent_square=;
+  this.recent_square.appendChild(document.createElement('div'));
+  this.recent_square.setAttribute('class', 'recent_move');
+
+  this.recent_source.appendChild(document.createElement('div'));
+  this.recent_source.setAttribute('class', 'recent_source');
+
+  const set_new_recent = function (fp, np) {
+    if (!fp) {
+      if (me.recent_source.parentNode) me.recent_source.parentNode.removeChild(me.recent_source);
+    } else {
+      me.recent_source.setAttribute('data-coord', fp);
+      if (!me.recent_source.parentNode) me.html_board.appendChild(me.recent_source);
+    }
+    me.recent_square.setAttribute('data-coord', np);
+    if (!me.recent_square.parentNode) {
+      me.html_board.appendChild(me.recent_square);
     }
   };
-  this.on("add_piece",function (pobj,loc) {
-    svg_pos(pobj,loc.toString())
-    set_new_recent(null,loc.toString())
-  })
-  this.on("move_piece",function(from,to,pobj){
-    var pbe=pobj.browser_element();
-    pbe.setAttribute("data-coord",to.toString());
-    set_new_recent(from.toString(),to.toString());
-    me.animation_notify(anitime);
-  })
-  this.on("remove_piece",function (pobj,loc) {
-    var pbe=pobj.browser_element()
-    if(pbe.parentNode)
-      pbe.parentNode.removeChild(pbe)
-  })
-  process.nextTick(function () {
-    me.emit("html_board",me.html_board)
+  this.on('add_piece', (pobj, loc) => {
+    svg_pos(pobj, loc.toString());
+    set_new_recent(null, loc.toString());
   });
-  
+  this.on('move_piece', (from, to, pobj) => {
+    const pbe = pobj.browser_element();
+    pbe.setAttribute('data-coord', to.toString());
+    set_new_recent(from.toString(), to.toString());
+    me.animation_notify(anitime);
+  });
+  this.on('remove_piece', (pobj, loc) => {
+    const pbe = pobj.browser_element();
+    if (pbe.parentNode) pbe.parentNode.removeChild(pbe);
+  });
+  process.nextTick(() => {
+    me.emit('html_board', me.html_board);
+  });
+
   return hb;
 };
+
 }).call(this,require('_process'))
 },{"../board.less":1,"_process":54}],7:[function(require,module,exports){
-var type_checker=require("type_checker");
-var board_util=require("../board_util.js");
-var assert=require("assert")
-var piece=require("../piece.js")
-var position=require("../position.js")
+const type_checker = require('type_checker');
+const assert = require('assert');
+const board_util = require('../board_util.js');
+const piece = require('../piece.js');
+const position = require('../position.js');
 
-module.exports=function check_check (color) {
-  var kingloc=this.bycolortype[color+" king"];
-  var myking,kpos;
-  myking=false;
-  Object.keys(kingloc).forEach(function (kcoor) {
+module.exports = function check_check(color) {
+  const kingloc = this.bycolortype[`${color} king`];
+  let myking; let kpos;
+  myking = false;
+  Object.keys(kingloc).forEach((kcoor) => {
     assert(!myking);
-    myking=kingloc[kcoor];
-    kpos=new position(kcoor);
-  })
+    myking = kingloc[kcoor];
+    kpos = new position(kcoor);
+  });
   assert(myking);
-  
-  var preh=this.history.length;
-  
-  
-  var oppc=board_util.opposite_color(color);
-  var vmc=this.valid_moves_by_color(oppc,true);
-  
-  var kposstr=kpos.toString();
-  
-  var kingsafe=vmc.every(function (mv) {
-    if(mv.to.toString()==kposstr)
-      return false;
-    if(mv.target&&mv.target.toString()==kposstr)
-      return false;
+
+  const preh = this.history.length;
+
+
+  const oppc = board_util.opposite_color(color);
+  const vmc = this.valid_moves_by_color(oppc, true);
+
+  const kposstr = kpos.toString();
+
+  const kingsafe = vmc.every((mv) => {
+    if (mv.to.toString() == kposstr) return false;
+    if (mv.target && mv.target.toString() == kposstr) return false;
     return true;
   });
-  assert(this.history.length==preh,"something mvoed")
-  
-  if(!kingsafe)
-    return true;
-  return false;
-}
+  assert(this.history.length == preh, 'something mvoed');
 
+  if (!kingsafe) return true;
+  return false;
+};
 
 },{"../board_util.js":17,"../piece.js":44,"../position.js":45,"assert":"assert","type_checker":43}],8:[function(require,module,exports){
 
-var assert=require("assert");
-var dcopy=require("dcopy");
+const assert = require('assert');
+const dcopy = require('dcopy');
 
-module.exports=function clone() {
-  var me=this;
-  
-  var board_state=Object.getPrototypeOf(this).constructor;
-  
-  var bcopy=new board_state();
-  bcopy.initialize("empty");
-  bcopy.turn=this.turn;
-  
-  assert(Object.keys(this.positions).length,"Copying none?")
-  
-  Object.keys(this.bypid).forEach(function (pid) {
-    var pobj=me.bypid[pid];
-    var pos=pobj.position ? pobj.position.toString() : null;
-    
-    if(pos===null)
-      assert(pobj.taken);
-    
-    var pcopy=new piece(pobj.toString())
-    
-    Object.keys(pobj).forEach(function (pkey) {
-      var pv=pobj[pkey];
-      if(typeof pv==typeof ""||typeof pv==typeof 1||typeof pv==typeof true)
-        pcopy[pkey]=pobj[pkey];
+module.exports = function clone() {
+  const me = this;
+
+  const board_state = Object.getPrototypeOf(this).constructor;
+
+  const bcopy = new board_state();
+  bcopy.initialize('empty');
+  bcopy.turn = this.turn;
+
+  assert(Object.keys(this.positions).length, 'Copying none?');
+
+  Object.keys(this.bypid).forEach((pid) => {
+    const pobj = me.bypid[pid];
+    const pos = pobj.position ? pobj.position.toString() : null;
+
+    if (pos === null) assert(pobj.taken);
+
+    const pcopy = new piece(pobj.toString());
+
+    Object.keys(pobj).forEach((pkey) => {
+      const pv = pobj[pkey];
+      if (typeof pv === typeof '' || typeof pv === typeof 1 || typeof pv === typeof true) pcopy[pkey] = pobj[pkey];
     });
-    
+
     assert(pobj.id);
     assert(pcopy.id);
-    assert(pobj.id==pcopy.id)
-    
-    bcopy.add_piece(pcopy,pos);
-    
-    assert(bcopy.bypid[pcopy.id]==pcopy)
-    assert(pobj.id==pcopy.id)
+    assert(pobj.id == pcopy.id);
+
+    bcopy.add_piece(pcopy, pos);
+
+    assert(bcopy.bypid[pcopy.id] == pcopy);
+    assert(pobj.id == pcopy.id);
   });
-  
-  bcopy.taken=dcopy(me.taken);
-  bcopy.history=dcopy(me.history);
-  
-  
+
+  bcopy.taken = dcopy(me.taken);
+  bcopy.history = dcopy(me.history);
+
+
   assert(this.compare(bcopy));
-  
+
   return bcopy;
 };
 
-
 },{"assert":"assert","dcopy":40}],9:[function(require,module,exports){
 
-var window=(function(){return this;})();
+const window = (function () { return this; }());
 
-module.exports=function flip_html_board() {
-  if(this.flip_css){
+module.exports = function flip_html_board() {
+  if (this.flip_css) {
     this.flip_css.parentNode.removeChild(this.flip_css);
     delete this.flip_css;
     return true;
   }
-  var document=window.document;
-  var head=document.querySelector("head")
-  var fpc=this.flip_css=document.createElement("style");
-  fpc.appendChild(document.createTextNode(".chessboard{transform:rotate(180deg);}.chessboard svg{transform:rotate(180deg);}"));
+  const document = window.document;
+  const head = document.querySelector('head');
+  const fpc = this.flip_css = document.createElement('style');
+  fpc.appendChild(document.createTextNode('.chessboard{transform:rotate(180deg);}.chessboard svg{transform:rotate(180deg);}'));
   head.appendChild(fpc);
   return true;
 };
@@ -785,605 +752,572 @@ module.exports=function flip_html_board() {
 },{}],10:[function(require,module,exports){
 
 
-var window=(function(){return this;})();
-var keycode=require("keycode");
-var assert=require("assert");
+const window = (function () { return this; }());
+const keycode = require('keycode');
+const assert = require('assert');
 
-var position=require("../position.js");
+const position = require('../position.js');
 
-var kmap={};
-var keymove=function (direction,dx,dy) {
-  return function(event){
-    var ae=document.activeElement;
-    var dc=ae.getAttribute("data-coord");
-    if(!dc)
-      return;
+const kmap = {};
+const keymove = function (direction, dx, dy) {
+  return function (event) {
+    const ae = document.activeElement;
+    const dc = ae.getAttribute('data-coord');
+    if (!dc) return;
     event.preventDefault();
     // console.log("arrow move");
-    var pos=new position(dc);
-    var npos=new position({
-      x:(pos.x-1+dx+8)%8+1,
-      y:(pos.y-1+dy+8)%8+1,
+    const pos = new position(dc);
+    const npos = new position({
+      x: (pos.x - 1 + dx + 8) % 8 + 1,
+      y: (pos.y - 1 + dy + 8) % 8 + 1,
     });
-    var mall=be.querySelectorAll("button[data-coord=\""+npos+"\"]");
-    var last=mall[mall.length-1];
+    const mall = be.querySelectorAll(`button[data-coord="${npos}"]`);
+    const last = mall[mall.length - 1];
     last.focus();
   };
 };
-kmap[keycode("up")]=keymove("up",0,-1);
-kmap[keycode("down")]=keymove("down",0,1);
-kmap[keycode("left")]=keymove("left",-1,0);
-kmap[keycode("right")]=keymove("right",1,0);
+kmap[keycode('up')] = keymove('up', 0, -1);
+kmap[keycode('down')] = keymove('down', 0, 1);
+kmap[keycode('left')] = keymove('left', -1, 0);
+kmap[keycode('right')] = keymove('right', 1, 0);
 
-var install_key_listeners=function () {
+const install_key_listeners = function () {
   assert(!this.key_listeners_installed);
-  this.key_listeners_installed=true;
-  
-  var document=window.document;
-  
-  document.addEventListener("keydown",function (event) {
-    if(event.keyCode in kmap){
+  this.key_listeners_installed = true;
+
+  const document = window.document;
+
+  document.addEventListener('keydown', (event) => {
+    if (event.keyCode in kmap) {
       kmap[event.keyCode](event);
     }
-  },false);
+  }, false);
 };
 
-module.exports=install_key_listeners;
-
+module.exports = install_key_listeners;
 
 },{"../position.js":45,"assert":"assert","keycode":51}],11:[function(require,module,exports){
-var type_checker=require("type_checker");
-var board_util=require("../board_util.js");
-var assert=require("assert")
-var piece=require("../piece.js")
-var position=require("../position.js")
+const type_checker = require('type_checker');
+const assert = require('assert');
+const board_util = require('../board_util.js');
+const piece = require('../piece.js');
+const position = require('../position.js');
 
-var perform_move_known_keys=(function () {
-  var o={};
-  "from,to,skipverify,rook_from,rook_to,castle,promo,enpassant,target,isjump,undoable".split(",")
-  .forEach(function (k) {
-    o[k]=true;
-  })
+const perform_move_known_keys = (function () {
+  const o = {};
+  'from,to,skipverify,rook_from,rook_to,castle,promo,enpassant,target,isjump,undoable'.split(',')
+    .forEach((k) => {
+      o[k] = true;
+    });
   return o;
-})();
+}());
 
-module.exports=function perform_move (mvdesc) {
+module.exports = function perform_move(mvdesc) {
   type_checker.object(mvdesc);
-  
-  Object.keys(mvdesc).forEach(function (k) {
-    assert(perform_move_known_keys[k],"Unknown key "+k);
+
+  Object.keys(mvdesc).forEach((k) => {
+    assert(perform_move_known_keys[k], `Unknown key ${k}`);
   });
-  
-  
-  var uclone=false;
-  if(mvdesc.undoable){
-    this.supressemit+=1;
+
+
+  const uclone = false;
+  if (mvdesc.undoable) {
+    this.supressemit += 1;
   }
-  
-  var from=new position(mvdesc.from);
-  var to=new position(mvdesc.to);
-  
-  var sourcepiece=this.positions[from.toString()]
-  assert(sourcepiece,"no piece found at "+from);
-  if(sourcepiece.color!==this.turn){
-    var e=new Error(sourcepiece+" piece at "+sourcepiece.position+", turn is "+this.turn);
-    console.log(sourcepiece,this.history,this.turn,mvdesc)
+
+  const from = new position(mvdesc.from);
+  const to = new position(mvdesc.to);
+
+  let sourcepiece = this.positions[from.toString()];
+  assert(sourcepiece, `no piece found at ${from}`);
+  if (sourcepiece.color !== this.turn) {
+    const e = new Error(`${sourcepiece} piece at ${sourcepiece.position}, turn is ${this.turn}`);
+    console.log(sourcepiece, this.history, this.turn, mvdesc);
     throw e;
   }
-  
-  if(!mvdesc.skipverify){
-    var possible=this.valid_moves_by_pos(from)
-    var notfound=possible.every(function (e) {
-      if(e.toString()==to.toString())
-        return false;
+
+  if (!mvdesc.skipverify) {
+    const possible = this.valid_moves_by_pos(from);
+    const notfound = possible.every((e) => {
+      if (e.toString() == to.toString()) return false;
       return true;
-    })
-    if(notfound)
-      throw new Error("invalid move?")
+    });
+    if (notfound) throw new Error('invalid move?');
   }
-  var targetpiece=null;
-  targetpiece=this.positions[to.toString()]
-  if(mvdesc.enpassant){
-    assert(!targetpiece)
-    assert(mvdesc.target)
-    targetpiece=this.positions[mvdesc.target.toString()]
+  let targetpiece = null;
+  targetpiece = this.positions[to.toString()];
+  if (mvdesc.enpassant) {
+    assert(!targetpiece);
+    assert(mvdesc.target);
+    targetpiece = this.positions[mvdesc.target.toString()];
   }
-  var target_loc=null;
-  if(targetpiece){
-    target_loc=targetpiece.position.toString();
-    this.remove_piece(targetpiece)
-    this.taken.push(targetpiece.id)
-    
-    targetpiece.taken=true
+  let target_loc = null;
+  if (targetpiece) {
+    target_loc = targetpiece.position.toString();
+    this.remove_piece(targetpiece);
+    this.taken.push(targetpiece.id);
+
+    targetpiece.taken = true;
   }
-  if(mvdesc.isjump){
-    sourcepiece.jumped=true;
+  if (mvdesc.isjump) {
+    sourcepiece.jumped = true;
   }
-  var original=new piece(sourcepiece.toString());
-  
-  this.move_piece(sourcepiece,to)
-  
-  var prepromo_id=null;
-  if(mvdesc.promo){
+  const original = new piece(sourcepiece.toString());
+
+  this.move_piece(sourcepiece, to);
+
+  let prepromo_id = null;
+  if (mvdesc.promo) {
     assert(sourcepiece.id);
-    prepromo_id=sourcepiece.id;
-    sourcepiece=this.promote(sourcepiece,mvdesc.promo);
+    prepromo_id = sourcepiece.id;
+    sourcepiece = this.promote(sourcepiece, mvdesc.promo);
   }
-  var rookpiece=null;
-  if(mvdesc.castle){
-    
-    var castlekey=sourcepiece.color+" castled";
-    assert(!this[castlekey])
-    
+  let rookpiece = null;
+  if (mvdesc.castle) {
+    const castlekey = `${sourcepiece.color} castled`;
+    assert(!this[castlekey]);
+
     this[castlekey]++;
-    
-    assert(mvdesc.rook_to&&mvdesc.rook_from)
-    rookpiece=this.positions[mvdesc.rook_from.toString()];
+
+    assert(mvdesc.rook_to && mvdesc.rook_from);
+    rookpiece = this.positions[mvdesc.rook_from.toString()];
     assert(rookpiece);
-    this.move_piece(rookpiece,mvdesc.rook_to);
-    
-    rookpiece.moved+=1;
+    this.move_piece(rookpiece, mvdesc.rook_to);
+
+    rookpiece.moved += 1;
   }
-  sourcepiece.moved+=1;
-  
-  
-  var notation=original.unicode()+from.notation();
-  if(targetpiece){
-    notation+="x";
-  } else
-    notation+="-";
-  notation+=to.notation();
-  
-  var desc=original+" "+from+" to "+to;
-  if(targetpiece)
-    desc+=" takes "+targetpiece;
-  if(mvdesc.castle){
-    desc+=" castling"
+  sourcepiece.moved += 1;
+
+
+  let notation = original.unicode() + from.notation();
+  if (targetpiece) {
+    notation += 'x';
+  } else notation += '-';
+  notation += to.notation();
+
+  let desc = `${original} ${from} to ${to}`;
+  if (targetpiece) desc += ` takes ${targetpiece}`;
+  if (mvdesc.castle) {
+    desc += ' castling';
   }
-  if(mvdesc.promo){
-    desc+=" promote to "+mvdesc.promo;
+  if (mvdesc.promo) {
+    desc += ` promote to ${mvdesc.promo}`;
   }
-  
+
   // assert(targetpiece.id&&sourcepiece.id)
-  var hentry={
-    desctxt:desc,
-    mvdesc:mvdesc,
-    notation:notation,
+  const hentry = {
+    desctxt: desc,
+    mvdesc,
+    notation,
   };
-  if(sourcepiece){
+  if (sourcepiece) {
     assert(sourcepiece.id);
-    hentry.source_id=sourcepiece.id;
+    hentry.source_id = sourcepiece.id;
   }
-  if(rookpiece){
+  if (rookpiece) {
     assert(rookpiece.id);
-    hentry.rook_id=rookpiece.id;
+    hentry.rook_id = rookpiece.id;
   }
-  if(prepromo_id){
-    hentry.prepromo_id=prepromo_id;
+  if (prepromo_id) {
+    hentry.prepromo_id = prepromo_id;
   }
-  if(targetpiece){
+  if (targetpiece) {
     assert(targetpiece.id);
-    assert(target_loc)
-    hentry.target_loc=target_loc;
-    hentry.target_id=targetpiece.id;
+    assert(target_loc);
+    hentry.target_loc = target_loc;
+    hentry.target_id = targetpiece.id;
   }
-  if(uclone){
+  if (uclone) {
     // console.log("saving clone ",uclone)
-    hentry.uclone=uclone;
+    hentry.uclone = uclone;
   }
   this.history.push(hentry);
-  
-  if(!this.supressemit)
-    this.emit("movedesc",desc,mvdesc,notation)
-  
-  this.turn=board_util.opposite_color(this.turn);
-  
+
+  if (!this.supressemit) this.emit('movedesc', desc, mvdesc, notation);
+
+  this.turn = board_util.opposite_color(this.turn);
+
   return true;
 };
 
 },{"../board_util.js":17,"../piece.js":44,"../position.js":45,"assert":"assert","type_checker":43}],12:[function(require,module,exports){
 (function (process){
 
-var bconstants=require("../board_constants.js");
+const colors = require('colors/safe');
+const bconstants = require('../board_constants.js');
 
-var colors=require("colors/safe")
-var pheight=3;
-var pwidth=5;
-module.exports=function print() {
-  for (var i = 1; i <= 8; i++) {
-    for(var t=0;t<pheight;t++){
-      var line="";
-      for (var j = 1; j <= 8; j++) {
-        var posstr=j+"x"+i;
-        var scolor=((i+j)%2 ? "bgBlue" : "bgBlack");
-        var pcode=" ";
-        var piece=this.positions[posstr];
-        var pcolor="white"
-        if(piece){
-          pcode=bconstants.options.valid_names[piece.pname]
-          if(piece.color=="black")
-            pcolor="yellow";
+
+const pheight = 3;
+const pwidth = 5;
+module.exports = function print() {
+  for (let i = 1; i <= 8; i++) {
+    for (let t = 0; t < pheight; t++) {
+      let line = '';
+      for (let j = 1; j <= 8; j++) {
+        const posstr = `${j}x${i}`;
+        const scolor = ((i + j) % 2 ? 'bgBlue' : 'bgBlack');
+        let pcode = ' ';
+        const piece = this.positions[posstr];
+        let pcolor = 'white';
+        if (piece) {
+          pcode = bconstants.options.valid_names[piece.pname];
+          if (piece.color == 'black') pcolor = 'yellow';
         }
-        if(t!=Math.floor(pheight/2))
-          pcode=" ";
-        if(process.title=="browser"){
-          if(j==1)
-            line+="|"
-          line+=""+pcode+"|"
-        } else{
-          var ptmp="";
-          ptmp+=(new Array(Math.floor(pwidth/2)+1)).join(" ")
-          ptmp+=pcode.toUpperCase();
-          ptmp+=(new Array(Math.floor(pwidth/2)+1)).join(" ")
-          ptmp=colors[scolor](ptmp)
-          ptmp=colors[pcolor](ptmp)
-          ptmp=colors.bold(ptmp)
-          line+=ptmp;
+        if (t != Math.floor(pheight / 2)) pcode = ' ';
+        if (process.title == 'browser') {
+          if (j == 1) line += '|';
+          line += `${pcode}|`;
+        } else {
+          let ptmp = '';
+          ptmp += (new Array(Math.floor(pwidth / 2) + 1)).join(' ');
+          ptmp += pcode.toUpperCase();
+          ptmp += (new Array(Math.floor(pwidth / 2) + 1)).join(' ');
+          ptmp = colors[scolor](ptmp);
+          ptmp = colors[pcolor](ptmp);
+          ptmp = colors.bold(ptmp);
+          line += ptmp;
         }
-      };
-      console.log(line)
+      }
+      console.log(line);
     }
-  };
+  }
 };
-
-
 
 }).call(this,require('_process'))
 },{"../board_constants.js":2,"_process":54,"colors/safe":39}],13:[function(require,module,exports){
-var type_checker=require("type_checker");
-var board_util=require("../board_util.js");
-var assert=require("assert")
-var piece=require("../piece.js")
-var position=require("../position.js")
+const type_checker = require('type_checker');
+const assert = require('assert');
+const board_util = require('../board_util.js');
+const piece = require('../piece.js');
+const position = require('../position.js');
 
-module.exports=function undo_move () {
-  assert(arguments.length==0)
+module.exports = function undo_move() {
+  assert(arguments.length == 0);
 
-  var pmove=this.history.pop();
-  
+  const pmove = this.history.pop();
+
   // assert(pmove.uclone);
-  if(pmove.uclone)
-    assert(Object.keys(pmove.uclone).length)
-  
-  var mvdesc=pmove.mvdesc;
-  
-  var sid=pmove.source_id;
+  if (pmove.uclone) assert(Object.keys(pmove.uclone).length);
+
+  const mvdesc = pmove.mvdesc;
+
+  const sid = pmove.source_id;
   assert(sid && sid in this.bypid);
-  
-  var tid=pmove.target_id;
-  
-  var tobj;
-  
-  if(tid){
-    tobj=this.bypid[tid];
+
+  const tid = pmove.target_id;
+
+  let tobj;
+
+  if (tid) {
+    tobj = this.bypid[tid];
     assert(tobj.taken);
     delete tobj.taken;
   }
-  var sobj=this.bypid[sid];
-  
-  if(mvdesc.promo){
-    var preo=this.bypid[pmove.prepromo_id];
-    
-    assert(preo,"per obj");
-    assert(preo.moved,"pre obj had not moved?")
-    assert(sobj.moved,"post obj had not moved?")
+  let sobj = this.bypid[sid];
+
+  if (mvdesc.promo) {
+    const preo = this.bypid[pmove.prepromo_id];
+
+    assert(preo, 'per obj');
+    assert(preo.moved, 'pre obj had not moved?');
+    assert(sobj.moved, 'post obj had not moved?');
     this.forget_piece(sobj);
-    this.add_piece(preo,pmove.mvdesc.from)
-    sobj=preo;
+    this.add_piece(preo, pmove.mvdesc.from);
+    sobj = preo;
     // sobj.moved--;
-    assert(sobj.moved,"obj had not moved?")
-  } else{
-    assert(sobj.moved>0)
-    
+    assert(sobj.moved, 'obj had not moved?');
+  } else {
+    assert(sobj.moved > 0);
+
     sobj.moved--;
-    if(mvdesc.isjump)
-      delete sobj.jumped;
-    this.move_piece(sobj,mvdesc.from.toString());
+    if (mvdesc.isjump) delete sobj.jumped;
+    this.move_piece(sobj, mvdesc.from.toString());
   }
-  
-  if(mvdesc.castle){
-    
-    var castlekey=sobj.color+" castled";
+
+  if (mvdesc.castle) {
+    const castlekey = `${sobj.color} castled`;
     this[castlekey]--;
-    assert(this[castlekey]===0);
-    
-    assert(mvdesc.rook_from&&mvdesc.rook_to)
-    var rook=this.positions[mvdesc.rook_to.toString()];
+    assert(this[castlekey] === 0);
+
+    assert(mvdesc.rook_from && mvdesc.rook_to);
+    const rook = this.positions[mvdesc.rook_to.toString()];
     assert(rook);
-    this.move_piece(rook,mvdesc.rook_from)
+    this.move_piece(rook, mvdesc.rook_from);
     rook.moved--;
-    assert(rook.moved==0)
+    assert(rook.moved == 0);
   }
-  
-  if(tobj){
+
+  if (tobj) {
     assert(pmove.target_loc);
-    
-    assert(this.taken[this.taken.length-1]==tobj.id)
+
+    assert(this.taken[this.taken.length - 1] == tobj.id);
     this.taken.pop();
     delete tobj.taken;
-    this.add_piece(tobj,pmove.target_loc);
+    this.add_piece(tobj, pmove.target_loc);
   }
 
-  this.turn=board_util.opposite_color(this.turn);
-  
-  if(pmove.uclone)
-    assert(this.compare(pmove.uclone));
-  
-  this.supressemit-=1;
-  
+  this.turn = board_util.opposite_color(this.turn);
+
+  if (pmove.uclone) assert(this.compare(pmove.uclone));
+
+  this.supressemit -= 1;
+
   return true;
 };
-var prev=null;
+const prev = null;
 
 },{"../board_util.js":17,"../piece.js":44,"../position.js":45,"assert":"assert","type_checker":43}],14:[function(require,module,exports){
-module.exports=function valid_moves () {
-  var cwhich=this.turn;
+module.exports = function valid_moves() {
+  const cwhich = this.turn;
   return this.valid_moves_by_color(cwhich);
 };
 
 },{}],15:[function(require,module,exports){
-var type_checker=require("type_checker");
-var board_util=require("../board_util.js");
-var assert=require("assert")
-var piece=require("../piece.js")
-var position=require("../position.js")
-var bconstants=require("../board_constants.js");
+const type_checker = require('type_checker');
+const assert = require('assert');
+const board_util = require('../board_util.js');
+const piece = require('../piece.js');
+const position = require('../position.js');
+const bconstants = require('../board_constants.js');
 
-module.exports=function valid_moves_by_color (cwhich,skipkingcheck) {
-  type_checker.string(cwhich)
-  var me=this;
-  assert(bconstants.options.valid_colors[cwhich])
-  
-  var cpos=this.bycolor[cwhich]
-  var mvall=[]
-  Object.keys(cpos).forEach(function (pstr) {
-    var p=cpos[pstr]
-    if(!p)
-      return;
-    var mvnew=me.valid_moves_by_pos(pstr,skipkingcheck)
-    
-    mvall.push.apply(mvall,mvnew);
-  })
-  
+module.exports = function valid_moves_by_color(cwhich, skipkingcheck) {
+  type_checker.string(cwhich);
+  const me = this;
+  assert(bconstants.options.valid_colors[cwhich]);
+
+  const cpos = this.bycolor[cwhich];
+  const mvall = [];
+  Object.keys(cpos).forEach((pstr) => {
+    const p = cpos[pstr];
+    if (!p) return;
+    const mvnew = me.valid_moves_by_pos(pstr, skipkingcheck);
+
+    mvall.push(...mvnew);
+  });
+
   return mvall;
 };
 
-
 },{"../board_constants.js":2,"../board_util.js":17,"../piece.js":44,"../position.js":45,"assert":"assert","type_checker":43}],16:[function(require,module,exports){
-var vmoves=require("../valid_moves.js");
-var position=require("../position.js")
-var assert=require("assert");
+const assert = require('assert');
+const vmoves = require('../valid_moves.js');
+const position = require('../position.js');
 
-module.exports=function valid_moves_by_pos (pos,skipkingcheck) {
-  pos=new position(pos);
-  var me=this;
-  var posstr=pos.toString()
-  var piece=this.positions[posstr]
-  if(!piece){
-    throw new Error('no piece at '+posstr)
+module.exports = function valid_moves_by_pos(pos, skipkingcheck) {
+  pos = new position(pos);
+  const me = this;
+  const posstr = pos.toString();
+  const piece = this.positions[posstr];
+  if (!piece) {
+    throw new Error(`no piece at ${posstr}`);
   }
-  
-  var piece_had_moved = piece.moved;
-  
-  prev="prev: "+piece+" "+pos+"";
-  var pname=piece.pname;
-  if(!vmoves[pname])
-    throw new Error('not implemented for '+pname+' yet')
-  
-  var preh=this.history.length;
-  var vcalc=vmoves[pname](this,piece,skipkingcheck)
-  assert(this.history.length==preh,"something moved when "+pname+" was checked")
-  
-  var pc=piece.color;
-  
-  if(skipkingcheck)
-    return vcalc;
-  
-  var bhinit=me.history.length;
-  var lmv=me.history[me.history.length-1];
-  
-  var vnew=[]
-  
-  vcalc.forEach(function (mv,i) {
-    assert(Object.keys(me.positions).length,"empty board?")
+
+  const piece_had_moved = piece.moved;
+
+  prev = `prev: ${piece} ${pos}`;
+  const pname = piece.pname;
+  if (!vmoves[pname]) throw new Error(`not implemented for ${pname} yet`);
+
+  const preh = this.history.length;
+  const vcalc = vmoves[pname](this, piece, skipkingcheck);
+  assert(this.history.length == preh, `something moved when ${pname} was checked`);
+
+  const pc = piece.color;
+
+  if (skipkingcheck) return vcalc;
+
+  const bhinit = me.history.length;
+  const lmv = me.history[me.history.length - 1];
+
+  const vnew = [];
+
+  vcalc.forEach((mv, i) => {
+    assert(Object.keys(me.positions).length, 'empty board?');
     // var bcopy=me.clone();
     // var targetpiece=bcopy.positions[mv.to.toString()]
-    mv.skipverify=true;
-    mv.undoable=true;
-    
-    if(bhinit!==me.history.length){
+    mv.skipverify = true;
+    mv.undoable = true;
+
+    if (bhinit !== me.history.length) {
       console.log(lmv);
-      throw new Error("History len should be "+bhinit+" is "+me.history.length)
+      throw new Error(`History len should be ${bhinit} is ${me.history.length}`);
     }
-    if(me.turn!==pc){
-      console.log(piece.toString())
-      console.log(vcalc)
-      console.log(me.history)
-      throw new Error("not my turn? "+me.turn+" and "+pc+" index:"+i)
+    if (me.turn !== pc) {
+      console.log(piece.toString());
+      console.log(vcalc);
+      console.log(me.history);
+      throw new Error(`not my turn? ${me.turn} and ${pc} index:${i}`);
     }
-    var hadmoved = piece.moved;
+    const hadmoved = piece.moved;
     me.perform_move(mv);
-    if(bhinit+1!==me.history.length){
-      console.log(bhinit)
-      console.log(me.history)
-      console.log(mv)
+    if (bhinit + 1 !== me.history.length) {
+      console.log(bhinit);
+      console.log(me.history);
+      console.log(mv);
       console.log(bs);
-      throw new Error("wrong len")
+      throw new Error('wrong len');
     }
-    
-    if(!me.check_check(piece.color)){
-      var mnew={};
-      Object.keys(mv).forEach(function (k) {
-        if(k==="undoable")
-          return;
-        mnew[k]=mv[k];
+
+    if (!me.check_check(piece.color)) {
+      const mnew = {};
+      Object.keys(mv).forEach((k) => {
+        if (k === 'undoable') return;
+        mnew[k] = mv[k];
       });
-      vnew.push(mnew)
+      vnew.push(mnew);
     }
-    if(bhinit+1!==me.history.length){
-      console.log(bhinit)
-      console.log(me.history)
-      console.log(mv)
+    if (bhinit + 1 !== me.history.length) {
+      console.log(bhinit);
+      console.log(me.history);
+      console.log(mv);
       console.log(bs);
-      throw new Error("wrong len")
+      throw new Error('wrong len');
     }
     me.undo_move();
-    if(piece.moved!==hadmoved){
+    if (piece.moved !== hadmoved) {
       console.log(mv);
     }
-    assert(piece.moved===hadmoved,"piece.moved changed between doing and undoing ");
-    
-    if(bhinit!==me.history.length){
-      console.log(bhinit)
-      console.log(me.history)
-      console.log(mv)
+    assert(piece.moved === hadmoved, 'piece.moved changed between doing and undoing ');
+
+    if (bhinit !== me.history.length) {
+      console.log(bhinit);
+      console.log(me.history);
+      console.log(mv);
       console.log(bs);
-      throw new Error("wrong len")
+      throw new Error('wrong len');
     }
     // assert(bhinit===me.history.length,"h should be same");
     // assert(me.compare(me));
-  })
+  });
 
-  assert(piece.moved === piece_had_moved,"piece_had_moved changed when getting valid moves")
+  assert(piece.moved === piece_had_moved, 'piece_had_moved changed when getting valid moves');
 
   return vnew;
-}
+};
 
 },{"../position.js":45,"../valid_moves.js":48,"assert":"assert"}],17:[function(require,module,exports){
 
-var path=require("path")
+const path = require('path');
 
-var piece=require("./piece.js");
-var position=require("./position.js")
-var assert=require("assert")
-var type_checker=require("type_checker")
-var position=require("./position.js")
+const assert = require('assert');
+const type_checker = require('type_checker');
+const piece = require('./piece.js');
+var position = require('./position.js');
+var position = require('./position.js');
 
-var bconstants=require("./board_constants.js")
+const bconstants = require('./board_constants.js');
 
-var bu={};
+const bu = {};
 
 
-bu.configure=function () {
+bu.configure = function () {
   piece.configure(bu.pconfig);
   position.configure(bu.pconfig);
 };
 
 
-bu.to_pos=function(cd){
-  type_checker.string(cd)
-  var r=new RegExp("^(["+[0,bu.size-1].map(function (offset) {
-    return String.fromCharCode(bconstants.acode+offset)
-  }).join("-")+"])"+"(\\d+)$","gi")
-  
-  var m=r.exec(cd)
-  if(!m)
-    throw new Error("parse position error");
-  var p=new position(m[1],m[2])
-  assert(p.toString()==cd)
-  return p
+bu.to_pos = function (cd) {
+  type_checker.string(cd);
+  const r = new RegExp(`^([${[0, bu.size - 1].map(offset => String.fromCharCode(bconstants.acode + offset)).join('-')}])` + '(\\d+)$', 'gi');
+
+  const m = r.exec(cd);
+  if (!m) throw new Error('parse position error');
+  const p = new position(m[1], m[2]);
+  assert(p.toString() == cd);
+  return p;
 };
 
 
-bu.opposite_color=function (cone) {
-  assert(bconstants.options.valid_colors[cone])
-  var call=Object.keys(bconstants.options.valid_colors)
-  for (var i = 0; i < call.length; i++) {
-    if(call[i]!=cone)
-      return call[i];
-  };
-  throw new Error("not found")
-}
-bu.pconfig={
-  board_util:bu,
-  valid_colors:function(n){
-    return !!(bconstants.options.valid_colors[n])
+bu.opposite_color = function (cone) {
+  assert(bconstants.options.valid_colors[cone]);
+  const call = Object.keys(bconstants.options.valid_colors);
+  for (let i = 0; i < call.length; i++) {
+    if (call[i] != cone) return call[i];
+  }
+  throw new Error('not found');
+};
+bu.pconfig = {
+  board_util: bu,
+  valid_colors(n) {
+    return !!(bconstants.options.valid_colors[n]);
   },
-  valid_names:function(n){
-    return !!(bconstants.options.valid_names[n])
+  valid_names(n) {
+    return !!(bconstants.options.valid_names[n]);
   },
-  size:bconstants.size
+  size: bconstants.size,
 };
 
 
-
-module.exports=bu;
+module.exports = bu;
 
 },{"./board_constants.js":2,"./piece.js":44,"./position.js":45,"assert":"assert","path":53,"type_checker":43}],18:[function(require,module,exports){
 (function (process){
 
-var assert=require("assert");
-var type_checker=require("type_checker");
-var piece=require("./piece.js");
-var board_util=require("./board_util.js");
+const assert = require('assert');
+const type_checker = require('type_checker');
+const piece = require('./piece.js');
+const board_util = require('./board_util.js');
 
-var nticks=0;
-var nextTickDelayed=function (cb) {
-  if(process.title=="browser") {
+let nticks = 0;
+const nextTickDelayed = function (cb) {
+  if (process.title == 'browser') {
     nticks++;
-    if(nticks%5==0)
-      setTimeout(cb,1);
-    else
-      process.nextTick(cb);
-  } else
-    process.nextTick(cb);
+    if (nticks % 5 == 0) setTimeout(cb, 1);
+    else process.nextTick(cb);
+  } else process.nextTick(cb);
 };
 
-var bot=function (bs,_options) {
-  var options=_options;
-  if(typeof _options==typeof "")
-    options={color:_options};
-  this.bs=bs;
-  this.depth=(typeof options.depth==typeof undefined ? 2 : options.depth);
-  this.color=options.color;
-  this.delay=(typeof options.delay==typeof undefined ? 500 : options.delay);
-  type_checker.string(options.color)
-  type_checker.number(this.delay)
-  type_checker.number(this.depth)
-  
-  piece.valid_colors(options.color)
+const bot = function (bs, _options) {
+  let options = _options;
+  if (typeof _options === typeof '') options = { color: _options };
+  this.bs = bs;
+  this.depth = (typeof options.depth === typeof undefined ? 2 : options.depth);
+  this.color = options.color;
+  this.delay = (typeof options.delay === typeof undefined ? 500 : options.delay);
+  type_checker.string(options.color);
+  type_checker.number(this.delay);
+  type_checker.number(this.depth);
+
+  piece.valid_colors(options.color);
   // console.log(byposcolor)
-  
-  var me=this;
-  this._bound_try_to_move=function(){
-    var args=arguments;
-    setTimeout(function(){
-      me.try_to_move.apply(me,args);
-    },me.delay);
+
+  const me = this;
+  this._bound_try_to_move = function () {
+    const args = arguments;
+    setTimeout(() => {
+      me.try_to_move(...args);
+    }, me.delay);
   };
-  if(!bs.html_board)
-    bs.on("movedesc",this._bound_try_to_move)
-  else
-    bs.on("animated",this._bound_try_to_move)
+  if (!bs.html_board) bs.on('movedesc', this._bound_try_to_move);
+  else bs.on('animated', this._bound_try_to_move);
   process.nextTick(this._bound_try_to_move);
 };
-bot.prototype.stop=function(){
-  assert(!this.stopped)
-  this.stopped=true;
-  this.bs.removeListener("movedesc",this._bound_try_to_move);
-  this.bs.removeListener("animated",this._bound_try_to_move);
+bot.prototype.stop = function () {
+  assert(!this.stopped);
+  this.stopped = true;
+  this.bs.removeListener('movedesc', this._bound_try_to_move);
+  this.bs.removeListener('animated', this._bound_try_to_move);
 };
 
-bot.prototype.change_board=function (nbd) {
-  this.bs.removeListener("animated",this._bound_try_to_move);
-  this.bs.removeListener("movedesc",this._bound_try_to_move);
-  this.bs=nbd;
-  nbd.on("animated",this._bound_try_to_move);
-  if(!nbd.html_board)
-    nbd.on("movedesc",this._bound_try_to_move);
+bot.prototype.change_board = function (nbd) {
+  this.bs.removeListener('animated', this._bound_try_to_move);
+  this.bs.removeListener('movedesc', this._bound_try_to_move);
+  this.bs = nbd;
+  nbd.on('animated', this._bound_try_to_move);
+  if (!nbd.html_board) nbd.on('movedesc', this._bound_try_to_move);
   process.nextTick(this._bound_try_to_move);
 };
-bot.prototype.try_to_move=function () {
-  assert(!this.stopped)
-  
-  var bs=this.bs;
-  var mycolor=this.color;
-  
-  if(bs.turn==mycolor){
+bot.prototype.try_to_move = function () {
+  assert(!this.stopped);
+
+  const bs = this.bs;
+  const mycolor = this.color;
+
+  if (bs.turn == mycolor) {
     // console.log("from my perspective "+mycolor)
     // console.log("board score was "+score_state_traditional(mycolor,bs))
-    
-    var mv=get_best(mycolor,this.depth,bs,function (mv,ns) {
+
+    const mv = get_best(mycolor, this.depth, bs, (mv, ns) => {
       // console.log(mycolor+" plays")
       // console.log("board score is now "+ns)
       bs.perform_move(mv);
@@ -1391,27 +1325,25 @@ bot.prototype.try_to_move=function () {
   }
 };
 
-var score_state=function (perspective, bs) {
-  
-  var state={};
-  state.number_of={};
-  state.moves=0;
-  
-  Object.keys(bs.bycolortype).forEach(function (ptype) {
-    
-    var plist=Object.keys(bs.bycolortype[ptype]);
-    state.number_of[ptype]=plist.length;
-    plist.forEach(function (pos) {
-      var pboj=bs.positions[pos];
-      var mlist=bs.valid_moves_by_pos(pos);
-      state.moves+=mlist.length;
-    })
-  })
+const score_state = function (perspective, bs) {
+  const state = {};
+  state.number_of = {};
+  state.moves = 0;
+
+  Object.keys(bs.bycolortype).forEach((ptype) => {
+    const plist = Object.keys(bs.bycolortype[ptype]);
+    state.number_of[ptype] = plist.length;
+    plist.forEach((pos) => {
+      const pboj = bs.positions[pos];
+      const mlist = bs.valid_moves_by_pos(pos);
+      state.moves += mlist.length;
+    });
+  });
 };
 
 
-var bypos={};
-bypos.bishop=[
+const bypos = {};
+bypos.bishop = [
   [-5, -5, -5, -5, -5, -5, -5, -5],
   [-5, 10, 5, 8, 8, 5, 10, -5],
   [-5, 5, 3, 8, 8, 3, 5, -5],
@@ -1421,19 +1353,19 @@ bypos.bishop=[
   [-5, 10, 5, 8, 8, 5, 10, -5],
   [-5, -5, -5, -5, -5, -5, -5, -5],
 ];
-bypos.knight=[
-  [-10, -5, -5, -5, -5, -5, -5, -10 ],
-  [ -8,  0,  0,  3,  3,  0,  0,  -8 ],
-  [ -8,  0, 10,  8,  8, 10,  0,  -8 ],
-  [ -8,  0,  8, 10, 10,  8,  0,  -8 ],
-  [ -8,  0,  8, 10, 10,  8,  0,  -8 ],
-  [ -8,  0, 10,  8,  8, 10,  0,  -8 ],
-  [ -8,  0,  0,  3,  3,  0,  0,  -8 ],
-  [-10, -5, -5, -5, -5, -5, -5, -10 ],
+bypos.knight = [
+  [-10, -5, -5, -5, -5, -5, -5, -10],
+  [-8, 0, 0, 3, 3, 0, 0, -8],
+  [-8, 0, 10, 8, 8, 10, 0, -8],
+  [-8, 0, 8, 10, 10, 8, 0, -8],
+  [-8, 0, 8, 10, 10, 8, 0, -8],
+  [-8, 0, 10, 8, 8, 10, 0, -8],
+  [-8, 0, 0, 3, 3, 0, 0, -8],
+  [-10, -5, -5, -5, -5, -5, -5, -10],
 ];
-var byposcolor={};
+const byposcolor = {};
 
-byposcolor["white pawn"]=[
+byposcolor['white pawn'] = [
   [0, 0, 0, 0, 0, 0, 0, 0],
   [0, 0, 0, -5, -5, 0, 0, 0],
   [0, 2, 3, 4, 4, 3, 2, 0],
@@ -1443,147 +1375,143 @@ byposcolor["white pawn"]=[
   [5, 10, 15, 20, 20, 15, 10, 5],
   [0, 0, 0, 0, 0, 0, 0, 0],
 ];
-byposcolor["black pawn"]=[];
+byposcolor['black pawn'] = [];
 
-byposcolor["white pawn"].forEach(function (e,i) {
-  var len=byposcolor["white pawn"].length;
-  var nr=byposcolor["white pawn"][len-1-i].slice();
-  
-  byposcolor["black pawn"].push(nr)
+byposcolor['white pawn'].forEach((e, i) => {
+  const len = byposcolor['white pawn'].length;
+  const nr = byposcolor['white pawn'][len - 1 - i].slice();
+
+  byposcolor['black pawn'].push(nr);
 });
 
-var castle_bonus=10;
+const castle_bonus = 10;
 
-var pscore={
-  pawn:100,
-  knight:300,
-  bishop:300,
-  rook:500,
-  queen:900,
-  king:350,
+const pscore = {
+  pawn: 100,
+  knight: 300,
+  bishop: 300,
+  rook: 500,
+  queen: 900,
+  king: 350,
 };
 
-var score_state_traditional=function (perspective, bs) {
+const score_state_traditional = function (perspective, bs) {
   piece.valid_colors(perspective);
-  var so=0;
-  Object.keys(bs.positions).forEach(function (pos) {
-    var multiplier=1;
-    var pobj=bs.positions[pos];
+  let so = 0;
+  Object.keys(bs.positions).forEach((pos) => {
+    let multiplier = 1;
+    const pobj = bs.positions[pos];
     type_checker.object(pobj);
-    var pname=pobj.pname;
-    var pfull=pobj.toString();
-    
-    if(pobj.color!=perspective){
-      multiplier*=(-1);
+    const pname = pobj.pname;
+    const pfull = pobj.toString();
+
+    if (pobj.color != perspective) {
+      multiplier *= (-1);
     }
-    var pos=pobj.position;
-    var pos_score=0;
-    var posarray=null;
-    if(pname in bypos){
-      posarray=bypos[pname];
-    } else if(pfull in byposcolor){
-      posarray=byposcolor[pfull];
+    var pos = pobj.position;
+    let pos_score = 0;
+    let posarray = null;
+    if (pname in bypos) {
+      posarray = bypos[pname];
+    } else if (pfull in byposcolor) {
+      posarray = byposcolor[pfull];
     }
-    if(posarray){
-      type_checker.object(posarray[pos.y-1])
-      pos_score=posarray[pos.y-1][pos.x-1];
-      
+    if (posarray) {
+      type_checker.object(posarray[pos.y - 1]);
+      pos_score = posarray[pos.y - 1][pos.x - 1];
+
       // console.log(pos_score+" score for "+pobj+" at "+pos)
-      
+
       type_checker.number(pos_score);
     }
     assert(pobj.pname in pscore);
-    so+=(pscore[pobj.pname]+pos_score)*multiplier;
+    so += (pscore[pobj.pname] + pos_score) * multiplier;
   });
-  
-  var myckey=perspective+" castled";
-  var otherckey=board_util.opposite_color(perspective)+" castled";
-  if(bs[myckey]){
-    so+=castle_bonus;
+
+  const myckey = `${perspective} castled`;
+  const otherckey = `${board_util.opposite_color(perspective)} castled`;
+  if (bs[myckey]) {
+    so += castle_bonus;
   }
-  if(bs[otherckey]){
-    so-=castle_bonus;
+  if (bs[otherckey]) {
+    so -= castle_bonus;
   }
-  
-  
+
+
   return so;
 };
 // var DEPTH=2;
-var get_best,nega_max;
+let get_best; let nega_max;
 
 // var collected_move=0;
-var brun=0;
+let brun = 0;
 
-get_best=function (perspective,DEPTH, bs, cb) {
-  piece.valid_colors(perspective)
+get_best = function (perspective, DEPTH, bs, cb) {
+  piece.valid_colors(perspective);
   type_checker.number(DEPTH);
-  type_checker.object(bs)
-  type_checker.function(cb)
-  
-  var moves=bs.valid_moves_by_color(bs.turn);
-  
-  var ex=Infinity;
-  var best_so_far=null;
-  var imediate_score=null;
-  
+  type_checker.object(bs);
+  type_checker.function(cb);
+
+  const moves = bs.valid_moves_by_color(bs.turn);
+
+  let ex = Infinity;
+  let best_so_far = null;
+  let imediate_score = null;
+
   brun++;
-  if(brun>2000){
+  if (brun > 2000) {
     console.log(arguments);
-    throw new Error("too much b");
+    throw new Error('too much b');
   }
-  var gbstart=bs.history.length;
-  
+  const gbstart = bs.history.length;
+
   // var start_score=score_state_traditional(perspective,bs);
-  
-  var step;
-  step=function () {
-    var mv=moves.shift();
+
+  let step;
+  step = function () {
+    const mv = moves.shift();
     // console.log(moves.length+" moves todo")
-    if(!mv){
-      assert(best_so_far!=null,"I am checkmated");
-      var cpmv={};
-      Object.keys(best_so_far).forEach(function (k) {
-        if(k=="undoable")
-          return;
-        cpmv[k]=best_so_far[k];
-      })
+    if (!mv) {
+      assert(best_so_far != null, 'I am checkmated');
+      const cpmv = {};
+      Object.keys(best_so_far).forEach((k) => {
+        if (k == 'undoable') return;
+        cpmv[k] = best_so_far[k];
+      });
       // console.log("old score "+start_score)
       // console.log("new score "+ex,best_so_far)
-      assert(bs.history.length==gbstart);
-      return cb(cpmv,imediate_score);
+      assert(bs.history.length == gbstart);
+      return cb(cpmv, imediate_score);
     }
-    
+
     // var bcopy=bs.clone();
-    
+
     // assert(bcopy.turn==bs.turn);
-    
+
     // var bturn=bcopy.turn;
     // var piece=bcopy.positions[mv.from.toString()];
     // console.log(bturn)
     // console.log(piece.color)
-    
-    mv.undoable=true;
-    
+
+    mv.undoable = true;
+
     bs.perform_move(mv);
-    
+
     // assert(bcopy.turn!=bs.turn)
-    
-    nega_max(bs,perspective,bs.turn,DEPTH-1,-Infinity, Infinity,function (nv) {
-      var save=function () {
-        ex=nv.score;
-        imediate_score=score_state_traditional(perspective,bs);
-        best_so_far=mv;
+
+    nega_max(bs, perspective, bs.turn, DEPTH - 1, -Infinity, Infinity, (nv) => {
+      const save = function () {
+        ex = nv.score;
+        imediate_score = score_state_traditional(perspective, bs);
+        best_so_far = mv;
       };
-      if(best_so_far===null)
-        save();
-      else if(nv.score<ex)
-        save();
-      else if(nv.score===ex){
-        if(Math.random()>.5)
-          save();
+      if (best_so_far === null) save();
+      else if (nv.score < ex) save();
+      else if (nv.score === ex) {
+        if (Math.random() > 0.5) save();
       }
       bs.undo_move();
-      
+
       // collected_move++;
       // console.log(collected_move+" moves","best move is ",best_so_far.from.toString()+" to "+best_so_far.to.toString())
       nextTickDelayed(step);
@@ -1592,12 +1520,12 @@ get_best=function (perspective,DEPTH, bs, cb) {
   nextTickDelayed(step);
 };
 // var nrun=0;
-nega_max=function (bs,perspective,turn,depth,alpha,beta, cb){
-  var ndepth;
+nega_max = function (bs, perspective, turn, depth, alpha, beta, cb) {
+  let ndepth;
   type_checker.number(depth);
   type_checker.number(alpha);
   type_checker.number(beta);
-  
+
   // nrun+=1;
   // if(nrun>2000){
   //   console.log(arguments)
@@ -1607,177 +1535,166 @@ nega_max=function (bs,perspective,turn,depth,alpha,beta, cb){
   piece.valid_colors(turn);
   piece.valid_colors(perspective);
   type_checker.function(cb);
-  
-  var cscore=score_state_traditional(perspective,bs);
-  var out={score:cscore,state:bs,children:[]};
-  
+
+  const cscore = score_state_traditional(perspective, bs);
+  const out = { score: cscore, state: bs, children: [] };
+
   // console.log(depth+" is depth")
-  
-  if(depth<=0){
-    nextTickDelayed(function () {
+
+  if (depth <= 0) {
+    nextTickDelayed(() => {
       cb(out);
     });
     return;
   }
-  
-  ndepth=depth-1;
-  
-  var mvall=bs.valid_moves_by_color(turn);
-  var opp=board_util.opposite_color(turn);
-  
-  var nalpha=alpha;
-  
-  var hstart=bs.history.length;
-  
-  var ondone=function () {
-    out.score=nalpha;
-    assert(hstart==bs.history.length);
-    nextTickDelayed(function () {
+
+  ndepth = depth - 1;
+
+  const mvall = bs.valid_moves_by_color(turn);
+  const opp = board_util.opposite_color(turn);
+
+  let nalpha = alpha;
+
+  const hstart = bs.history.length;
+
+  const ondone = function () {
+    out.score = nalpha;
+    assert(hstart == bs.history.length);
+    nextTickDelayed(() => {
       cb(out);
     });
   };
 
-  
-  var mvstep=function () {
-    var mv=mvall.shift();
-    
-    if(!mv){
-      return ondone();}
-    
+
+  var mvstep = function () {
+    const mv = mvall.shift();
+
+    if (!mv) {
+      return ondone();
+    }
+
     // toundo++;
-    mv.undoable=true;
-    assert(mv.from.toString() in bs.positions)
-    assert(bs.positions[mv.from.toString()].color==bs.turn)
+    mv.undoable = true;
+    assert(mv.from.toString() in bs.positions);
+    assert(bs.positions[mv.from.toString()].color == bs.turn);
     bs.perform_move(mv);
-    
-    nega_max(bs,opp,opp,ndepth,-1*beta,-1*nalpha,function(tmp){
-    
-      nalpha=Math.max(nalpha,tmp.score * -1);
-      
+
+    nega_max(bs, opp, opp, ndepth, -1 * beta, -1 * nalpha, (tmp) => {
+      nalpha = Math.max(nalpha, tmp.score * -1);
+
       type_checker.number(tmp.score);
       type_checker.number(nalpha);
-      
+
       bs.undo_move();
-      
-      if(nalpha>=beta){
-        out.score=nalpha;
+
+      if (nalpha >= beta) {
+        out.score = nalpha;
         out.children.push(tmp);
-        return ondone()
+        return ondone();
       }
       nextTickDelayed(mvstep);
     });
   };
   nextTickDelayed(mvstep);
-  
-  return;
 };
 
 
-module.exports=bot;
+module.exports = bot;
 
 }).call(this,require('_process'))
 },{"./board_util.js":17,"./piece.js":44,"_process":54,"assert":"assert","type_checker":43}],19:[function(require,module,exports){
 (function (process){
 
-var Picker=require("./game_picker.js")
-var BoardState=require("./board_state.js");
-var bot=require("./bot.js");
+const Picker = require('./game_picker.js');
+const BoardState = require('./board_state.js');
+const bot = require('./bot.js');
 
-var window=(function(){return this;})();
-var assert=require("assert")
-var piece=require("./piece.js")
-var position=require("./position.js")
-var type_checker=require("type_checker")
-var turn_display=require("./turn_display.js");
+const window = (function () { return this; }());
+const assert = require('assert');
+const piece = require('./piece.js');
+const position = require('./position.js');
+const type_checker = require('type_checker');
+const turn_display = require('./turn_display.js');
 
-var use_debug = require("./use_debug.js");
+const use_debug = require('./use_debug.js');
 
-var history_display=require("./move_history_display.js")
+const history_display = require('./move_history_display.js');
 
-var pickrandom=function(arr){
-  return arr[Math.floor(Math.random()*arr.length)]
+const pickrandom = function (arr) {
+  return arr[Math.floor(Math.random() * arr.length)];
 };
-var append_to_body=function (bs,cb) {
-  
-  var window=(function(){return this;})();
+const append_to_body = function (bs, cb) {
+  const window = (function () { return this; }());
 
-  var body=document.querySelector("body");
-  var be=bs.browser_element();
-  
-  var t_display=new turn_display(bs);
-  var mvhistory=new history_display(bs);
-  
-  if(cb)
-    type_checker.function(cb);
-  
-  var append=function () {
-    if(!body)
-      body=document.querySelector("body");
+  let body = document.querySelector('body');
+  const be = bs.browser_element();
+
+  const t_display = new turn_display(bs);
+  const mvhistory = new history_display(bs);
+
+  if (cb) type_checker.function(cb);
+
+  const append = function () {
+    if (!body) body = document.querySelector('body');
     body.appendChild(be);
     t_display.attach(body);
     mvhistory.attach(body);
-    if(cb){
-      cb();}
+    if (cb) {
+      cb();
+    }
   };
-  if(!document.body){
-    document.addEventListener("DOMContentLoaded",append,false);
-  } else
-    append();
-  
+  if (!document.body) {
+    document.addEventListener('DOMContentLoaded', append, false);
+  } else append();
+
   return be;
 };
 
-var init_board=function (cb) {
-  var bs=new BoardState()
-  
-  if(use_debug()){
-    bs.debug=true;
-    window.bs=bs;
+const init_board = function (cb) {
+  const bs = new BoardState();
+
+  if (use_debug()) {
+    bs.debug = true;
+    window.bs = bs;
   }
   bs.initialize();
-  append_to_body(bs,function(){
+  append_to_body(bs, () => {
     cb(bs);
   });
 };
 
-if(process.title==="browser"){
-  var pdiv=document.createElement("div");
-  var p=new Picker(pdiv);
-  var inited=false;
-  var bs=null;
-  p.on("start",function (desc) {
-    if(use_debug())
-      console.log(desc,inited,bs)
-    if(!inited)
-      return;
-    var keylistenersset=false;
-    Object.keys(desc).forEach(function (color) {
-      if(desc[color]=="Human"){
+if (process.title === 'browser') {
+  const pdiv = document.createElement('div');
+  const p = new Picker(pdiv);
+  let inited = false;
+  let bs = null;
+  p.on('start', (desc) => {
+    if (use_debug()) console.log(desc, inited, bs);
+    if (!inited) return;
+    let keylistenersset = false;
+    Object.keys(desc).forEach((color) => {
+      if (desc[color] == 'Human') {
         bs.add_human(color);
-        if(!keylistenersset){
+        if (!keylistenersset) {
           bs.install_key_listeners();
-          keylistenersset=true;
+          keylistenersset = true;
         }
       }
-      if(desc[color]=="Bot")
-        var bt=new bot(bs,color);
-    })
-  })
-  var start=function () {
+      if (desc[color] == 'Bot') var bt = new bot(bs, color);
+    });
+  });
+  const start = function () {
     document.body.appendChild(pdiv);
-    init_board(function (_bs) {
-      inited=true;
-      bs=_bs;
-    })
+    init_board((_bs) => {
+      inited = true;
+      bs = _bs;
+    });
   };
-  if(!document.body)
-    document.addEventListener("DOMContentLoaded",start,false);
-  else
-    start();
-  
-  window.require=require;
-}
+  if (!document.body) document.addEventListener('DOMContentLoaded', start, false);
+  else start();
 
+  window.require = require;
+}
 
 }).call(this,require('_process'))
 },{"./board_state.js":3,"./bot.js":18,"./game_picker.js":21,"./move_history_display.js":28,"./piece.js":44,"./position.js":45,"./turn_display.js":46,"./use_debug.js":47,"_process":54,"assert":"assert","type_checker":43}],20:[function(require,module,exports){
@@ -1785,151 +1702,148 @@ module.exports = {"formtemplate":{"tag":"form","class":"gamestarter","name":"gam
 },{}],21:[function(require,module,exports){
 (function (process){
 
-var window=(function(){return this;})();
-var document=window.document;
-var EventEmitter=require("events").EventEmitter;
-var util=require("util")
-var sgen=require("gen2015-07")
+const window = (function () { return this; }());
+const document = window.document;
+const EventEmitter = require('events').EventEmitter;
+const util = require('util');
+const sgen = require('gen2015-07');
 
-var use_debug=require("./use_debug.js");
 
-var gen=function (desc) {
-  return sgen(document,desc);
+const gen = function (desc) {
+  return sgen(document, desc);
 };
 
-var assert=require("assert");
-var type_checker=require("type_checker");
-var fstructure=require("./fstructure.yaml");
+const assert = require('assert');
+const type_checker = require('type_checker');
+const use_debug = require('./use_debug.js');
+const fstructure = require('./fstructure.yaml');
 
-var fakeevent={preventDefault:function(){}};
+const fakeevent = { preventDefault() {} };
 
-var getremove=function (ele,key) {
-  var v=ele.getAttribute(key);
+const getremove = function (ele, key) {
+  const v = ele.getAttribute(key);
   ele.removeAttribute(key);
   return v;
 };
 
-var generate=function (ee,prnt) {
+const generate = function (ee, prnt) {
   // fstructure.parent=prnt;
-  
-  var formtemp=fstructure.formtemplate;
-  var sidetemp=fstructure.sidetemplate;
-  
-  formtemp.parent=prnt;
-  
-  var cstate={};
-  
-  var fobj=gen(formtemp);
-  var sidelocs=[].slice.call(fobj.querySelectorAll(".aside"));
-  sidelocs.forEach(function (loc) {
-    sidetemp.forEach(function (spart) {
-      loc.appendChild(gen(spart))
-    })
-    var whichside=getremove(loc,"data-side");
-    
-    var btns=[].slice.call(loc.querySelectorAll("button"));
-    
-    btns.forEach(function (btn,i) {
-      var is = getremove(btn,"data-is");
-      var become=getremove(btn,"data-become");
-      var swap=function(){
-        var tmp = is;
+
+  const formtemp = fstructure.formtemplate;
+  const sidetemp = fstructure.sidetemplate;
+
+  formtemp.parent = prnt;
+
+  const cstate = {};
+
+  const fobj = gen(formtemp);
+  const sidelocs = [].slice.call(fobj.querySelectorAll('.aside'));
+  sidelocs.forEach((loc) => {
+    sidetemp.forEach((spart) => {
+      loc.appendChild(gen(spart));
+    });
+    const whichside = getremove(loc, 'data-side');
+
+    const btns = [].slice.call(loc.querySelectorAll('button'));
+
+    btns.forEach((btn, i) => {
+      let is = getremove(btn, 'data-is');
+      let become = getremove(btn, 'data-become');
+      const swap = function () {
+        const tmp = is;
         is = become;
         become = tmp;
       };
-      cstate[whichside]=is;
-      var setcurrent=function (event) {
+      cstate[whichside] = is;
+      const setcurrent = function (event) {
         event.preventDefault();
-        btn.innerHTML="";
+        btn.innerHTML = '';
         btn.appendChild(document.createTextNode(become));
-        cstate[whichside]=become;
-        if(use_debug())
-          console.log(whichside+" is "+become);
+        cstate[whichside] = become;
+        if (use_debug()) console.log(`${whichside} is ${become}`);
         swap();
       };
-      btn.addEventListener("click",setcurrent,false);
+      btn.addEventListener('click', setcurrent, false);
     });
   });
-  var sbutton=fobj.querySelector(".start_game")
-  sbutton.addEventListener("click",function (event) {
+  const sbutton = fobj.querySelector('.start_game');
+  sbutton.addEventListener('click', (event) => {
     event.preventDefault();
-    ee.emit("start",cstate);
-    if(use_debug())
-      console.log(cstate);
+    ee.emit('start', cstate);
+    if (use_debug()) console.log(cstate);
     ee.collapse();
-  },false);
-  
+  }, false);
+
   return fobj;
 };
 
 
-var Picker=function (prnt) {
+const Picker = function (prnt) {
   EventEmitter.call(this);
   type_checker.object(prnt);
   type_checker.object(prnt.ownerDocument);
-  assert(prnt.ownerDocument===document);
-  
-  var me=this;
-  this.parent=prnt;
-  var hobj=this.html_obj=generate(this,prnt);
-  this.collapsing=false;
-  this.expanding=false;
-  this.collapsed=false;
-  
-  this.collapseable=hobj.querySelectorAll(".button_surround,.start_game_row")
-  this.collapseable=[].slice.call(this.collapseable)
-  process.nextTick(function(){
-    assert(document.body.contains(me.html_obj))
-  //   me.last_height=me.html_obj.clientHeight;
-  //   me.html_obj.style.height=me.last_height+"px";
-    me.collapseable.forEach(function (ele) {
-      if(!ele.style.height)
-        ele.style.height=ele.clientHeight+"px";
-    })
-  })
+  assert(prnt.ownerDocument === document);
+
+  const me = this;
+  this.parent = prnt;
+  const hobj = this.html_obj = generate(this, prnt);
+  this.collapsing = false;
+  this.expanding = false;
+  this.collapsed = false;
+
+  this.collapseable = hobj.querySelectorAll('.button_surround,.start_game_row');
+  this.collapseable = [].slice.call(this.collapseable);
+  process.nextTick(() => {
+    assert(document.body.contains(me.html_obj));
+    //   me.last_height=me.html_obj.clientHeight;
+    //   me.html_obj.style.height=me.last_height+"px";
+    me.collapseable.forEach((ele) => {
+      if (!ele.style.height) ele.style.height = `${ele.clientHeight}px`;
+    });
+  });
 };
 
 
-util.inherits(Picker,EventEmitter);
-Picker.prototype.collapse=function () {
-  var me=this;
-  var hobj=this.html_obj;
+util.inherits(Picker, EventEmitter);
+Picker.prototype.collapse = function () {
+  const me = this;
+  const hobj = this.html_obj;
   assert(!this.collapsing);
   assert(!this.expanding);
-  assert(!this.collapsed)
-  var to_c=this.collapseable;
-  
-  to_c.forEach(function (ele) {
-    ele.style.height="0px"
+  assert(!this.collapsed);
+  const to_c = this.collapseable;
+
+  to_c.forEach((ele) => {
+    ele.style.height = '0px';
   });
-  
+
   // hobj.style.height=this.last_height+"px";
   // hobj.style.height="0px"
-  this.collapsing=true;
-  setTimeout(function () {
-    if(me.collapsing){
-      me.collapsed=true;
-      me.collapsing=false;
+  this.collapsing = true;
+  setTimeout(() => {
+    if (me.collapsing) {
+      me.collapsed = true;
+      me.collapsing = false;
     }
-  },1E3);
+  }, 1E3);
 };
-Picker.prototype.expand=function () {
+Picker.prototype.expand = function () {
   assert(!this.collapsing);
   assert(this.collapsed);
   // this.html_obj.style.height=this.last_height+"px";
-  this.expanding=true;
-  this.collapseable.forEach(function (ele) {
-    ele.style.height=ele.scrollHeight+"px";
-  })
-  setTimeout(function () {
-    if(me.expanding){
-      me.collapsed=false;
-      me.expanding=false;
+  this.expanding = true;
+  this.collapseable.forEach((ele) => {
+    ele.style.height = `${ele.scrollHeight}px`;
+  });
+  setTimeout(() => {
+    if (me.expanding) {
+      me.collapsed = false;
+      me.expanding = false;
     }
-  },1E3);
-}
+  }, 1E3);
+};
 
-module.exports=Picker;
+module.exports = Picker;
 
 }).call(this,require('_process'))
 },{"./fstructure.yaml":20,"./use_debug.js":47,"_process":54,"assert":"assert","events":49,"gen2015-07":42,"type_checker":43,"util":56}],22:[function(require,module,exports){
@@ -1946,45 +1860,43 @@ module.exports="<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://w
 module.exports="<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\"\n  viewBox=\"0 0 148.9332 173.16669\" xml:space=\"preserve\"\n  >\n  <path\n    style=\"stroke-width:1.732px;\"\n    d=\"m 40.71875,31.84375 0,30 11.40625,0 C 52.480031,73.670785 52.15625,125.5 52.15625,125.5 l -8.66425,2.66469 c 0,0 0.803191,8.05666 -0.664,11.664 -1.275442,3.13589 -4.972043,4.73176 -6.663938,7.664 -1.878457,3.25557 -3.664062,10.664 -3.664062,10.664 0,0 28.235631,5 42.5,5 14.264369,0 42.5,-5 42.5,-5 0,0 -2.00623,-7.45083 -3.9845,-10.7035 -1.80114,-2.96142 -5.67021,-4.4962 -6.9845,-7.7035 -1.48044,-3.61277 -0.484,-11.703 -0.484,-11.703 l -9.4845,-2.70294 c 0,0 -0.49629,-52.972929 0.0625,-63.5 l 11.59375,0 0,-30 -7.5,0 0,7.5 -7.5,0 0,-7.5 -7.5,0 0,7.5 -7.5,0 0,-7.5 -7.5,0 0,7.5 -7.5,0 0,-7.5 -7.5,0 0,7.5 -7.5,0 0,-7.5 z\"\n     />\n</svg>";
 },{}],28:[function(require,module,exports){
 
-var window=(function(){return this;})();
-var document=window.document;
-var assert=require('assert')
+const window = (function () { return this; }());
+const document = window.document;
+const assert = require('assert');
 
-var d_history=function (bs) {
-  
-  var div=this.div=document.createElement("div");
-  div.className="move_history";
-  var ihave=this.history=[];
-  
-  var mvtitle=document.createElement("h6");
-  mvtitle.appendChild(document.createTextNode("Move History"))
-  
-  
-  var mvsub=this.mvsub=document.createElement("div");
-  
-  [mvtitle,mvsub].forEach(function (e) {
+const d_history = function (bs) {
+  const div = this.div = document.createElement('div');
+  div.className = 'move_history';
+  const ihave = this.history = [];
+
+  const mvtitle = document.createElement('h6');
+  mvtitle.appendChild(document.createTextNode('Move History'));
+
+
+  const mvsub = this.mvsub = document.createElement('div');
+
+  [mvtitle, mvsub].forEach((e) => {
     div.appendChild(e);
-  })
+  });
   // div.appendChild();
-  
-  bs.on("movedesc",function (desctxt,mdesc,mnot) {
-    var row=document.createElement("div");
+
+  bs.on('movedesc', (desctxt, mdesc, mnot) => {
+    const row = document.createElement('div');
     row.appendChild(document.createTextNode(mnot));
     mvsub.appendChild(row);
-    mvsub.scrollTop=mvsub.scrollHeight;
+    mvsub.scrollTop = mvsub.scrollHeight;
   });
 };
 
-d_history.prototype.attach=function (parent) {
-  var me=this;
-    parent.appendChild(me.div);
-  return;
+d_history.prototype.attach = function (parent) {
+  const me = this;
+  parent.appendChild(me.div);
 };
-d_history.prototype.detach=function (parent) {
+d_history.prototype.detach = function (parent) {
   return parent.removeChild(this.div);
 };
 
-module.exports=d_history;
+module.exports = d_history;
 
 },{"assert":"assert"}],29:[function(require,module,exports){
 /*
@@ -5155,755 +5067,688 @@ assert_not_have=function (o,plist) {
 
 },{"assert":"assert"}],44:[function(require,module,exports){
 
-var type_checker=require("type_checker");
-var board_util=null;
-var assert=require("assert")
+const type_checker = require('type_checker');
+
+let board_util = null;
+const assert = require('assert');
 
 
 
-var imgs={};
+const imgs = {};
 
-imgs.bishop=require("./img/bishop.svg");
-imgs.king=require("./img/king.svg");
-imgs.knight=require("./img/knight.svg");
-imgs.rook=require("./img/rook.svg");
-imgs.pawn=require("./img/pawn.svg");
-imgs.queen=require("./img/queen.svg");
+imgs.bishop = require('./img/bishop.svg');
+imgs.king = require('./img/king.svg');
+imgs.knight = require('./img/knight.svg');
+imgs.rook = require('./img/rook.svg');
+imgs.pawn = require('./img/pawn.svg');
+imgs.queen = require('./img/queen.svg');
 
-var unicode={};
-unicode["white king"]="\u2654";
-unicode["white queen"]="\u2655";
-unicode["white rook"]="\u2656";
-unicode["white bishop"]="\u2657";
-unicode["white knight"]="\u2658";
-unicode["white pawn"]="\u2659";
-unicode["black king"]="\u265A";
-unicode["black queen"]="\u265B";
-unicode["black rook"]="\u265C";
-unicode["black bishop"]="\u265D";
-unicode["black knight"]="\u265E";
-unicode["black pawn"]="\u265F";
+const unicode = {};
+unicode['white king'] = '\u2654';
+unicode['white queen'] = '\u2655';
+unicode['white rook'] = '\u2656';
+unicode['white bishop'] = '\u2657';
+unicode['white knight'] = '\u2658';
+unicode['white pawn'] = '\u2659';
+unicode['black king'] = '\u265A';
+unicode['black queen'] = '\u265B';
+unicode['black rook'] = '\u265C';
+unicode['black bishop'] = '\u265D';
+unicode['black knight'] = '\u265E';
+unicode['black pawn'] = '\u265F';
 
-var div_temp=null;
-var window=(function () {return this;})();
-var get_temp_div=function () {
-  if(div_temp)
-    return div_temp;
-  if(!window.document)
-    throw new Error("document not found");
-  
-  div_temp=window.document.createElement("div")
+let div_temp = null;
+const window = (function () { return this; }());
+const get_temp_div = function () {
+  if (div_temp) return div_temp;
+  if (!window.document) throw new Error('document not found');
+
+  div_temp = window.document.createElement('div');
   return div_temp;
 };
 
-var piece;
-var config={}
-piece=function(str){
-  if(!config.configured)
-    throw new Error("not configured call .config")
-  type_checker.string(str)
-  var pp=piece.parse_piece(str)
-  if(!pp)
-    throw new Error("invalid "+str)
-  this.ispiece=true;
-  this.moved=0;
-  this.color=pp.color
-  this._pname=pp.pname
+let piece;
+const config = {};
+piece = function (str) {
+  if (!config.configured) throw new Error('not configured call .config');
+  type_checker.string(str);
+  const pp = piece.parse_piece(str);
+  if (!pp) throw new Error(`invalid ${str}`);
+  this.ispiece = true;
+  this.moved = 0;
+  this.color = pp.color;
+  this._pname = pp.pname;
 };
 
-piece.imgs=imgs;
+piece.imgs = imgs;
 
-piece.prototype.unicode=function () {
-  var ts=this.toString();
-  if(!(ts in unicode))
-    throw new Error('not found')
+piece.prototype.unicode = function () {
+  const ts = this.toString();
+  if (!(ts in unicode)) throw new Error('not found');
   return unicode[ts];
 };
 
-piece.prototype.toJSON=function () {
-  var onew={};
-  for(var k in this){
-    if(k=="html_piece")
-      continue;
-    if(typeof this[k]==typeof function(){})
-      continue;
-    onew[k]=this[k];
+piece.prototype.toJSON = function () {
+  const onew = {};
+  for (const k in this) {
+    if (k == 'html_piece') continue;
+    if (typeof this[k] === typeof function () {}) continue;
+    onew[k] = this[k];
   }
   return onew;
-}
+};
 
-piece.prototype.browser_element=function () {
-  if(this.html_piece)
-    return this.html_piece;
-  var dt=get_temp_div();
-  dt.innerHTML=imgs[this.pname];
-  
-  var svgele=dt.querySelector("svg");
+piece.prototype.browser_element = function () {
+  if (this.html_piece) return this.html_piece;
+  const dt = get_temp_div();
+  dt.innerHTML = imgs[this.pname];
+
+  const svgele = dt.querySelector('svg');
   svgele.parentNode.removeChild(svgele);
-  dt.innerHTML="";
-  
+  dt.innerHTML = '';
+
   // console.error(imgs[this.pname]);
-  
-  Object.defineProperty(this,"html_piece",{
-    enumerable:false,
-    configurable:true,
-    value:svgele
+
+  Object.defineProperty(this, 'html_piece', {
+    enumerable: false,
+    configurable: true,
+    value: svgele,
   });
-  
+
   // console.log(this.pname);
-  
-  var pcolor=this.color;
-  if(pcolor){
-    var oppcolor=board_util.opposite_color(pcolor)
-    svgele.setAttribute("class",""+this.pname+" "+pcolor)
+
+  const pcolor = this.color;
+  if (pcolor) {
+    const oppcolor = board_util.opposite_color(pcolor);
+    svgele.setAttribute('class', `${this.pname} ${pcolor}`);
     // var pth=[].slice.call(svgele.querySelectorAll("path,rect,circle"))
     // pth.forEach(function (p) {
     //   p.style.fill=pcolor;
     //   p.style.stroke=oppcolor;
     // })
   }
-  
+
   return svgele;
 };
-Object.defineProperty(piece.prototype,"pname",{
-  get:function (v) {
+Object.defineProperty(piece.prototype, 'pname', {
+  get(v) {
     return this._pname;
   },
-  set:function (v) {
-    if(config.valid_names(v)){
-      this._pname=v;
+  set(v) {
+    if (config.valid_names(v)) {
+      this._pname = v;
       return v;
     }
-    throw new Error("invalid name")
-  }
-})
+    throw new Error('invalid name');
+  },
+});
 
-piece.fromJSON=function(jstr) {
-  var jo=JSON.parse(jstr)
-  return Object.create(piece.prototype,jo);
-}
-piece.configure=function(bs){
+piece.fromJSON = function (jstr) {
+  const jo = JSON.parse(jstr);
+  return Object.create(piece.prototype, jo);
+};
+piece.configure = function (bs) {
   assert(!config.configured);
-  type_checker.object(bs)
-  type_checker.function(bs.valid_names)
-  type_checker.function(bs.valid_colors)
-  type_checker.object(bs.board_util)
-  
-  board_util=bs.board_util;
-  config.valid_names=bs.valid_names;
-  config.valid_colors=bs.valid_colors;
-  config.configured=true;
-  
+  type_checker.object(bs);
+  type_checker.function(bs.valid_names);
+  type_checker.function(bs.valid_colors);
+  type_checker.object(bs.board_util);
+
+  board_util = bs.board_util;
+  config.valid_names = bs.valid_names;
+  config.valid_colors = bs.valid_colors;
+  config.configured = true;
+
   return true;
-}
+};
 
-piece.valid_colors=function () {
+piece.valid_colors = function () {
   assert(config.configured);
-  return config.valid_colors.apply(config,arguments);
+  return config.valid_colors(...arguments);
 };
 
-piece.parse_piece=function (piece_name) {
-  type_checker.string(piece_name)
-  
-  var m=/^([a-z]+) ([a-z]+)$/gi.exec(piece_name)
-  if(!m)
-    return false
-  var color=m[1]
-  var pname=m[2]
-  if(!config.valid_colors(color))
-    return false
-  if(!config.valid_names(pname))
-    return false
+piece.parse_piece = function (piece_name) {
+  type_checker.string(piece_name);
+
+  const m = /^([a-z]+) ([a-z]+)$/gi.exec(piece_name);
+  if (!m) return false;
+  const color = m[1];
+  const pname = m[2];
+  if (!config.valid_colors(color)) return false;
+  if (!config.valid_names(pname)) return false;
   return {
-    color:color,
-    pname:pname
-  }
-}
-
-piece.interface=type_checker.define_interface({
-  color:"",
-  pname:""
-},null)
-piece.prototype.toString=function(){
-  return this.color+" "+this.pname
+    color,
+    pname,
+  };
 };
-piece.prototype.inspect=function () {
-  return JSON.stringify(this)
-}
-//piece.prototype.toString;
 
-module.exports=piece;
+piece.interface = type_checker.define_interface({
+  color: '',
+  pname: '',
+}, null);
+piece.prototype.toString = function () {
+  return `${this.color} ${this.pname}`;
+};
+piece.prototype.inspect = function () {
+  return JSON.stringify(this);
+};
+// piece.prototype.toString;
+
+module.exports = piece;
+
 },{"./img/bishop.svg":22,"./img/king.svg":23,"./img/knight.svg":24,"./img/pawn.svg":25,"./img/queen.svg":26,"./img/rook.svg":27,"assert":"assert","type_checker":43}],45:[function(require,module,exports){
 
-var assert=require("assert")
-var type_checker=require("type_checker")
-var config={
-  
-}
-var check_square=function (n) {
+const assert = require('assert');
+const type_checker = require('type_checker');
+
+const config = {
+
+};
+const check_square = function (n) {
   type_checker.number(config.size);
-  if(isNaN(n)||n<1||n>config.size)
-    throw new Error("error matching number for square")
-}
-var singlearg={}
-singlearg[typeof ""]=function (pstr) {
-  var xs=pstr.split("x")
-  if(xs.length!=2)
-    throw new Error("unparseable");
+  if (isNaN(n) || n < 1 || n > config.size) throw new Error('error matching number for square');
+};
+const singlearg = {};
+singlearg[typeof ''] = function (pstr) {
+  const xs = pstr.split('x');
+  if (xs.length != 2) throw new Error('unparseable');
   return xs;
 };
-singlearg[typeof {}]=function (pobj) {
-  type_checker.number(pobj.x)
-  type_checker.number(pobj.y)
-  return [pobj.x,pobj.y]
-}
+singlearg[typeof {}] = function (pobj) {
+  type_checker.number(pobj.x);
+  type_checker.number(pobj.y);
+  return [pobj.x, pobj.y];
+};
 
-var position=function(xo,yo){
-  var x,y;
-  if(arguments.length==1){
-    var xtype=typeof xo;
-    if(xtype in singlearg){
-      var both=singlearg[xtype](xo)
-      x=parseInt(both[0]);
-      y=parseInt(both[1]);
+const position = function (xo, yo) {
+  let x; let y;
+  if (arguments.length == 1) {
+    const xtype = typeof xo;
+    if (xtype in singlearg) {
+      const both = singlearg[xtype](xo);
+      x = parseInt(both[0]);
+      y = parseInt(both[1]);
     }
-  } else{
-    x=parseInt(xo)
-    y=parseInt(yo)
+  } else {
+    x = parseInt(xo);
+    y = parseInt(yo);
   }
   type_checker.number(x);
   type_checker.number(y);
-  
-  assert(config.configured)
+
+  assert(config.configured);
   check_square(x);
   check_square(y);
-  this.isposition=true;
-  this.x=x;
-  this.y=y;
+  this.isposition = true;
+  this.x = x;
+  this.y = y;
 };
-var acode="A".charCodeAt();
-position.prototype.notation=function () {
-  return String.fromCharCode(acode+this.x-1)+this.y;
+const acode = 'A'.charCodeAt();
+position.prototype.notation = function () {
+  return String.fromCharCode(acode + this.x - 1) + this.y;
 };
-position.softfail_slow=function(x,y){
-  try{
-    return new position(x,y);
-  }catch(e){
+position.softfail_slow = function (x, y) {
+  try {
+    return new position(x, y);
+  } catch (e) {
   }
   return false;
-}
-position.softfail=function (xo,yo) {
-  var x,y;
-  x=parseInt(xo);
-  y=parseInt(yo);
-  type_checker.number(x)
-  type_checker.number(y)
-  type_checker.number(config.size)
-  if(x<1||x>config.size)
-    return false;
-  if(y<1||y>config.size)
-    return false;
-  return new position(x,y);
-}
-position.configure=function(c){
-  if(config.configured)
-    throw new Error("cannot config twice")
+};
+position.softfail = function (xo, yo) {
+  let x; let y;
+  x = parseInt(xo);
+  y = parseInt(yo);
+  type_checker.number(x);
+  type_checker.number(y);
+  type_checker.number(config.size);
+  if (x < 1 || x > config.size) return false;
+  if (y < 1 || y > config.size) return false;
+  return new position(x, y);
+};
+position.configure = function (c) {
+  if (config.configured) throw new Error('cannot config twice');
   type_checker.object(c);
   type_checker.number(c.size);
-  config.configured=true
-  config.size=c.size;
-}
-position.prototype.toString=function(){
-  return this.x+"x"+this.y;
+  config.configured = true;
+  config.size = c.size;
 };
-position.prototype.toJSON=position.prototype.toString;
-position.prototype.inspect=function () {
+position.prototype.toString = function () {
+  return `${this.x}x${this.y}`;
+};
+position.prototype.toJSON = position.prototype.toString;
+position.prototype.inspect = function () {
   return JSON.stringify(this.toString());
 };
 
-module.exports=position;
+module.exports = position;
+
 },{"assert":"assert","type_checker":43}],46:[function(require,module,exports){
 (function (process){
 
-var window=(function(){return this;})();
-var document=window.document;
-var assert=require('assert')
+const window = (function () { return this; }());
+const document = window.document;
+const assert = require('assert');
 
-var d_turn=function (bs) {
-  
-  var div=this.div=document.createElement("div");
-  div.className="turn_display";
-  
-  var turn_title=document.createElement("h6");
-  turn_title.appendChild(document.createTextNode("Turn"))
-  
-  
-  var tdisplay=this.tdisplay=document.createElement("div");
-  
-  [turn_title,tdisplay].forEach(function (e) {
+const d_turn = function (bs) {
+  const div = this.div = document.createElement('div');
+  div.className = 'turn_display';
+
+  const turn_title = document.createElement('h6');
+  turn_title.appendChild(document.createTextNode('Turn'));
+
+
+  const tdisplay = this.tdisplay = document.createElement('div');
+
+  [turn_title, tdisplay].forEach((e) => {
     div.appendChild(e);
-  })
+  });
   // div.appendChild();
-  
-  var update=function () {
-    var turn = bs.turn.toString();
-    turn = turn.substr(0,1).toUpperCase()+turn.substr(1).toLowerCase();
-    tdisplay.innerHTML="";
+
+  const update = function () {
+    let turn = bs.turn.toString();
+    turn = turn.substr(0, 1).toUpperCase() + turn.substr(1).toLowerCase();
+    tdisplay.innerHTML = '';
     tdisplay.appendChild(document.createTextNode(turn));
   };
   // bs.on("initialize",update);
-  bs.on("movedesc",update);
-  bs.on("animated",update);
+  bs.on('movedesc', update);
+  bs.on('animated', update);
   process.nextTick(update);
 };
 
-d_turn.prototype.attach=function (parent) {
-  var me=this;
-    parent.appendChild(me.div);
-  return;
+d_turn.prototype.attach = function (parent) {
+  const me = this;
+  parent.appendChild(me.div);
 };
-d_turn.prototype.detach=function (parent) {
+d_turn.prototype.detach = function (parent) {
   return parent.removeChild(this.div);
 };
 
-module.exports=d_turn;
+module.exports = d_turn;
 
 }).call(this,require('_process'))
 },{"_process":54,"assert":"assert"}],47:[function(require,module,exports){
 
-var window=(function(){return this;})();
+const window = (function () { return this; }());
 
 
-var use_debug;
-use_debug=function(){
-  if(!("result" in use_debug))
-    use_debug.result = use_debug.test();
+let use_debug;
+use_debug = function () {
+  if (!('result' in use_debug)) use_debug.result = use_debug.test();
   return use_debug.result;
 };
-use_debug.test=function(){
-  var loc = window.location;
-  if(!loc)
-    return true;
-  var hnm = loc.hostname;
-  if(!hnm)
-    return true;
-  if(/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/gi.test(hnm))
-    return true;
+use_debug.test = function () {
+  const loc = window.location;
+  if (!loc) return true;
+  const hnm = loc.hostname;
+  if (!hnm) return true;
+  if (/^\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}$/gi.test(hnm)) return true;
   return false;
 };
 
-module.exports=use_debug;
+module.exports = use_debug;
 
 },{}],48:[function(require,module,exports){
+const assert = require('assert');
+const typeChecker = require('type_checker');
+require('./board_util.js');
+const position = require('./position.js');
 
-
-var board_util=require("./board_util.js")
-var position=require("./position.js")
-var assert=require("assert")
-var type_checker=require("type_checker")
-
-var HIDETODO=true;
-
-
-var move=function (opos,dx,dy) {
-  var npos=position.softfail(opos.x+dx,opos.y+dy)
-  if(!npos)
-    return false;
+function move(opos, dx, dy) {
+  const npos = position.softfail(opos.x + dx, opos.y + dy);
+  if (!npos) return false;
   return npos;
-};
+}
 
-var vasserts=function(bs,piece){
-  type_checker.object(piece)
-  type_checker.object(piece.position)
-  assert(piece.color==="white"||piece.color==="black")
-};
+function vasserts(bs, piece) {
+  typeChecker.object(piece);
+  typeChecker.object(piece.position);
+  assert(piece.color === 'white' || piece.color === 'black');
+}
 
+const vmoves = {};
 
+vmoves.pawn = function pawn(bs, piece) {
+  const color = piece.color;
+  const opos = piece.position;
+  vasserts.apply(this, arguments);
 
-var vmoves={}
-vmoves.pawn=function(bs,piece){
-  var color=piece.color;
-  var opos=piece.position;
-  vasserts.apply(this,arguments)
-  
-  var direction=1;
-  var homerow=2;
-  if(color!="white"){
-    homerow=7;
-    direction=-1;
+  let direction = 1;
+  let homerow = 2;
+  if (color !== 'white') {
+    homerow = 7;
+    direction = -1;
   }
-  if(opos.y!=homerow){
-    assert(piece.moved)
+  if (opos.y !== homerow) {
+    assert(piece.moved);
   }
-  
-  var diffs=[
+
+  const diffs = [
     {
-      dx:0,
-      dy:1,
-      require_empty:[{
-        dx:0,
-        dy:1
-      }]
+      dx: 0,
+      dy: 1,
+      require_empty: [{
+        dx: 0,
+        dy: 1,
+      }],
     },
     {
-      dx:1,
-      dy:1,
-      requires_occ:true
+      dx: 1,
+      dy: 1,
+      requires_occ: true,
     },
     {
-      dx:-1,
-      dy:1,
-      requires_occ:true
-    }
+      dx: -1,
+      dy: 1,
+      requires_occ: true,
+    },
   ];
-  if(!piece.moved){
+  if (!piece.moved) {
     diffs.push({
-      dx:0,
-      dy:2,
-      isjump:true,
-      require_empty:[{
-        dx:0,
-        dy:1
-      },{
-        dx:0,
-        dy:2
-      }]
-    })
+      dx: 0,
+      dy: 2,
+      isjump: true,
+      require_empty: [{
+        dx: 0,
+        dy: 1,
+      }, {
+        dx: 0,
+        dy: 2,
+      }],
+    });
   }
-  var promoptions="queen,knight,rook,bishop".split(",");
-  
-  // .forEach(function (promo) {
-  //   diffs.push({
-  //     dx:0,
-  //     dy:1,
-  //     islast:true,
-  //     promo:promo,
-  //     require_empty:[{
-  //       dx:0,
-  //       dy:1
-  //     }]
-  //   })
-  // })
-  
-  if(color!="white")
-    diffs.forEach(function (e) {
-      e.dy*=-1;
-      if(e.require_empty){
-        e.require_empty.forEach(function (rempty) {
-          rempty.dx*=-1;
-          rempty.dy*=-1;
-        })
+  const promoptions = 'queen,knight,rook,bishop'.split(',');
+
+  if (color !== 'white') {
+    diffs.forEach((e) => {
+      e.dy *= -1;
+      if (e.require_empty) {
+        e.require_empty.forEach((requiresEmptyInput) => {
+          const requiresEmpty = requiresEmptyInput;
+          requiresEmpty.dx *= -1;
+          requiresEmpty.dy *= -1;
+        });
       }
     });
-  var promos=[];
-  var trymoves=diffs.map(function (dpos) {
-    var rempty=false;
-    var rrow=false;
-    if(dpos.require_empty){
-      for (var i = 0; i < dpos.require_empty.length; i++) {
-        var re_mv=dpos.require_empty[i];
-        rempty=move(opos,re_mv.dx,re_mv.dy)
-        if(bs.positions[rempty.toString()])
-          return false;
-      };
+  }
+
+  const promos = [];
+  let trymoves = diffs.map((dpos) => {
+    let rempty = false;
+    const rrow = false;
+    if (dpos.require_empty) {
+      for (let i = 0; i < dpos.require_empty.length; i++) {
+        const requiresEmpty = dpos.require_empty[i];
+        rempty = move(opos, requiresEmpty.dx, requiresEmpty.dy);
+        if (bs.positions[rempty.toString()]) return false;
+      }
     }
     delete dpos.require_empty;
-    
-    var o={};
-    Object.keys(dpos).forEach(function (k) {
-      if(k=="dx")
-        return;
-      if(k=="dy")
-        o.mv=move(opos,dpos.dx,dpos.dy);
-      else
-        o[k]=dpos[k];
-    })
-    return o
+
+    const o = {};
+    Object.keys(dpos).forEach((k) => {
+      if (k === 'dx') return;
+      if (k === 'dy') o.mv = move(opos, dpos.dx, dpos.dy);
+      else o[k] = dpos[k];
+    });
+    return o;
   });
-  
-  trymoves = trymoves.filter(function (e) {
-    if(e===false)
-      return false;
-    if(e.mv===false)
-      return false;
-    var current=bs.positions[e.mv.toString()]
-    if(!e.requires_occ)
-      return !current;
-    else{
-      return (current&&current.color!=color);
-    }
+
+  trymoves = trymoves.filter((e) => {
+    if (e === false) return false;
+    if (e.mv === false) return false;
+    const current = bs.positions[e.mv.toString()];
+    if (!e.requires_occ) return !current;
+
+    return (current && current.color !== color);
   });
-  
-  trymoves = trymoves.filter(function (e) {
-    if(e===false)
-      return false;
-    if(e.mv==false)
-      return false;
-    if(e.mv.y==1||e.mv.y==8){
-      promoptions.forEach(function (p) {
+
+  trymoves = trymoves.filter((e) => {
+    if (e === false) return false;
+    if (e.mv === false) return false;
+    if (e.mv.y === 1 || e.mv.y === 8) {
+      promoptions.forEach((p) => {
         promos.push({
-          from:opos,
-          to:new position({x:e.mv.x,y:e.mv.y}),
-          promo:p,
-        })
-      })
+          from: opos,
+          to: new position({ x: e.mv.x, y: e.mv.y }),
+          promo: p,
+        });
+      });
       return false;
     }
     return true;
   });
-  
-  
-  
-  var mvappend=[];
-  
-  var lastmove_meta=bs.history[bs.history.length-1];
-  var lastmove=null;
-  if(lastmove_meta)
-    lastmove=lastmove_meta.mvdesc;
-  if(lastmove && lastmove.isjump){
-    var jpos=new position(lastmove.to.toString());
-    if(jpos.y==opos.y){
-      if((jpos.x+1==opos.x) || (jpos.x-1==opos.x)){
+
+
+  const mvappend = [];
+
+  const lastMoveMeta = bs.history[bs.history.length - 1];
+  let lastMove = null;
+
+  if (lastMoveMeta) {
+    lastMove = lastMoveMeta.mvdesc;
+  }
+
+  if (lastMove && lastMove.isjump) {
+    const jpos = new position(lastMove.to.toString());
+    if (jpos.y === opos.y) {
+      if ((jpos.x + 1 === opos.x) || (jpos.x - 1 === opos.x)) {
         mvappend.push({
-          enpassant:true,
-          from:opos,
-          to:new position({x:jpos.x,y:opos.y+direction}),
-          target:jpos
-        })
+          enpassant: true,
+          from: opos,
+          to: new position({ x: jpos.x, y: opos.y + direction }),
+          target: jpos,
+        });
       }
     }
   }
-  
-  
-  return trymoves.map(function (e) {
-    var mvdesc={
-      from:opos,
-      to:e.mv
+
+
+  return trymoves.map((e) => {
+    const mvdesc = {
+      from: opos,
+      to: e.mv,
     };
-    if("isjump" in e){
-      mvdesc.isjump=e.isjump;
+    if ('isjump' in e) {
+      mvdesc.isjump = e.isjump;
     }
-    if("promo" in e){
-      mvdesc.promo=e.promo;
+    if ('promo' in e) {
+      mvdesc.promo = e.promo;
     }
     return mvdesc;
   }).concat(mvappend).concat(promos);
 };
 
-var add_direction;
-add_direction=function (opos,bs,color,vm) {
-  var gendir
-  gendir=function (dir) {
-    var from=dir.pos;
-    var dx=dir.dx;
-    var dy=dir.dy;
-    var to=move(from,dx,dy)
-    if(!to)
-      return false;
-    var current=bs.positions[to.toString()];
-    if(current){
-      if(current.color!=color)
-        vm.push({from:opos,to:to})
+let addDirection;
+addDirection = function (opos, bs, color, vm) {
+  function genDirection(dir) {
+    const from = dir.pos;
+    const dx = dir.dx;
+    const dy = dir.dy;
+    const to = move(from, dx, dy);
+    if (!to) return false;
+    const current = bs.positions[to.toString()];
+    if (current) {
+      if (current.color !== color) vm.push({ from: opos, to });
       return false;
     }
-    vm.push({from:opos,to:to})
-    gendir({pos:to,dx:dx,dy:dy})
+    vm.push({ from: opos, to });
+    genDirection({ pos: to, dx, dy });
     return true;
   }
-  return gendir;
+
+  return genDirection;
 };
-vmoves.rook=function (bs,piece) {
-  var color=piece.color;
-  var opos=piece.position;
-  var row=opos.x
-  var col=opos.y
-  
-  var vm=[]
-  
-  var dirs=[
-    {pos:opos,dx:-1,dy:0},
-    {pos:opos,dx:1,dy:0},
-    {pos:opos,dx:0,dy:-1},
-    {pos:opos,dx:0,dy:1}
+vmoves.rook = function rook(bs, piece) {
+  const color = piece.color;
+  const opos = piece.position;
+  const row = opos.x;
+  const col = opos.y;
+
+  const vm = [];
+
+  const dirs = [
+    { pos: opos, dx: -1, dy: 0 },
+    { pos: opos, dx: 1, dy: 0 },
+    { pos: opos, dx: 0, dy: -1 },
+    { pos: opos, dx: 0, dy: 1 },
   ];
-  dirs.forEach(add_direction(opos,bs,color,vm))
+  dirs.forEach(addDirection(opos, bs, color, vm));
   return vm;
+};
+
+function copydir(o) {
+  return { dx: o.dx, dy: o.dy, pos: o.pos };
 }
-var copydir=function (o) {
-  return {dx:o.dx,dy:o.dy,pos:o.pos}
-}
-vmoves.bishop=function (bs,piece) {
-  var color=piece.color;
-  var opos=piece.position;
-  var row=opos.x
-  var col=opos.y
-  
-  var vm=[]
-  
-  var dirs=[
-    {pos:opos,dx:-1,dy:-1},
-    {pos:opos,dx:1,dy:1},
-    {pos:opos,dx:1,dy:-1},
-    {pos:opos,dx:-1,dy:1}
+
+vmoves.bishop = function bishop(bs, piece) {
+  const color = piece.color;
+  const opos = piece.position;
+  const row = opos.x;
+  const col = opos.y;
+
+  const vm = [];
+
+  const dirs = [
+    { pos: opos, dx: -1, dy: -1 },
+    { pos: opos, dx: 1, dy: 1 },
+    { pos: opos, dx: 1, dy: -1 },
+    { pos: opos, dx: -1, dy: 1 },
   ];
-  dirs.forEach(add_direction(opos,bs,color,vm))
+  dirs.forEach(addDirection(opos, bs, color, vm));
   return vm;
-}
-vmoves.king=function (bs,piece,skipkingcheck) {
-  var color=piece.color;
-  var opos=piece.position;
-  var dirs=[
-    {pos:opos,dx:1,dy:1},
-    {pos:opos,dx:1,dy:0},
-    {pos:opos,dx:0,dy:1},
-  ]
-  dirs.slice().forEach(function (e) {
-    var ne=copydir(e)
-    if(ne.dx==0)
-      return;
-    ne.dx*=-1;
+};
+
+vmoves.king = function king(bs, piece, skipkingcheck) {
+  const color = piece.color;
+  const opos = piece.position;
+  const dirs = [
+    { pos: opos, dx: 1, dy: 1 },
+    { pos: opos, dx: 1, dy: 0 },
+    { pos: opos, dx: 0, dy: 1 },
+  ];
+  dirs.slice().forEach((e) => {
+    const ne = copydir(e);
+    if (ne.dx === 0) return;
+    ne.dx *= -1;
     dirs.push(ne);
-  })
-  dirs.slice().forEach(function (e) {
-    var ne=copydir(e)
-    if(ne.dy==0)
-      return;
-    ne.dy*=-1;
-    dirs.push(ne);
-  })
-  
-  var vm=dirs.map(function (dpos) {
-    return {
-      mv:move(opos,dpos.dx,dpos.dy),
-      dpos:dpos,
-    }
-  })
-  .filter(function (desc) {
-    if(!desc.mv)
-      return false;
-    var current=bs.positions[desc.mv.toString()];
-    if(!current)
-      return true;
-    if(current.color!=color)
-      return true;
-    return false;
-  })
-  .map(function (e) {
-    return {
-      to:e.mv,
-      from:opos,
-    };
-  })
-  var mrooks=[];
-  var rall=bs.bycolortype[color+" rook"]
-  var mrookpos=Object.keys(rall).map(function (rpos) {
-    return rpos;
   });
-  var castles=mrookpos.map(function (rpos) {
-    // var bcopy=bs.clone();
-    var rook=bs.positions[rpos.toString()]
-    
-    var mking=bs.positions[piece.position.toString()]
-    
-    if(mking.moved)
+  dirs.slice().forEach((e) => {
+    const ne = copydir(e);
+    if (ne.dy === 0) return;
+    ne.dy *= -1;
+    dirs.push(ne);
+  });
+
+  const vm = dirs.map(dpos => ({
+    mv: move(opos, dpos.dx, dpos.dy),
+    dpos,
+  }))
+    .filter((desc) => {
+      if (!desc.mv) return false;
+      const current = bs.positions[desc.mv.toString()];
+      if (!current) return true;
+      if (current.color !== color) return true;
       return false;
-    if(rook.moved)
-      return false;
-    var y=rook.position.y
-    assert(y==mking.position.y)
-    var dx=rook.position.x-mking.position.x;
-    var di=(dx<0 ? -1 : 1);
-    
-    var intermediate=new position({x:opos.x+di,y:opos.y})
-    
-    if(bs.positions[intermediate.toString()])
-      return false;
-    
-    bs.perform_move({
-      from:mking.position,
-      to:intermediate,
-      undoable:true,
-      skipverify:true
     })
-    if(bs.check_check(mking.color)){
+    .map(e => ({
+      to: e.mv,
+      from: opos,
+    }));
+  const mrooks = [];
+  const rall = bs.bycolortype[`${color} rook`];
+  const mrookpos = Object.keys(rall).map(rpos => rpos);
+  const castles = mrookpos.map((rpos) => {
+    // var bcopy=bs.clone();
+    const rook = bs.positions[rpos.toString()];
+
+    const mking = bs.positions[piece.position.toString()];
+
+    if (mking.moved) return false;
+    if (rook.moved) return false;
+    const y = rook.position.y;
+    assert(y === mking.position.y);
+    const dx = rook.position.x - mking.position.x;
+    const di = (dx < 0 ? -1 : 1);
+
+    const intermediate = new position({ x: opos.x + di, y: opos.y });
+
+    if (bs.positions[intermediate.toString()]) return false;
+
+    bs.perform_move({
+      from: mking.position,
+      to: intermediate,
+      undoable: true,
+      skipverify: true,
+    });
+    if (bs.check_check(mking.color)) {
       bs.undo_move();
       return false;
     }
     bs.undo_move();
-      
-    var p= new position({x:opos.x+di*2,y:opos.y})
-    if(bs.positions[p.toString()])
-      return false;
-    
-    var rook_to=new position({x:opos.x+di,y:opos.y})
-    return {
-      from:opos,
-      to:p,
-      rook_from:rpos,
-      rook_to:rook_to,
-      castle:true,
-    };
-  })
-  .filter(function (e) {
-    return e!==false;
-  })
-  vm.push.apply(vm,castles);
-  return vm;
-}
-vmoves.queen=function(bs,piece){
-  return vmoves.rook(bs,piece).concat(vmoves.bishop(bs,piece));
-}
-vmoves.knight=function (bs,piece) {
-  var color=piece.color;
-  var opos=piece.position;
-  var diffs=[
-    {dx:2,dy:1}
-  ]
-  diffs.slice().forEach(function (e) {
-    var en=copydir(e)
-    var tmp=en.dy;
-    en.dy=en.dx;
-    en.dx=tmp;
-    diffs.push(en);
-  });
-  diffs.slice().forEach(function (e) {
-    var en=copydir(e)
-    en.dy*=-1;
-    diffs.push(en);
-  });
-  diffs.slice().forEach(function (e) {
-    var en=copydir(e)
-    en.dx*=-1;
-    diffs.push(en);
-  });
-  var vm=diffs.map(function (dpos) {
-    return {
-      mv:move(opos,dpos.dx,dpos.dy),
-      dpos:dpos,
-    }
-  })
-  .filter(function (e) {
-    return (e.mv!==false)
-  })
-  .filter(function (e) {
-    var current=bs.positions[e.mv.toString()];
-    if(!current)
-      return true;
-    if(current.color!=color)
-      return true;
-    return false;
-  })
-  .map(function (e) {
-    return {
-      to:e.mv,
-      from:opos
-    };
-  })
-  
-  return vm;
-}
 
-module.exports=vmoves;
+    const p = new position({ x: opos.x + di * 2, y: opos.y });
+    if (bs.positions[p.toString()]) return false;
+
+    const rook_to = new position({ x: opos.x + di, y: opos.y });
+    return {
+      from: opos,
+      to: p,
+      rook_from: rpos,
+      rook_to,
+      castle: true,
+    };
+  })
+    .filter(e => e !== false);
+  vm.push(...castles);
+  return vm;
+};
+vmoves.queen = function (bs, piece) {
+  return vmoves.rook(bs, piece).concat(vmoves.bishop(bs, piece));
+};
+vmoves.knight = function (bs, piece) {
+  const color = piece.color;
+  const opos = piece.position;
+  const diffs = [
+    { dx: 2, dy: 1 },
+  ];
+  diffs.slice().forEach((e) => {
+    const en = copydir(e);
+    const tmp = en.dy;
+    en.dy = en.dx;
+    en.dx = tmp;
+    diffs.push(en);
+  });
+  diffs.slice().forEach((e) => {
+    const en = copydir(e);
+    en.dy *= -1;
+    diffs.push(en);
+  });
+  diffs.slice().forEach((e) => {
+    const en = copydir(e);
+    en.dx *= -1;
+    diffs.push(en);
+  });
+  const vm = diffs.map(dpos => ({
+    mv: move(opos, dpos.dx, dpos.dy),
+    dpos,
+  }))
+    .filter(e => (e.mv !== false))
+    .filter((e) => {
+      const current = bs.positions[e.mv.toString()];
+      if (!current) return true;
+      if (current.color !== color) return true;
+      return false;
+    })
+    .map(e => ({
+      to: e.mv,
+      from: opos,
+    }));
+
+  return vm;
+};
+
+module.exports = vmoves;
 
 },{"./board_util.js":17,"./position.js":45,"assert":"assert","type_checker":43}],49:[function(require,module,exports){
 // Copyright Joyent, Inc. and other Node contributors.
@@ -7773,5 +7618,6 @@ function hasOwnProperty(obj, prop) {
 
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./support/isBuffer":55,"_process":54,"inherits":50}],"assert":[function(require,module,exports){
-module.exports=function (test,msg) {if(!test)throw new Error("Assertion Error"+(typeof msg==typeof ""? ": "+msg : ""));};
+module.exports = function (test, msg) { if (!test) throw new Error(`Assertion Error${typeof msg === typeof '' ? `: ${msg}` : ''}`); };
+
 },{}]},{},[19]);
