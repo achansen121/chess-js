@@ -2,5 +2,5 @@
 
 Play here
 
-https://gitcdn.link/repo/achansen121/chess-js/master/static/index.html
+https://achansen121.github.io/chess/
 
