@@ -219,7 +219,7 @@ BoardState.prototype.toJSON = function () {
   const vcopy = {};
 
   jcopy.forEach((key) => {
-    vcopy[key] = this[key]
+    vcopy[key] = this[key];
   });
 
   return vcopy;
@@ -335,7 +335,7 @@ module.exports = function _checkall(note) {
 };
 
 },{}],5:[function(require,module,exports){
-(function (process){
+(function (process){(function (){
 
 const window = (function () { return this; }());
 const assert = require('assert');
@@ -503,9 +503,9 @@ const add_human = function (color) {
 
 module.exports = add_human;
 
-}).call(this,require('_process'))
+}).call(this)}).call(this,require('_process'))
 },{"../board_constants.js":2,"../piece.js":44,"../position.js":45,"_process":54,"assert":"assert"}],6:[function(require,module,exports){
-(function (process){
+(function (process){(function (){
 
 const window = (function () { return this; }());
 
@@ -645,7 +645,7 @@ module.exports = function browser_element(parent) {
   return hb;
 };
 
-}).call(this,require('_process'))
+}).call(this)}).call(this,require('_process'))
 },{"../board.less":1,"_process":54}],7:[function(require,module,exports){
 const type_checker = require('type_checker');
 const assert = require('assert');
@@ -941,7 +941,7 @@ module.exports = function perform_move(mvdesc) {
 };
 
 },{"../board_util.js":17,"../piece.js":44,"../position.js":45,"assert":"assert","type_checker":43}],12:[function(require,module,exports){
-(function (process){
+(function (process){(function (){
 
 const colors = require('colors/safe');
 const bconstants = require('../board_constants.js');
@@ -983,7 +983,7 @@ module.exports = function print() {
   }
 };
 
-}).call(this,require('_process'))
+}).call(this)}).call(this,require('_process'))
 },{"../board_constants.js":2,"_process":54,"colors/safe":39}],13:[function(require,module,exports){
 const type_checker = require('type_checker');
 const assert = require('assert');
@@ -1251,7 +1251,7 @@ bu.pconfig = {
 module.exports = bu;
 
 },{"./board_constants.js":2,"./piece.js":44,"./position.js":45,"assert":"assert","path":53,"type_checker":43}],18:[function(require,module,exports){
-(function (process){
+(function (process){(function (){
 
 const assert = require('assert');
 const type_checker = require('type_checker');
@@ -1601,9 +1601,9 @@ nega_max = function (bs, perspective, turn, depth, alpha, beta, cb) {
 
 module.exports = bot;
 
-}).call(this,require('_process'))
+}).call(this)}).call(this,require('_process'))
 },{"./board_util.js":17,"./piece.js":44,"_process":54,"assert":"assert","type_checker":43}],19:[function(require,module,exports){
-(function (process){
+(function (process){(function (){
 
 const Picker = require('./game_picker.js');
 const BoardState = require('./board_state.js');
@@ -1696,11 +1696,11 @@ if (process.title === 'browser') {
   window.require = require;
 }
 
-}).call(this,require('_process'))
+}).call(this)}).call(this,require('_process'))
 },{"./board_state.js":3,"./bot.js":18,"./game_picker.js":21,"./move_history_display.js":28,"./piece.js":44,"./position.js":45,"./turn_display.js":46,"./use_debug.js":47,"_process":54,"assert":"assert","type_checker":43}],20:[function(require,module,exports){
-module.exports = {"formtemplate":{"tag":"form","class":"gamestarter","name":"gamestarter","children":[{"tag":"div","class":"gamestarter_sub","children":[{"tag":"div","data-side":"white","class":"aside","child":{"tag":"h6","text":"White"}},{"tag":"div","class":"aside","data-side":"black","child":{"tag":"h6","text":"Black"}}]},{"tag":"div","class":"start_game_row","child":{"tag":"button","text":"Start","class":"start_game"}}]},"sidetemplate":[{"tag":"div","class":"button_surround","children":[{"tag":"button","child":"Human","data-is":"Human","data-become":"Bot"}]}]}
+module.exports=JSON.parse(atob("eyJmb3JtdGVtcGxhdGUiOnsidGFnIjoiZm9ybSIsImNsYXNzIjoiZ2FtZXN0YXJ0ZXIiLCJuYW1lIjoiZ2FtZXN0YXJ0ZXIiLCJjaGlsZHJlbiI6W3sidGFnIjoiZGl2IiwiY2xhc3MiOiJnYW1lc3RhcnRlcl9zdWIiLCJjaGlsZHJlbiI6W3sidGFnIjoiZGl2IiwiZGF0YS1zaWRlIjoid2hpdGUiLCJjbGFzcyI6ImFzaWRlIiwiY2hpbGQiOnsidGFnIjoiaDYiLCJ0ZXh0IjoiV2hpdGUifX0seyJ0YWciOiJkaXYiLCJjbGFzcyI6ImFzaWRlIiwiZGF0YS1zaWRlIjoiYmxhY2siLCJjaGlsZCI6eyJ0YWciOiJoNiIsInRleHQiOiJCbGFjayJ9fV19LHsidGFnIjoiZGl2IiwiY2xhc3MiOiJzdGFydF9nYW1lX3JvdyIsImNoaWxkIjp7InRhZyI6ImJ1dHRvbiIsInRleHQiOiJTdGFydCIsImNsYXNzIjoic3RhcnRfZ2FtZSJ9fV19LCJzaWRldGVtcGxhdGUiOlt7InRhZyI6ImRpdiIsImNsYXNzIjoiYnV0dG9uX3N1cnJvdW5kIiwiY2hpbGRyZW4iOlt7InRhZyI6ImJ1dHRvbiIsImNoaWxkIjoiSHVtYW4iLCJkYXRhLWlzIjoiSHVtYW4iLCJkYXRhLWJlY29tZSI6IkJvdCJ9XX1dfQ=="));
 },{}],21:[function(require,module,exports){
-(function (process){
+(function (process){(function (){
 
 const window = (function () { return this; }());
 const document = window.document;
@@ -1845,7 +1845,7 @@ Picker.prototype.expand = function () {
 
 module.exports = Picker;
 
-}).call(this,require('_process'))
+}).call(this)}).call(this,require('_process'))
 },{"./fstructure.yaml":20,"./use_debug.js":47,"_process":54,"assert":"assert","events":49,"gen2015-07":42,"type_checker":43,"util":56}],22:[function(require,module,exports){
 module.exports="<svg xmlns=\"http://www.w3.org/2000/svg\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" version=\"1.1\"\n  viewBox=\"0 0 202.03075 388\" xml:space=\"preserve\"\n  >\n  <path\n    transform=\"translate(-239.48463,-184.66)\"\n    style=\"stroke-width:3.88px;\"\n    d=\"m 340.5,185.21875 c 0,0 -8.33846,4.39207 -11.40625,14.375 -2.13516,6.94806 7.25934,2.7015 7.40625,9.96875 0.45244,22.38145 -35.49059,40.79736 -33.875,63.125 1.12731,15.57948 20.0632,24.62199 15.9375,39.6875 -2.70926,9.8932 -29.04675,1.16023 -28.5625,11.40625 0.39836,8.42871 19.36581,0.29766 24.28125,7.15625 20.26689,28.27869 6.75168,71.28571 -4.28125,104.28125 -7.70736,23.04994 -23.08653,44.06436 -41.4375,60 -4.82382,4.18892 -17.65195,2.1955 -17.125,8.5625 0.53422,6.45482 17.15872,-0.60419 18.5625,5.71875 2.92281,13.16498 -30.81988,13.69567 -30,27.15625 0.77913,12.79148 15.97949,16.26903 31.4375,22.125 19.14823,7.25394 45.76329,10.71875 69.0625,10.71875 23.29921,0 49.91427,-3.46481 69.0625,-10.71875 15.45801,-5.85597 30.65837,-9.33352 31.4375,-22.125 0.81988,-13.46058 -32.92281,-13.99127 -30,-27.15625 1.40378,-6.32294 18.02828,0.73607 18.5625,-5.71875 0.52695,-6.367 -12.30118,-4.37358 -17.125,-8.5625 -18.35097,-15.93564 -33.73014,-36.95006 -41.4375,-60 -11.03293,-32.99554 -24.54814,-76.00256 -4.28125,-104.28125 4.91544,-6.85859 23.88289,1.27246 24.28125,-7.15625 0.48425,-10.24602 -25.85324,-1.51305 -28.5625,-11.40625 -4.1257,-15.06551 14.81019,-24.10802 15.9375,-39.6875 0.68732,-9.4989 -5.44398,-18.28093 -12.65625,-26.96875 l -21.5,25.59375 -5.71875,-4.78125 22.3125,-26.625 c -8.36473,-9.77562 -16.52946,-19.6111 -16.3125,-30.34375 0.14691,-7.26725 9.54141,-3.02069 7.40625,-9.96875 -3.06779,-9.98293 -11.40625,-14.375 -11.40625,-14.375 z\"\n     />\n</svg>";
 },{}],23:[function(require,module,exports){
@@ -2386,7 +2386,7 @@ Object.keys(codes).forEach(function(key) {
 });
 
 },{}],37:[function(require,module,exports){
-(function (process){
+(function (process){(function (){
 /*
 MIT License
 
@@ -2423,9 +2423,9 @@ module.exports = function(flag, argv) {
   return pos !== -1 && (terminatorPos === -1 ? true : pos < terminatorPos);
 };
 
-}).call(this,require('_process'))
+}).call(this)}).call(this,require('_process'))
 },{"_process":54}],38:[function(require,module,exports){
-(function (process){
+(function (process){(function (){
 /*
 The MIT License (MIT)
 
@@ -2578,7 +2578,7 @@ module.exports = {
   stderr: getSupportLevel(process.stderr),
 };
 
-}).call(this,require('_process'))
+}).call(this)}).call(this,require('_process'))
 },{"./has-flag.js":37,"_process":54,"os":52}],39:[function(require,module,exports){
 //
 // Remark: Requiring this file will use the "safe" colors API,
@@ -2593,70 +2593,65 @@ module['exports'] = colors;
 
 },{"./lib/colors":29}],40:[function(require,module,exports){
 
-var assert=require("assert");
+const assert = require('assert');
 
-var type_checker=require("type_checker");
+const type_checker = require('type_checker');
 
 
-var ontype={};
+const ontype = {};
 
-var copy_obj_rec;
+let copy_obj_rec;
 
-var primitive=function (o,no,k,v) {
-  no[k]=v;
+const primitive = function (o, no, k, v) {
+  no[k] = v;
   return true;
 };
 
 
-ontype[typeof {}]=function (o,no,k,v,sn,msn) {
-  if(v===null)
-    return primitive.apply(this,arguments);
-  no[k]=copy_obj_rec(v,sn,msn);
+ontype[typeof {}] = function (o, no, k, v, sn, msn) {
+  if (v === null) return primitive.apply(this, arguments);
+  no[k] = copy_obj_rec(v, sn, msn);
   return true;
 };
-ontype[typeof function(){}]=function (o,no,k,v,sn,msn) {
+ontype[typeof function () {}] = function (o, no, k, v, sn, msn) {
   return true;
 };
-ontype[typeof undefined]=primitive;
-ontype[typeof 1]=primitive;
-ontype[typeof ""]=primitive;
-ontype[typeof true]=primitive;
+ontype[typeof undefined] = primitive;
+ontype[typeof 1] = primitive;
+ontype[typeof ''] = primitive;
+ontype[typeof true] = primitive;
 
-copy_obj_rec=function (o,seen,mycopy) {
+copy_obj_rec = function (o, seen, mycopy) {
   type_checker.object(o);
   type_checker.array(seen);
   type_checker.array(mycopy);
-  
-  var si=seen.indexOf(o);
-  if(si>=0)
-    return mycopy[si];
-  
-  var no;
-  if(Array.isArray(o))
-    no=[];
-  else
-    no={};
-  
+
+  const si = seen.indexOf(o);
+  if (si >= 0) return mycopy[si];
+
+  let no;
+  if (Array.isArray(o)) no = [];
+  else no = {};
+
   seen.push(o);
   mycopy.push(no);
-  
-  Object.keys(o).forEach(function (k) {
-    var v=o[k];
-    var ts=(typeof o[k]);
-    
+
+  Object.keys(o).forEach((k) => {
+    const v = o[k];
+    const ts = (typeof o[k]);
+
     assert(ts in ontype);
-    ontype[ts](o,no,k,v,seen,mycopy);
+    ontype[ts](o, no, k, v, seen, mycopy);
   });
   return no;
 };
 
-var copy_object=function (o) {
-  return copy_obj_rec(o,[],[]);
+const copy_object = function (o) {
+  return copy_obj_rec(o, [], []);
 };
 
 
-module.exports=copy_object;
-
+module.exports = copy_object;
 
 },{"assert":"assert","type_checker":43}],41:[function(require,module,exports){
 /*!
@@ -4772,137 +4767,131 @@ module.exports=copy_object;
 
 },{}],42:[function(require,module,exports){
 
-var assert=require("assert");
-var type_checker=require("type_checker")
-var es5=require("es5-shim");
+const assert = require('assert');
+const type_checker = require('type_checker');
+const es5 = require('es5-shim');
 
-var defaultkey;
-var specialkey={};
-var tagpossible="tag,tagName".split(",");
-var skip={};
-tagpossible.forEach(function (t) {
-  skip[t]=true;
+let defaultkey;
+const specialkey = {};
+const tagpossible = 'tag,tagName'.split(',');
+const skip = {};
+tagpossible.forEach((t) => {
+  skip[t] = true;
 });
-var gen=module.exports=function (document,desc) {
-  assert(arguments.length==2);
+const gen = module.exports = function (document, desc) {
+  assert(arguments.length == 2);
   type_checker.object(document);
   type_checker.object(document.documentElement);
-  if(typeof desc==typeof "")
-    return document.createElement(desc);
+  if (typeof desc === typeof '') return document.createElement(desc);
   type_checker.object(desc);
-  
-  var e;
-  if(typeof desc.tag==typeof ""){
-    e=document.createElement(desc.tag);
+
+  let e;
+  if (typeof desc.tag === typeof '') {
+    e = document.createElement(desc.tag);
     type_checker.undefined(desc.tagName);
   } else {
     type_checker.undefined(desc.tag);
     type_checker.string(desc.tagName);
-    e=document.createElement(desc.tagName);
+    e = document.createElement(desc.tagName);
   }
-  Object.keys(desc).forEach(function (dkey) {
-    if(skip[dkey])
-      return;
-    if(dkey in specialkey){
-      specialkey[dkey](e,desc,dkey,desc[dkey]);
-    } else
-      defaultkey(e,desc,dkey,desc[dkey]);
+  Object.keys(desc).forEach((dkey) => {
+    if (skip[dkey]) return;
+    if (dkey in specialkey) {
+      specialkey[dkey](e, desc, dkey, desc[dkey]);
+    } else defaultkey(e, desc, dkey, desc[dkey]);
   });
   return e;
 };
-defaultkey=function (e,desc,k,_v) {
-  var v;
-  v=_v;
-  if(typeof v==typeof 1)
-    v=v.toString()
+defaultkey = function (e, desc, k, _v) {
+  let v;
+  v = _v;
+  if (typeof v === typeof 1) v = v.toString();
   type_checker.string(v);
-  return e.setAttribute(k,v);
+  return e.setAttribute(k, v);
 };
-specialkey.parentNode=function (e,desc,k,v) {
-  phexclude(desc,"parentNode");
-  return v.appendChild(e);
-}
-specialkey.parent=function (e,desc,k,v) {
-  phexclude(desc,"parent");
+specialkey.parentNode = function (e, desc, k, v) {
+  phexclude(desc, 'parentNode');
   return v.appendChild(e);
 };
-specialkey.style=function (e,desc,k,v) {
-  if(typeof v==typeof ""){
-    return defaultkey(e,desc,k,v);
+specialkey.parent = function (e, desc, k, v) {
+  phexclude(desc, 'parent');
+  return v.appendChild(e);
+};
+specialkey.style = function (e, desc, k, v) {
+  if (typeof v === typeof '') {
+    return defaultkey(e, desc, k, v);
   }
   type_checker.object(e.style);
-  Object.keys(v).forEach(function (skey) {
-    var v_sub=v[skey];
+  Object.keys(v).forEach((skey) => {
+    const v_sub = v[skey];
     type_checker.string(v_sub);
-    
-    e.style[skey]=v_sub;
+
+    e.style[skey] = v_sub;
   });
   return true;
 };
-var assert_not_have
-var chexclude
-var onchn=function(e){
-  var document=e.ownerDocument;
+let assert_not_have;
+let chexclude;
+const onchn = function (e) {
+  const document = e.ownerDocument;
   return function (chn) {
-    var rchn=chn;
-    if(typeof chn==typeof ""){
-      rchn=document.createTextNode(chn)
+    let rchn = chn;
+    if (typeof chn === typeof '') {
+      rchn = document.createTextNode(chn);
     }
-    if(rchn.ownerDocument!==document)
-      rchn=gen(document,rchn);
-    e.appendChild(rchn)
+    if (rchn.ownerDocument !== document) rchn = gen(document, rchn);
+    e.appendChild(rchn);
     return true;
   };
 };
-specialkey.child=function (e,desc,k,v) {
-  chexclude(desc,"child");
+specialkey.child = function (e, desc, k, v) {
+  chexclude(desc, 'child');
   return onchn(e)(v);
 };
-specialkey.children=function (e,desc,k,v) {
-  var document=e.ownerDocument;
-  chexclude(desc,"children");
-  v.forEach(onchn(e))
+specialkey.children = function (e, desc, k, v) {
+  const document = e.ownerDocument;
+  chexclude(desc, 'children');
+  v.forEach(onchn(e));
   return true;
 };
-specialkey.html=function (e,desc,k,v) {
+specialkey.html = function (e, desc, k, v) {
   type_checker.string(v);
-  chexclude(desc,"html")
-  e.innerHTML=v;
+  chexclude(desc, 'html');
+  e.innerHTML = v;
   return true;
 };
-specialkey.text=function (e,desc,k,v) {
+specialkey.text = function (e, desc, k, v) {
   type_checker.string(v);
-  chexclude(desc,"text")
-  e.appendChild(e.ownerDocument.createTextNode(v))
+  chexclude(desc, 'text');
+  e.appendChild(e.ownerDocument.createTextNode(v));
   return true;
 };
 
-var gen_exclude=function (list) {
-  return function (desc,skip) {
+const gen_exclude = function (list) {
+  return function (desc, skip) {
     type_checker.string(skip);
-    var cwithout=list.filter(function (k) {
-      return k!==skip;
-    });
-    assert_not_have(desc,cwithout);
+    const cwithout = list.filter(k => k !== skip);
+    assert_not_have(desc, cwithout);
   };
-}
-phexclude=gen_exclude("parent,parentNode".split(","));
-chexclude=gen_exclude("html,child,children,text".split(","));
+};
+phexclude = gen_exclude('parent,parentNode'.split(','));
+chexclude = gen_exclude('html,child,children,text'.split(','));
 
-assert_not_have=function (o,plist) {
+assert_not_have = function (o, plist) {
   type_checker.object(o);
   type_checker.array(plist);
   type_checker.function(plist.forEach);
-  
-  plist.forEach(function (pname) {
-    assert(typeof o[pname]==typeof undefined)
+
+  plist.forEach((pname) => {
+    assert(typeof o[pname] === typeof undefined);
   });
 };
 
 },{"assert":"assert","es5-shim":41,"type_checker":43}],43:[function(require,module,exports){
 // Generated by CoffeeScript 1.9.1
-(function() {
-  var assert, gen_type_enf, o, tk, ts, type_str;
+(function () {
+  let assert; let gen_type_enf; let o; let tk; let ts; let
+    type_str;
 
   assert = require('assert');
 
@@ -4910,11 +4899,11 @@ assert_not_have=function (o,plist) {
 
   type_str = {};
 
-  type_str.string = typeof "";
+  type_str.string = typeof '';
 
   type_str.number = typeof 1;
 
-  type_str["function"] = typeof (function() {});
+  type_str.function = typeof (function () {});
 
   type_str.object = typeof {};
 
@@ -4922,10 +4911,10 @@ assert_not_have=function (o,plist) {
 
   type_str.boolean = typeof true;
 
-  gen_type_enf = function(ts, tk) {
-    return function(a) {
-      assert(arguments.length === 1, "Wrong number of arguments");
-      assert(typeof a === ts, "Not of type " + tk);
+  gen_type_enf = function (ts, tk) {
+    return function (a) {
+      assert(arguments.length === 1, 'Wrong number of arguments');
+      assert(typeof a === ts, `Not of type ${tk}`);
       return a;
     };
   };
@@ -4934,46 +4923,47 @@ assert_not_have=function (o,plist) {
     ts = type_str[tk];
     o[tk] = gen_type_enf(ts, tk);
   }
-  
-  o.array=function (a) {
-    assert(arguments.length === 1, "Wrong number of arguments");
-    assert(Array.isArray(a), "Not type array");
+
+  o.array = function (a) {
+    assert(arguments.length === 1, 'Wrong number of arguments');
+    assert(Array.isArray(a), 'Not type array');
     return a;
   };
 
-  o.object = function(a) {
-    assert(arguments.length === 1, "Wrong number of arguments");
-    assert(type_str.object === typeof a, "Not type object");
-    assert(a !== null, "Null object");
+  o.object = function (a) {
+    assert(arguments.length === 1, 'Wrong number of arguments');
+    assert(type_str.object === typeof a, 'Not type object');
+    assert(a !== null, 'Null object');
     return a;
   };
 
-  o.number = function(a) {
-    assert(arguments.length === 1, "Wrong number of arguments");
-    assert(type_str.number === typeof a, "Not type number");
+  o.number = function (a) {
+    assert(arguments.length === 1, 'Wrong number of arguments');
+    assert(type_str.number === typeof a, 'Not type number');
     o.not_nan(a);
     return a;
   };
 
-  o.not_nan = function(a) {
-    assert(arguments.length === 1, "Wrong number of arguments");
-    assert(!isNaN(a), "NaN number");
+  o.not_nan = function (a) {
+    assert(arguments.length === 1, 'Wrong number of arguments');
+    assert(!isNaN(a), 'NaN number');
     return a;
   };
 
-  o["null"] = function(a) {
-    assert(arguments.length === 1, "Wrong number of arguments");
-    assert(a === null, "not null");
+  o.null = function (a) {
+    assert(arguments.length === 1, 'Wrong number of arguments');
+    assert(a === null, 'not null');
     return a;
   };
 
-  o.define_interface = function(interface_def, sub_interface_defs) {
-    var cobj, e, interface_obj, k, sint;
-    assert(arguments.length > 0, "Wrong number of arguments");
-    assert(arguments.length < 3, "Wrong number of arguments");
+  o.define_interface = function (interface_def, sub_interface_defs) {
+    let cobj; let e; let interface_obj; let k; let
+      sint;
+    assert(arguments.length > 0, 'Wrong number of arguments');
+    assert(arguments.length < 3, 'Wrong number of arguments');
     interface_obj = {
-      type: "interface",
-      required_keys: {}
+      type: 'interface',
+      required_keys: {},
     };
     for (k in interface_def) {
       cobj = interface_def[k];
@@ -4984,7 +4974,7 @@ assert_not_have=function (o,plist) {
       for (k in sub_interface_defs) {
         sint = sub_interface_defs[k];
         o.undefined(interface_obj.required_keys[k]);
-        
+
         o.is_valid_interface(sint);
         interface_obj.required_keys[k] = sint;
       }
@@ -4992,14 +4982,15 @@ assert_not_have=function (o,plist) {
     return interface_obj;
   };
 
-  o.is_valid_interface = function(iobj) {
-    var k, ref, v;
-    assert(arguments.length === 1, "Wrong number of arguments");
+  o.is_valid_interface = function (iobj) {
+    let k; let ref; let
+      v;
+    assert(arguments.length === 1, 'Wrong number of arguments');
     o.object(iobj);
     o.string(iobj.type);
     o.object(iobj.required_keys);
     assert(Object.keys(iobj).length === 2);
-    assert(iobj.type === "interface");
+    assert(iobj.type === 'interface');
     ref = iobj.required_keys;
     for (k in ref) {
       v = ref[k];
@@ -5009,29 +5000,29 @@ assert_not_have=function (o,plist) {
       if (o.is_valid_interface(v)) {
         continue;
       }
-      throw new Error("invalid interface value at key " + k);
+      throw new Error(`invalid interface value at key ${k}`);
     }
     return true;
   };
 
-  o.coerce_number = function(s) {
-    assert(arguments.length === 1, "Wrong number of arguments");
+  o.coerce_number = function (s) {
+    assert(arguments.length === 1, 'Wrong number of arguments');
     if (typeof s === type_str.number) {
       o.number(s);
       return s;
-    } else if (typeof s === type_str.string) {
+    } if (typeof s === type_str.string) {
       s = parseFloat(s);
       o.number(s);
     } else {
-      throw new Error("could not coerce");
+      throw new Error('could not coerce');
     }
     return s;
   };
 
-  o.coerce_string = function(s) {
-    assert(arguments.length === 1, "Wrong number of arguments");
+  o.coerce_string = function (s) {
+    assert(arguments.length === 1, 'Wrong number of arguments');
     if (typeof s === type_str.number) {
-      s = s + "";
+      s += '';
     } else if (typeof s === type_str.object) {
       s = JSON.stringify(s);
     }
@@ -5039,30 +5030,30 @@ assert_not_have=function (o,plist) {
     return s;
   };
 
-  o.uses_interface = function(to_test, interface_obj) {
-    var e, k, ref, v;
-    assert(arguments.length === 2, "Wrong number of arguments");
+  o.uses_interface = function (to_test, interface_obj) {
+    let e; let k; let ref; let
+      v;
+    assert(arguments.length === 2, 'Wrong number of arguments');
     o.object(to_test);
-    
+
     o.is_valid_interface(interface_obj);
-    
+
     ref = interface_obj.required_keys;
     for (k in ref) {
       v = ref[k];
       if (typeof v === type_str.string) {
-        assert(typeof to_test[k] === v, "Invalid Type for key: " + k);
+        assert(typeof to_test[k] === v, `Invalid Type for key: ${k}`);
       } else if (typeof v === type_str.object) {
         o.is_valid_interface(v);
         o.uses_interface(to_test[k], v);
       } else {
-        throw new Error("invalid interface def");
+        throw new Error('invalid interface def');
       }
     }
     return true;
   };
 
   module.exports = o;
-
 }).call(this);
 
 },{"assert":"assert"}],44:[function(require,module,exports){
@@ -5323,7 +5314,7 @@ position.prototype.inspect = function () {
 module.exports = position;
 
 },{"assert":"assert","type_checker":43}],46:[function(require,module,exports){
-(function (process){
+(function (process){(function (){
 
 const window = (function () { return this; }());
 const document = window.document;
@@ -5366,7 +5357,7 @@ d_turn.prototype.detach = function (parent) {
 
 module.exports = d_turn;
 
-}).call(this,require('_process'))
+}).call(this)}).call(this,require('_process'))
 },{"_process":54,"assert":"assert"}],47:[function(require,module,exports){
 
 const window = (function () { return this; }());
@@ -6529,7 +6520,7 @@ exports.homedir = function () {
 };
 
 },{}],53:[function(require,module,exports){
-(function (process){
+(function (process){(function (){
 // .dirname, .basename, and .extname methods are extracted from Node.js v8.11.1,
 // backported and transplited with Babel, with backwards-compat fixes
 
@@ -6833,7 +6824,7 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-}).call(this,require('_process'))
+}).call(this)}).call(this,require('_process'))
 },{"_process":54}],54:[function(require,module,exports){
 // shim for using process in browser
 var process = module.exports = {};
@@ -7028,7 +7019,7 @@ module.exports = function isBuffer(arg) {
     && typeof arg.readUInt8 === 'function';
 }
 },{}],56:[function(require,module,exports){
-(function (process,global){
+(function (process,global){(function (){
 // Copyright Joyent, Inc. and other Node contributors.
 //
 // Permission is hereby granted, free of charge, to any person obtaining a
@@ -7616,7 +7607,7 @@ function hasOwnProperty(obj, prop) {
   return Object.prototype.hasOwnProperty.call(obj, prop);
 }
 
-}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
+}).call(this)}).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{"./support/isBuffer":55,"_process":54,"inherits":50}],"assert":[function(require,module,exports){
 module.exports = function (test, msg) { if (!test) throw new Error(`Assertion Error${typeof msg === typeof '' ? `: ${msg}` : ''}`); };
 

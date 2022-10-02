@@ -1,15 +1,36 @@
 
 const brfs = require('brfs');
 const lessify = require('node-lessify');
-const bd = require('browserify-data');
 const through = require('through');
 const fs = require('fs');
+const jsYaml = require('js-yaml');
 
+
+function handleYamlFile(file) {
+  let getStream = through();
+
+  const getStreamWrite = getStream.write;
+  const getStreamEnd = getStream.end;
+
+  let yamlStr = '';
+  getStream.write = function (d) {
+    yamlStr += d;
+  };
+
+  getStream.end = function () {
+    const obj = jsYaml.load(yamlStr);
+    const objStr64 = btoa(JSON.stringify(obj));
+    getStreamWrite.call(getStream, `module.exports=JSON.parse(atob("${objStr64}"));`);
+    getStreamEnd.call(getStream);
+  };
+
+  return getStream;
+}
 
 module.exports = function (file, package_options) {
   console.log(`transforming ${file}`);
   if (/\.yaml$/gi.test(file)) {
-    return bd.apply(this, arguments);
+    return handleYamlFile(file);
   }
   if (/\.(css|less)$/gi.test(file)) {
     return lessify(file, { textMode: true });
