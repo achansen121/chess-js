@@ -5,7 +5,7 @@
   "main": "build.js",
   "dependencies": {
     "brfs": "^1.4.0",
-    "browserify": "^16.2.3",
+    "browserify": "^16.5.2",
     "colors": "^1.4.0",
     "css": "^2.2.1",
     "js-yaml": "^4.1.0",
@@ -14,10 +14,8 @@
     "minifyify": "^7.0.3",
     "node-lessify": "^0.0.10",
     "outpipe": "^1.1.1",
-    "recurse_watch": "https://github.com/achansen121/nd_recurse_watch.git",
     "through": "^2.3.8",
     "through2": "^2.0.0",
-    "type_checker": "https://github.com/achansen121/node-type_checker.git",
     "watchify": "^4.0.0"
   },
   "devDependencies": {

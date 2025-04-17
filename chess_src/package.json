@@ -9,8 +9,7 @@
     "css": "^2.2.1",
     "less": "^3.9.0",
     "node-lessify": "^0.0.10",
-    "outpipe": "^1.1.1",
-    "recurse_watch": "https://github.com/achansen121/nd_recurse_watch.git"
+    "outpipe": "^1.1.1"
   },
   "devDependencies": {
     "es5-shim": "^4.5.12",
